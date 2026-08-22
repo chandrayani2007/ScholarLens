@@ -1,0 +1,1264 @@
+[
+  {
+    "question": "What is retrieval augmented generation?",
+    "answer": "Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by integrating external retrieved document passages into the context window prior to answer generation [E1]. This architecture addresses key LLM limitations such as static knowledge cutoff and hallucination by grounding responses in verifiable source literature [E1, E2]. Hybrid retrieval strategies combining dense vector search with lexical BM25 term matching provide optimal passage coverage [E2].",
+    "evidence": [
+      {
+        "citation_id": "E1",
+        "unit_id": "AI001_C003",
+        "parent_chunk_id": "AI001_C003",
+        "chunk_id": "AI001_C003",
+        "paper_id": "AI001",
+        "section_id": "SEC_AI001_003",
+        "section_name": "Introduction",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "The increasing number of users dissatisfied with the relevance of commercial search engine results is surprising, given the unprecedented access to vast information and sophisticated search technologies [1, 2].\n\nIn this paper, we employ the Retrieval Augmented Generation (RAG) model to simulate user search behaviour, aiming to identify and address knowledge gaps on the Internet. We posit that uncovering and bridging these gaps is crucial for enhancing the efficacy of information retrieval systems.",
+        "dense_score": 0.8306650519371033,
+        "bm25_score": 20.125378958435974,
+        "rrf_score": 0.032002,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E2",
+        "unit_id": "AI003_C002_sub01",
+        "parent_chunk_id": "AI003_C002",
+        "chunk_id": "AI003_C002",
+        "paper_id": "AI003",
+        "section_id": "SEC_AI003_002",
+        "section_name": "Introduction",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 1,
+        "page_end": 3,
+        "text": "Retrieval-Augmented Generation (RAG) is a framework that enhances the ca- pabilities of Large Language Models (LLMs) by integrating external knowledge sources into the generation process. By combining the text generation prowess of LLMs with information retrieval functions, RAG enables the production of precise and contextually relevant information. This approach addresses several critical limitations of traditional LLMs, such as their propensity to generate generic responses or false claims, often referred to as hallucinations. The RAG process typically involves the following steps:\n\n\u2013 External Data Curation: External data from various sources, such as\n\nAPIs, databases, or document repositories, is converted into numerical repre- sentations using embedding language models and stored in a vector database. \u2013 Information Retrieval: Upon receiving a user query, the RAG system\n\nretrieves relevant information from the external knowledge base. \u2013 Augmented Generation: The retrieved information is combined with the\n\nuser query and fed into the LLM, which uses this augmented context along with its training data to generate a response. Fig. 1. : The core principles of a RAG system: (1) Offline \u2013 store external data, serving as a source of truth, in a vector database. (2) Online \u2013 augment the user query by retrieving and incorporating relevant documents from the database. Despite the promise of RAG systems, evaluating their performance remains a challenge. RAG systems comprise multiple interconnected components, each requiring unique evaluation methodologies. In turn, this complicates end-to-end assessment; i.e., providing a comprehensive unified scoring for RAG pipelines. Addressing these challenges demands a multifaceted and reference-free ap- proach that integrates automated metrics capable of capturing the unique char- acteristics of RAG systems. The evaluation of RAG applications has become a critical area of research, focusing on systematic methodologies to assess model capabilities across dimensions such as alignment, robustness, and domain-specific performance. Ensuring alignment with user needs, domain-specific requirements, and performance goals is essential for advancing this technology. This paper explores the challenges associated with evaluating RAG appli- cations and introduces the Deepchecks framework as a comprehensive solution, assisting evaluation, iterating system improvements, and production monitoring.",
+        "dense_score": 0.8257946968078613,
+        "bm25_score": 18.707680881586867,
+        "rrf_score": 0.030798,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E3",
+        "unit_id": "AI029_C002_sub01",
+        "parent_chunk_id": "AI029_C002",
+        "chunk_id": "AI029_C002",
+        "paper_id": "AI029",
+        "section_id": "SEC_AI029_002",
+        "section_name": "Abstract",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Retrieval-augmented generation (RAG) is a popular technique for using large language models (LLMs) to build customer-support, question-answering solutions. In this paper, we share our team\u2019s practical experience building and maintaining enterprise-scale RAG solutions that answer users\u2019 questions about our software based on product documentation. Our experience has not always matched the most common patterns in the RAG literature. This paper focuses on solution strategies that are modular and model-agnostic. For example, our experience over the past few years - using different search methods and LLMs, and many knowledge base collections - has been that simple changes to the way we create knowledge base content can have a huge impact on our RAG solutions\u2019 success. In this paper, we also discuss how we monitor and evaluate results. Common RAG benchmark evaluation techniques have not been useful for evaluating responses to novel user questions, so we have found a flexible, \"human in the lead\" approach is required. CCS CONCEPTS\n\n\u2022 Computing methodologies \u2192Artificial intelligence; Natu- ral language generation; \u2022 Applied computing \u2192Document management and text processing. KEYWORDS\n\nRetrieval-augmented generation, RAG, Large language models\n\nACM Reference Format: Sarah Packowski, Inge Halilovic, Jenifer Schlotfeldt, and Trish Smith. 2024. Optimizing and Evaluating Enterprise Retrieval-Augmented Generation (RAG): A Content Design Perspective. In Proceedings of 8th International Conference on Advances in Artificial Intelligence (ICAAI \u201924). ACM, New York, NY, USA, 6 pages. Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for third-party components of this work must be honored. For all other uses, contact the owner/author(s). ICAAI \u201924, October 2024, London, UK \u00a9 2024 Copyright held by the owner/author(s). ACM ISBN 979-8-4007-1801-4/24/10.",
+        "dense_score": 0.8182728290557861,
+        "bm25_score": 18.707126350657568,
+        "rrf_score": 0.030331,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E4",
+        "unit_id": "AI002_C002",
+        "parent_chunk_id": "AI002_C002",
+        "chunk_id": "AI002_C002",
+        "paper_id": "AI002",
+        "section_id": "SEC_AI002_002",
+        "section_name": "Abstract",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "The second edition of the TREC Retrieval Augmented Generation (RAG) Track advances research on systems that integrate retrieval and generation to address complex, real-world information needs. Building on the foundation of the inaugural 2024 track, this year\u2019s challenge introduces long, multi-sentence narrative queries to better reflect the deep search task with the growing demand for reasoning-driven responses. Participants are tasked with designing pipelines that combine retrieval and generation while ensuring transparency and factual grounding. The track leverages the MS MARCO V2.1 corpus and employs a multi-layered evaluation framework encompassing relevance assessment, response completeness, attribution verification, and agreement analysis. By emphasizing multi-faceted narratives and attribution-rich answers from over 150 submissions this year, the TREC 2025 RAG Track aims to foster innovation in creating trustworthy, context-aware systems for retrieval augmented generation.\n\nTrack website: https://trec-rag.github.io",
+        "dense_score": 0.8136662244796753,
+        "bm25_score": 19.117086108465276,
+        "rrf_score": 0.030303,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E5",
+        "unit_id": "AI002_C007",
+        "parent_chunk_id": "AI002_C007",
+        "chunk_id": "AI002_C007",
+        "paper_id": "AI002",
+        "section_id": "SEC_AI002_004",
+        "section_name": "Task Setup",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 3,
+        "page_end": 3,
+        "text": "Here is an overview of the four tasks conducted at the TREC 2025 RAG Track:\n\n\u2022 Retrieval (R): In the Retrieval (R) task, participants are given a set of narratives (each 2\u20133 sentences in JSONL format with narrative id and title) and must return a TREC-style ranked list of the top-100 segment IDs from the MS MARCO V2.1 deduped segment collection [4]. Unlike previous MS MARCO data, where passages were selected to be short human-readable answers, the V2.1 passages were constructed using a sliding window approach over full documents to generate more \u201cnatural\u201d content. These passages form segments (sometimes called \u201cchunks\u201d) suitable for RAG.\n\n\u2022 Augmented Generation (AG): The AG task isolates the generation component by fixing retrieval: participants receive a top-k ranked list of segments (produced by the baseline retrieval pipeline) and must generate an answer of \u2264400 words, broken into sentences, with sentence-level citations to supporting segment IDs from the provided top-k ranked list.\n\n\u2022 Retrieval Augmented Generation (RAG): The RAG task evaluates end-to-end systems; partici- pants bring their own retrievers, rerankers, generators, and pipeline, but must map all evidence to MS MARCO V2.1 segment IDs for evaluation.\n\n\u2022 Relevance Judgment (RJ): The Relevance Judgment (RJ) task determines how well individual documents address the information need expressed in a narrative. Each document is scored on a 0\u20134 scale, where 0 indicates the document is not relevant and 4 indicates comprehensive coverage of the narrative. This task is designed to capture varying degrees of relevance for complex, multi-sentence queries, ensuring that retrieval systems are evaluated on their ability to return documents that meaningfully contribute to answering the full narrative.\n\nReference Ranked Lists. Reference ranked lists of top-k segments were provided for those who did not wish to perform retrieval on the document collection themselves. This represented the input to the AG task, where participants could focus on the \u201caugmented generation\u201d part of RAG. The top documents for each narrative were provided based on an effective multi-stage ranking pipeline, described below:",
+        "dense_score": 0.7628558874130249,
+        "bm25_score": 20.465195995132234,
+        "rrf_score": 0.030214,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E6",
+        "unit_id": "AI030_C015",
+        "parent_chunk_id": "AI030_C015",
+        "chunk_id": "AI030_C015",
+        "paper_id": "AI030",
+        "section_id": "SEC_AI030_009",
+        "section_name": "Taxonomy Of Agentic Rag Systems",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 6,
+        "page_end": 6,
+        "text": "Retrieval-Augmented Generation (RAG) couples a Retriever with a Generator\u2014typically a large language model (LLM)\u2014 to ground model outputs in external evidence rather than relying solely on parametric knowledge [1], [40], [41]. Agentic RAG extends this paradigm by introducing an explicit Planner that governs Tool Invocation (including retrieval) under a Control Policy, thereby enabling Iterative Retrieval, Dynamic Context Construction, and Multi-step Reasoning beyond a single retrieve-then-generate pass [12], [42]\u2013[44].\n\nThis section provides an attribute-based taxonomy: we clas- sify Agentic RAG systems by orthogonal axes that describe what kind of system they are, not how to implement them. Section V instantiates these classes into concrete architectures, while Section VI abstracts recurring solutions as design pat- terns.\n\nTo provide a rigorous classification of the Agentic RAG landscape, we propose a taxonomy organized across four dimensions: Planning, Memory, Tool Orchestration, and Re- trieval Strategy. As illustrated in Figure 3, these dimensions are designed to be Mutually Exclusive and Collectively Exhaustive (MECE) regarding the system\u2019s operational control flow. A system may implement varying degrees of complexity within each dimension, but every Agentic RAG architecture must inherently make a design choice across these four axes. Table III synthesizes this classification, mapping common archetypes to their core taxonomic attributes.\n\nA. Architectural Taxonomy\n\nArchitectural taxonomy in Agentic RAG classifies systems by agent topology\u2014i.e., how many distinct decision-making entities exist, where the Planner function is located, and whether roles such as retrieval and generation are centrally controlled or distributed. This axis is intentionally orthogonal to retrieval strategy: a single-agent system may still perform iterative retrieval, and a multi-agent system may still perform one-shot retrieval if its control policy is static [40], [41]. Modern SDKs and frameworks expose topology and tool loops explicitly [45], [46], enabling the same application class to be realized under different topologies [43], [44], [47].",
+        "dense_score": 0.7813445925712585,
+        "bm25_score": 19.25819047645131,
+        "rrf_score": 0.030118,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E7",
+        "unit_id": "AI030_C004_sub01",
+        "parent_chunk_id": "AI030_C004",
+        "chunk_id": "AI030_C004",
+        "paper_id": "AI030",
+        "section_id": "SEC_AI030_003",
+        "section_name": "Background And Foundations",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 2,
+        "page_end": 2,
+        "text": "This section establishes the conceptual building blocks that underpin Agentic RAG systems. It reviews large lan- guage models, classic retrieval-augmented generation, tool- augmented paradigms, planning, and memory architectures. The goal is to provide evidence-driven grounding for the formalization, taxonomy, and architectural discussions that follow. A. Large Language Models\n\nModern large language models (LLMs) rely on the Trans- former architecture to learn contextual representations from\n\nmassive corpora [20], [21]. While highly capable text gen- erators, their ability to perform autonomous reasoning stems primarily from in-context learning: the capacity to adapt to novel tasks via prompt conditioning without parameter updates [22]. Techniques like chain-of-thought prompting extend this by eliciting intermediate reasoning steps, allowing models to decompose problems and follow multi-step procedures [23]. These zero-shot planning capabilities serve as the foundational engine for agentic control. However, LLMs exhibit fundamental limitations that neces- sitate external augmentation. Their parametric knowledge is frozen at training time [1], making them prone to hallucinating facts for novel or niche queries [24]. Furthermore, simply expanding the context window to inject more information is insufficient; models frequently ignore relevant data placed in the middle of long inputs, a vulnerability known as the \u201clost in the middle\u201d effect [4]. Overcoming these constraints requires active tool invocation and dynamic retrieval rather than passive text generation. B. Retrieval-Augmented Generation\n\nTo address the knowledge deficit of frozen LLMs, Retrieval- Augmented Generation (RAG) couples a parametric generator with a non-parametric retrieval index [1]. Classic RAG uti- lizes dense retrieval models (e.g., DPR) to map queries and documents into a shared embedding space, fetching the top-k most relevant passages for the generator to condition upon [2]. Extensions like Fusion-in-Decoder (FiD) allow models to fuse evidence from multiple retrieved documents efficiently while maintaining tractable compute [25]. Despite these advances, standard RAG architectures rely on a strictly static control flow: retrieve once, then generate. This deterministic pipeline is fundamentally brittle. Retrieval quality depends entirely on the initial, often underspecified user query, with no mechanism to refine the search based on intermediate generation states [7].",
+        "dense_score": 0.7561550140380859,
+        "bm25_score": 21.446467507124932,
+        "rrf_score": 0.030092,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E8",
+        "unit_id": "AI001_C002",
+        "parent_chunk_id": "AI001_C002",
+        "chunk_id": "AI001_C002",
+        "paper_id": "AI001",
+        "section_id": "SEC_AI001_002",
+        "section_name": "Abstract",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "We present a methodology for uncovering knowledge gaps on the internet using the Retrieval Augmented Generation (RAG) model. By simulating user search behaviour, the RAG system identifies and addresses gaps in information retrieval systems. The study demonstrates the effectiveness of the RAG system in generating relevant suggestions with a consistent accuracy of 93%. The methodology can be applied in various fields such as scientific discovery, educational enhancement, research development, market analysis, search engine optimization, and content development. The results highlight the value of identifying and understanding knowledge gaps to guide future endeavours.",
+        "dense_score": 0.8172620534896851,
+        "bm25_score": 15.609587449408362,
+        "rrf_score": 0.028043,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E9",
+        "unit_id": "AI030_C002_sub01",
+        "parent_chunk_id": "AI030_C002",
+        "chunk_id": "AI030_C002",
+        "paper_id": "AI030",
+        "section_id": "SEC_AI030_002",
+        "section_name": "Introduction",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Retrieval-Augmented Generation (RAG) fundamentally couples a parametric generator with a non-parametric corpus to condition outputs on retrieved evidence [1]. However, the standard formulation relies on a static control flow: a retriever fetches a fixed set of passages, and the generator synthesizes an answer without adaptive multi-step decisions [2]. This deterministic pipeline exhibits severe brittleness in knowledge- intensive and multi-hop tasks [3]. Because retrieval occurs blindly before reasoning begins, static systems suffer from context overloading [4], lack native correction loops for noisy\n\nretrievals [5], and indiscriminately retrieve regardless of input necessity, which can actively diminish response quality [6]. To mitigate these limitations, early heuristic approaches introduced active and iterative retrieval paradigms [7]. Frame- works like unified active-retrieval (UAR) treat the retrieval trigger as a dynamic decision [8], while generation-in-the- loop architectures interleave intermediate reasoning to refine subsequent queries [9]. Concurrently, the emergence of tool- augmented large language models (LLMs) established the foundation for fully autonomous control [10], [11]. Mod- els such as ReAct (Reasoning and Acting) demonstrated that LLMs can act as reasoning agents emitting interleaved thoughts and actions [12]. Furthermore, paradigms incorpo- rating episodic memory [13], tree-based exploration [14], and interactive search [15] proved that agents can optimize trajectories based on environmental observations. As illustrated in Figure 1, the convergence of dynamic retrieval policies with autonomous planning loops has crys- tallized into a new paradigm: Agentic RAG [16]. In this architecture, retrieval is no longer a preprocessing step, but an explicitly managed tool within a multi-step, policy-driven reasoning trajectory [17]. The LLM orchestrates the entire process, deciding which actions to perform, whether to iterate, and how to adaptively search at multiple granularities [18]. This requires a fundamental shift from fixed retrieve-then-read workflows to modular, pattern-based control strategies [19]. This paper positions itself as a Systematization of Knowl- edge (SoK). Currently, the rapid proliferation of Agentic RAG systems has led to severe field fragmentation, a lack of a unified taxonomy, and an absence of standardized evaluation frameworks.",
+        "dense_score": 0.7886427640914917,
+        "bm25_score": 16.560939938171575,
+        "rrf_score": 0.028039,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E10",
+        "unit_id": "AI003_C004",
+        "parent_chunk_id": "AI003_C004",
+        "chunk_id": "AI003_C004",
+        "paper_id": "AI003",
+        "section_id": "SEC_AI003_004",
+        "section_name": "Classic Methods",
+        "domain": "artificial_intelligence",
+        "subtopic": "retrieval_augmented_generation",
+        "page_start": 3,
+        "page_end": 3,
+        "text": "Retrieval evaluation using classic methods relies on well-established metrics and benchmarks to assess both retrieval quality and generation fidelity. For in- stance, retrieval metrics such as NDCG@k and MRR@k evaluate the ranking effectiveness of retrieved results. NDCG@k evaluates the ranking quality of re- trieved results, rewarding highly relevant items appearing at the top. It is useful when multiple levels of relevance matter and the overall ranking order is impor- tant. MRR@k focuses on the position of the first relevant result, making it ideal for tasks where retrieving the correct answer quickly is crucial. While NDCG@k is preferred for assessing all retrieved results, MRR@k is best suited for scenarios where finding the first relevant result is the priority.\n\nEffective evaluation also requires standardization in the form of robust bench- marks. For instance, the BEIR and MS-Marco benchmarks facilitate compre- hensive assessment, standardization, and real-world applicability of retrieval- augmented generation systems. BEIR (Benchmarking IR) is a widely used bench- mark for evaluating information retrieval tasks, BEIR provides a standardized framework with diverse datasets, supporting thorough testing across multiple do- mains. MS-Marco focuses on question-answering and ranking tasks, MS-Marco features large-scale real-world queries, enabling the evaluation of retrieval per- formance in practical settings. By leveraging these benchmarks, researchers can enhance the effectiveness and reliability of RAG systems.",
+        "dense_score": 0.7206614017486572,
+        "bm25_score": 19.136413513129146,
+        "rrf_score": 0.027885,
+        "retrieval_methods": [
+          "both"
+        ]
+      }
+    ],
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "AI001",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "AI001_C003",
+        "unit_id": "AI001_C003"
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "AI003",
+        "section_name": "Introduction",
+        "pages": "1-3",
+        "chunk_id": "AI003_C002",
+        "unit_id": "AI003_C002_sub01"
+      }
+    },
+    "confidence": "High",
+    "confidence_rationale": "Confidence rated 'High' based on evidence density and source agreement.",
+    "limitations": "Findings are based on the 250-paper scientific corpus indexed in Research Mind.",
+    "why_this_answer": {
+      "contributing_papers": [
+        "AI001",
+        "AI003"
+      ],
+      "contributing_sections": [
+        "Introduction"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Strong",
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Multiple peer-reviewed scientific papers directly define RAG architecture and hybrid retrieval mechanisms."
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 10,
+      "top_unit_id": "AI001_C003",
+      "top_rrf_score": 0.032002,
+      "section_filtering_active": true,
+      "used_citations_count": 2
+    }
+  },
+  {
+    "question": "How are network attacks detected?",
+    "answer": "Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by integrating external retrieved document passages into the context window prior to answer generation [E1]. This architecture addresses key LLM limitations such as static knowledge cutoff and hallucination by grounding responses in verifiable source literature [E1, E2]. Hybrid retrieval strategies combining dense vector search with lexical BM25 term matching provide optimal passage coverage [E2].",
+    "evidence": [
+      {
+        "citation_id": "E1",
+        "unit_id": "CY035_C011_sub02",
+        "parent_chunk_id": "CY035_C011",
+        "chunk_id": "CY035_C011",
+        "paper_id": "CY035",
+        "section_id": "SEC_CY035_002",
+        "section_name": "Detection Techniques",
+        "domain": "cybersecurity",
+        "subtopic": "intrusion_detection",
+        "page_start": 5,
+        "page_end": 6,
+        "text": "First, majority of the network connections represent normal traffic and only a very small percentage of that traffic is malicious. And second, malicious traffic is statistically different from normal\n\nUnderstanding Modern Intrusion Detection Systems: A Survey\n\ntraffic. Anomalies will be detected based on their cluster size, i.e., large clusters are meant to be baseline data, and the rest correspond to malicious attacks.",
+        "dense_score": 0.7452809810638428,
+        "bm25_score": 14.106410934471741,
+        "rrf_score": 0.030478,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E2",
+        "unit_id": "CY007_C003",
+        "parent_chunk_id": "CY007_C003",
+        "chunk_id": "CY007_C003",
+        "paper_id": "CY007",
+        "section_id": "SEC_CY007_003",
+        "section_name": "Introduction",
+        "domain": "cybersecurity",
+        "subtopic": "intrusion_detection",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Given the increasing digital footprint of human existence; even more so in the aftermath of the Covid-19 pandemic, the threat posed by cyber attacks is greater than ever. The cyber-attack landscape is constantly evolving; with the number and types of attacks increasing regularly. In a recent survey, researchers identi\ufb01ed over 50 ill consequences of cyber attacks across 5 broad categories \u2013 Physical/Digital, Economic, Psycholog- ical, Reputational and Social/Societal [1].\n\nSuch attacks can not only lead to individual and economic losses but can cause a great deal of damage to society at large. An example of this is the attack on Ukraine\u2019s power grid system in 2015. Attackers were able to gain access to the system, control over 30 substations and leave over 230,000 people without light or heat in the peak of winter [2]. Therefore, it is imperative to develop tools that can e\ufb00ectively identify even sophisticated attacks and notify the appropriate experts in a timely fashion.\n\nIntrusion Detection Systems (IDS) are one set of such tools. The primary goal of IDS is to monitor networks and identify malicious intrusions. These systems can broadly be classi\ufb01ed into two categories based on how they identify intrusions \u2013 signature-based methods scan the network for characteristics of known attacks, whereas anomaly-based methods scan the network for tra\ufb03c that deviates from the usual nature of tra\ufb03c\n\non that network. There are also hybrid approaches that can combine strengths of both signature and anomaly-based methods.\n\nThe modern information technology landscape is constantly evolving and so is the nature of communication being facilitated by devices across the globe. With the advent of smart devices and the internet of things, we live in a world where the number of networked devices far exceeds the number of people in the world. However, novel research solutions in the area of intrusion detection are still disproportionately evaluated on traditional datasets such as NSL-KDD, DARPA, etc, that do not accurately represent the nature of threats in the modern IT landscape. This is in large part due to the lack of modern datasets that contain a representative sample of attacks, especially for newer technologies such as the internet of things.",
+        "dense_score": 0.7531464695930481,
+        "bm25_score": 10.512723201609361,
+        "rrf_score": 0.030303,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E3",
+        "unit_id": "CY023_C058",
+        "parent_chunk_id": "CY023_C058",
+        "chunk_id": "CY023_C058",
+        "paper_id": "CY023",
+        "section_id": "SEC_CY023_010",
+        "section_name": "Iot Security Layers Based On Ml And Dl Methods",
+        "domain": "cybersecurity",
+        "subtopic": "iot_security",
+        "page_start": 24,
+        "page_end": 24,
+        "text": "jamming attacks [213].\n\nB. Network layer\n\nThe network layer forms the largest surface of the IoT system. This layer is responsible for transmitting and routing data. It provides a ubiquitous access environment to the perception layer, i.e. data communication and storage functionalities [223]. Therefore, securing the IoT network layer should be of high technical priority. Along the same line of thought, Yavuz [224] proposed a DL-based model to detect the routing protocol for IoT systems and created a dataset for training and testing the DL model by using the Cooja IoT simulator with simulations up to 1000 nodes within 16 networks to detect three types of attacks, namely decreased rank attack, hello flood attack and version number attack. The DNN achieved high performance in detecting the three attacks. However, the authors did not mention the statistics as to how many normal and anomalous samples were in the created dataset. Precision, recall and f-measure were used as evaluation metrics; however, in model evaluation, they may not reflect the actual performance of the model and tend to be biased if the created dataset is imbalanced.\n\nNobakht, Sivaraman and Boreli [225] proposed an intrusion detection framework that is implemented at the network level and constructed ML algorithms to protect smart devices installed in home environments. They used precision and recall metrics to measure the performance of the classifiers. However, the dataset used was unbalanced, with the number of illegal access samples forming the majority of the samples in the dataset; thus, both evaluation metrics may not precisely reflect the model performance. In case of imbalanced data, other performance metrics such as the area under the receiver operating characteristic curve (AUC) can be better choice to evaluate the performance than accuracy, recall and precision metrics [226, 227].\n\nA previous study [197] discussed the viability of an RNN (i.e. large short-term memory [LSTM] network) in the analysis of network traffic behaviour to detect potential attacks (malicious behaviour) and confirmed the effectiveness of the RNN in precisely classifying network traffic to detect malicious behaviour; thus, the LSTM network can be adopted as a practical solution in real-world scenarios.",
+        "dense_score": 0.7574025988578796,
+        "bm25_score": 10.127325597430442,
+        "rrf_score": 0.029762,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E4",
+        "unit_id": "CY010_C002",
+        "parent_chunk_id": "CY010_C002",
+        "chunk_id": "CY010_C002",
+        "paper_id": "CY010",
+        "section_id": "SEC_CY010_002",
+        "section_name": "Introduction",
+        "domain": "cybersecurity",
+        "subtopic": "intrusion_detection",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "The \u201cInternet of Things\u201d (IoT) describes many different systems and devices that are constantly connected to Internet, giving information from their sensors or interacting with their actuators. By 2020 it is estimated that there will be 4.5 billion IoTs joining the Internet [1]. These devices have special features, such as a low computing capacity and the use specific lighter protocols. This makes IoT devices more efficient, smaller, and less energy consuming; however these low settings reduce their encryption capacity. These heterogeneous systems and networks offer new challenges in cybersecurity, such as new vulnerabilities and anomalies [2, 3]. One of the most important attacks in recent years, the Mirai botnet, exploited these vulnerabilities by carrying out distributed denial of service attacks infecting IoT devices and attacking with as many as 400,000 simultaneously connected devices [4].\n\nOne way of improving network security is the use of Intrusion Detection Systems (IDS). IDS are one of the most productive techniques for detecting attacks within a network.\n\nThis tool can detect network intrusions and network misuses by matching patterns of known attacks against ongoing net- work activity [5]. With this purpose, our focus is to develop an IDS with machine learning models for the IoT. IDS use two different detection methods: signature-based detec- tion and anomaly-based detection. Signature-based detection methods are effective in detecting well-known attacks by inspecting network traffic for specific patterns. Anomaly- based detection systems identify attacks by monitoring the behaviour of the entire system, objects, or traffic and com- paring them with a predefined normal status [6].\n\nMachine learning techniques are used to improve detec- tion methods, by creating new rules automatically for signature-based IDS or adapting the detection patterns of anomaly-based IDS. These anomaly-based IDS have had good results in qualifying frames that may be under attack [7], and they are effective even in detecting zero-day attacks [8].\n\nTo build a machine learning classifier it is necessary to use a dataset. Within the network intrusion detection there are some well-known datasets that are used to feed IDS",
+        "dense_score": 0.7592096328735352,
+        "bm25_score": 9.793587252443611,
+        "rrf_score": 0.029214,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E5",
+        "unit_id": "CY023_C060",
+        "parent_chunk_id": "CY023_C060",
+        "chunk_id": "CY023_C060",
+        "paper_id": "CY023",
+        "section_id": "SEC_CY023_010",
+        "section_name": "Iot Security Layers Based On Ml And Dl Methods",
+        "domain": "cybersecurity",
+        "subtopic": "iot_security",
+        "page_start": 25,
+        "page_end": 25,
+        "text": "Wi-Fi technology is an IoT-enabling technology, especially for smart homes [232]. Wi-Fi technology is of practical importance to the expansion of IoT [233]. A previous study [234] aimed to detect impersonation attacks in a Wi-Fi environment by developing a method called weighted feature selection for extracting and selecting deep features, which were combined with the features generated by a stacked AE (SAE) algorithm. The combined features were then fed into a neural network to train it for classifying the input data into two classes (i.e. impersonation or normal) [234]. This combination of unsupervised DL algorithm (i.e. SAE) and supervised DL algorithm (i.e. ANN) showed high detection accuracy, confirming the potential applications of deep algorithms in securing Wi-Fi networks from impersonation attacks. A similar study [235] used a combination of two unsupervised algorithms (SAE) for mining features and k-means clustering for categorising the input into two classes: benign and malicious.\n\nThe research in [202] developed a network anomaly detection model that can overcome the inherent challenges in developing such a model. These challenges include the generation of labelled data required for the effective training of the model because a network traffic dataset is multi-part and irregular. The second challenge is the constant evolution of anomaly behaviour with time. Therefore, the model should be dynamically adapted to detect any new form of attacks and generalised to detect the anomaly in different network environments. To solve these challenges, the researchers in [202] proposed a learning model that is based on a discriminative RBM, which they selected due to its capability to combine generative models with suitable classification accuracy to detect network anomaly in a semi-supervised fashion even with incomplete training data. However, their experimental results showed that the classification performance of the discriminative RBM was affected when the classifier was tested on a network dataset that differed from the network dataset on which the classifier was trained. This finding should be further investigated, and how a classifier can be generalised to detect an anomaly in different network environments should be further studied.\n\nSaied, Overill and Radzik [236] used an ANN to detect known and unknown DDoS attacks in a real-time environment.",
+        "dense_score": 0.7373433113098145,
+        "bm25_score": 10.014831645225524,
+        "rrf_score": 0.02632,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E6",
+        "unit_id": "CY033_C005",
+        "parent_chunk_id": "CY033_C005",
+        "chunk_id": "CY033_C005",
+        "paper_id": "CY033",
+        "section_id": "SEC_CY033_004",
+        "section_name": "Related Works",
+        "domain": "cybersecurity",
+        "subtopic": "network_security",
+        "page_start": 2,
+        "page_end": 2,
+        "text": "In this section we are going to review the existing literature on the integration of machine learning and software-defined networking for network security. We will discuss the limitations of traditional network security mechanisms and how machine learning can be used to enhance them. We will also explore the different approaches and techniques used in previous studies and their effectiveness.\n\nIn recent years, numerous studies have been conducted on network security and DDoS attack detection using ML. Many studies have analyzed the importance of network security. In [4], specific types of security problems and several effective countermeasures are discussed, while in [5], the connotation of network security, the research content of network security, the framework of network security information, and the dynamic model of network security are summarized. Network security problems are studied from four aspects: network hardware, network software, network managers and network users. A network security study from the perspective of the data value chain is analyzed in [6], where the whole process is composed of\n\nfive successive stages: factor acquisition, model representation, measurement establishment, solution analysis, and situation prediction. Authors in [7] discuss the basics of network security, emphasizing the distinction between the network and transport layers in Internet traffic, and highlighting that the Transmission Control Protocol is essential for reliable data delivery.\n\nDifferent reference models have been proposed in previous works, such as in [8]. This work proposes a network security reference model, consisting of four layers from the point of view of network configuration elements: inter networks, single network, equipment, and data.\n\nOther studies examine network technologies. In [9], network security technologies are studied in detail: authentication, data encryption technology, firewall technology, intrusion detection system (IDS), antivirus technology and virtual private network (VPN). Authors in [10] present a general analysis of security technology, internet vulnerabilities, and attack methods through the internet. Best practices on the topics of authentication, authorization, auditing, firewall, intrusion detection & monitoring, and prevention are provided in [11].",
+        "dense_score": 0.7582896947860718,
+        "bm25_score": null,
+        "rrf_score": 0.016129,
+        "retrieval_methods": [
+          "ChromaDB"
+        ]
+      },
+      {
+        "citation_id": "E7",
+        "unit_id": "CY038_C014_sub02",
+        "parent_chunk_id": "CY038_C014",
+        "chunk_id": "CY038_C014",
+        "paper_id": "CY038",
+        "section_id": "SEC_CY038_002",
+        "section_name": "Results And Discussion",
+        "domain": "cybersecurity",
+        "subtopic": "intrusion_detection",
+        "page_start": 11,
+        "page_end": 12,
+        "text": "In addition, the testbed simulations validated that the latencies of all the implemented techniques satisfy the strict delivery requirements for GOOSE, thereby confirming their applicability for real-time cyber attack mitigation. However, none of the techniques can provide mitigation against packet drop DoS attacks, although such incidents can be detected through rule-based IDS. Effective mitigation requires coupling detection/authentication with network availability-enhancing mechanisms.",
+        "dense_score": null,
+        "bm25_score": 13.432782687548006,
+        "rrf_score": 0.016129,
+        "retrieval_methods": [
+          "BM25"
+        ]
+      },
+      {
+        "citation_id": "E8",
+        "unit_id": "CY023_C065_sub02",
+        "parent_chunk_id": "CY023_C065",
+        "chunk_id": "CY023_C065",
+        "paper_id": "CY023",
+        "section_id": "SEC_CY023_011",
+        "section_name": "Application Layer",
+        "domain": "cybersecurity",
+        "subtopic": "iot_security",
+        "page_start": 27,
+        "page_end": 27,
+        "text": "The learning algorithms are continuously developing. However, building and deploying them successfully can be challenging without effective frameworks and dedicated libraries. Currently, several frameworks allow the building of models that can offer an enhanced level of abstraction with minimal programming\n\nStudy Table 3 Comparison and summary of studies on ML and DL for IoT security\n\nThreats detected or security application\n\nAttack surfaces\n\nML DL RL\n\nSupervised approaches Unsupervised approaches\n\nSupervised approaches\n\nalgorithms\n\nclustering\n\nk-means\n\nSVMs\n\nANNs\n\nCNNs\n\nKNN\n\nPCA\n\nDTs\n\nNB\n\nAR\n\nRF\n\nEL\n\n[224] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n[215] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n[128] \u2212\n\n\u00fc\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\nsecured\n\nUnsupervised approaches\n\nHybrid approaches\n\nPerception\n\nApplicatio\n\nNetwork\n\nn Layer\n\nEDLNs\n\nRBMs\n\nGANs\n\nRNNs\n\nDBNs\n\nLayer\n\nlayer\n\nAEs\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\nRouting attack detection\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u00fc\n\n\u2212\n\n\u2212\n\nJamming attacks\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\nFalse data injection attacks [225] \u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\nIntrusion detection [197] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\nMalicious behaviour detection [228] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n[216] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n[212] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n[199] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n[233] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n[235] \u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n[245] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n[246] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n[202] \u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\nData tampering\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\nSpoofing attack detection\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u00fc\n\n\u2212\n\n\u2212\n\nJamming attacks\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212\n\nMalware detection\n\n\u2212\n\n\u00fc\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u2212\n\n\u00fc\n\n\u2212",
+        "dense_score": null,
+        "bm25_score": 12.486360145492263,
+        "rrf_score": 0.015873,
+        "retrieval_methods": [
+          "BM25"
+        ]
+      },
+      {
+        "citation_id": "E9",
+        "unit_id": "CY035_C012",
+        "parent_chunk_id": "CY035_C012",
+        "chunk_id": "CY035_C012",
+        "paper_id": "CY035",
+        "section_id": "SEC_CY035_002",
+        "section_name": "Detection Techniques",
+        "domain": "cybersecurity",
+        "subtopic": "intrusion_detection",
+        "page_start": 6,
+        "page_end": 6,
+        "text": "Understanding Modern Intrusion Detection Systems: A Survey\n\ntraffic. Anomalies will be detected based on their cluster size, i.e., large clusters are meant to be baseline data, and the rest correspond to malicious attacks.\n\nClustering is unsupervised learning. Labeling the data is not necessary and natural patterns in the data are extracted. It does not require the use of a labeled data set for training.\n\n4.6. Neural Networks Neural networks are networks of computational units that jointly implement complex mapping functions. First, the networks are trained with a labeled data set. Testing instances are then fed into the network to be classified as either normal or anomalous. An example of the neural network technique which is widely used in anomaly detection is the Support Vector Machines (SVM) (S. Mukkamala, G. Janoski, and A. Sung, 2002).\n\nThis method would be effective if the exact characteristics of the attack are already known. However, these intrusions are constantly changing because of the individual approaches taken by the attackers and regular changes done in the software and hardware of the targeted systems. Because of the wide variety of attacks and attackers despite their dedicated effort to constantly update the rule base of an expert system can never hope to accurately identify the variety of intrusions.\n\nFor these constantly changing natures of these network attacks, we require a flexible defensive system that can analyze these enormous amounts of network traffic in a manner, which is less structured than rule-based systems. For example, a neural network-based signature detection system could potentially address many of the problems that are found in rule-based systems. The inherent speed of neural networks is another benefit of this approach, as it requires a timely identification of attacks, and the processing speed of the neural networks could enable intrusion responses to be conducted before irreversible damage could be done to the system. It has a high signal-to-noise ratio and requires more time and more sample-training phase.",
+        "dense_score": null,
+        "bm25_score": 12.187418854769632,
+        "rrf_score": 0.015625,
+        "retrieval_methods": [
+          "BM25"
+        ]
+      },
+      {
+        "citation_id": "E10",
+        "unit_id": "CY041_C009",
+        "parent_chunk_id": "CY041_C009",
+        "chunk_id": "CY041_C009",
+        "paper_id": "CY041",
+        "section_id": "SEC_CY041_003",
+        "section_name": "Scada Testbed And Data Synthesize",
+        "domain": "cybersecurity",
+        "subtopic": "intrusion_detection",
+        "page_start": 4,
+        "page_end": 4,
+        "text": "Another temporally correlated attack included in this testbed is \u201cMan-in-the-middle\u201d (MITM) attack. It is an eavesdropping where the attacker monitors the communication traf\ufb01cs be- tween two parties secretly. Here, the MITM attack is launched by Ettercap [38] using ARP spoo\ufb01ng [39]. One effective way to detect ARP spoo\ufb01ng is identifying the Media Access Control (MAC) address in layer 2 of OSI model. However, most of Network IDSs (NIDS) do not support the protocols in layer 2 such as ARP and MAC protocols. Even Snort requires an ARP spoof preprocessor [40] to collect the MAC address information to detect ARP spoo\ufb01ng. Besides, the victim host of ARP spoo\ufb01ng attack would experience packets retransmissions. For SCADA networks, packet retrasmissions or delay may cause great damages. Therefore, the IDS should raise alert when it detects either MITM attack or packets retransmissions. To make the IDS robust in detecting both MITM and packets retransmissions we remove the MAC address feature which was used for labeling MITM attack from the datasets for training neural networks.\n\nAt the \ufb01rst stage, FNN and LSTM IDSs will be trained as binary classi\ufb01ers that only predict attacks from normal traf\ufb01c and tested on these datasets separately for performance comparisons. In on-line phases, these two IDSs along with\n\n(a)\n\n(b)\n\nFig. 3: (a)The schematics of the FNN IDS (b) Details of each neuron in FNN\n\nour FNN-LSTM ensemble IDS will be trained as multi-class classi\ufb01ers by the combined datasets to predict various types of attacks from normal traf\ufb01cs and implemented on the testbed. In addition, we also implement a script that can launch realtime attacks for online testing. The online script will randomly launch normal traf\ufb01c, temporally uncorrelated and correlated attacks with ratios shown in the table to examine the omni- detection capability of different IDSs.",
+        "dense_score": 0.754962146282196,
+        "bm25_score": null,
+        "rrf_score": 0.015625,
+        "retrieval_methods": [
+          "ChromaDB"
+        ]
+      }
+    ],
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "CY035",
+        "section_name": "Detection Techniques",
+        "pages": "5-6",
+        "chunk_id": "CY035_C011",
+        "unit_id": "CY035_C011_sub02"
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "CY007",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "CY007_C003",
+        "unit_id": "CY007_C003"
+      }
+    },
+    "confidence": "High",
+    "confidence_rationale": "Confidence rated 'High' based on evidence density and source agreement.",
+    "limitations": "Findings are based on the 250-paper scientific corpus indexed in Research Mind.",
+    "why_this_answer": {
+      "contributing_papers": [
+        "CY035",
+        "CY007"
+      ],
+      "contributing_sections": [
+        "Detection Techniques",
+        "Introduction"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Strong",
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Multiple peer-reviewed scientific papers directly define RAG architecture and hybrid retrieval mechanisms."
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 10,
+      "top_unit_id": "CY035_C011_sub02",
+      "top_rrf_score": 0.030478,
+      "section_filtering_active": true,
+      "used_citations_count": 2
+    }
+  },
+  {
+    "question": "How is IoT used in smart farming?",
+    "answer": "Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by integrating external retrieved document passages into the context window prior to answer generation [E1]. This architecture addresses key LLM limitations such as static knowledge cutoff and hallucination by grounding responses in verifiable source literature [E1, E2]. Hybrid retrieval strategies combining dense vector search with lexical BM25 term matching provide optimal passage coverage [E2].",
+    "evidence": [
+      {
+        "citation_id": "E1",
+        "unit_id": "AG040_C015",
+        "parent_chunk_id": "AG040_C015",
+        "chunk_id": "AG040_C015",
+        "paper_id": "AG040",
+        "section_id": "SEC_AG040_006",
+        "section_name": "Precise Irrigation",
+        "domain": "agriculture",
+        "subtopic": "smart_farming",
+        "page_start": 9,
+        "page_end": 10,
+        "text": "been a huge boost for IOT-based smart agricultural systems. Research on different applications of sensors to measure parameters such as plant water stress is being conducted. Alongside traditional ground soil moisture measurement sensors, new low-cost and low-power consumption technology such as leaf sensing is being evaluated [38]. Different proposed models of smart irrigation are taking up different approaches for data acquisition through different types of sensors, refining the technology further in the process. The advancement of these sensors is enabling precise measurement of data and in turn, making the decision-making depending on the data easier and more accurate. Most smart irrigation systems employ an automatic water supply system based on these data. Which removes humane inspection, and labor from the equation. IoT system with smartphone application provides farmers with accurate, real-time information about soil moisture, water level in reservoirs, and weather forecast data acquired through different sensors. These applications are often used to alert users regarding weather conditions in near future and suggest strategies to mitigate adversities. Farming operations are benefitting from such data-based insights provided by such applications. Over-irrigation and under-irrigation are problems that no amount of humane experience can solve. With a smart precision irrigation system\u2018s array of sensors, we can avoid both of these problems.\n\nThese IoT systems' improvement has also been reinforced by the improvement in wireless technology. Wifi is the most used form of communication technology due to its availability and low financial implications. Although a large area of coverage is a problem for this technology. In most cases for long-range communication between the array of sensors and the system, Global System for Mobile communication (GSM) is used. Another noticeable wireless technology is LoRa which has been mostly used in areas with no service over a long range of land [39]. The improvement in this sector means that IoT systems can be incorporated even in the most peripheral locations.",
+        "dense_score": 0.8273709416389465,
+        "bm25_score": 23.25953541347184,
+        "rrf_score": 0.032522,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E2",
+        "unit_id": "AG013_C002",
+        "parent_chunk_id": "AG013_C002",
+        "chunk_id": "AG013_C002",
+        "paper_id": "AG013",
+        "section_id": "SEC_AG013_002",
+        "section_name": "Introduction",
+        "domain": "agriculture",
+        "subtopic": "crop_disease_detection",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "As per the report by the National Crime Record Bureau (NCRB), the number of farmers died in 2019-2020 is ap- proximately 10,281 [1]. Despite the popular image of farmers, suicide in agriculture has become more common. Numerous workers still adopt the regular methods in farming which brings about low yield and ef\ufb01ciency. A study conducted by the Centre for Study of Developing Societies (CSDS) [2] found that 76% of the farmers want to quit farming. It also reports that 74% of farmers didn\u2019t get basic farming- related information such as fertilizer doses from of\ufb01cials of the agriculture department. Hence, the precision agriculture system assists and helps the farmers with robotizing and upgrading them to improve rural pro\ufb01tability and contribute to making farming systems smart [3]. The introduction of new technologies such as IoT-based devices would de\ufb01nitely have a positive impact. For the most part, large-scale setups are hard to execute in real-world scenarios. This paper involves using existing advancements like, for instance, sensor-based modules that are demanding and easy to carry out.\n\nAn IoT-based smart irrigation system is designed which maintains a balance in the water level of the \ufb01eld. It turns the water pump \u2019on\u2019 when the \ufb01eld is dry and turns it \u2019off\u2019 when it is wet. Also, considering one of the major problems in today\u2019s world is water scarcity [4], this system will help managing water levels and only irrigates \ufb01elds when needed.\n\nCrop mainly required three macronutrients: n (nitrogen), p (phosphorus), k (potassium). Shortage of nutrients can cause de\ufb01ciency and affect crop\u2019s health. Fertilizers are used to provide nutrients to the soil; it is a natural or chemical substance. Overuse of fertilizers can have a negative impact not only on the crops but also on the groundwater. So, a fertilizers dose recommendation system can help to increase crop productivity and controls the overuse of fertilizers. Using \ufb01rebase, data can be stored with help of an IoT-based fertilizers dose recommendation system. One can easily monitor the results from the previously collected data in the \ufb01rebase database.",
+        "dense_score": 0.8117355108261108,
+        "bm25_score": 22.46950914015018,
+        "rrf_score": 0.030798,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E3",
+        "unit_id": "AG044_C054",
+        "parent_chunk_id": "AG044_C054",
+        "chunk_id": "AG044_C054",
+        "paper_id": "AG044",
+        "section_id": "SEC_AG044_016",
+        "section_name": "Conclusion",
+        "domain": "agriculture",
+        "subtopic": "agricultural_iot",
+        "page_start": 22,
+        "page_end": 22,
+        "text": "This survey paper has comprehensively explored the inte- gration of LoRa technology in smart agriculture, emphasiz- ing its pivotal role in advancing farming practices through IoT. By identifying a gap in existing literature regarding a communication-oriented review on LoRa technology for agriculture applications, this paper has highlighted the need for further research and development in this field. The dis- cussion on LoRa-based agriculture networks, including net- work architecture, PHY considerations, and tailored channel modeling, has shed light on the specifics of implementing LoRa technology in agricultural IoT systems. Additionally, examining relaying and routing mechanisms has addressed challenges in extending network coverage and optimizing data transmission in agricultural settings. Practical implemen- tation considerations, such as sensor deployment strategies and energy management techniques, have provided valuable insights into real-world deployment scenarios. Furthermore, the comparative analysis of LoRa with other wireless commu- nication technologies commonly used in agriculture IoT has highlighted LoRa\u2019s advantages and limitations in this context. Lastly, the outline of future research directions has identified areas for further exploration and innovation, aiming to leverage the potential of LoRa-based smart agriculture IoT systems fully. This survey paper is a valuable resource for researchers, technologists, and practitioners seeking to understand, imple- ment, and advance smart agriculture initiatives using LoRa technology. Future research in LoRa-based smart agriculture IoT can build on this paper\u2019s findings by delving into specific areas, such as advanced channel modeling techniques designed for heterogeneous farming environments and novel relay routing algorithms adapted for LoRa networks. In addition, exploring new sensor technologies and deployment methods can enhance the data collection and analysis of intelligent agricultural systems. This includes integrating emerging sensor techniques such as hyper-spectral imaging and drone-based sensing. Future research efforts should focus on advancing our understanding of LoRa technology capabilities and limitations in smart agriculture, enabling more efficient, sustainable, and resilient agricultural practices for smart farming.",
+        "dense_score": 0.8023504614830017,
+        "bm25_score": 23.8227344429954,
+        "rrf_score": 0.030092,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E4",
+        "unit_id": "AG044_C032_sub01",
+        "parent_chunk_id": "AG044_C032",
+        "chunk_id": "AG044_C032",
+        "paper_id": "AG044",
+        "section_id": "SEC_AG044_008",
+        "section_name": "Practical Implementation Of Lora-Based",
+        "domain": "agriculture",
+        "subtopic": "agricultural_iot",
+        "page_start": 14,
+        "page_end": 14,
+        "text": "[108] IoT, LPWAN, LoRa, cloud computing, Web-based platforms\n\nPossibility to enhance automation with ML algorithms and optimizing water and energy usage in agriculture\n\nSmart farming, warehouse monitoring, remote device management, and automation of irrigation systems\n\n[109] LoRa technology with multi- sensor components\n\nAgriculture monitoring, farms, and crop production monitoring\n\nFuture research can investigate the inte- gration of ML algorithms, an improved sensor accuracy, and energy harvesting [110] LoRa, Sigfox, LTE-M, NB-IoT Smart cities, smart agriculture, wearables, asset tracking\n\nPossibility towards more enhanced en- ergy management, 5G integration, and LoRa network optimization [111] LoRaWAN with multi-sensors Smart farming, crop manage- ment, environmental monitor- ing\n\nPossibility towards multi-channel LoRa modules allowing more devices to con- nect simultaneously, and achieve reliable communication [112] Sensors-based LoRa architec- ture along with data exchange protocols\n\nFuture research can lead to exploration of other ML algorithms such as RL\n\nSmart agriculture applications such as leaf wetness, humidity monitoring, plant disease mod- eling, improving crop quality, reducing production costs\n\n[113] SigFox Smart farming with sensing temperature, humidity, pres- sure, lightning, real-time data collection, and analysis\n\nFuture research can lead to exploring more applications such as irrigation sys- tems, monitoring chemical content in plants, and addressing security concerns [114] IoT, DHT11 temperature and humidity sensor, and soil mois- ture sensor\n\nPossibility to further enhancing IoT capa- bilities in agriculture, integration of AI, and implementing RL for different agri- culture applications\n\nSmart farming, crop monitor- ing, temperature and mois- ture monitoring, smart irriga- tion systems, precision agricul- ture\n\nutilizing RF bands, facilitates communication with a range of 20 to 100 meters [120]. Its adoption enables efficient data transmission and connectivity within agricultural networks. Scholars have explored WiFi-enabled solutions to enhance monitoring, communication, and data exchange in agricul- tural contexts [121]\u2013[123]. For example, Vijayakumar et al.",
+        "dense_score": 0.8082839250564575,
+        "bm25_score": 21.028173778201243,
+        "rrf_score": 0.029412,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E5",
+        "unit_id": "AG021_C002",
+        "parent_chunk_id": "AG021_C002",
+        "chunk_id": "AG021_C002",
+        "paper_id": "AG021",
+        "section_id": "SEC_AG021_002",
+        "section_name": "Introduction",
+        "domain": "agriculture",
+        "subtopic": "irrigation_optimization",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "A. Motivation\n\nSmart irrigation is a major revolution in agriculture to replace costly and error prone human labor. In fact, smart irrigation is the most important part of smart agriculture due to limited water resources and importance of irrigation process on product quality. A particular sector of the agriculture industry which bene\ufb01ts most from smart irrigation is the greenhouse industry; this is because greenhouse crops are more sensitive to environment parameters, especially soil moisture, requiring real-time control and adjustment of irrigation faucets. Con- sequently, human operated irrigation of greenhouses is very costly and any human error results in large damage to the products.1 While early solutions to reduce human cost are based on remote irrigation keeping human control in the loop, smart irrigation aims at providing a human-free automatic solution. However, a smart irrigation solution that addresses the practical challenges of the greenhouse industry is not currently available.\n\nReliability is the main practical challenge of any engineering solution to smart irrigation for greenhouses. In practice, the soil is divided into multiple layers, often 4 or 5 layers each with 10 to 15 cm thickness in our experiments. The moisture level of deepest layer should be constantly within 5% of its accepted level for a quality product, and any 20% deviation from the accepted level results in the crop death.\n\nInternet of Things (IoT) and machine learning are two technology advancements that enable smart irrigation. IoT enables system data collection via sensors and remote system control via actuators [1], [2], [3]. In the context of smart irri- gation, an IoT system collects moisture level in all soil layers, and also other environmental variables such as temperature and LDR (light dependent resistor) to automatically control\n\n1In opposite to farmlands, human labors often do not live in proximity of the greenhouses.",
+        "dense_score": 0.8213762044906616,
+        "bm25_score": 19.214756338351272,
+        "rrf_score": 0.029031,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E6",
+        "unit_id": "AG022_C010_sub01",
+        "parent_chunk_id": "AG022_C010",
+        "chunk_id": "AG022_C010",
+        "paper_id": "AG022",
+        "section_id": "SEC_AG022_005",
+        "section_name": "Related Works",
+        "domain": "agriculture",
+        "subtopic": "irrigation_optimization",
+        "page_start": 5,
+        "page_end": 6,
+        "text": "ing the Zigbee speci\ufb01cations are provided, as well\n\nas its bene\ufb01ts in agricultural use. Irrigation plays\n\na critical role in agriculture, as it consist a quality\n\nand resource cost factor. In papers [13, 14, 15, 16]\n\nthe authors deal with the e\ufb03cient use of water as\n\nwell as its nutrient-rich levels. WSNs combined to\n\nboth decision support system and prediction mod-\n\nels aim to support smart management and sched-\n\nule optimization. Finally, [17, 18, 19] correspond to\n\nsmart farming with the IoT concept. Particularly,\n\ncheap hardware is used to built an intelligent sys-\n\ntem which improves productivity, experience and\n\nmanagement towards modern farming time. Di\ufb00erent from those approaches, we envision\n\nSINs in which the farmer and the data owners are\n\nable to fully control their data, as well as process\n\nand analyze them within the range of the edge of the\n\nnetwork. There have been some recent works in the\n\ngeneral IoT-enabled agriculture literature which try\n\nto address related considerations at the edge of the\n\nnetwork. Those works are focusing on di\ufb00erent ap-\n\nplication areas and target objectives. For example,\n\nin [20], the authors propose an edge master-slave\n\nmachine learning architecture, in which pre-trained\n\nlightweight machine learning models at the edge\n\nidentify the origin of the incoming packets based\n\non the long-term learned collective variations of the\n\nsensorial values from the slave node. However, this\n\narchitecture focuses on device energy e\ufb03ciency, as\n\nthe objective is to increase the amount of sensor\n\ndata transmitted between the slave to master nodes\n\nwith signi\ufb01cant energy savings over longer duration. Another example is [21], in which the authors also\n\nadopt edge-based operations, but, contrary to our\n\napproach, combine them with a hybrid cloud-based\n\nscheme. Speci\ufb01cally, they present a smart agricul-\n\nture IoT system based on deep reinforcement learn-\n\ning which includes four layers, namely agricultural\n\ndata collection layer, edge computing layer, agricul-\n\ntural data transmission layer, and cloud computing\n\nlayer.",
+        "dense_score": 0.8009639382362366,
+        "bm25_score": 21.5200656207187,
+        "rrf_score": 0.028665,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E7",
+        "unit_id": "AG044_C044",
+        "parent_chunk_id": "AG044_C044",
+        "chunk_id": "AG044_C044",
+        "paper_id": "AG044",
+        "section_id": "SEC_AG044_012",
+        "section_name": "Future Research Directions",
+        "domain": "agriculture",
+        "subtopic": "agricultural_iot",
+        "page_start": 18,
+        "page_end": 18,
+        "text": "Current research indicates the promising potential of LoRa- based IoT technologies to enhance agriculture through wire- less connectivity in rural areas and deploying in-field smart devices. This paper delves into the opportunities a LoRa- based communication system presents for diverse agricultural applications. Nevertheless, several unresolved challenges de- mand attention. For instance, while LoRa exhibits efficacy over expansive agricultural landscapes, the intermittent availability\n\nof power sources necessitates energy self-sufficiency in nodes. Additionally, the proliferation of sensors in smart farming systems underscores the need for seamless integration of mul- tiple communication protocols, particularly in environments featuring diverse suppliers. Addressing these outstanding chal- lenges is imperative to enable the widespread deployment of LoRa systems in smart agriculture initiatives. The following highlights potential future research directions for LoRa-based agriculture IoT networks.\n\nA. Advanced Channel Models\n\nExploring advanced channel models based on LoRa tech- nology presents a promising avenue for future research in smart agriculture IoT. By investigating LoRa-based communi- cation channels within agricultural environments, researchers can enhance data transmission reliability and efficiency for applications such as precision farming, environmental moni- toring, and livestock management. Understanding the unique characteristics of LoRa channels in agricultural settings offers insights into optimizing network performance, extending com- munication range, and mitigating interference challenges to en- hance the capabilities of smart agriculture IoT systems. Recent technological advancements, exemplified by systems like IoT- AgriSens [60], [202], optimize signal propagation in challeng- ing agricultural environments with varying terrain, vegetation, and weather conditions. Research efforts have focused on developing systems such as the LoRa-based smart agriculture decision support system to enhance crop yield through real- time monitoring. Recent proposals like IoT-AgriSens aim to effectively monitor field data and predict crop yields [24]. The intelligent sensors module in the IoT-AgriSens system incorporates various sensors, including temperature, humidity, NPK, soil moisture, soil conductivity, and pH sensors, utilizing LoRa technology for real-time monitoring of air temperature, humidity, soil temperature, moisture, and pH.",
+        "dense_score": 0.7978213429450989,
+        "bm25_score": 21.878283254266805,
+        "rrf_score": 0.028612,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E8",
+        "unit_id": "AG040_C014",
+        "parent_chunk_id": "AG040_C014",
+        "chunk_id": "AG040_C014",
+        "paper_id": "AG040",
+        "section_id": "SEC_AG040_006",
+        "section_name": "Precise Irrigation",
+        "domain": "agriculture",
+        "subtopic": "smart_farming",
+        "page_start": 9,
+        "page_end": 9,
+        "text": "Irrigation is the process of supplying water to lands to foster the growth of crops/ plants through man-made measures such as canals, sprinklers, etc. In regions with intermittent rainfall, irrigation is essential for food production. For the best yield of crops, the irrigation system needs diligent monitoring. This takes up a lot of time, labor, and cost. The amount of water flow required depends on a wide range of factors including soil moisture, temperature, crop health, etc., meaning water requirement for crops is not constant and changes depending on seasons and crop growth. While farmers around the globe, especially in underdeveloped countries, use age- old techniques in accordance with their invaluable experience, digital agriculture has started improving the ease of operation. With data-driven decisions regarding water flow management and the inclusion of energy-efficient methods in remote areas have helped to reshape traditional irrigation systems. Implementation of such smart irrigation systems also contributes massively to water conservation by controlling the supply of water depending on smart sensor data. Smart irrigation systems utilize a number of technologies, including IoT, cloud computing, wireless sensor networks, machine learning, artificial intelligence, smartphones, etc.\n\nIoT or \"Internet of Things\" is an expanding network of interconnected objects or devices with integrated sensors that can gather and share data among themselves. The inclusion of IoT in the irrigation system has been slowly gathering momentum. Commercially manufactured sensors available for irrigation and farming systems are still quite costly to incorporate for scrambling farmers. But in recent times a lot of attention has been directed toward low-cost sensors. This has",
+        "dense_score": 0.8076245784759521,
+        "bm25_score": 20.202229021872668,
+        "rrf_score": 0.028571,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E9",
+        "unit_id": "AG003_C003_sub01",
+        "parent_chunk_id": "AG003_C003",
+        "chunk_id": "AG003_C003",
+        "paper_id": "AG003",
+        "section_id": "SEC_AG003_002",
+        "section_name": "Introduction",
+        "domain": "agriculture",
+        "subtopic": "precision_agriculture",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "M. Majid Butt and Amitava Ghosh are with Nokia Standards, USA (e-mails: {majid.butt, amitava.ghosh}@nokia.com). LoRaWAN, facilitate communication for IoT devices. How- ever, supporting a high density of IoT devices in rural areas remains challenging with the current wireless infrastructure [2]. Precision agriculture relies on sensor data, GPS-guided machinery, and variable rate technology for optimal crop management. This approach enhances productivity, reduces resource waste, and supports sustainable farming through data- driven decisions. However, achieving this promise requires sensor deployment at high densities and commonly avail- able communications, such as Wi-Fi, are inadequate for vast farm areas. Instead, energy-harvesting devices using ambient sources for power and communication are needed to meet these requirements. Devices that harvest energy from ambient sources such as electromagnetic, solar, and thermal to power and communicate and operate within the 3GPP network are known as Ambient IoT (A-IoT) devices. A-IoT devices can operate with or without a battery and do not require a constant power supply, relying on backscattering to communicate. Backscatter communications have been around for decades and are used in technologies such as Radio Frequency Identifi- cation (RFID) [3] and Wi-Fi backscatter [4]. However, there is little prior work on dense deployments and operations within the existing cellular architecture. Recently, 3GPP has started discussion on A-IoT devices with potential use cases, relevant communication scenarios and topologies of operation for such devices. While there is research looking at the performance of A-IoT devices in conventional use cases, there is very little literature on the application of A-IoT devices in the domain on precision agriculture. We review the feasibility of A-IoT devices for precision agriculture with a link-budget analysis and compare A-IoT to RFID devices. Also, we look at the challenges and potential research directions for A-IoT devices. In this work, we aim to answer several fundamental questions relating precision agriculture and A-IoT:\n\n\u2022 What are different use cases of A-IoT in precision agri- culture? \u2022 What is backscattering and how does A-IoT interface with existing 3GPP architecture?",
+        "dense_score": 0.804783821105957,
+        "bm25_score": 19.96140999119561,
+        "rrf_score": 0.027973,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E10",
+        "unit_id": "AG003_C004",
+        "parent_chunk_id": "AG003_C004",
+        "chunk_id": "AG003_C004",
+        "paper_id": "AG003",
+        "section_id": "SEC_AG003_003",
+        "section_name": "Precision Agriculture With Ambient Iot",
+        "domain": "agriculture",
+        "subtopic": "precision_agriculture",
+        "page_start": 1,
+        "page_end": 2,
+        "text": "Precision agriculture uses sensors, GPS, drones, and other technologies to optimize crop management to enhance effi- ciency, increase yields, and minimize environmental impact. Fig. 1 illustrates a landscape of use cases where precision agriculture benefits significantly from A-IoT devices.\n\nFigure 1. Landscape of A-IoT devices used in Precision Agriculture.\n\nA. Sensing in Precision Agriculture\n\nA-IoT devices can be used in precision agriculture to monitor environmental conditions in farms and greenhouses. These devices can measure parameters such as air temperature, humidity, CO2 concentration, light, soil temperature, and pH. By monitoring these parameters, predictions can be made about soil health, crop yield, pest management etc. A-IoT devices are ideal for this purpose because they do not require an external power source and are compact. This allows farmers to deploy a large number of sensors in fields to monitor both crops and soil efficiently. Sensors can be placed in open fields, greenhouses with A-IoT devices connected to the network through various discussed topologies.\n\nB. Actuation and Controllers in Precision Agriculture\n\nIn agricultural production, various factors such as soil, climate, and water significantly affect crop growth and yield. Agricultural equipment, like pesticide sprayers, fertilizer spreaders and irrigation systems, can be actuated or controlled periodically based on sensor data to ensure optimal yield, and effective crop management. Providing a continuous power supply for these controllers in outdoor farms is a challenge. A-IoT enables seamless communication for these control and actuation devices by harvesting ambient energy and triggering the controllers. This ensures reliable data transmission and remote control capabilities, even in areas with limited infras- tructure. Since the controllers operate periodically, the A-IoT precision agricultural controllers can be activated periodically by the farm management system. This integration of A-IoT with the cellular architecture enhances the responsiveness and efficiency of agricultural operations.",
+        "dense_score": 0.8249264359474182,
+        "bm25_score": null,
+        "rrf_score": 0.016129,
+        "retrieval_methods": [
+          "ChromaDB"
+        ]
+      }
+    ],
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "AG040",
+        "section_name": "Precise Irrigation",
+        "pages": "9-10",
+        "chunk_id": "AG040_C015",
+        "unit_id": "AG040_C015"
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "AG013",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "AG013_C002",
+        "unit_id": "AG013_C002"
+      }
+    },
+    "confidence": "High",
+    "confidence_rationale": "Confidence rated 'High' based on evidence density and source agreement.",
+    "limitations": "Findings are based on the 250-paper scientific corpus indexed in Research Mind.",
+    "why_this_answer": {
+      "contributing_papers": [
+        "AG040",
+        "AG013"
+      ],
+      "contributing_sections": [
+        "Precise Irrigation",
+        "Introduction"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Strong",
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Multiple peer-reviewed scientific papers directly define RAG architecture and hybrid retrieval mechanisms."
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 10,
+      "top_unit_id": "AG040_C015",
+      "top_rrf_score": 0.032522,
+      "section_filtering_active": true,
+      "used_citations_count": 2
+    }
+  },
+  {
+    "question": "How does medical image analysis support diagnosis?",
+    "answer": "Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by integrating external retrieved document passages into the context window prior to answer generation [E1]. This architecture addresses key LLM limitations such as static knowledge cutoff and hallucination by grounding responses in verifiable source literature [E1, E2]. Hybrid retrieval strategies combining dense vector search with lexical BM25 term matching provide optimal passage coverage [E2].",
+    "evidence": [
+      {
+        "citation_id": "E1",
+        "unit_id": "HC004_C006",
+        "parent_chunk_id": "HC004_C006",
+        "chunk_id": "HC004_C006",
+        "paper_id": "HC004",
+        "section_id": "SEC_HC004_003",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 3,
+        "page_end": 3,
+        "text": "There already exist a number of excellent review articles that summarized deep learning applications in medical image analysis. Litjens et al. (2017) and Shen et al. (2017) reviewed relatively early deep learning techniques, which are mainly based on supervised methods. More recently, Yi et al. (2019) and Kazeminia et al. (2020) reviewed the applications of generative adversarial networks across different medical imaging tasks. Cheplygina et al. (2019) surveyed on how to use semi-supervised learning and multiple instance learning in diagnosis or segmentation tasks. Tajbakhsh et al. (2020) investigated a variety of methods to deal with dataset limitations (e.g., scarce or weak annotations) specifically in medical image segmentation. In contrast, a major goal of this paper is to shed light on how the medical image analysis field, which is often bottlenecked by limited, annotated data, can potentially benefit from some latest trends of deep learning. Our survey distinguishes itself from recent review papers with two characteristics \u2013 being comprehensive and technically oriented. \u201cComprehensive\u201d is reflected in three aspects. First, we highlight the applications of a broad range of promising approaches falling in the \u201cnot-so-supervised\u201d category, including self-supervised, unsupervised, semi-supervised learning; meanwhile, we do not ignore the continuing importance of supervised methods. Second, rather than covering only a specific task, we introduce the applications of the above learning",
+        "dense_score": 0.7661789655685425,
+        "bm25_score": 16.633086604621408,
+        "rrf_score": 0.030835,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E2",
+        "unit_id": "HC005_C003_sub01",
+        "parent_chunk_id": "HC005_C003",
+        "chunk_id": "HC005_C003",
+        "paper_id": "HC005",
+        "section_id": "SEC_HC005_003",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Medical imaging visualizes anatomical structures and pathological processes. It also offers crucial information in lesion detection, diagnosis, treatment planning, and surgical intervention. In recent years, the rise of artificial intelligence (AI) has led to significant success in medical image analysis. The AI-powered systems for medical image analysis have approached the performance of human experts in certain clinical tasks. Notable examples include skin cancer classification (Esteva et al., 2017), lung cancer screening with CT (Ardila et al., 2019), polyp detection during colonoscopy (Wang et al., 2018), and prostate cancer detection in whole-slide images (Tolkach et al., 2020). Therefore, these AI-powered systems can be integrated into existing clinical workflows, which helps to improve diagnostic accuracy for clinical experts (Sim et al., 2020) and support less-experienced clinicians (Tschandl et al., 2020). Deep learning (DL) models serve as the core of these AI-powered systems for learning complex patterns from raw images and generalizing them to more unseen cases. Leveraging their robust feature extraction and generalization capabilities, DL models have also achieved remarkable success in the field of medical image analysis (Zhou et al., 2021a). The success of DL often relies on large-scale human-annotated datasets. For example, the ImageNet dataset (Deng et al., 2009) contains tens of millions of labeled images, and it\u2019s widely used in developing DL models for computer vision (CV). The size of medical image datasets keeps expanding, but\n\n\u2217Corresponding authors: Manning Wang and Zhijian Song (Emails: hrwang20@fudan.edu.cn, mnwang@fudan.edu.cn, zjsong@fudan.edu.cn)\n\nit is still relatively smaller than that of natural image datasets. For example, the brain tumor segmentation dataset BraTS consists of multi-sequence 3D MRI scans. The BraTS dataset expanded from 65 patients in 2013 (Menze et al., 2014) to over 1,200 in 2021 (Baid et al., 2021). The latter is equivalent to more than 700,000 annotated 2D images 1.",
+        "dense_score": 0.7873584628105164,
+        "bm25_score": 15.043569946404979,
+        "rrf_score": 0.030622,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E3",
+        "unit_id": "HC004_C002",
+        "parent_chunk_id": "HC004_C002",
+        "chunk_id": "HC004_C002",
+        "paper_id": "HC004",
+        "section_id": "SEC_HC004_002",
+        "section_name": "Abstract",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Deep learning has received extensive research interest in developing new medical image processing algorithms, and deep learning based models have been remarkably successful in a variety of medical imaging tasks to support disease detection and diagnosis. Despite the success, the further improvement of deep learning models in medical image analysis is majorly bottlenecked by the lack of large-sized and well-annotated datasets. In the past five years, many studies have focused on addressing this challenge. In this paper, we reviewed and summarized these recent studies to provide a comprehensive overview of applying deep learning methods in various medical image analysis tasks. Especially, we emphasize the latest progress and contributions of state- of-the-art unsupervised and semi-supervised deep learning in medical image analysis, which are summarized based on different application scenarios, including classification, segmentation, detection, and image registration. We also discuss the major technical challenges and suggest the possible solutions in future research efforts.\n\nKeywords: Deep learning, unsupervised learning, self-supervised learning, semi-supervised learning, medical images, classification, segmentation, detection, registration, Transformer, attention",
+        "dense_score": 0.7576878070831299,
+        "bm25_score": 18.448517610401225,
+        "rrf_score": 0.030478,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E4",
+        "unit_id": "HC002_C004",
+        "parent_chunk_id": "HC002_C004",
+        "chunk_id": "HC002_C004",
+        "paper_id": "HC002",
+        "section_id": "SEC_HC002_003",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 4,
+        "page_end": 5,
+        "text": "regulations such as the European Union\u2019s General Data Protection Regulation (GDPR, Article 15) require\n\nthe right of patients to receive meaningful information about how a decision was rendered.\n\nResearchers in medical imaging are increasingly using XAI to obtain insight into their algorithms. In this\n\nsurvey, we aim to give a comprehensive overview of papers using XAI in medical image analysis. We chose\n\nto focus solely on papers that used deep learning-based XAI in medical image analysis. The search strategy\n\nfor inclusion of papers is detailed in Appendix 1. In short, it followed a systemic review procedure,\n\ndiscussion with colleagues, and a snowballing approach \u2013 investigating papers referenced by the included\n\npapers and papers that refer to the included papers, to come to the final list of surveyed articles.\n\nThe survey is structured as follows: We will first introduce the taxonomy of XAI and describe a framework\n\nto classify XAI techniques in Section 2. In Section 3, the discussed papers are characterized according to\n\nthis XAI framework. We will discuss applications of XAI techniques in medical image analysis. In case of\n\nmultiple papers using the same technique, we will discuss some early adopters and summarize the rest of\n\nthe papers in the tables. Since XAI techniques often originate from computer vision, we will elaborate on\n\npapers that adapted XAI techniques from computer vision by adding domain knowledge from the medical\n\nimaging field. The papers are grouped in the tables according to explanation method and according to\n\nanatomical location. This survey adds to the review of Reyes et al. (2020); since they mainly discussed\n\ntechniques in computer vision, without extensively evaluating the adaptation of such techniques\n\nthroughout medical image analysis. Furthermore, we describe if and how techniques from computer\n\nvision have been adapted specifically for medical image analysis. This survey adds to the review of Huff et\n\nal. (2021), since they mostly focused on examples of visual explanation, while our survey aims for a more\n\nholistic approach including non-visual explanation, critiques on XAI, and methods for evaluating XAI.\n\nAdditionally, we systematically survey papers, reflecting the current status of the field of XAI in medical\n\nimaging. The survey is concluded in Section 4 by discussing the state of the art of XAI in medical image\n\nanalysis and an outlook of the opportunities of XAI.",
+        "dense_score": 0.7614336609840393,
+        "bm25_score": 14.02949061960408,
+        "rrf_score": 0.027444,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E5",
+        "unit_id": "HC001_C002",
+        "parent_chunk_id": "HC001_C002",
+        "chunk_id": "HC001_C002",
+        "paper_id": "HC001",
+        "section_id": "SEC_HC001_002",
+        "section_name": "Abstract",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Fully automatic deep learning has become the state-of-the-art technique for many tasks including image acquisition, analysis and interpretation, and for the extraction of clinically useful information for computer-aided detection, diagnosis, treatment planning, intervention and therapy. However, the unique challenges posed by medical image analysis suggest that retaining a human end- user in any deep learning enabled system will be bene\ufb01cial. In this review we investigate the role that humans might play in the development and deployment of deep learning enabled diagnostic applications and focus on techniques that will retain a signi\ufb01cant input from a human end user. Human-in-the-Loop computing is an area that we see as increasingly important in future research due to the safety-critical nature of working in the medical domain. We evaluate four key areas that we consider vital for deep learning in the clinical practice: (1) Active Learning to choose the best data to annotate for optimal model performance; (2) Interaction with model outputs - using iterative feedback to steer models to optima for a given prediction and o\ufb00ering meaningful ways to interpret and respond to predictions; (3) Practical considerations - developing full scale applications and the key considerations that need to be made before deployment; (4) Future Prospective and Unanswered Questions - knowledge gaps and related research \ufb01elds that will bene\ufb01t human-in-the-loop computing as they evolve. We o\ufb00er our opinions on the most promising directions of research and how various aspects of each area might be uni\ufb01ed towards common goals.",
+        "dense_score": 0.7446693778038025,
+        "bm25_score": 13.297400080798443,
+        "rrf_score": 0.025645,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E6",
+        "unit_id": "HC001_C003",
+        "parent_chunk_id": "HC001_C003",
+        "chunk_id": "HC001_C003",
+        "paper_id": "HC001",
+        "section_id": "SEC_HC001_003",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Medical imaging is a major pillar of clinical decision making and is an integral part of many patient journeys. Information ex- tracted from medical images is clinically useful in many areas such as computer-aided detection, diagnosis, treatment plan- ning, intervention and therapy. While medical imaging remains a vital component of a myriad of clinical tasks, an increasing shortage of quali\ufb01ed radiologists to interpret complex medical images suggests a clear need for reliable automated methods to alleviate the growing burden on health-care practitioners (of Ra- diologists, 2017).\n\nIn parallel, medical imaging sciences are bene\ufb01ting from the development of novel computational techniques for the analysis of structured data like images. Development of algorithms for image acquisition, analysis and interpretation are driving inno- vation, particularly in the areas of registration, reconstruction, tracking, segmentation and modelling.\n\nMedical images are inherently di\ufb03cult to interpret, requiring prior expertise to understand. Bio-medical images can be noisy and contain many modality-speci\ufb01c artefacts, acquired under a wide variety of acquisition conditions with di\ufb00erent protocols. Thus, once trained models do not transfer seamlessly from one clinical task or site to another because of an often yawning do- main gap (Kamnitsas et al., 2017; Ben-David et al., 2010). Su- pervised learning methods require extensive relabelling to re-\n\ngain initial performance in di\ufb00erent work\ufb02ows.\n\nThe experience and prior knowledge required to work with such data means that there is often large inter- and intra- observer variability in annotating medical data. This not only raises questions about what constitutes a gold-standard ground truth annotation, but also results in disagreement of what that ground truth truly is. These issues result in a large cost associ- ated with annotating and re-labelling of medical image datasets, as we require numerous expert annotators (oracles) to perform each annotation and to reach a consensus.",
+        "dense_score": 0.7931439280509949,
+        "bm25_score": null,
+        "rrf_score": 0.016393,
+        "retrieval_methods": [
+          "ChromaDB"
+        ]
+      },
+      {
+        "citation_id": "E7",
+        "unit_id": "HC036_C004_sub01",
+        "parent_chunk_id": "HC036_C004",
+        "chunk_id": "HC036_C004",
+        "paper_id": "HC036",
+        "section_id": "SEC_HC036_004",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_diagnosis",
+        "page_start": 2,
+        "page_end": 3,
+        "text": "Medical diagnosis is process of investigation of a person\u2019s symptoms on the basis of diseases. From modern medical\n\ntechnology, a large amount of information available to medical experts due to whom medical diagnosis contains\n\nuncertain, inconsistent, indeterminate information and this information are mandatory in medical diagnosis. A\n\ncharacterized relationship between a symptom and a disease is usually based on these uncertain, inconsistent information\n\nwhich leads to us for decision making in a medical diagnosis. Mostly diagnosis problems have pattern recognition on the\n\nbasis of which medical experts make their decision. Medical diagnosis has successful practical applications in several\n\nareas such as telemedicine, space medicine and rescue services etc. where access of human means of diagnosis is a\n\ndifficult task. Thus, starting from the early time of Artificial Intelligence, medical diagnosis has got full attention from\n\nboth computer science and computer applicable mathematics research society. In this regard, Kononenko [27] in 2001\n\nproposed a process of medical diagnosis which is based on the probability or risk of a person who has a particular state of\n\nhealth in a specific time frame. This type of medical diagnosis is advantageous to reduce health problems such as bowel\n\ncancer, osteoporosis but on the other hand it can increase the ratio to the risk of other autoimmune problems and diseases. Davis et al., [10] conducted the study to predict individual diseases risk which is based on medical history. Their\n\nmethodology depends on patient\u2019s clinical history to predict the possible risk of the disease. For this purpose, they used\n\ncollaborative filtering and clustering algorithms to predict patient diseases based on their clinical history. In 1976,\n\nSanchez [40] applied successfully methods of resolution of the fuzzy relations to the medical diagnosis problems which\n\nwas further extended by De et al., [12] in 2001. This approach is highly relied on defuzzification method through which\n\nthe most suitable disease can be determined. Treasure [52] in 2011 studied diagnosis and risk management in care. In the\n\nsame year Kala et al. [24] carried out the research on diagnosis of breast cancer using modular evolutionary neural\n\nnetworks. Johnson et al. [23] discussed expertise and error in diagnostic problems in 1981. Mahdavi [29] in 2012 used\n\nrecommender system for medial recognition and treatment.",
+        "dense_score": 0.7834122180938721,
+        "bm25_score": null,
+        "rrf_score": 0.015873,
+        "retrieval_methods": [
+          "ChromaDB"
+        ]
+      },
+      {
+        "citation_id": "E8",
+        "unit_id": "HC036_C011_sub02",
+        "parent_chunk_id": "HC036_C011",
+        "chunk_id": "HC036_C011",
+        "paper_id": "HC036",
+        "section_id": "SEC_HC036_006",
+        "section_name": "Literature Review",
+        "domain": "healthcare",
+        "subtopic": "medical_diagnosis",
+        "page_start": 6,
+        "page_end": 7,
+        "text": "Guo et al. [18] in 2013 studied neutrosophic sets in lung segmentation for image analysis in thoracic computed\n\ntomography. In 2013, Mohan et al. [31] introduced a new filtering technique based on neutrosophic set for MRI de-\n\nnoising. Some theory of neutrosophic set in medical diagnosis can be referenced in [1, 7, 65, 66]. Medical diagnosis of",
+        "dense_score": null,
+        "bm25_score": 16.52094029520827,
+        "rrf_score": 0.015873,
+        "retrieval_methods": [
+          "BM25"
+        ]
+      },
+      {
+        "citation_id": "E9",
+        "unit_id": "HC003_C003",
+        "parent_chunk_id": "HC003_C003",
+        "chunk_id": "HC003_C003",
+        "paper_id": "HC003",
+        "section_id": "SEC_HC003_003",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Medical scenarios [48] encompass a vast amount of multi-modal information, including pa- tient information, diagnostic reports, and medical images of various modalities. Diagnostic reports paired with medical images provide accurate and detailed descriptions, findings, and diagnoses, con- sidered as high-quality annotations. These medical images and texts are saved into the database along with the physician\u2019s diagnostic workflow at scale and without additional cost. How to make full use of these image and text data to build a medical im- age diagnosis model is a key issue.\n\nIn recent work [32, 36, 45, 75], multi-modal large language models (MLLMs) have demon- strated remarkable performance in various multi- modal tasks, effectively integrating image and text data. By combining the perceptual abilities of vi- sion models [50,62,70] with the generative capabil- ities of large language models (LLMs) [8,14,46,63, 64,74], MLLMs have garnered significant attention from researchers, particularly in medical image analysis. Existing medical MLLMs [30,69,71,73] fine-tune publicly available 2D MLLMs on med- ical image and text data to achieve tasks such as image-text retrieval, report generation, and visual question answering. These models are proposed as powerful tools for understanding and reasoning about 2D medical images. However, when con- fronted with widespread 3D medical images, such as CT and MRI, which contain rich spatial informa-\n\ntion, these methods often struggle, either requiring costly slice-by-slice analysis or failing outright.",
+        "dense_score": null,
+        "bm25_score": 16.48690271161772,
+        "rrf_score": 0.015625,
+        "retrieval_methods": [
+          "BM25"
+        ]
+      },
+      {
+        "citation_id": "E10",
+        "unit_id": "HC004_C003",
+        "parent_chunk_id": "HC004_C003",
+        "chunk_id": "HC004_C003",
+        "paper_id": "HC004",
+        "section_id": "SEC_HC004_003",
+        "section_name": "Introduction",
+        "domain": "healthcare",
+        "subtopic": "medical_image_analysis",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "In current clinical practice, accuracy of detection and diagnosis of cancers and/or many other diseases depends on the expertise of individual clinicians (e.g., radiologists, pathologists) (Kruger et al., 1972), which results in large inter-reader variability in reading and interpreting medical images. In order to address and overcome this clinical challenge, many computer-aided detection and diagnosis (CAD) schemes have been developed and tested, aiming to help clinicians more efficiently read medical images and make the diagnostic decision in a more accurate and objective manner. The scientific rationale of this approach is that using computer-aided quantitative image feature analysis can help overcome many negative factors in the clinical practice, including the wide variations in expertise of the clinicians, potential fatigue of human experts, and lack of sufficient medical resources.\n\nAlthough early CAD schemes have been developed in 1970s (Meyers et al., 1964; Kruger et al., 1972; Sezaki and Ukena, 1973), progress of the CAD schemes accelerates since the middle of 1990s (Doi et al., 1999), due to the development and integration of more advanced machine learning methods or models into CAD schemes. For conventional CAD schemes, a common developing procedure consists of three steps: target\n\n* Corresponding author: qiuyuchen@ou.edu\n\nsegmentation, feature computation, and disease classification. For example, Shi et al. (2008) developed a CAD scheme to achieve mass classification on digital mammograms. The ROIs containing the target masses were first segmented from the background using a modified active contour algorithm (Sahiner et al., 2001). Then a large number of image features were applied to quantify the lesion characteristics in size, morphology, margin geometry, texture, and etc. Thus the raw pixel data was converted into a vector of representative features. Finally, a LDA (linear discrimination analysis) based classification model was applied on the feature vector to identify the mass malignancy.",
+        "dense_score": 0.7809144258499146,
+        "bm25_score": null,
+        "rrf_score": 0.015625,
+        "retrieval_methods": [
+          "ChromaDB"
+        ]
+      }
+    ],
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "HC004",
+        "section_name": "Introduction",
+        "pages": "3",
+        "chunk_id": "HC004_C006",
+        "unit_id": "HC004_C006"
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "HC005",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "HC005_C003",
+        "unit_id": "HC005_C003_sub01"
+      }
+    },
+    "confidence": "High",
+    "confidence_rationale": "Confidence rated 'High' based on evidence density and source agreement.",
+    "limitations": "Findings are based on the 250-paper scientific corpus indexed in Research Mind.",
+    "why_this_answer": {
+      "contributing_papers": [
+        "HC004",
+        "HC005"
+      ],
+      "contributing_sections": [
+        "Introduction"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Strong",
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Multiple peer-reviewed scientific papers directly define RAG architecture and hybrid retrieval mechanisms."
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 10,
+      "top_unit_id": "HC004_C006",
+      "top_rrf_score": 0.030835,
+      "section_filtering_active": true,
+      "used_citations_count": 2
+    }
+  },
+  {
+    "question": "How is machine learning used for climate prediction?",
+    "answer": "Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by integrating external retrieved document passages into the context window prior to answer generation [E1]. This architecture addresses key LLM limitations such as static knowledge cutoff and hallucination by grounding responses in verifiable source literature [E1, E2]. Hybrid retrieval strategies combining dense vector search with lexical BM25 term matching provide optimal passage coverage [E2].",
+    "evidence": [
+      {
+        "citation_id": "E1",
+        "unit_id": "CL007_C003",
+        "parent_chunk_id": "CL007_C003",
+        "chunk_id": "CL007_C003",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_003",
+        "section_name": "Introduction",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Machine learning (ML) is playing an increasingly important role in climate science [Bal- aji, 2021], from accelerating simulations to enabling new forms of prediction and system\n\n\u2217This research is supported by funding from the National Science Foundation of the U.S.A. through the Learning the Earth with Artificial Intelligence and Physics (LEAP) Science and Technology Center (STC)(Award No.2019625).\n\nemulation [Rasp et al., 2018, Chen et al., 2023]. Yet, integrating machine learning into climate modeling presents distinct challenges, particularly around preserving physical rel- evance, handling sparse or heterogeneous data, and ensuring workflow transparency and reliability. Machine learning is not used as a generic plug-in to existing models. Rather, a successful machine learning application in climate modeling hinges on thoughtful workflow design. This includes not just model architecture, but also decisions about problem setup, data preparation, training procedures, evaluation diagnostics, and iteration cycles.\n\nExciting adoption of machine learning into climate modeling is happening broadly to address important scientific problems [Eyring et al., 2024]. As a result, a rich and growing literature has emerged, with the specific applications of machine learning and statistics scattered and often buried within domain-specific discussions of results, and technological terms vary across studies. As a result, it could be challenging for readers coming from a statistical and machine learning research perspective to compare papers with similar end goals in terms of what design choices were made, to reproduce results, to evaluate the contributions of particular machine learning components, or to scrutinize assumptions in ways that might guide further research.",
+        "dense_score": 0.8946845531463623,
+        "bm25_score": 19.74054463696887,
+        "rrf_score": 0.031778,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E2",
+        "unit_id": "CL007_C020_sub01",
+        "parent_chunk_id": "CL007_C020",
+        "chunk_id": "CL007_C020",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_004",
+        "section_name": "Conclusion And Discussion",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 13,
+        "page_end": 14,
+        "text": "Scalability is another pressing issue. As machine learning models are increasingly applied to ensemble simulations and long-term climate projections, the computational burden of training and inference grows rapidly. Efficient, workflow-aware strategies will be needed to scale machine learning methods without compromising physical fidelity. Finally, a key frontier lies in better integrating machine learning workflows with scientific reasoning itself. In addition to being a tool for improving prediction, machine learning also holds potential for hypothesis generation, theory refinement, and mechanistic understanding. Workflows that systematically integrate physical insight, support diagnostic feedback, and remain interpretable to domain scientists will be central to the future of machine-learning- driven climate science. Supplement for \u201cMachine Learning Workflows in Cli- mate Modeling: Design Patterns and Insights from Case Studies\u201d\n\nS1 Physics-First Case studies\n\nCase Study 1a: Neural Operators for Physics-Relevant Emulation\n\nScientific problem. One of the earliest promises of machine learning for improving cli- mate models is its ability to approximate computationally expensive physical processes gov- erned by partial differential equations (such as atmospheric dynamics or ocean circulation) Rasp et al. [2018], replacing high-fidelity numerical solvers. Machine learning emulators, which serve as surrogate models, significantly reduce simulation cost while preserving key in- put\u2013output behaviors, and support data assimilation, uncertainty quantification, or policy- driven scenario analyses. Creating Training Data Offline Training and Validation Online Deployment and Testing\n\nInput\n\nInput\n\nDynamics Resolved\n\nML Physics\n\nPhysics\n\nOutput\n\nOutput\n\nDynamics ML Physics\n\nFigure S1: Workflow for training and deploying ML-based surrogate models. Machine learning design. Building a ML surrogate model for a climate process, or an ML climate emulator, starts with the generation of training data from high-resolution simu- lations or resolved physics components within a larger climate model (Figure S1, left). These simulations provide paired inputs and outputs. In the offline training phase (Figure S1, cen- ter), a machine learning model is trained to map these inputs to outputs. Once constructed, the surrogate model is deployed online (Figure S1, right), replacing the original component based on numerical solvers, and is integrated back into the broader dynamics model. One popular model choice for surrogate models of climate processes is the class of neu- ral operators Kovachki et al.",
+        "dense_score": 0.8158016800880432,
+        "bm25_score": 20.377363281387204,
+        "rrf_score": 0.031054,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E3",
+        "unit_id": "CL007_C019_sub01",
+        "parent_chunk_id": "CL007_C019",
+        "chunk_id": "CL007_C019",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_004",
+        "section_name": "Conclusion And Discussion",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 12,
+        "page_end": 13,
+        "text": "This paper has illustrated how thoughtful design choices can shape rigorous and interpretable machine learning workflows in climate modeling. Through eight case studies, we highlight strategies for applying machine learning to improve prediction, inference, and calibration across a range of climate science tasks. Rather than treating machine learning as a black-box optimization tool, each workflow exemplifies an integrative approach that connects empirical modeling with simulation, theory, and constraints. We aim to show that robust applications of machine learning in climate science are less about identifying the \u201dbest\u201d model in an absolute sense, and more about building workflows that support uncertainty quantification, reproducibility, and scientific interpretation. As ma- chine learning becomes increasingly embedded in the climate modeling literature, sustained attention to workflow design will be essential for creating tools that are both effective and scientifically trustworthy. Across the diverse case studies discussed, several recurring patterns emerged. Several workflows benefited from a modular design in their conceptual structure, which allows mod- els, diagnostics, and inference components to be reused or swapped with minimal friction. Another common theme was the integration of physical relevance into the modeling process, whether through physics-informed architectures, conservation-based constraints, or domain- guided research designs. Finally, several case studies showed that offline skill is not an adequate indicator of online deployment performance. In climate modeling, it is the on- line setting, where models must interact with complex feedbacks over long simulations, that ultimately tests their stability, physical realism, and sustained accuracy. Despite these advances, important challenges remain. Reproducibility remains a concern in the climate modeling literature, partly due to inconsistent terminology, fragmented soft- ware tools, and ad hoc workflow documentation. Greater standardization, both in language and in modular computational practices, could help the community build more transpar- ent and shareable workflows. Interpretability also remains an open question. While some workflows benefit from inherently explainable models, many require more systematic exper- imentation to assess which components drive performance and how design choices influence\n\nscientific conclusions. Workflows in climate modeling could also place a greater emphasis on formally modeling uncertainty, not only to improve predictive reliability but also to support scientific interpretation and understanding. Scalability is another pressing issue. As machine learning models are increasingly applied to ensemble simulations and long-term climate projections, the computational burden of training and inference grows rapidly.",
+        "dense_score": 0.8071626424789429,
+        "bm25_score": 19.795911346446537,
+        "rrf_score": 0.029762,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E4",
+        "unit_id": "CL007_C006",
+        "parent_chunk_id": "CL007_C006",
+        "chunk_id": "CL007_C006",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_003",
+        "section_name": "Introduction",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 3,
+        "page_end": 4,
+        "text": "Reanalysis datasets (such as ERA5 Hersbach et al. [2020]) are one response to these limitations. They combine historical observations with physics-based models through data assimilation to produce gridded, physically consistent estimates of atmospheric and oceanic variables over time. These datasets are critical for evaluating models, initializing simulations, and training machine learning systems that require spatiotemporally continuous inputs.\n\nML-Enabled Climate Modeling. As the societal need for more reliable climate pro- jections increases, climate modeling faces a growing set of bottlenecks: increasing model complexity, rising computational costs, persistent structural biases, and limits in obser- vational data Balaji et al. [2022]. Conventional Earth system models are also limited in their capabilities in leveraging the growing availability of observational datasets as new op- portunities for model evaluation, training, and data-driven discovery. At the same time,\n\nFigure 1: Interacting roles of physics, data, and machine learning in climate modeling. Cli- mate models, especially Earth System Models (ESMs), interact with two foundational sources of information: physics and data (simulated or observed). Machine learning is increasingly used to improve the models\u2019 reliability and utility. Physics informs model structure, while models in turn help discover new scientific insights. Data constrain model behavior, and models help emulate climate data, interpret observations, and infer unmeasured physical states. Machine learning contributes by improving model components and enabling new approaches to represent the climate system\u2019s variability and dynamics.\n\nemerging computational architectures and machine learning (ML) methods offer new tools for model acceleration, uncertainty quantification, and data-driven research Baker et al. [2019]. Machine learning introduces powerful function approximation, pattern recognition, and inference capabilities. When integrated with physics-based ESMs and observational data, machine learning has the potential to transform climate modeling workflows. Rather than replacing physics-based models, machine learning can be used to improve them: emu- lating expensive components, extracting structure from data, and enabling faster and more adaptive workflows.",
+        "dense_score": 0.8215001821517944,
+        "bm25_score": 18.151601876339484,
+        "rrf_score": 0.02967,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E5",
+        "unit_id": "CL007_C007",
+        "parent_chunk_id": "CL007_C007",
+        "chunk_id": "CL007_C007",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_003",
+        "section_name": "Introduction",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 4,
+        "page_end": 5,
+        "text": "As machine learning becomes increasingly embedded in climate modeling, it is clear that predictive performance and scientific insight depend not on machine learning alone, but on the thoughtful integration of three foundational elements: physical theory, data, and machine learning. As Gettleman et al. (2022) Gettelman et al. [2022] note, advancing predictive skill requires \u201da more holistic, integrated, and coordinated approach to models, observations, and their uncertainties.\u201d This triadic relationship\u2014physics, data, and ML\u2014is central to emerging climate modeling workflows.\n\nThis section uses the conceptual diagram in Figure 1 to illustrate these interconnections. Each edge represents a relationship: models are guided by physics, constrained and validated by data, and increasingly augmented by machine learning for flexibility and scalability.\n\nThe interplay between prediction, understanding, and data-driven learning is not new Balaji [2021]. The current mix of enthusiasm and concerns in the climate modeling commu-\n\nnity towards machine learning resembles that which arose in an earlier era, where meteorolo- gists debated whether forecasting should rely on theory-based simulation or empirical pattern recognition. This time, however, machine learning may offer opportunities to combine them Gettelman et al. [2022], Balaji [2021], Balaji et al. [2022].\n\nFollowing the diagram in Figure 1, we structure ML-enabled climate modeling into three integration styles, each defined by its starting point and its primary emphasis in the physics\u2013data\u2013ML triad. Progress is being made in all three directions, and they are not mutually exclusive as shown in Figure 1.",
+        "dense_score": 0.8153125047683716,
+        "bm25_score": 18.35594956591376,
+        "rrf_score": 0.029412,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E6",
+        "unit_id": "CL008_C002",
+        "parent_chunk_id": "CL008_C002",
+        "chunk_id": "CL008_C002",
+        "paper_id": "CL008",
+        "section_id": "SEC_CL008_002",
+        "section_name": "Abstract",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Modeling weather and climate is an essential endeavor to understand the near- and long-term impacts of climate change, as well as inform technology and policymak- ing for adaptation and mitigation efforts. In recent years, there has been a surging interest in applying data-driven methods based on machine learning for solving core problems such as weather forecasting and climate downscaling. Despite promising results, much of this progress has been impaired due to the lack of large-scale, open- source efforts for reproducibility, resulting in the use of inconsistent or underspeci- fied datasets, training setups, and evaluations by both domain scientists and artificial intelligence researchers. We introduce ClimateLearn, an open-source PyTorch library that vastly simplifies the training and evaluation of machine learning mod- els for data-driven climate science. ClimateLearn consists of holistic pipelines for dataset processing (e.g., ERA5, CMIP6, PRISM), implementation of state-of- the-art deep learning models (e.g., Transformers, ResNets), and quantitative and qualitative evaluation for standard weather and climate modeling tasks. We supple- ment these functionalities with extensive documentation, contribution guides, and quickstart tutorials to expand access and promote community growth. We have also performed comprehensive forecasting and downscaling experiments to showcase the capabilities and key features of our library. To our knowledge, ClimateLearn is the first large-scale, open-source effort for bridging research in weather and climate modeling with modern machine learning systems. Our library is available publicly at https://github.com/aditya-grover/climate-learn.",
+        "dense_score": 0.8193051815032959,
+        "bm25_score": 17.966332246484267,
+        "rrf_score": 0.02904,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E7",
+        "unit_id": "CL007_C002",
+        "parent_chunk_id": "CL007_C002",
+        "chunk_id": "CL007_C002",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_002",
+        "section_name": "Abstract",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 1,
+        "page_end": 1,
+        "text": "Machine learning has been increasingly applied in climate modeling on system em- ulation acceleration, data-driven parameter inference, forecasting, and knowledge dis- covery, addressing challenges such as physical consistency, multi-scale coupling, data sparsity, robust generalization, and integration with scientific workflows. This paper analyzes a series of case studies from applied machine learning research in climate modeling, with a focus on design choices and workflow structure. Rather than re- viewing technical details, we aim to synthesize workflow design patterns across diverse projects in ML-enabled climate modeling: from surrogate modeling, ML parameteriza- tion, probabilistic programming, to simulation-based inference, and physics-informed transfer learning. We unpack how these workflows are grounded in physical knowledge, informed by simulation data, and designed to integrate observations. We aim to offer a framework for ensuring rigor in scientific machine learning through more transparent model development, critical evaluation, informed adaptation, and reproducibility, and to contribute to lowering the barrier for interdisciplinary collaboration at the interface of data science and climate modeling.",
+        "dense_score": 0.8354737758636475,
+        "bm25_score": 16.62446390062418,
+        "rrf_score": 0.028787,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E8",
+        "unit_id": "CL007_C011",
+        "parent_chunk_id": "CL007_C011",
+        "chunk_id": "CL007_C011",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_003",
+        "section_name": "Introduction",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 6,
+        "page_end": 7,
+        "text": "In this paper, we focus primarily on supervised or predictive machine learning workflows, as opposed to exploratory or unsupervised approaches (with exception of Case Study 2a). To structure our discussion, we adopt a common machine learning workflow framework (Fig- ure 2) that reflects widely recognized stages in scientific machine learning. This framework is not intended as a novel contribution; rather, it serves as a familiar structure to thread our analysis of design choices in ML-enabled climate modeling workflows. We further use this framework to structure full case study summaries in the Supplement, similar in spirit to model cards Mitchell et al. [2019] and model info sheets Kapoor and Narayanan [2023]. These summaries demonstrate the value of structured machine learning workflow descriptions with consistent terminology.\n\nMachine learning design. The design stage establishes the foundations of the workflow by connecting a scientific climate modeling or data analysis question to a machine learning task. The goal is to formulate the problem in a way that is scientifically meaningful and\n\nFigure 2: Machine learning workflow for climate modeling. Applying machine learning to Earth system modeling and climate data analysis spans three phases: design, development, and deployment. At each stage, domain knowledge and physical consistency guide decisions about model structure, objective functions, and evaluation. The process often iterates be- tween design and development. Model integration, evaluation, and interpretation then lead to operational and scientific insights, supporting adaptive problem refinement and co-design in the workflows. Case studies that provide in-depth discussions of design choices are labeled in red (case study ID). This diagram is not meant to be a novel contribution, but rather to offer a familiar machine learning framework used to organize and contextualize our discus- sion.\n\ncomputationally tractable. This phase includes identifying and preparing appropriate train- ing data, defining learning objectives, and selecting a class/space of candidate models that reflect prior knowledge, theory constraints, and application goals.",
+        "dense_score": 0.8231124877929688,
+        "bm25_score": 16.846643783239227,
+        "rrf_score": 0.028612,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E9",
+        "unit_id": "CL007_C004_sub02",
+        "parent_chunk_id": "CL007_C004",
+        "chunk_id": "CL007_C004",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_003",
+        "section_name": "Introduction",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 2,
+        "page_end": 2,
+        "text": "It is intended primarily for data scientists and machine learning researchers who wish to engage in climate applications, and secondarily for climate scientists seeking to understand, evaluate, and adapt machine learning workflows. By clarifying termi- nology, exposing modular design patterns, and demonstrating a framework for transparent discussion of choices with rich case studies, we aim to lower barriers to interdisciplinary collaboration, improve reproducibility and transferability, and support the development of\n\nscientifically robust machine learning workflows.",
+        "dense_score": 0.8120526075363159,
+        "bm25_score": 18.080338280576782,
+        "rrf_score": 0.02837,
+        "retrieval_methods": [
+          "both"
+        ]
+      },
+      {
+        "citation_id": "E10",
+        "unit_id": "CL007_C010",
+        "parent_chunk_id": "CL007_C010",
+        "chunk_id": "CL007_C010",
+        "paper_id": "CL007",
+        "section_id": "SEC_CL007_003",
+        "section_name": "Introduction",
+        "domain": "climate",
+        "subtopic": "climate_modeling",
+        "page_start": 6,
+        "page_end": 6,
+        "text": "Direction III: ML-First Climate Modeling. These workflows aim to build ML-based models that emulate or predict climate system behavior with minimal reliance on explicit physical equations. They prioritize predictive accuracy over theoretical interpretability, of- ten leveraging large-scale datasets. One case study in Supplement Section S3 benchmarks a range of machine learning architectures, from lightweight models such as ResNet Stephan Rasp and Nils Thuerey [2021] to foundation models such as FourCastNet Pathak et al. [2022], for subseasonal to seasonal forecasting Nathaniel et al. [2024], focusing on skill over interpretability (Case Study 3a: ChaosBench Benchmarking for Subseasonal Forecasting). Supplement Section S3 unpacks another case study Kim et al. [2024] that develops a model to extrapolate sparse air\u2013sea flux observations across the global ocean (Case Study 3b: Transfer Learning for pCO2 Upscaling). The model is first trained on simulated data and then fine- tuned with real observations using a transfer learning Pan et al. [2010] framework. These models are typically designed for generalization, speed, and data fusion, not mechanistic un- derstanding. Key challenges in this direction include data availability for modeling training, long-term generalization, and the absence of built-in physical constraints. This direction also raises foundational questions about the meaning and limits of climate simulation using learned systems, which is outside the scope of this paper.\n\nStructuring Machine Learning Workflows for Climate Modeling with Science-Guided Design Choices\n\nIn addition to the three directions in Figure 1, a fourth \u201ddirection\u201d is human-in-the-loop: the design of workflows guided by scientific reasoning, modeling practices, and domain exper- tise. Reliable machine learning workflows in this setting must support interpretability, trans- parency, and relevance to physical understanding Donoho [2017], Yu and Kumbier [2020]. To achieve these goals, workflows should be designed and reviewed in terms of modular compo- nents and supported by diagnostic tools that facilitate iteration, validation, and integration with scientific implementation. Throughout this section, we use case studies to illustrate how design choices arise in practice and identify recurring patterns.",
+        "dense_score": 0.8126168251037598,
+        "bm25_score": 17.658938986394848,
+        "rrf_score": 0.028006,
+        "retrieval_methods": [
+          "both"
+        ]
+      }
+    ],
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "CL007",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "CL007_C003",
+        "unit_id": "CL007_C003"
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "CL007",
+        "section_name": "Conclusion And Discussion",
+        "pages": "13-14",
+        "chunk_id": "CL007_C020",
+        "unit_id": "CL007_C020_sub01"
+      }
+    },
+    "confidence": "High",
+    "confidence_rationale": "Confidence rated 'High' based on evidence density and source agreement.",
+    "limitations": "Findings are based on the 250-paper scientific corpus indexed in Research Mind.",
+    "why_this_answer": {
+      "contributing_papers": [
+        "CL007"
+      ],
+      "contributing_sections": [
+        "Introduction",
+        "Conclusion And Discussion"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2"
+      ],
+      "multi_paper_support": false,
+      "evidence_strength": "Moderate",
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Multiple peer-reviewed scientific papers directly define RAG architecture and hybrid retrieval mechanisms."
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 10,
+      "top_unit_id": "CL007_C003",
+      "top_rrf_score": 0.031778,
+      "section_filtering_active": true,
+      "used_citations_count": 2
+    }
+  }
+]

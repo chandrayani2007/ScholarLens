@@ -1,0 +1,150 @@
+[
+  {
+    "query": "What are the limitations of Agentic RAG?",
+    "answer_preview": "This section therefore examines the limitations of existing evaluation practices and outlines a structured framework for assessing agentic RAG behavior [E1]. Evaluation Dimensions for Agentic RAG To move beyond the limitations of static metrics, eval...",
+    "evidence_strength": "Good",
+    "unsupported_claims": 1,
+    "contributing_papers": [
+      "AI030"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "What is cloud computing?",
+    "answer_preview": "Model-specific explanation Model-specific explanation methods are limited to particular classes of models [E1]. For example, such a method may use attributes that are specific to a type of neural network [E1]. [E2]",
+    "evidence_strength": "Good",
+    "unsupported_claims": 1,
+    "contributing_papers": [
+      "HC002",
+      "CY178"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_RETRY_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "What algorithms are commonly used for intrusion detection?",
+    "answer_preview": "Several methods and algorithms are employed in the context of intrusion detection  [E1]. presented an e\ufb00ective overview of intrusion detection and the most popular machine learning methods used for the same [E1]. The survey\u2019s focus is to educate the ...",
+    "evidence_strength": "Moderate",
+    "unsupported_claims": 0,
+    "contributing_papers": [
+      "CY007"
+    ],
+    "active_citations": [
+      "E1"
+    ],
+    "local_citation_count": 1,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "What are the limitations of LLMs?",
+    "answer_preview": "guities and avoids the need for an image-to-text model [E1]. \u2022 Add summaries to tutorials or long procedures \u2013 LLMs struggle with long tutorials or procedures (because of getting \u201clost in the middle\u201d or context window limitations.) Adding a \n\ninheren...",
+    "evidence_strength": "Good",
+    "unsupported_claims": 1,
+    "contributing_papers": [
+      "AI029",
+      "AI072"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "How does reinforcement learning improve robotic manipulation?",
+    "answer_preview": "deemed ungraspable by geometrical methods [E1]. The framework\u2019s sim-to-real transferability is further validated through physical experiments on a Delta parallel robot, where a refined grasp successfully manipulates an object that was previously ungr...",
+    "evidence_strength": "Good",
+    "unsupported_claims": 1,
+    "contributing_papers": [
+      "AI184"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "What are the benefits of precision agriculture?",
+    "answer_preview": "The key advantages and benefits of precision agriculture are documented in academic research  [E1]. Also, we look at the challenges and potential research directions for A-IoT devices [E1]. In this work, we aim to answer several fundamental questions...",
+    "evidence_strength": "Excellent",
+    "unsupported_claims": 0,
+    "contributing_papers": [
+      "AG003",
+      "AG040"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "What is quantum teleportation?",
+    "answer_preview": "First, our use of quantum vocabulary is mathematical, not ontological, and we do not claim that the brain is a quantum physical device at biological scales [E1]. We claim that cognitive state transitions exhibit the algebraic non-commutativity, conte...",
+    "evidence_strength": "Good",
+    "unsupported_claims": 1,
+    "contributing_papers": [
+      "HC197",
+      "HC105"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  },
+  {
+    "query": "How does carbon capture work?",
+    "answer_preview": "Carbon capture and storage (CCS) (or carbon capture and sequestration) is the process of capturing waste carbon dioxide, transporting it to a storage site, and depositing it where it will not enter the atmosphere, normally into un- derground geologic...",
+    "evidence_strength": "Good",
+    "unsupported_claims": 1,
+    "contributing_papers": [
+      "CL006",
+      "CL060"
+    ],
+    "active_citations": [
+      "E1",
+      "E2"
+    ],
+    "local_citation_count": 2,
+    "online_citation_count": 0,
+    "source_type": "Research Mind Corpus",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "online_fallback_active": false
+  }
+]

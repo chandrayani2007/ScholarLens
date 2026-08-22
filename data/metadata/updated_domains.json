@@ -1,0 +1,262 @@
+{
+  "artificial_intelligence": {
+    "machine_learning": [
+      "machine learning",
+      "supervised learning",
+      "statistical learning"
+    ],
+    "deep_learning": [
+      "deep learning",
+      "neural networks",
+      "representation learning"
+    ],
+    "large_language_models": [
+      "language models",
+      "large language models",
+      "LLM reasoning"
+    ],
+    "natural_language_processing": [
+      "natural language processing",
+      "text classification",
+      "computational linguistics"
+    ],
+    "computer_vision": [
+      "computer vision",
+      "object detection",
+      "image segmentation"
+    ],
+    "retrieval_augmented_generation": [
+      "retrieval augmented generation",
+      "dense retrieval",
+      "RAG language models"
+    ],
+    "ai_agents": [
+      "autonomous agents",
+      "multi-agent planning",
+      "LLM agents"
+    ],
+    "explainable_ai": [
+      "explainable AI",
+      "interpretable machine learning",
+      "XAI"
+    ],
+    "reinforcement_learning": [
+      "reinforcement learning",
+      "policy optimization",
+      "deep reinforcement learning"
+    ],
+    "generative_ai": [
+      "generative AI",
+      "diffusion models",
+      "generative adversarial networks"
+    ]
+  },
+  "cybersecurity": {
+    "network_security": [
+      "network security",
+      "intrusion prevention",
+      "firewall security"
+    ],
+    "intrusion_detection": [
+      "intrusion detection",
+      "anomaly detection",
+      "network intrusion"
+    ],
+    "malware_detection": [
+      "malware detection",
+      "malware analysis",
+      "malicious software"
+    ],
+    "phishing_detection": [
+      "phishing detection",
+      "phishing url",
+      "anti-phishing"
+    ],
+    "ransomware": [
+      "ransomware",
+      "ransomware detection",
+      "crypto-ransomware"
+    ],
+    "authentication": [
+      "authentication",
+      "multi-factor authentication",
+      "biometric authentication"
+    ],
+    "privacy": [
+      "differential privacy",
+      "privacy preserving",
+      "homomorphic encryption"
+    ],
+    "cloud_security": [
+      "cloud security",
+      "container security",
+      "serverless security"
+    ],
+    "iot_security": [
+      "iot security",
+      "internet of things security",
+      "edge security"
+    ],
+    "ai_for_cybersecurity": [
+      "ai cybersecurity",
+      "adversarial attack",
+      "threat intelligence"
+    ]
+  },
+  "agriculture": {
+    "precision_agriculture": [
+      "precision agriculture",
+      "smart farming",
+      "site-specific crop"
+    ],
+    "crop_recommendation": [
+      "crop recommendation",
+      "crop selection",
+      "crop prediction"
+    ],
+    "crop_disease_detection": [
+      "crop disease detection",
+      "plant disease",
+      "leaf disease"
+    ],
+    "soil_analysis": [
+      "soil analysis",
+      "soil moisture prediction",
+      "soil nutrient"
+    ],
+    "irrigation_optimization": [
+      "smart irrigation",
+      "irrigation optimization",
+      "water management"
+    ],
+    "yield_prediction": [
+      "yield prediction",
+      "crop yield forecasting",
+      "harvest prediction"
+    ],
+    "agricultural_remote_sensing": [
+      "agricultural remote sensing",
+      "crop monitoring",
+      "ndvi"
+    ],
+    "smart_farming": [
+      "digital agriculture",
+      "greenhouse",
+      "smart farming"
+    ],
+    "agricultural_iot": [
+      "agricultural iot",
+      "farming sensor",
+      "smart agriculture sensors"
+    ],
+    "ai_ml_in_agriculture": [
+      "ai agriculture",
+      "machine learning agriculture",
+      "agricultural robotics"
+    ]
+  },
+  "healthcare": {
+    "medical_image_analysis": [
+      "medical image analysis",
+      "medical image segmentation",
+      "radiology ai"
+    ],
+    "disease_prediction": [
+      "disease prediction",
+      "early disease diagnosis",
+      "clinical risk prediction"
+    ],
+    "clinical_nlp": [
+      "clinical nlp",
+      "clinical natural language processing",
+      "medical text mining"
+    ],
+    "healthcare_ai": [
+      "healthcare ai",
+      "artificial intelligence healthcare",
+      "clinical workflow"
+    ],
+    "drug_discovery": [
+      "drug discovery ai",
+      "virtual screening machine learning",
+      "molecular generation"
+    ],
+    "biomedical_nlp": [
+      "biomedical nlp",
+      "pubmed text",
+      "biomedical language models"
+    ],
+    "clinical_decision_support": [
+      "clinical decision support",
+      "cdss",
+      "diagnostic reasoning"
+    ],
+    "medical_diagnosis": [
+      "medical diagnosis",
+      "automated diagnosis",
+      "diagnostic accuracy"
+    ],
+    "electronic_health_records": [
+      "electronic health",
+      "ehr",
+      "clinical patient"
+    ],
+    "explainable_ai_in_healthcare": [
+      "explainable ai",
+      "interpretable medical diagnosis",
+      "trustworthy ai"
+    ]
+  },
+  "climate": {
+    "climate_change": [
+      "climate change mitigation",
+      "global warming trend",
+      "climate sensitivity"
+    ],
+    "climate_modeling": [
+      "climate modeling",
+      "earth system models",
+      "climate projections"
+    ],
+    "weather_prediction": [
+      "weather prediction machine learning",
+      "deep learning weather",
+      "precipitation forecasting"
+    ],
+    "extreme_weather": [
+      "extreme weather detection",
+      "flood forecasting",
+      "drought prediction"
+    ],
+    "carbon_emissions": [
+      "carbon emissions monitoring",
+      "greenhouse gas flux",
+      "decarbonization modeling"
+    ],
+    "remote_sensing": [
+      "climate",
+      "earth observation climate",
+      "environmental remote sensing"
+    ],
+    "environmental_monitoring": [
+      "environmental monitoring",
+      "ecosystem monitoring",
+      "ocean sensor network"
+    ],
+    "renewable_energy_and_climate": [
+      "renewable energy forecasting",
+      "grid integration",
+      "clean energy"
+    ],
+    "climate_risk_prediction": [
+      "climate risk assessment",
+      "sea level rise modeling",
+      "climate vulnerability"
+    ],
+    "ai_ml_for_climate_science": [
+      "ai climate",
+      "machine learning earth system",
+      "climate dynamics"
+    ]
+  }
+}

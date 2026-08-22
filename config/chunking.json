@@ -1,0 +1,6 @@
+{
+  "chunk_size": 512,
+  "chunk_overlap": 75,
+  "min_chunk_size": 50,
+  "tokenizer": "cl100k_base"
+}

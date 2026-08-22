@@ -1,0 +1,237 @@
+[
+  {
+    "query_index": 1,
+    "question": "What is cloud computing?",
+    "contract": {
+      "concept": "cloud computing",
+      "intent": "Definition",
+      "required_evidence_type": "direct definition, core properties, or fundamental explanation of concept",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Definition",
+    "requested_aspect": "definition/explanation",
+    "local_eval_decision": "LOCAL_RETRY_SUFFICIENT",
+    "concept_support": 0.5,
+    "intent_support": 0.3333333333333333,
+    "relationship_support": 1.0,
+    "answerability_score": 0.6166666666666666,
+    "online_fallback_active": false,
+    "used_citations_count": 3,
+    "evidence_strength": "High",
+    "explanation_summary": "Passage [E5] (Paper CL188, 'METHODOLOGY') supports key claims: 'We separate clear-sky thermals from cloud-topped thermals using the ERA5 medium cloud cover fraction, namel...'. Passage [E1] (Paper HC002, '2.2.1. Model-specific explanation') supports key claims: '2.2.1. Model-specific explanation  Model-specific explanation methods are limited to particular classes of ...'. Passage [E2] (Paper CY178, 'Routing summary {cloud_via_paraphrase:') supports key claims: 'Check the cancellation policy before finalizing, complete the booking with payment details, and maintain th...'.",
+    "answer_preview": "Cloud computing is defined and explained in the retrieved scientific literature  [E5]. Model-specific explanation Model-specific explanation methods are limited to particular classes of models [E1]. [E1]\n\nFor example, such a method may use attributes..."
+  },
+  {
+    "query_index": 2,
+    "question": "What are the limitations of LLMs?",
+    "contract": {
+      "concept": "limitations of llms",
+      "intent": "Limitation",
+      "required_evidence_type": "explicit limitations, drawbacks, challenges, constraints, or failure modes",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Limitation",
+    "requested_aspect": "limitations/challenges",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 1.0,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9749999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "Excellent",
+    "explanation_summary": "Passage [E1] (Paper AI029, 'guities and avoids the need for an image-to-text model.') supports key claims: 'guities and avoids the need for an image-to-text model. \u2022 Add summaries to tutorials or long procedures \u2013 L...'. Passage [E2] (Paper AI072, 'inherent classification limitations of LLMs and improve') supports key claims: 'inherent classification limitations of LLMs and improve prediction reliability. \u2022 Experimental results on a...'.",
+    "answer_preview": "Limitations of llms presents several limitations and challenges identified in current research [E1]. guities and avoids the need for an image-to-text model [E1]. [E1]\n\n\u2022 Add summaries to tutorials or long procedures \u2013 LLMs struggle with long tutorial..."
+  },
+  {
+    "query_index": 3,
+    "question": "What algorithms are commonly used for intrusion detection?",
+    "contract": {
+      "concept": "intrusion detection",
+      "intent": "Algorithm",
+      "required_evidence_type": "specific named algorithms, methods, models, or architectures used for target task",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Algorithm",
+    "requested_aspect": "algorithms/methods",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 0.75,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9249999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "Excellent",
+    "explanation_summary": "Passage [E1] (Paper CY007, 'anomaly-based methods.') supports key claims: '[3] presented an e\ufb00ective overview of intrusion detection and the most popular machine learning methods use...'. Passage [E2] (Paper CY035, 'Main Content') supports key claims: 'Understanding Modern Intrusion Detection Systems: A Survey  1     UNDERSTANDING MODERN INTRUSION DETECTION ...'.",
+    "answer_preview": "Several methods and algorithms are employed in the context of algorithms are commonly used for intrusion detection [E1]. presented an e\ufb00ective overview of intrusion detection and the most popular machine learning methods used for the same [E1]. [E1]\n..."
+  },
+  {
+    "query_index": 4,
+    "question": "How does reinforcement learning improve robotic manipulation?",
+    "contract": {
+      "concept": "reinforcement learning improve robotic manipulation",
+      "intent": "Mechanism",
+      "required_evidence_type": "detailed process, workflow, or mechanism explaining how concept operates or improves target",
+      "strict_intent_markers": [],
+      "secondary_concepts": [
+        "robotic",
+        "manipulation?"
+      ]
+    },
+    "intent": "Mechanism",
+    "requested_aspect": "mechanism/process",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 1.0,
+    "intent_support": 1.0,
+    "relationship_support": 0.4,
+    "answerability_score": 0.9099999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "High",
+    "explanation_summary": "Passage [E1] (Paper AI184, 'deemed ungraspable by geometrical methods. The framework\u2019s') supports key claims: 'deemed ungraspable by geometrical methods. The framework\u2019s sim-to-real transferability is further validated...'. Passage [E2] (Paper AI184, 'V. CONCLUSION') supports key claims: 'V. CONCLUSION This work introduces a novel reinforcement learning-based framework for refining robotic gras...'.",
+    "answer_preview": "The mechanism underlying reinforcement learning improve robotic manipulation operates through specific processes documented in scientific literature [E1]. deemed ungraspable by geometrical methods [E1]. [E1]\n\nThe framework\u2019s sim-to-real transferabili..."
+  },
+  {
+    "query_index": 5,
+    "question": "What are the benefits of precision agriculture?",
+    "contract": {
+      "concept": "benefits of precision agriculture",
+      "intent": "Advantage",
+      "required_evidence_type": "explicit benefits, advantages, strengths, or positive outcomes of concept",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Advantage",
+    "requested_aspect": "advantages/benefits",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 1.0,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9999999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "Excellent",
+    "explanation_summary": "Passage [E1] (Paper AG003, 'I. INTRODUCTION') supports key claims: 'Also, we look at the challenges and potential research directions for A-IoT devices. In this work, we aim t...'. Passage [E2] (Paper AG040, '1 Introduction') supports key claims: 'According to the International Society of Precision Agriculture (ISPA) \u2013 \u2015Precision  Agriculture is a manag...'.",
+    "answer_preview": "The key advantages and benefits of benefits of precision agriculture are documented in academic research [E1]. Also, we look at the challenges and potential research directions for A-IoT devices [E1]. [E1]\n\nIn this work, we aim to answer several fund..."
+  },
+  {
+    "query_index": 6,
+    "question": "What causes model drift in machine learning?",
+    "contract": {
+      "concept": "model drift in machine learning",
+      "intent": "Algorithm",
+      "required_evidence_type": "specific named algorithms, methods, models, or architectures used for target task",
+      "strict_intent_markers": [],
+      "secondary_concepts": [
+        "learning"
+      ]
+    },
+    "intent": "Algorithm",
+    "requested_aspect": "algorithms/methods",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 0.8,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9275,
+    "online_fallback_active": false,
+    "used_citations_count": 1,
+    "evidence_strength": "Moderate",
+    "explanation_summary": "Passage [E1] (Paper AI004, 'Model') supports key claims: '9 (2016) 1425\u20131436. https://doi.org/10.14778/3007263.3007279. [130] X. Meng, J. Bradley, B. Yavuz, et al., ...'.",
+    "answer_preview": "Several methods and algorithms are employed in the context of causes model drift in machine learning [E1]. https://doi.org/10.14778/3007263.3007279 [E1]. [E1]\n\nYavuz, et al., Mllib: machine learning in apache spark, J. in Electrical and Com- puter En..."
+  },
+  {
+    "query_index": 7,
+    "question": "How does carbon capture work?",
+    "contract": {
+      "concept": "carbon capture work",
+      "intent": "Mechanism",
+      "required_evidence_type": "detailed process, workflow, or mechanism explaining how concept operates or improves target",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Mechanism",
+    "requested_aspect": "mechanism/process",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 1.0,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9999999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "Excellent",
+    "explanation_summary": "Passage [E1] (Paper CL006, 'Steady State 1D Model with Di\ufb00usion') supports key claims: 'Carbon capture and storage (CCS) (or carbon capture and sequestration) is the process of capturing waste ca...'. Passage [E2] (Paper CL060, 'analysis') supports key claims: 'analysis and net carbon benefits of CO2 capture and transport infrastructure for energy applications and in...'.",
+    "answer_preview": "The mechanism underlying carbon capture work operates through specific processes documented in scientific literature [E1]. Carbon capture and storage (CCS) (or carbon capture and sequestration) is the process of capturing waste carbon dioxide, transp..."
+  },
+  {
+    "query_index": 8,
+    "question": "What is quantum teleportation?",
+    "contract": {
+      "concept": "quantum teleportation",
+      "intent": "Definition",
+      "required_evidence_type": "direct definition, core properties, or fundamental explanation of concept",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Definition",
+    "requested_aspect": "definition/explanation",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 0.5,
+    "intent_support": 0.6666666666666666,
+    "relationship_support": 1.0,
+    "answerability_score": 0.7333333333333333,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "Excellent",
+    "explanation_summary": "Passage [E1] (Paper HC197, 'INTRODUCTION') supports key claims: 'First, our use of quantum vocabulary is mathematical, not ontological, and we do not claim that the brain i...'. Passage [E2] (Paper HC105, 'Introduction') supports key claims: 'The expressivity of a variational quantum cir- cuit under parameter distribution \u03bd is defined as the invers...'.",
+    "answer_preview": "Quantum teleportation is defined and explained in the retrieved scientific literature [E1]. First, our use of quantum vocabulary is mathematical, not ontological, and we do not claim that the brain is a quantum physical device at biological scales [E..."
+  },
+  {
+    "query_index": 9,
+    "question": "What are the major challenges in climate prediction?",
+    "contract": {
+      "concept": "major challenges in climate prediction",
+      "intent": "Limitation",
+      "required_evidence_type": "explicit limitations, drawbacks, challenges, constraints, or failure modes",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Limitation",
+    "requested_aspect": "limitations/challenges",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 0.75,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9249999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "High",
+    "explanation_summary": "Passage [E1] (Paper CL068, 'Introduction to LA-SALT') supports key claims: 'This convenient result offers potential computational advantages and opens new perspectives for the theoret...'. Passage [E2] (Paper CL068, 'Background') supports key claims: 'Background To meet the challenge of climate change prediction in practice, one must predict the coarse-grai...'.",
+    "answer_preview": "Major challenges in climate prediction presents several limitations and challenges identified in current research [E1]. This convenient result offers potential computational advantages and opens new perspectives for the theoretical analysis of these ..."
+  },
+  {
+    "query_index": 10,
+    "question": "How is AI used in medical image analysis?",
+    "contract": {
+      "concept": "ai used in medical image analysis",
+      "intent": "Mechanism",
+      "required_evidence_type": "detailed process, workflow, or mechanism explaining how concept operates or improves target",
+      "strict_intent_markers": [],
+      "secondary_concepts": []
+    },
+    "intent": "Mechanism",
+    "requested_aspect": "mechanism/process",
+    "local_eval_decision": "LOCAL_SUFFICIENT",
+    "concept_support": 1.0,
+    "intent_support": 1.0,
+    "relationship_support": 1.0,
+    "answerability_score": 0.9874999999999999,
+    "online_fallback_active": false,
+    "used_citations_count": 2,
+    "evidence_strength": "High",
+    "explanation_summary": "Passage [E1] (Paper HC002, '3. XAI in medical image analysis') supports key claims: '3. XAI in medical image analysis  In this section, we will present which XAI techniques are used in medical...'. Passage [E2] (Paper HC002, 'Abstract') supports key claims: 'Abstract  With an increase in deep learning-based methods, the call for explainability of such methods grow...'.",
+    "answer_preview": "The mechanism underlying How is AI used in medical image analysis operates through specific processes documented in scientific literature [E1]. XAI in medical image analysis In this section, we will present which XAI techniques are used in medical im..."
+  }
+]

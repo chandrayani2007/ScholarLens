@@ -1,0 +1,5 @@
+Configuration,Top1,Top5,Top10,MRR,Answer Groundedness,Citation Correctness,Domain Isolation,Cross-Domain Leakage,Zero Evidence Rate
+Vector-Only,0.298,0.315,0.317,0.3052,100%,100%,100%,0%,68.3%
+BM25-Only,0.297,0.315,0.319,0.3051,100%,100%,100%,0%,68.1%
+Current Hybrid,0.304,0.318,0.32,0.3095,100%,100%,100%,0%,68.0%
+Improved Section-Aware Hybrid,0.304,0.318,0.32,0.3095,100%,100%,100%,0%,68.0%

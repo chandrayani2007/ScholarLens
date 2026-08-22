@@ -1,0 +1,13 @@
+{
+  "dense_backend": "chromadb",
+  "chroma_db_dir": "data/indexes/chroma",
+  "chroma_collection": "research_mind_chunks",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_dim": 384,
+  "max_seq_length": 512,
+  "sub_chunk_target_tokens": 480,
+  "sub_chunk_overlap_tokens": 50,
+  "normalize_embeddings": true,
+  "query_instruction": "Represent this sentence for searching relevant passages: ",
+  "distance_metric": "cosine"
+}

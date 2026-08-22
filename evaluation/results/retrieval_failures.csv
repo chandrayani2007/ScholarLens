@@ -1,0 +1,199 @@
+query_id,question,category,reason
+Q-002,How does transformer self-attention function in research (Mechanism)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-003,How does learning rate decay function in research (Cause)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-004,How does overfitting in deep neural networks function in research (Effect)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-005,How does parameter efficient fine-tuning LoRA function in research (Advantage)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-006,How does LLM hallucination function in research (Limitation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-007,How does agentic workflow planning function in research (Challenge)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-008,How does computer vision autonomous driving function in research (Application)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-009,How does convolutional networks vs vision transformers function in research (Comparison)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-010,How does factual accuracy in RAG function in research (Evaluation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-011,How does concept drift in ML pipelines function in research (Prediction)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-012,How does out-of-distribution inputs in neural nets function in research (Detection)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-014,How does diffusion model denoising step function in research (Mechanism)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-015,How does gradient vanishing in deep networks function in research (Cause)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-016,How does dropout regularization on generalization function in research (Effect)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-017,How does quantization for model compression function in research (Advantage)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-018,How does context window length constraints in LLMs function in research (Limitation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-019,How does multi-agent coordination bottlenecks function in research (Challenge)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-020,How does graph neural networks molecular prediction function in research (Application)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-021,How does supervised fine-tuning vs RLHF function in research (Comparison)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-022,How does chain of thought reasoning quality function in research (Evaluation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-023,How does training loss convergence rate function in research (Prediction)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-024,How does adversarial perturbations in vision models function in research (Detection)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-025,How does deep reinforcement learning function in research (Definition)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-026,How does policy gradient actor-critic update function in research (Mechanism)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-027,How does sparse data in recommendation systems function in research (Cause)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-028,How does catastrophic forgetting in continual learning function in research (Effect)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-029,How does mixture of experts parameter efficiency function in research (Advantage)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-030,How does reward hacking in AI alignment function in research (Limitation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-031,How does safety constraints in autonomous agents function in research (Challenge)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-032,How does NLP for code synthesis function in research (Application)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-033,How does dense retrieval vs BM25 lexical search function in research (Comparison)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-034,How does RAGAS benchmark scores function in research (Evaluation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-035,How does hyperparameter optimization performance function in research (Prediction)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-036,How does data poisoning in training sets function in research (Detection)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-037,How does representation learning function in research (Definition)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-038,How does masked language modeling BERT function in research (Mechanism)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-039,How does high dimensionality in feature spaces function in research (Cause)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-040,How does batch normalization on training speed function in research (Effect)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-041,How does pruning redundant network weights function in research (Advantage)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-042,How does quadratic complexity of self-attention function in research (Limitation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-043,How does latency in real-time LLM inference function in research (Challenge)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-044,How does reinforcement learning robotic control function in research (Application)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-045,How does autoregressive vs non-autoregressive decoding function in research (Comparison)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-046,How does SHAP and LIME interpretability accuracy function in research (Evaluation)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-047,How does model degradation over time function in research (Prediction)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-048,How does bias detection in word embeddings function in research (Detection)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-049,How does foundation models function in research (Definition)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-050,How does contrastive learning SimCLR function in research (Mechanism)?,single_domain_ai,Zero retrieved evidence passages / 0 citations returned
+Q-066,What is the role of credential stuffing account takeover in cybersecurity (Effect)?,single_domain_cy,Zero retrieved evidence passages / 0 citations returned
+Q-079,What is the role of hardware enclave isolation SGX in cybersecurity (Advantage)?,single_domain_cy,Zero retrieved evidence passages / 0 citations returned
+Q-081,What is the role of serverless permission privilege drift in cybersecurity (Challenge)?,single_domain_cy,Zero retrieved evidence passages / 0 citations returned
+Q-090,What is the role of identity theft data breach impact in cybersecurity (Effect)?,single_domain_cy,Zero retrieved evidence passages / 0 citations returned
+Q-101,How is precision agriculture site-specific management addressed in agriculture research (Definition)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-103,How is soil nutrient depletion NPK addressed in agriculture research (Cause)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-104,How is crop yield reduction from drought addressed in agriculture research (Effect)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-105,How is drone remote sensing canopy monitoring addressed in agriculture research (Advantage)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-106,How is computer vision weed detection occlusion addressed in agriculture research (Limitation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-107,How is high initial hardware cost smallholders addressed in agriculture research (Challenge)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-108,How is satellite NDVI crop biomass tracking addressed in agriculture research (Application)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-109,How is satellite vs drone imagery spatial resolution addressed in agriculture research (Comparison)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-110,How is biological pest control efficiency addressed in agriculture research (Evaluation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-111,How is regional crop harvest yield addressed in agriculture research (Prediction)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-112,How is plant water stress thermal canopy addressed in agriculture research (Detection)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-113,How is climate-smart agriculture addressed in agriculture research (Definition)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-115,How is salinization of agricultural soil addressed in agriculture research (Cause)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-116,How is frost damage on orchard fruit production addressed in agriculture research (Effect)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-117,How is conservation tillage moisture retention addressed in agriculture research (Advantage)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-118,How is NDVI saturation in dense canopies addressed in agriculture research (Limitation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-119,How is predicting crop yield during extreme heatwaves addressed in agriculture research (Challenge)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-120,How is soft robotic fruit harvesting addressed in agriculture research (Application)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-122,How is soil organic carbon accumulation addressed in agriculture research (Evaluation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-123,How is nocturnal orchard frost risk addressed in agriculture research (Prediction)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-124,How is leaf spot fungal lesions addressed in agriculture research (Detection)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-125,How is smart farming digital agriculture addressed in agriculture research (Definition)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-126,How is NIR spectroscopy soil nitrogen measurement addressed in agriculture research (Mechanism)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-127,How is excessive chemical pesticide runoff addressed in agriculture research (Cause)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-128,How is soil erosion on arable land addressed in agriculture research (Effect)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-130,How is GPS signal loss under dense crop canopy addressed in agriculture research (Limitation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-131,How is autonomous tractor navigation in mud addressed in agriculture research (Challenge)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-132,How is machine learning soil nutrient mapping addressed in agriculture research (Application)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-133,How is organic vs precision agriculture footprint addressed in agriculture research (Comparison)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-134,How is cover crop weed suppression rate addressed in agriculture research (Evaluation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-135,How is pest infestation population dynamics addressed in agriculture research (Prediction)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-136,How is pest insects using computer vision addressed in agriculture research (Detection)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-137,How is soil organic matter addressed in agriculture research (Definition)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-138,How is crop recommendation model selection addressed in agriculture research (Mechanism)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-140,How is crop stunt from heavy metal toxicity addressed in agriculture research (Effect)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-141,How is variable rate fertilizer application addressed in agriculture research (Advantage)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-142,How is spectral resolution limits of RGB cameras addressed in agriculture research (Limitation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-143,How is wireless agricultural sensor battery life addressed in agriculture research (Challenge)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-144,How is livestock behavioral monitoring addressed in agriculture research (Application)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-145,How is hydroponics vs aeroponics water consumption addressed in agriculture research (Comparison)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-146,How is yield prediction model MAE metrics addressed in agriculture research (Evaluation)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-147,How is drought stress index in corn addressed in agriculture research (Prediction)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-148,How is foliar rust disease in wheat addressed in agriculture research (Detection)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-149,How is vertical farming hydroponics addressed in agriculture research (Definition)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-150,How is greenhouse temperature feedback loop addressed in agriculture research (Mechanism)?,single_domain_ag,Zero retrieved evidence passages / 0 citations returned
+Q-151,What is the significance of clinical decision support system in healthcare (Definition)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-153,What is the significance of hospital scanner model domain shift in healthcare (Cause)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-154,What is the significance of diagnostic delay in rare diseases in healthcare (Effect)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-155,What is the significance of AI radiology early cancer sensitivity in healthcare (Advantage)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-156,What is the significance of single-site dataset generalization limits in healthcare (Limitation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-157,What is the significance of FDA regulatory software certification in healthcare (Challenge)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-158,What is the significance of early sepsis prediction ICU vital streams in healthcare (Application)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-159,What is the significance of 2D vs 3D vision transformers tumor segmentation in healthcare (Comparison)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-160,What is the significance of automated mammography screening accuracy in healthcare (Evaluation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-161,What is the significance of 30-day hospital readmission risk in healthcare (Prediction)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-162,What is the significance of cardiac arrhythmia wearable ECG in healthcare (Detection)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-163,What is the significance of federated learning in health research in healthcare (Definition)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-164,What is the significance of clinical NLP bio-NER entity extraction in healthcare (Mechanism)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-165,What is the significance of unstructured EHR missing data notes in healthcare (Cause)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-166,What is the significance of medication error risk in prescriptions in healthcare (Effect)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-167,What is the significance of HIPAA compliant multi-hospital research in healthcare (Advantage)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-168,What is the significance of pulse oximetry calibration bias in dark skin in healthcare (Limitation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-169,What is the significance of EHR FHIR system interoperability friction in healthcare (Challenge)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-170,What is the significance of diabetic retinopathy fundus screening in healthcare (Application)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-171,What is the significance of rule-based vs deep learning decision support in healthcare (Comparison)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-172,What is the significance of AI triage chatbot diagnostic safety in healthcare (Evaluation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-173,What is the significance of acute kidney injury 48h onset in healthcare (Prediction)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-174,What is the significance of ischemic stroke non-contrast CT in healthcare (Detection)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-176,What is the significance of Grad-CAM saliency map visualization in healthcare (Mechanism)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-177,What is the significance of algorithmic bias in clinical risk scores in healthcare (Cause)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-178,What is the significance of patient burnout from frequent clinic visits in healthcare (Effect)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-179,What is the significance of generative AI de-novo drug design speed in healthcare (Advantage)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-180,What is the significance of black-box neural network interpretability in healthcare (Limitation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-182,What is the significance of clinical trial matching oncology NLP in healthcare (Application)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-183,What is the significance of CT scan vs MRI soft tissue resolution in healthcare (Comparison)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-184,What is the significance of AlphaFold 3D protein structure prediction in healthcare (Evaluation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-185,What is the significance of disease onset timeline in chronic illness in healthcare (Prediction)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-186,What is the significance of microaneurysms in retinal imaging in healthcare (Detection)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-187,What is the significance of BioBERT pre-training in healthcare (Definition)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-188,What is the significance of surgical phase video frame extraction in healthcare (Mechanism)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-189,What is the significance of patient non-compliance with drug therapy in healthcare (Cause)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-190,What is the significance of adverse drug event risk in healthcare (Effect)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-191,What is the significance of automated patient risk stratification in healthcare (Advantage)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-192,What is the significance of scanned clinical note OCR degradation in healthcare (Limitation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-193,What is the significance of real-time inference latency in surgical AI in healthcare (Challenge)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-194,What is the significance of molecular ligand binding screening in healthcare (Application)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-195,What is the significance of centralized data warehouse vs federated learning in healthcare (Comparison)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-196,What is the significance of clinical NLP assertion status metrics in healthcare (Evaluation)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-197,What is the significance of post-operative complication risk in healthcare (Prediction)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-198,What is the significance of brain tumor glioma boundaries in healthcare (Detection)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-200,What is the significance of radiology feature heatmaps in healthcare (Mechanism)?,single_domain_hc,Zero retrieved evidence passages / 0 citations returned
+Q-201,How is Earth System Models climate modeling evaluated in climate science (Definition)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-202,How is deep neural weather forecasting emulators evaluated in climate science (Mechanism)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-203,How is greenhouse gas anthropogenic emissions evaluated in climate science (Cause)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-204,How is sea level rise coastal flooding evaluated in climate science (Effect)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-205,How is AI surrogate model speed over numerical NWP evaluated in climate science (Advantage)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-206,How is out-of-distribution extremes blurring evaluated in climate science (Limitation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-207,How is sub-grid convection scale parameterization evaluated in climate science (Challenge)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-208,How is tropical cyclone track and intensity evaluated in climate science (Application)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-209,How is GCM global resolution vs RCM regional downscaling evaluated in climate science (Comparison)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-210,How is heatwave duration and peak temperature accuracy evaluated in climate science (Evaluation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-212,How is methane super-emitter plumes satellite evaluated in climate science (Detection)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-213,How is equilibrium climate sensitivity evaluated in climate science (Definition)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-214,How is satellite infrared methane spectroscopy evaluated in climate science (Mechanism)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-215,How is deforestation impact on carbon sinks evaluated in climate science (Cause)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-216,How is ocean acidification on marine ecosystems evaluated in climate science (Effect)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-217,How is wall-to-wall satellite forest carbon stock evaluated in climate science (Advantage)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-218,How is coastal radar altimetry footprint contamination evaluated in climate science (Limitation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-219,How is quantifying urban greenhouse gas inventories evaluated in climate science (Challenge)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-220,How is SAR flood risk inundation mapping evaluated in climate science (Application)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-221,How is FourCastNet vs traditional numerical NWP evaluated in climate science (Comparison)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-222,How is physics-informed neural network conservation loss evaluated in climate science (Evaluation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-224,How is wildfire ignition thermal hotspots evaluated in climate science (Detection)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-225,How is greenhouse gas flux evaluated in climate science (Definition)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-226,How is cloud feedback optical depth parameterization evaluated in climate science (Mechanism)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-227,How is volcanic eruption radiative forcing evaluated in climate science (Cause)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-228,How is polar ice sheet mass loss evaluated in climate science (Effect)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-229,How is renewable energy wind solar forecasting evaluated in climate science (Advantage)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-230,How is coarse spatial resolution in atmospheric models evaluated in climate science (Limitation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-231,How is ocean overturning circulation feedback evaluated in climate science (Challenge)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-232,How is remote sensing polar ice sheet retreat evaluated in climate science (Application)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-233,How is optical vs microwave SAR satellite imaging evaluated in climate science (Comparison)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-234,How is urban heat island downscaling accuracy evaluated in climate science (Evaluation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-236,How is atmospheric aerosol radiative forcing evaluated in climate science (Detection)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-237,How is climate risk assessment evaluated in climate science (Definition)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-238,How is atmospheric chemistry ODE neural surrogate evaluated in climate science (Mechanism)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-239,How is fossil fuel CO2 emissions evaluated in climate science (Cause)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-240,How is glacial retreat warming trend evaluated in climate science (Effect)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-241,How is clean energy grid integration stability evaluated in climate science (Advantage)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-242,How is cloud microphysics parameterization error evaluated in climate science (Limitation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-244,How is satellite environmental monitoring evaluated in climate science (Application)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-245,How is direct air capture vs point-source capture evaluated in climate science (Comparison)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-246,How is global climate model temperature bias evaluated in climate science (Evaluation)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-248,How is decarbonization carbon flux evaluated in climate science (Detection)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-249,How is renewable energy forecasting evaluated in climate science (Definition)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-250,How is ocean atmosphere thermodynamic coupling evaluated in climate science (Mechanism)?,single_domain_cl,Zero retrieved evidence passages / 0 citations returned
+Q-251,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #1)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-252,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #2)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-253,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #3)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-254,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #4)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-255,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #5)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-256,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #6)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-257,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #7)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-258,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #8)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-259,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #9)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned
+Q-260,How are AI computer vision models applied in healthcare for clinical diagnostic radiology (Multi-Domain #10)?,multi_domain_ai_hc,Zero retrieved evidence passages / 0 citations returned

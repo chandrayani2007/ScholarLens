@@ -1,0 +1,344 @@
+{
+  "domains": {
+    "artificial_intelligence": {
+      "canonical_name": "artificial_intelligence",
+      "display_name": "Artificial Intelligence",
+      "id_prefix": "AI",
+      "target_count": 200,
+      "subtopics": [
+        {
+          "name": "Machine Learning",
+          "canonical": "machine_learning",
+          "target_count": 20,
+          "search_queries": ["machine learning", "supervised learning", "statistical learning", "learning algorithms"]
+        },
+        {
+          "name": "Deep Learning",
+          "canonical": "deep_learning",
+          "target_count": 20,
+          "search_queries": ["deep learning", "neural networks", "representation learning", "transformer neural networks"]
+        },
+        {
+          "name": "Large Language Models",
+          "canonical": "large_language_models",
+          "target_count": 20,
+          "search_queries": ["language models", "large language models", "LLM reasoning", "LLM fine-tuning"]
+        },
+        {
+          "name": "Natural Language Processing",
+          "canonical": "natural_language_processing",
+          "target_count": 20,
+          "search_queries": ["natural language processing", "text classification", "computational linguistics", "semantic parsing"]
+        },
+        {
+          "name": "Computer Vision",
+          "canonical": "computer_vision",
+          "target_count": 20,
+          "search_queries": ["computer vision", "object detection", "image segmentation", "vision transformer"]
+        },
+        {
+          "name": "Retrieval-Augmented Generation",
+          "canonical": "retrieval_augmented_generation",
+          "target_count": 20,
+          "search_queries": ["retrieval augmented generation", "dense retrieval", "RAG language models", "vector retrieval RAG"]
+        },
+        {
+          "name": "AI Agents / Agentic AI",
+          "canonical": "ai_agents",
+          "target_count": 20,
+          "search_queries": ["autonomous agents", "multi-agent planning", "LLM agents", "agentic workflow"]
+        },
+        {
+          "name": "Explainable AI",
+          "canonical": "explainable_ai",
+          "target_count": 20,
+          "search_queries": ["explainable AI", "interpretable machine learning", "XAI", "feature attribution"]
+        },
+        {
+          "name": "Reinforcement Learning",
+          "canonical": "reinforcement_learning",
+          "target_count": 20,
+          "search_queries": ["reinforcement learning", "policy optimization", "deep reinforcement learning", "Q-learning"]
+        },
+        {
+          "name": "Generative AI",
+          "canonical": "generative_ai",
+          "target_count": 20,
+          "search_queries": ["generative AI", "diffusion models", "generative adversarial networks", "latent diffusion"]
+        }
+      ]
+    },
+    "cybersecurity": {
+      "canonical_name": "cybersecurity",
+      "display_name": "Cybersecurity",
+      "id_prefix": "CY",
+      "target_count": 200,
+      "subtopics": [
+        {
+          "name": "Network Security",
+          "canonical": "network_security",
+          "target_count": 20,
+          "search_queries": ["network security", "intrusion prevention", "firewall security", "network vulnerability"]
+        },
+        {
+          "name": "Intrusion Detection",
+          "canonical": "intrusion_detection",
+          "target_count": 20,
+          "search_queries": ["intrusion detection", "anomaly detection", "network intrusion", "signature detection"]
+        },
+        {
+          "name": "Malware Detection",
+          "canonical": "malware_detection",
+          "target_count": 20,
+          "search_queries": ["malware detection", "malware analysis", "malicious software", "dynamic malware analysis"]
+        },
+        {
+          "name": "Phishing Detection",
+          "canonical": "phishing_detection",
+          "target_count": 20,
+          "search_queries": ["phishing detection", "phishing url", "anti-phishing", "email security"]
+        },
+        {
+          "name": "Ransomware",
+          "canonical": "ransomware",
+          "target_count": 20,
+          "search_queries": ["ransomware", "ransomware detection", "crypto-ransomware", "malware encryption"]
+        },
+        {
+          "name": "Authentication",
+          "canonical": "authentication",
+          "target_count": 20,
+          "search_queries": ["authentication", "multi-factor authentication", "biometric authentication", "zero trust authentication"]
+        },
+        {
+          "name": "Privacy",
+          "canonical": "privacy",
+          "target_count": 20,
+          "search_queries": ["differential privacy", "privacy preserving", "homomorphic encryption", "data privacy"]
+        },
+        {
+          "name": "Cloud Security",
+          "canonical": "cloud_security",
+          "target_count": 20,
+          "search_queries": ["cloud security", "container security", "serverless security", "cloud access security"]
+        },
+        {
+          "name": "IoT Security",
+          "canonical": "iot_security",
+          "target_count": 20,
+          "search_queries": ["iot security", "internet of things security", "edge security", "smart device security"]
+        },
+        {
+          "name": "AI for Cybersecurity",
+          "canonical": "ai_for_cybersecurity",
+          "target_count": 20,
+          "search_queries": ["ai cybersecurity", "adversarial attack", "threat intelligence", "cyber threat modeling"]
+        }
+      ]
+    },
+    "agriculture": {
+      "canonical_name": "agriculture",
+      "display_name": "Agriculture",
+      "id_prefix": "AG",
+      "target_count": 200,
+      "subtopics": [
+        {
+          "name": "Precision Agriculture",
+          "canonical": "precision_agriculture",
+          "target_count": 20,
+          "search_queries": ["precision agriculture", "smart farming", "site-specific crop", "crop management"]
+        },
+        {
+          "name": "Crop Recommendation",
+          "canonical": "crop_recommendation",
+          "target_count": 20,
+          "search_queries": ["crop recommendation", "crop selection", "crop prediction", "soil suitability crop"]
+        },
+        {
+          "name": "Crop Disease Detection",
+          "canonical": "crop_disease_detection",
+          "target_count": 20,
+          "search_queries": ["crop disease detection", "plant disease", "leaf disease", "pest detection"]
+        },
+        {
+          "name": "Soil Analysis",
+          "canonical": "soil_analysis",
+          "target_count": 20,
+          "search_queries": ["soil analysis", "soil moisture prediction", "soil nutrient", "soil classification"]
+        },
+        {
+          "name": "Irrigation Optimization",
+          "canonical": "irrigation_optimization",
+          "target_count": 20,
+          "search_queries": ["smart irrigation", "irrigation optimization", "water management", "drip irrigation"]
+        },
+        {
+          "name": "Yield Prediction",
+          "canonical": "yield_prediction",
+          "target_count": 20,
+          "search_queries": ["yield prediction", "crop yield forecasting", "harvest prediction", "biomass estimation"]
+        },
+        {
+          "name": "Agricultural Remote Sensing",
+          "canonical": "agricultural_remote_sensing",
+          "target_count": 20,
+          "search_queries": ["agricultural remote sensing", "crop monitoring", "ndvi", "satellite crop classification"]
+        },
+        {
+          "name": "Smart Farming",
+          "canonical": "smart_farming",
+          "target_count": 20,
+          "search_queries": ["digital agriculture", "greenhouse", "smart farming", "vertical farming"]
+        },
+        {
+          "name": "Agricultural IoT",
+          "canonical": "agricultural_iot",
+          "target_count": 20,
+          "search_queries": ["agricultural iot", "farming sensor", "smart agriculture sensors", "wireless agricultural sensor"]
+        },
+        {
+          "name": "AI/ML in Agriculture",
+          "canonical": "ai_ml_in_agriculture",
+          "target_count": 20,
+          "search_queries": ["ai agriculture", "machine learning agriculture", "agricultural robotics", "crop vision"]
+        }
+      ]
+    },
+    "healthcare": {
+      "canonical_name": "healthcare",
+      "display_name": "Healthcare",
+      "id_prefix": "HC",
+      "target_count": 200,
+      "subtopics": [
+        {
+          "name": "Medical Image Analysis",
+          "canonical": "medical_image_analysis",
+          "target_count": 20,
+          "search_queries": ["medical image analysis", "medical image segmentation", "radiology ai", "lesion detection"]
+        },
+        {
+          "name": "Disease Prediction",
+          "canonical": "disease_prediction",
+          "target_count": 20,
+          "search_queries": ["disease prediction", "early disease diagnosis", "clinical risk prediction", "patient risk stratification"]
+        },
+        {
+          "name": "Clinical NLP",
+          "canonical": "clinical_nlp",
+          "target_count": 20,
+          "search_queries": ["clinical nlp", "clinical natural language processing", "medical text mining", "clinical note extraction"]
+        },
+        {
+          "name": "Healthcare AI",
+          "canonical": "healthcare_ai",
+          "target_count": 20,
+          "search_queries": ["healthcare ai", "artificial intelligence healthcare", "clinical workflow", "medical ai systems"]
+        },
+        {
+          "name": "Drug Discovery",
+          "canonical": "drug_discovery",
+          "target_count": 20,
+          "search_queries": ["drug discovery ai", "virtual screening machine learning", "molecular generation", "protein ligand binding"]
+        },
+        {
+          "name": "Biomedical NLP",
+          "canonical": "biomedical_nlp",
+          "target_count": 20,
+          "search_queries": ["biomedical nlp", "pubmed text", "biomedical language models", "gene disease relation"]
+        },
+        {
+          "name": "Clinical Decision Support",
+          "canonical": "clinical_decision_support",
+          "target_count": 20,
+          "search_queries": ["clinical decision support", "cdss", "diagnostic reasoning", "treatment recommendation"]
+        },
+        {
+          "name": "Medical Diagnosis",
+          "canonical": "medical_diagnosis",
+          "target_count": 20,
+          "search_queries": ["medical diagnosis", "automated diagnosis", "diagnostic accuracy", "symptom diagnosis"]
+        },
+        {
+          "name": "Electronic Health Records",
+          "canonical": "electronic_health_records",
+          "target_count": 20,
+          "search_queries": ["electronic health", "ehr", "clinical patient", "longitudinal health records"]
+        },
+        {
+          "name": "Explainable AI in Healthcare",
+          "canonical": "explainable_ai_in_healthcare",
+          "target_count": 20,
+          "search_queries": ["explainable ai", "interpretable medical diagnosis", "trustworthy ai", "clinical interpretability"]
+        }
+      ]
+    },
+    "climate": {
+      "canonical_name": "climate",
+      "display_name": "Climate",
+      "id_prefix": "CL",
+      "target_count": 200,
+      "subtopics": [
+        {
+          "name": "Climate Change",
+          "canonical": "climate_change",
+          "target_count": 20,
+          "search_queries": ["climate change mitigation", "global warming trend", "climate sensitivity", "greenhouse warming"]
+        },
+        {
+          "name": "Climate Modeling",
+          "canonical": "climate_modeling",
+          "target_count": 20,
+          "search_queries": ["climate modeling", "earth system models", "climate projections", "ocean atmosphere coupling"]
+        },
+        {
+          "name": "Weather Prediction",
+          "canonical": "weather_prediction",
+          "target_count": 20,
+          "search_queries": ["weather prediction machine learning", "deep learning weather", "precipitation forecasting", "numerical weather prediction"]
+        },
+        {
+          "name": "Extreme Weather",
+          "canonical": "extreme_weather",
+          "target_count": 20,
+          "search_queries": ["extreme weather detection", "flood forecasting", "drought prediction", "tropical cyclone forecasting"]
+        },
+        {
+          "name": "Carbon Emissions",
+          "canonical": "carbon_emissions",
+          "target_count": 20,
+          "search_queries": ["carbon emissions monitoring", "greenhouse gas flux", "decarbonization modeling", "carbon flux estimation"]
+        },
+        {
+          "name": "Remote Sensing",
+          "canonical": "remote_sensing",
+          "target_count": 20,
+          "search_queries": ["remote sensing environmental monitoring", "satellite imagery climate", "remote sensing climate", "optical remote sensing climate"]
+        },
+        {
+          "name": "Environmental Monitoring",
+          "canonical": "environmental_monitoring",
+          "target_count": 20,
+          "search_queries": ["environmental monitoring", "ecosystem monitoring", "ocean sensor network", "air quality monitoring"]
+        },
+        {
+          "name": "Renewable Energy and Climate",
+          "canonical": "renewable_energy_and_climate",
+          "target_count": 20,
+          "search_queries": ["renewable energy forecasting", "grid integration", "clean energy", "solar wind forecasting"]
+        },
+        {
+          "name": "Climate Risk Prediction",
+          "canonical": "climate_risk_prediction",
+          "target_count": 20,
+          "search_queries": ["climate risk assessment", "sea level rise modeling", "climate vulnerability", "coastal risk modeling"]
+        },
+        {
+          "name": "AI/ML for Climate Science",
+          "canonical": "ai_ml_for_climate_science",
+          "target_count": 20,
+          "search_queries": ["ai climate", "machine learning earth system", "climate dynamics", "physics-informed climate ML"]
+        }
+      ]
+    }
+  }
+}

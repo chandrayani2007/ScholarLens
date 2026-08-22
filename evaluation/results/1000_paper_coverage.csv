@@ -1,0 +1,1001 @@
+paper_id,domain,title,retrieved,rank,mrr
+AI001,artificial_intelligence,Harnessing Retrieval-Augmented Generation (RAG) for Uncovering Knowledge Gaps,True,1,1.0
+AI002,artificial_intelligence,Overview of the TREC 2025 Retrieval Augmented Generation (RAG) Track,True,1,1.0
+AI003,artificial_intelligence,Deepchecks: Evaluating Retrieval-Augmented Generation (RAG),True,1,1.0
+AI004,artificial_intelligence,On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practi,True,1,1.0
+AI005,artificial_intelligence,Reviewing Data Access Patterns and Computational Redundancy for Machine Learning,True,1,1.0
+AI006,artificial_intelligence,Machine Learning Algorithms for Detecting Mental Stress in College Students,True,1,1.0
+AI007,artificial_intelligence,Discrimination in machine learning algorithms,True,1,1.0
+AI008,artificial_intelligence,AutoML-Zero: Evolving Machine Learning Algorithms From Scratch,True,1,1.0
+AI009,artificial_intelligence,A Novel Deep Neural Network Architecture for Mars Visual Navigation,True,1,1.0
+AI010,artificial_intelligence,Synthesizing Deep Neural Network Architectures using Biological Synaptic Strengt,True,1,1.0
+AI011,artificial_intelligence,ODMTCNet: An Interpretable Multi-view Deep Neural Network Architecture for Image,True,1,1.0
+AI012,artificial_intelligence,GuavaNet: A deep neural network architecture for automatic sensory evaluation to,True,1,1.0
+AI013,artificial_intelligence,Generalization Tower Network: A Novel Deep Neural Network Architecture for Multi,True,1,1.0
+AI014,artificial_intelligence,UloRL:An Ultra-Long Output Reinforcement Learning Approach for Advancing Large L,True,1,1.0
+AI015,artificial_intelligence,Large Language Models Reasoning Abilities Under Non-Ideal Conditions After RL-Fi,True,1,1.0
+AI016,artificial_intelligence,LLM-Seg: Bridging Image Segmentation and Large Language Model Reasoning,True,1,1.0
+AI017,artificial_intelligence,ARMOR-MAD: Adaptive Routing for Heterogeneous Multi-Agent Debate in Large Langua,True,1,1.0
+AI018,artificial_intelligence,Making Large Language Models Better Reasoners with Alignment,True,1,1.0
+AI019,artificial_intelligence,Problems and Countermeasures in Natural Language Processing Evaluation,True,1,1.0
+AI020,artificial_intelligence,Quantized Large Language Models in Biomedical Natural Language Processing: Evalu,True,1,1.0
+AI021,artificial_intelligence,MDBench: A Synthetic Multi-Document Reasoning Benchmark Generated with Knowledge,True,1,1.0
+AI022,artificial_intelligence,"SIB-200: A Simple, Inclusive, and Big Evaluation Dataset for Topic Classificatio",True,1,1.0
+AI023,artificial_intelligence,Towards Contamination Resistant Benchmarks,True,1,1.0
+AI024,artificial_intelligence,Accelerating Object Detection with YOLOv4 for Real-Time Applications,True,1,1.0
+AI025,artificial_intelligence,MISFIT-V: Misaligned Image Synthesis and Fusion using Information from Thermal a,True,1,1.0
+AI026,artificial_intelligence,Edge-Cloud Collaborated Object Detection via Difficult-Case Discriminator,True,1,1.0
+AI027,artificial_intelligence,Object Detection Through Exploration With A Foveated Visual Field,True,1,1.0
+AI028,artificial_intelligence,Unbiased IoU for Spherical Image Object Detection,True,1,1.0
+AI029,artificial_intelligence,Optimizing and Evaluating Enterprise Retrieval-Augmented Generation (RAG): A Con,True,1,1.0
+AI030,artificial_intelligence,"SoK: Agentic Retrieval-Augmented Generation (RAG): Taxonomy, Architectures, Eval",True,1,1.0
+AI031,artificial_intelligence,Foundations of a Time-Consistent Counterfactual Actuarial Runtime for Autonomous,True,1,1.0
+AI032,artificial_intelligence,Toward cryptographically verifiable authorization for autonomous AI agents: A se,True,1,1.0
+AI033,artificial_intelligence,AgentWard: A Lifecycle Security Architecture for Autonomous AI Agents,True,1,1.0
+AI034,artificial_intelligence,Fully Autonomous AI Agents Should Not be Developed,True,1,1.0
+AI035,artificial_intelligence,Behavioral Governance for Autonomous AI Agents: The AgentBound Framework,True,1,1.0
+AI036,artificial_intelligence,Class-Dependent Perturbation Effects in Evaluating Time Series Attributions,True,1,1.0
+AI037,artificial_intelligence,For Better or Worse: The Impact of Counterfactual Explanations' Directionality o,True,1,1.0
+AI038,artificial_intelligence,eXplainable Artificial Intelligence (XAI) in aging clock models,True,1,1.0
+AI039,artificial_intelligence,Explainable Artificial Intelligence (XAI) for Increasing User Trust in Deep Rein,True,1,1.0
+AI040,artificial_intelligence,Revisiting the Performance-Explainability Trade-Off in Explainable Artificial In,True,1,1.0
+AI041,artificial_intelligence,Divergence-Augmented Policy Optimization,True,1,1.0
+AI042,artificial_intelligence,From Complexity to Simplicity: Adaptive ES-Active Subspaces for Blackbox Optimiz,True,1,1.0
+AI043,artificial_intelligence,Building surrogate models using trajectories of agents trained by Reinforcement ,True,1,1.0
+AI044,artificial_intelligence,Beyond Monolithic Rewards: A Hybrid and Multi-Aspect Reward Optimization for MLL,True,1,1.0
+AI045,artificial_intelligence,Leveraging Discrete Function Decomposability for Scientific Design,True,1,1.0
+AI046,artificial_intelligence,Generative Diffusion Models on Graphs: Methods and Applications,True,1,1.0
+AI047,artificial_intelligence,Nonequilbrium physics of generative diffusion models,True,1,1.0
+AI048,artificial_intelligence,Theoretical research on generative diffusion models: an overview,True,1,1.0
+AI049,artificial_intelligence,Inference Attacks Against Graph Generative Diffusion Models,True,1,1.0
+AI050,artificial_intelligence,Conditional sampling within generative diffusion models,True,1,1.0
+AI051,artificial_intelligence,Changing Data Sources in the Age of Machine Learning for Official Statistics,False,None,0.0
+AI052,artificial_intelligence,DOME: Recommendations for supervised machine learning validation in biology,False,None,0.0
+AI053,artificial_intelligence,Learning Curves for Decision Making in Supervised Machine Learning: A Survey,False,None,0.0
+AI054,artificial_intelligence,Active learning for data streams: a survey,False,None,0.0
+AI055,artificial_intelligence,Physics-Inspired Interpretability Of Machine Learning Models,False,None,0.0
+AI056,artificial_intelligence,Privacy-preserving machine learning for healthcare: open challenges and future p,False,None,0.0
+AI057,artificial_intelligence,A Benchmark Study of Machine Learning Models for Online Fake News Detection,False,None,0.0
+AI058,artificial_intelligence,MerLin: A Discovery Engine for Photonic and Hybrid Quantum Machine Learning,False,None,0.0
+AI059,artificial_intelligence,Emotion in Reinforcement Learning Agents and Robots: A Survey,False,None,0.0
+AI060,artificial_intelligence,Fourier Learning Machines: Nonharmonic Fourier-Based Neural Networks for Scienti,False,None,0.0
+AI061,artificial_intelligence,MEMe: An Accurate Maximum Entropy Method for Efficient Approximations in Large-S,False,None,0.0
+AI062,artificial_intelligence,Generalizing Machine Learning Evaluation through the Integration of Shannon Entr,False,None,0.0
+AI063,artificial_intelligence,ALERT-Transformer: Bridging Asynchronous and Synchronous Machine Learning for Re,False,None,0.0
+AI064,artificial_intelligence,Learning Representations from Dendrograms,False,None,0.0
+AI065,artificial_intelligence,Public Policymaking for International Agricultural Trade using Association Rules,False,None,0.0
+AI066,artificial_intelligence,Unsupervised Representation Learning with Minimax Distance Measures,False,None,0.0
+AI067,artificial_intelligence,Automatic Machine Learning by Pipeline Synthesis using Model-Based Reinforcement,False,None,0.0
+AI068,artificial_intelligence,Beyond Volume: The Impact of Complex Healthcare Data on the Machine Learning Pip,False,None,0.0
+AI069,artificial_intelligence,Explanatory machine learning for sequential human teaching,False,None,0.0
+AI070,artificial_intelligence,ML-Schema: Exposing the Semantics of Machine Learning with Schemas and Ontologie,False,None,0.0
+AI071,artificial_intelligence,Reproducibility in Machine Learning for Health,False,None,0.0
+AI072,artificial_intelligence,Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and ,False,None,0.0
+AI073,artificial_intelligence,A Framework for Implementing Machine Learning on Omics Data,False,None,0.0
+AI074,artificial_intelligence,Teaching Uncertainty Quantification in Machine Learning through Use Cases,False,None,0.0
+AI075,artificial_intelligence,The Scientific Method in the Science of Machine Learning,False,None,0.0
+AI076,artificial_intelligence,Multimodal Machine Learning for Automated ICD Coding,False,None,0.0
+AI077,artificial_intelligence,Machine Learning for Health (ML4H) Workshop at NeurIPS 2018,False,None,0.0
+AI078,artificial_intelligence,On-Device Machine Learning: An Algorithms and Learning Theory Perspective,False,None,0.0
+AI079,artificial_intelligence,Towards Quantification of Bias in Machine Learning for Healthcare: A Case Study ,False,None,0.0
+AI080,artificial_intelligence,Bayesian Differential Privacy for Machine Learning,False,None,0.0
+AI081,artificial_intelligence,Active WeaSuL: Improving Weak Supervision with Active Learning,False,None,0.0
+AI082,artificial_intelligence,Learning to Impute: A General Framework for Semi-supervised Learning,False,None,0.0
+AI083,artificial_intelligence,Tradeoffs Between Contrastive and Supervised Learning: An Empirical Study,False,None,0.0
+AI084,artificial_intelligence,SelfMatch: Combining Contrastive Self-Supervision and Consistency for Semi-Super,False,None,0.0
+AI085,artificial_intelligence,Learning to Predict Gradients for Semi-Supervised Continual Learning,False,None,0.0
+AI086,artificial_intelligence,Detecting Heart Disease from Multi-View Ultrasound Images via Supervised Attenti,False,None,0.0
+AI087,artificial_intelligence,Temporal Supervised Contrastive Learning for Modeling Patient Risk Progression,False,None,0.0
+AI088,artificial_intelligence,InterLUDE: Interactions between Labeled and Unlabeled Data to Enhance Semi-Super,False,None,0.0
+AI089,artificial_intelligence,Self-Supervised Learning for Large-Scale Unsupervised Image Clustering,False,None,0.0
+AI090,artificial_intelligence,Supervised Contrastive Learning for Accented Speech Recognition,False,None,0.0
+AI091,artificial_intelligence,Weakly Supervised Multi-task Learning for Concept-based Explainability,False,None,0.0
+AI092,artificial_intelligence,Exploring Self-Supervised Regularization for Supervised and Semi-Supervised Lear,True,8,0.125
+AI093,artificial_intelligence,Learn from Anywhere: Rethinking Generalized Zero-Shot Learning with Limited Supe,False,None,0.0
+AI094,artificial_intelligence,GraphVICRegHSIC: Towards improved self-supervised representation learning for gr,True,7,0.1429
+AI095,artificial_intelligence,Non-Contrastive Self-supervised Learning for Utterance-Level Information Extract,False,None,0.0
+AI096,artificial_intelligence,Color Variants Identification in Fashion e-commerce via Contrastive Self-Supervi,False,None,0.0
+AI097,artificial_intelligence,Semi-Supervised Multimodal Multi-Instance Learning for Aortic Stenosis Diagnosis,False,None,0.0
+AI098,artificial_intelligence,Elastic Weight Consolidation Improves the Robustness of Self-Supervised Learning,False,None,0.0
+AI099,artificial_intelligence,FreeMatch: Self-adaptive Thresholding for Semi-supervised Learning,False,None,0.0
+AI100,artificial_intelligence,Statistical Limits of Supervised Quantum Learning,False,None,0.0
+AI101,artificial_intelligence,Robot Perception enables Complex Navigation Behavior via Self-Supervised Learnin,False,None,0.0
+AI102,artificial_intelligence,Operator-valued Kernels for Learning from Functional Response Data,False,None,0.0
+AI103,artificial_intelligence,Interpolation Consistency Training for Semi-Supervised Learning,True,8,0.125
+AI104,artificial_intelligence,Learning Flat Latent Manifolds with VAEs,False,None,0.0
+AI105,artificial_intelligence,Do Self-Supervised and Supervised Methods Learn Similar Visual Representations?,False,None,0.0
+AI106,artificial_intelligence,Transfer Learning with Pre-trained Conditional Generative Models,False,None,0.0
+AI107,artificial_intelligence,Federated Self-Supervised Learning in Heterogeneous Settings: Limits of a Baseli,False,None,0.0
+AI108,artificial_intelligence,Towards Label-efficient Automatic Diagnosis and Analysis: A Comprehensive Survey,False,None,0.0
+AI109,artificial_intelligence,Improving Few-Shot Learning with Auxiliary Self-Supervised Pretext Tasks,False,None,0.0
+AI110,artificial_intelligence,"Statistical Inference, Learning and Models in Big Data",False,None,0.0
+AI111,artificial_intelligence,"Activation Functions, Statistics and Learning of Higher-Order Interactions in Re",False,None,0.0
+AI112,artificial_intelligence,Federated Learning with Superquantile Aggregation for Heterogeneous Data,False,None,0.0
+AI113,artificial_intelligence,Statistical Inference for the Population Landscape via Moment Adjusted Stochasti,False,None,0.0
+AI114,artificial_intelligence,Developmental approach reveals the statistical learning of Neural Language Model,False,None,0.0
+AI115,artificial_intelligence,Compressive Statistical Learning with Random Feature Moments,False,None,0.0
+AI116,artificial_intelligence,ALEVS: Active Learning by Statistical Leverage Sampling,False,None,0.0
+AI117,artificial_intelligence,Spectral learning of Bernoulli linear dynamical systems models,False,None,0.0
+AI118,artificial_intelligence,Active Learning Methods based on Statistical Leverage Scores,False,None,0.0
+AI119,artificial_intelligence,Learning Correlated Reward Models: Statistical Barriers and Opportunities,False,None,0.0
+AI120,artificial_intelligence,Leveraging Machine Learning for Official Statistics: A Statistical Manifesto,False,None,0.0
+AI121,artificial_intelligence,Minimal Achievable Sufficient Statistic Learning,False,None,0.0
+AI122,artificial_intelligence,Understanding the Statistical Accuracy-Communication Trade-off in Personalized F,False,None,0.0
+AI123,artificial_intelligence,Online Statistical Inference of Constant Sample-averaged Q-Learning,False,None,0.0
+AI124,artificial_intelligence,Fast rates in statistical and online learning,False,None,0.0
+AI125,artificial_intelligence,Controlling Wasserstein Distances by Kernel Norms with Application to Compressiv,False,None,0.0
+AI126,artificial_intelligence,Statistical and structural identifiability in representation learning,False,None,0.0
+AI127,artificial_intelligence,Semi-Supervised Learning -- A Statistical Physics Approach,False,None,0.0
+AI128,artificial_intelligence,"On the Statistical Efficiency of $\ell_{1,p}$ Multi-Task Learning of Gaussian Gr",False,None,0.0
+AI129,artificial_intelligence,Statistical Linear Estimation with Penalized Estimators: an Application to Reinf,False,None,0.0
+AI130,artificial_intelligence,Transformation Properties of Learned Visual Representations,False,None,0.0
+AI131,artificial_intelligence,Variational Gibbs Inference for Statistical Model Estimation from Incomplete Dat,False,None,0.0
+AI132,artificial_intelligence,Anomaly Detection on Attributed Networks via Contrastive Self-Supervised Learnin,False,None,0.0
+AI133,artificial_intelligence,On-line learning dynamics of ReLU neural networks using statistical physics tech,False,None,0.0
+AI134,artificial_intelligence,Fairness and Randomness in Machine Learning: Statistical Independence and Relati,False,None,0.0
+AI135,artificial_intelligence,Discriminative Dictionary Learning based on Statistical Methods,False,None,0.0
+AI136,artificial_intelligence,Application of Statistical Relational Learning to Hybrid Recommendation Systems,False,None,0.0
+AI137,artificial_intelligence,Learn to Accumulate Evidence from All Training Samples: Theory and Practice,False,None,0.0
+AI138,artificial_intelligence,The Modern Mathematics of Deep Learning,False,None,0.0
+AI139,artificial_intelligence,Deep Learning and Computational Physics (Lecture Notes),False,None,0.0
+AI140,artificial_intelligence,Monodense Deep Neural Model for Determining Item Price Elasticity,False,None,0.0
+AI141,artificial_intelligence,A multitask deep learning model for real-time deployment in embedded systems,False,None,0.0
+AI142,artificial_intelligence,Deep learning observables in computational fluid dynamics,False,None,0.0
+AI143,artificial_intelligence,DILIE: Deep Internal Learning for Image Enhancement,False,None,0.0
+AI144,artificial_intelligence,Generalized Regularized Evidential Deep Learning Models: Theory and Comprehensiv,False,None,0.0
+AI145,artificial_intelligence,Activation Analysis of a Byte-Based Deep Neural Network for Malware Classificati,False,None,0.0
+AI146,artificial_intelligence,Predicting Thrombectomy Recanalization from CT Imaging Using Deep Learning Model,False,None,0.0
+AI147,artificial_intelligence,DeepCFL: Deep Contextual Features Learning from a Single Image,False,None,0.0
+AI148,artificial_intelligence,PePR: Performance Per Resource Unit as a Metric to Promote Small-Scale Deep Lear,False,None,0.0
+AI149,artificial_intelligence,Solution of Physics-based Bayesian Inverse Problems with Deep Generative Priors,False,None,0.0
+AI150,artificial_intelligence,Hybrid deep learning-based strategy for the hepatocellular carcinoma cancer grad,False,None,0.0
+AI151,artificial_intelligence,Memorization in Deep Neural Networks: Does the Loss Function matter?,False,None,0.0
+AI152,artificial_intelligence,DCIL: Deep Contextual Internal Learning for Image Restoration and Image Retarget,False,None,0.0
+AI153,artificial_intelligence,On the approximation of rough functions with deep neural networks,False,None,0.0
+AI154,artificial_intelligence,On ADMM in Deep Learning: Convergence and Saturation-Avoidance,False,None,0.0
+AI155,artificial_intelligence,Why & When Deep Learning Works: Looking Inside Deep Learnings,False,None,0.0
+AI156,artificial_intelligence,ChainerRL: A Deep Reinforcement Learning Library,False,None,0.0
+AI157,artificial_intelligence,A Brief Survey of Deep Reinforcement Learning,False,None,0.0
+AI158,artificial_intelligence,Explainable Deep Learning: A Field Guide for the Uninitiated,False,None,0.0
+AI159,artificial_intelligence,Classifying Options for Deep Reinforcement Learning,False,None,0.0
+AI160,artificial_intelligence,On the Importance of Strong Baselines in Bayesian Deep Learning,False,None,0.0
+AI161,artificial_intelligence,ScreenerNet: Learning Self-Paced Curriculum for Deep Neural Networks,False,None,0.0
+AI162,artificial_intelligence,Generalization in Deep Learning,False,None,0.0
+AI163,artificial_intelligence,Deep Bayesian Multi-Target Learning for Recommender Systems,False,None,0.0
+AI164,artificial_intelligence,Multi-agent Deep Reinforcement Learning with Extremely Noisy Observations,False,None,0.0
+AI165,artificial_intelligence,Biologically inspired architectures for sample-efficient deep reinforcement lear,False,None,0.0
+AI166,artificial_intelligence,Deep Reinforcement Learning: An Overview,False,None,0.0
+AI167,artificial_intelligence,The Deep Arbitrary Polynomial Chaos Neural Network or how Deep Artificial Neural,False,None,0.0
+AI168,artificial_intelligence,Learning Active Subspaces and Discovering Important Features with Gaussian Radia,False,None,0.0
+AI169,artificial_intelligence,Hierarchical Attentional Hybrid Neural Networks for Document Classification,False,None,0.0
+AI170,artificial_intelligence,A Neural Network-Evolutionary Computational Framework for Remaining Useful Life ,False,None,0.0
+AI171,artificial_intelligence,Continual Learning for Recurrent Neural Networks: an Empirical Evaluation,False,None,0.0
+AI172,artificial_intelligence,A Review on Neural Network Models of Schizophrenia and Autism Spectrum Disorder,False,None,0.0
+AI173,artificial_intelligence,Towards Dropout Training for Convolutional Neural Networks,False,None,0.0
+AI174,artificial_intelligence,Acute Lymphoblastic Leukemia Detection Using Hypercomplex-Valued Convolutional N,False,None,0.0
+AI175,artificial_intelligence,Spiking Inception Module for Multi-layer Unsupervised Spiking Neural Networks,False,None,0.0
+AI176,artificial_intelligence,Improving Generalization of Deep Neural Networks by Leveraging Margin Distributi,False,None,0.0
+AI177,artificial_intelligence,Dual Accuracy-Quality-Driven Neural Network for Prediction Interval Generation,False,None,0.0
+AI178,artificial_intelligence,A Recurrent Probabilistic Neural Network with Dimensionality Reduction Based on ,False,None,0.0
+AI179,artificial_intelligence,MECCH: Metapath Context Convolution-based Heterogeneous Graph Neural Networks,False,None,0.0
+AI180,artificial_intelligence,mFI-PSO: A Flexible and Effective Method in Adversarial Image Generation for Dee,False,None,0.0
+AI181,artificial_intelligence,On Information Plane Analyses of Neural Network Classifiers -- A Review,False,None,0.0
+AI182,artificial_intelligence,Using Neural Networks for Relation Extraction from Biomedical Literature,False,None,0.0
+AI183,artificial_intelligence,Understanding Neural Networks and Individual Neuron Importance via Information-O,False,None,0.0
+AI184,artificial_intelligence,CiwGAN and fiwGAN: Encoding information in acoustic data to model lexical learni,False,None,0.0
+AI185,artificial_intelligence,Tackling the Curse of Dimensionality with Physics-Informed Neural Networks,True,1,1.0
+AI186,artificial_intelligence,Newton-Puiseux Analysis for Interpretability and Calibration of Complex-Valued N,False,None,0.0
+AI187,artificial_intelligence,A Learning Framework for n-bit Quantized Neural Networks toward FPGAs,False,None,0.0
+AI188,artificial_intelligence,Further advantages of data augmentation on convolutional neural networks,False,None,0.0
+AI189,artificial_intelligence,Study of a committee of neural networks for biometric hand-geometry recognition,False,None,0.0
+AI190,artificial_intelligence,Transfer Learning Using Ensemble Neural Networks for Organic Solar Cell Screenin,False,None,0.0
+AI191,artificial_intelligence,Multiclass Graph-Based Large Margin Classifiers: Unified Approach for Support Ve,False,None,0.0
+AI192,artificial_intelligence,Scaling Limits of Wide Neural Networks with Weight Sharing: Gaussian Process Beh,False,None,0.0
+AI193,artificial_intelligence,Masked Conditional Neural Networks for Audio Classification,False,None,0.0
+AI194,artificial_intelligence,Bounded Rational Decision-Making with Adaptive Neural Network Priors,False,None,0.0
+AI195,artificial_intelligence,SPIDE: A Purely Spike-based Method for Training Feedback Spiking Neural Networks,False,None,0.0
+AI196,artificial_intelligence,Visualising Basins of Attraction for the Cross-Entropy and the Squared Error Neu,False,None,0.0
+AI197,artificial_intelligence,Learning Cross-Lingual Sentence Representations via a Multi-task Dual-Encoder Mo,False,None,0.0
+AI198,artificial_intelligence,On the Interpretability and Evaluation of Graph Representation Learning,False,None,0.0
+AI199,artificial_intelligence,Meta-Learning Representations for Continual Learning,False,None,0.0
+AI200,artificial_intelligence,On the Similarities of Embeddings in Contrastive Learning,False,None,0.0
+CY001,cybersecurity,Quantum Identity-Based Encryption from the Learning with Errors Problem,True,1,1.0
+CY002,cybersecurity,SNEED: Enhancing Network Security Services Using Network Coding and Joint Capaci,True,1,1.0
+CY003,cybersecurity,SFAMSS: a secure framework for atm machines via secret sharing,True,1,1.0
+CY004,cybersecurity,Assessing the Real-World Impact of Post-Quantum Cryptography on WPA-Enterprise N,True,1,1.0
+CY005,cybersecurity,Encryption is Futile: Delay Attacks on High-Precision Clock Synchronization,True,1,1.0
+CY006,cybersecurity,An Evolution Strategy Approach toward Rule-set Generation for Network Intrusion ,True,1,1.0
+CY007,cybersecurity,Emerging Trends of Recently Published Datasets for Intrusion Detection Systems (,True,1,1.0
+CY008,cybersecurity,A high throughput Intrusion Detection System (IDS) to enhance the security of da,True,1,1.0
+CY009,cybersecurity,AI-Driven Intrusion Detection Systems (IDS) on the ROAD Dataset: A Comparative A,True,1,1.0
+CY010,cybersecurity,Multiclass Classification Procedure for Detecting Attacks on MQTT-IoT Protocol,True,1,1.0
+CY011,cybersecurity,URLTran: Improving Phishing URL Detection Using Transformers,True,1,1.0
+CY012,cybersecurity,Eliciting Least-to-Most Reasoning for Phishing URL Detection,True,1,1.0
+CY013,cybersecurity,PhishVQC: Optimizing Phishing URL Detection with Correlation Based Feature Selec,True,1,1.0
+CY014,cybersecurity,Efficient Phishing URL Detection Using Graph-based Machine Learning and Loopy Be,True,1,1.0
+CY015,cybersecurity,A Lightweight Hybrid MLP-Based Framework for Real-Time Phishing URL Detection Us,True,1,1.0
+CY016,cybersecurity,BAZAM: A Blockchain-Assisted Zero-Trust Authentication in Multi-UAV Wireless Net,True,1,1.0
+CY017,cybersecurity,SAFE-SiP: Secure Authentication Framework for System-in-Package Using Multi-part,True,1,1.0
+CY018,cybersecurity,Randomized Response Mechanisms for Differential Privacy Data Analysis: Bounds an,True,1,1.0
+CY019,cybersecurity,Trident: Efficient 4PC Framework for Privacy Preserving Machine Learning,True,1,1.0
+CY020,cybersecurity,Fedlearn-Algo: A flexible open-source privacy-preserving machine learning platfo,True,1,1.0
+CY021,cybersecurity,Privacy Preserving Machine Learning Model Personalization through Federated Pers,True,1,1.0
+CY022,cybersecurity,Asymmetric Private Set Intersection with Applications to Contact Tracing and Pri,True,1,1.0
+CY023,cybersecurity,A Survey of Machine and Deep Learning Methods for Internet of Things (IoT) Secur,True,1,1.0
+CY024,cybersecurity,A Low-Power BLS12-381 Pairing Crypto-Processor for Internet-of-Things Security A,True,1,1.0
+CY025,cybersecurity,Converging Zero Trust and IoT Security: A Multivocal Literature Review,True,1,1.0
+CY026,cybersecurity,Efficient and Secure Group Key Management in IoT using Multistage Interconnected,True,1,1.0
+CY027,cybersecurity,Generative AI for Internet of Things Security: Challenges and Opportunities,True,1,1.0
+CY028,cybersecurity,Homomorphic Encryption: Theory & Applications,True,1,1.0
+CY029,cybersecurity,Analysing ZigBee Key Establishment Protocols,True,1,1.0
+CY030,cybersecurity,A Weakest Chain Approach to Assessing the Overall Effectiveness of the 802.11 Wi,True,1,1.0
+CY031,cybersecurity,On Angels and Demons: Strategic (De)Construction of Dynamic Models,True,1,1.0
+CY032,cybersecurity,SD-WAN over MPLS: A Comprehensive Performance Analysis and Security with Insight,True,1,1.0
+CY033,cybersecurity,MLDAS: Machine Learning Dynamic Algorithm Selection for Software-Defined Network,True,1,1.0
+CY034,cybersecurity,Enriched multi-agent middleware for building rule-based distributed security sol,True,1,1.0
+CY035,cybersecurity,Understanding Modern Intrusion Detection Systems: A Survey,True,1,1.0
+CY036,cybersecurity,FetFIDS: A Feature Embedding Attention based Federated Network Intrusion Detecti,True,1,1.0
+CY037,cybersecurity,Improving Transferability of Network Intrusion Detection in a Federated Learning,True,1,1.0
+CY038,cybersecurity,Evaluation of Real-Time Mitigation Techniques for Cyber Security in IEC 61850 / ,True,1,1.0
+CY039,cybersecurity,Self-adaptive web intrusion detection system,True,1,1.0
+CY040,cybersecurity,Comparison of feature extraction tools for network traffic data,True,1,1.0
+CY041,cybersecurity,Omni SCADA Intrusion Detection Using Deep Learning Algorithms,True,1,1.0
+CY042,cybersecurity,Evading network-level emulation,False,None,0.0
+CY043,cybersecurity,ECU Identification using Neural Network Classification and Hyperparameter Tuning,True,1,1.0
+CY044,cybersecurity,A short review on Applications of Deep learning for Cyber security,True,1,1.0
+CY045,cybersecurity,Can Features for Phishing URL Detection Be Trusted Across Diverse Datasets? A Ca,True,1,1.0
+CY046,cybersecurity,Benchmarking Large Language Models for Zero-shot and Few-shot Phishing URL Detec,True,1,1.0
+CY047,cybersecurity,Phishing URL Detection using Bi-LSTM,True,1,1.0
+CY048,cybersecurity,AntiPhishStack: LSTM-based Stacked Generalization Model for Optimized Phishing U,True,1,1.0
+CY049,cybersecurity,Phishing URL Detection Through Top-level Domain Analysis: A Descriptive Approach,True,1,1.0
+CY050,cybersecurity,MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detectio,True,1,1.0
+CY051,cybersecurity,A security suite for wireless body area networks,False,None,0.0
+CY052,cybersecurity,Differentiated Security Architecture for Secure and Efficient Infotainment Data ,False,None,0.0
+CY053,cybersecurity,Ontologies for Network Security and Future Challenges,False,None,0.0
+CY054,cybersecurity,Evaluation of Enhanced Security Solutions in 802.11-Based Networks,False,None,0.0
+CY055,cybersecurity,Enabling AutoML for Zero-Touch Network Security: Use-Case Driven Analysis,False,None,0.0
+CY056,cybersecurity,Finding Traitors in Secure Networks Using Byzantine Agreements,False,None,0.0
+CY057,cybersecurity,ACE: A Security Architecture for LLM-Integrated App Systems,False,None,0.0
+CY058,cybersecurity,Complete Security Framework for Wireless Sensor Networks,False,None,0.0
+CY059,cybersecurity,Network Hexagons Under Attack: Secure Crowdsourcing of Geo-Referenced Data,False,None,0.0
+CY060,cybersecurity,HTTPI Based Web Service Security over SOAP,False,None,0.0
+CY061,cybersecurity,"Audit Analysis Models, Security Frameworks and Their Relevance for VoIP",True,8,0.125
+CY062,cybersecurity,Quantitative Models of Imperfect Deception in Network Security using Signaling G,False,None,0.0
+CY063,cybersecurity,"Physical and Mechatronic Security, Technologies and Future Trends for Vehicular ",False,None,0.0
+CY064,cybersecurity,Automated Big Text Security Classification,False,None,0.0
+CY065,cybersecurity,"A Survey of Attacks, Security Mechanisms and Challenges in Wireless Sensor Netwo",False,None,0.0
+CY066,cybersecurity,Assessing Cyber-Physical Security in Industrial Control Systems,False,None,0.0
+CY067,cybersecurity,Energy Efficient Security Architecture for Wireless BioMedical Sensor Networks,False,None,0.0
+CY068,cybersecurity,Advanced Drone Swarm Security by Using Blockchain Governance Game,False,None,0.0
+CY069,cybersecurity,Very Pwnable Network: Cisco AnyConnect Security Analysis,False,None,0.0
+CY070,cybersecurity,Security properties in an open peer-to-peer network,False,None,0.0
+CY071,cybersecurity,Towards efficient and secure quantum-classical communication networks,False,None,0.0
+CY072,cybersecurity,Secret Sharing in 5G-MEC: Applicability for joint Security and Dependability,False,None,0.0
+CY073,cybersecurity,Two Phase Authentication and VPN Based Secured Communication for IoT Home Networ,False,None,0.0
+CY074,cybersecurity,Implementing New-age Authentication Techniques using OpenID for Security Automat,False,None,0.0
+CY075,cybersecurity,Human-centred home network security,False,None,0.0
+CY076,cybersecurity,A Trust Based Cross Layer Security Protocol for Mobile Ad hoc Networks,False,None,0.0
+CY077,cybersecurity,Attacks Against Security Context in 5G Network,False,None,0.0
+CY078,cybersecurity,ODMRP with Quality of Service and local recovery with security Support,False,None,0.0
+CY079,cybersecurity,A Survey on Security and Privacy Protocols for Cognitive Wireless Sensor Network,False,None,0.0
+CY080,cybersecurity,Pencil: Private and Extensible Collaborative Learning without the Non-Colluding ,False,None,0.0
+CY081,cybersecurity,Burstiness of Intrusion Detection Process: Empirical Evidence and a Modeling App,False,None,0.0
+CY082,cybersecurity,Effectiveness of Intrusion Prevention Systems (IPS) in Fast Networks,False,None,0.0
+CY083,cybersecurity,An overview of Intrusion Detection and Prevention Systems,False,None,0.0
+CY084,cybersecurity,Securing Fog-to-Things Environment Using Intrusion Detection System Based On Ens,False,None,0.0
+CY085,cybersecurity,Learning Intrusion Prevention Policies through Optimal Stopping,False,None,0.0
+CY086,cybersecurity,Intrusion Prevention through Optimal Stopping,False,None,0.0
+CY087,cybersecurity,Proceedings 2014 International Workshop on Advanced Intrusion Detection and Prev,False,None,0.0
+CY088,cybersecurity,Implementing a Robot Intrusion Prevention System (RIPS) for ROS 2,False,None,0.0
+CY089,cybersecurity,A Novel Online Incremental Learning Intrusion Prevention System,False,None,0.0
+CY090,cybersecurity,VHDL Modeling of Intrusion Detection & Prevention System (IDPS) A Neural Network,False,None,0.0
+CY091,cybersecurity,Distributing Intelligence in 6G Programmable Data Planes for Effective In-Networ,False,None,0.0
+CY092,cybersecurity,CANTXSec: A Deterministic Intrusion Detection and Prevention System for CAN Bus ,False,None,0.0
+CY093,cybersecurity,AIDPS:Adaptive Intrusion Detection and Prevention System for Underwater Acoustic,False,None,0.0
+CY094,cybersecurity,WedgeTail: An Intrusion Prevention System for the Data Plane of Software Defined,False,None,0.0
+CY095,cybersecurity,Hierarchical Design Based Intrusion Detection System For Wireless Ad hoc Network,False,None,0.0
+CY096,cybersecurity,Adaptable Plug and Play Security Operations Center Leveraging a Novel Programmab,False,None,0.0
+CY097,cybersecurity,Application Layer Intrusion Detection with Combination of Explicit-Rule- Based a,False,None,0.0
+CY098,cybersecurity,Proofs of No Intrusion,False,None,0.0
+CY099,cybersecurity,IDPS: An Integrated Intrusion Handling Model for Cloud,True,4,0.25
+CY100,cybersecurity,Intrusion Resilience Systems for Modern Vehicles,False,None,0.0
+CY101,cybersecurity,Adaptive Bi-Recommendation and Self-Improving Network for Heterogeneous Domain A,False,None,0.0
+CY102,cybersecurity,Combinatorial Optimization based Feature Selection Method: A study on Network In,False,None,0.0
+CY103,cybersecurity,Mimic Learning to Generate a Shareable Network Intrusion Detection Model,False,None,0.0
+CY104,cybersecurity,Ensemble learning techniques for intrusion detection system in the context of cy,False,None,0.0
+CY105,cybersecurity,Efficient Network Representation for GNN-based Intrusion Detection,False,None,0.0
+CY106,cybersecurity,A review of security attacks and Intrusion Detection Schemes in Wireless Sensor ,False,None,0.0
+CY107,cybersecurity,Survivor: A Fine-Grained Intrusion Response and Recovery Approach for Commodity ,False,None,0.0
+CY108,cybersecurity,DDoS Attacks in Cloud Computing: Detection and Prevention,False,None,0.0
+CY109,cybersecurity,Threshold Verification Technique for Network Intrusion Detection System,False,None,0.0
+CY110,cybersecurity,Firewalls to Secure Dynamic LLM Agentic Networks,False,None,0.0
+CY111,cybersecurity,Distributed firewalls and IDS interoperability checking based on a formal approa,False,None,0.0
+CY112,cybersecurity,A Formal Approach To Firewalls Testing Techniques,False,None,0.0
+CY113,cybersecurity,ControlNET: A Firewall for RAG-based LLM System,False,None,0.0
+CY114,cybersecurity,Systematic review of automatic translation of high-level security policy into fi,True,7,0.1429
+CY115,cybersecurity,Implementation of Portion Approach in Distributed Firewall Application for Netwo,False,None,0.0
+CY116,cybersecurity,Misconfiguration Management of Network Security Components,False,None,0.0
+CY117,cybersecurity,QoS Web Service Security Dynamic Intruder Detection System for HTTP SSL services,False,None,0.0
+CY118,cybersecurity,"Man-in-the-OBD: A modular, protocol agnostic firewall for automotive dongles to ",False,None,0.0
+CY119,cybersecurity,BlockFW -- Towards Blockchain-based Rule-Sharing Firewall,False,None,0.0
+CY120,cybersecurity,"Securing Generative AI Agentic Workflows: Risks, Mitigation, and a Proposed Fire",False,None,0.0
+CY121,cybersecurity,Spying on the Spy: Security Analysis of Hidden Cameras,False,None,0.0
+CY122,cybersecurity,Enhancing HPC Security with a User-Based Firewall,False,None,0.0
+CY123,cybersecurity,Effective Measurement Requirements for Network Security Management,False,None,0.0
+CY124,cybersecurity,Reliable Process for Security Policy Deployment,False,None,0.0
+CY125,cybersecurity,Architecture Of A Identity Based Firewall System,False,None,0.0
+CY126,cybersecurity,Formal Checking of Multiple Firewalls,False,None,0.0
+CY127,cybersecurity,Distributing and Obfuscating Firewalls via Oblivious Bloom Filter Evaluation,False,None,0.0
+CY128,cybersecurity,SecSip: A Stateful Firewall for SIP-based Networks,False,None,0.0
+CY129,cybersecurity,SDFW: SDN-based Stateful Distributed Firewall,False,None,0.0
+CY130,cybersecurity,BioShield: A Context-Aware Firewall for Securing Bio-LLMs,False,None,0.0
+CY131,cybersecurity,Semantics-Preserving Simplification of Real-World Firewall Rule Sets,False,None,0.0
+CY132,cybersecurity,"Extending Firewall Session Table to Accelerate NAT, QoS Classification and Routi",False,None,0.0
+CY133,cybersecurity,MobileAtlas: Geographically Decoupled Measurements in Cellular Networks for Secu,False,None,0.0
+CY134,cybersecurity,Machine Learning Approach on Multiclass Classification of Internet Firewall Log ,False,None,0.0
+CY135,cybersecurity,ForestFirewalls: Getting Firewall Configuration Right in Critical Networks (Tech,False,None,0.0
+CY136,cybersecurity,Boolean Expressions in Firewall Analysis,False,None,0.0
+CY137,cybersecurity,Introducing the Generative Application Firewall (GAF),False,None,0.0
+CY138,cybersecurity,"Indirect Prompt Injections: Are Firewalls All You Need, or Stronger Benchmarks?",False,None,0.0
+CY139,cybersecurity,Firewall Configuration Errors Revisited,False,None,0.0
+CY140,cybersecurity,A Hybrid Deep Learning Anomaly Detection Framework for Intrusion Detection,False,None,0.0
+CY141,cybersecurity,Online Feature Ranking for Intrusion Detection Systems,False,None,0.0
+CY142,cybersecurity,Cyber Situation Awareness with Active Learning for Intrusion Detection,False,None,0.0
+CY143,cybersecurity,Road Context-aware Intrusion Detection System for Autonomous Cars,False,None,0.0
+CY144,cybersecurity,A New Clustering Approach for Anomaly Intrusion Detection,False,None,0.0
+CY145,cybersecurity,Intrusion Detection in Internet of Things using Convolutional Neural Networks,False,None,0.0
+CY146,cybersecurity,A review of Federated Learning in Intrusion Detection Systems for IoT,False,None,0.0
+CY147,cybersecurity,Tree-based Intelligent Intrusion Detection System in Internet of Vehicles,False,None,0.0
+CY148,cybersecurity,LCCDE: A Decision-Based Ensemble Framework for Intrusion Detection in The Intern,False,None,0.0
+CY149,cybersecurity,Toward Autonomous and Efficient Cybersecurity: A Multi-Objective AutoML-based In,False,None,0.0
+CY150,cybersecurity,A Multi-Objective AutoML-based Efficient Intrusion Detection System for EV Charg,False,None,0.0
+CY151,cybersecurity,Towards Autonomous Cybersecurity: An Intelligent AutoML Framework for Autonomous,False,None,0.0
+CY152,cybersecurity,MTH-IDS: A Multi-Tiered Hybrid Intrusion Detection System for Internet of Vehicl,False,None,0.0
+CY153,cybersecurity,Online Self-Supervised Deep Learning for Intrusion Detection Systems,False,None,0.0
+CY154,cybersecurity,Dueling Deep Q-Learning for Intrusion Detection,False,None,0.0
+CY155,cybersecurity,A Transfer Learning and Optimized CNN Based Intrusion Detection System for Inter,False,None,0.0
+CY156,cybersecurity,Adaptive Intrusion Detection System Leveraging Dynamic Neural Models with Advers,False,None,0.0
+CY157,cybersecurity,Fast Feature Reduction in intrusion detection datasets,False,None,0.0
+CY158,cybersecurity,Few-Shot Network Intrusion Detection Using Online Triplet Mining,False,None,0.0
+CY159,cybersecurity,CST-AFNet: A dual attention-based deep learning framework for intrusion detectio,False,None,0.0
+CY160,cybersecurity,Performance Comparison of Intrusion Detection Systems and Application of Machine,False,None,0.0
+CY161,cybersecurity,Targeted Adversarial Traffic Generation : Black-box Approach to Evade Intrusion ,False,None,0.0
+CY162,cybersecurity,Explainable AI-Driven Cyber Risk Analytics and Model Reliability Assessment for ,False,None,0.0
+CY163,cybersecurity,A Protocol-Language Model for Network Intrusion (Without Deep Packet Inspection),False,None,0.0
+CY164,cybersecurity,FuGeIDS: Fuzzy Genetic paradigms in Intrusion Detection Systems,False,None,0.0
+CY165,cybersecurity,Intrusion Detection A Text Mining Based Approach,False,None,0.0
+CY166,cybersecurity,Provenance-based Intrusion Detection: Opportunities and Challenges,False,None,0.0
+CY167,cybersecurity,Multi-sensor Intrusion Detection System,False,None,0.0
+CY168,cybersecurity,Graph-based Anomaly Detection and Description: A Survey,False,None,0.0
+CY169,cybersecurity,No Need to Know Physics: Resilience of Process-based Model-free Anomaly Detectio,False,None,0.0
+CY170,cybersecurity,Quantum Machine Learning for Cyber-Physical Anomaly Detection in Unmanned Aerial,False,None,0.0
+CY171,cybersecurity,"Explain First, Trust Later: LLM-Augmented Explanations for Graph-Based Crypto An",False,None,0.0
+CY172,cybersecurity,Network Traffic Anomaly Detection,False,None,0.0
+CY173,cybersecurity,Anomaly Detection in Graph Structured Data: A Survey,False,None,0.0
+CY174,cybersecurity,State Frequency Estimation for Anomaly Detection,False,None,0.0
+CY175,cybersecurity,Double-Adversarial Activation Anomaly Detection: Adversarial Autoencoders are An,False,None,0.0
+CY176,cybersecurity,Survey on Incremental Approaches for Network Anomaly Detection,False,None,0.0
+CY177,cybersecurity,Anomaly Detection using Principles of Human Perception,False,None,0.0
+CY178,cybersecurity,Quantum Autoencoders for Anomaly Detection in Cybersecurity,False,None,0.0
+CY179,cybersecurity,Lightweight Collaborative Anomaly Detection for the IoT using Blockchain,False,None,0.0
+CY180,cybersecurity,SAFE: Self-Supervised Anomaly Detection Framework for Intrusion Detection,False,None,0.0
+CY181,cybersecurity,Dempster-Shafer for Anomaly Detection,False,None,0.0
+CY182,cybersecurity,Anomaly Detection Techniques in Smart Grid Systems: A Review,False,None,0.0
+CY183,cybersecurity,Privacy Interpretation of Behavioural-based Anomaly Detection Approaches,False,None,0.0
+CY184,cybersecurity,A Collective Anomaly Detection Method Over Bitcoin Network,False,None,0.0
+CY185,cybersecurity,LogBERT: Log Anomaly Detection via BERT,False,None,0.0
+CY186,cybersecurity,CloudShield: Real-time Anomaly Detection in the Cloud,False,None,0.0
+CY187,cybersecurity,CIoTA: Collaborative IoT Anomaly Detection via Blockchain,False,None,0.0
+CY188,cybersecurity,BAD: Blockchain Anomaly Detection,False,None,0.0
+CY189,cybersecurity,Learning to Detect Cyber Attacks: Neural Anomaly Detection for Cybersecurity wit,False,None,0.0
+CY190,cybersecurity,SCADE: Scalable Framework for Anomaly Detection in High-Performance System,False,None,0.0
+CY191,cybersecurity,Detecting Log Anomalies with Multi-Head Attention (LAMA),False,None,0.0
+CY192,cybersecurity,Multimedia Traffic Anomaly Detection,False,None,0.0
+CY193,cybersecurity,Machine Learning Applications in Misuse and Anomaly Detection,False,None,0.0
+CY194,cybersecurity,A Review of Machine Learning based Anomaly Detection Techniques,False,None,0.0
+CY195,cybersecurity,An Immune Inspired Approach to Anomaly Detection,False,None,0.0
+CY196,cybersecurity,An Intrusion Response System utilizing Deep Q-Networks and System Partitions,False,None,0.0
+CY197,cybersecurity,A Novel Contrastive Loss for Zero-Day Network Intrusion Detection,False,None,0.0
+CY198,cybersecurity,E-GraphSAGE: A Graph Neural Network based Intrusion Detection System for IoT,False,None,0.0
+CY199,cybersecurity,Kitsune: An Ensemble of Autoencoders for Online Network Intrusion Detection,False,None,0.0
+CY200,cybersecurity,Enhancing Robustness Against Adversarial Examples in Network Intrusion Detection,False,None,0.0
+AG001,agriculture,Robotic Monitoring of Colorimetric Leaf Sensors for Precision Agriculture,True,1,1.0
+AG002,agriculture,An Efficient Data Warehouse for Crop Yield Prediction,True,1,1.0
+AG003,agriculture,Ambient IoT: Communications Enabling Precision Agriculture,True,1,1.0
+AG004,agriculture,Lettuce modelling for growth control in precision agriculture,True,1,1.0
+AG005,agriculture,Architecture for Multi-Unmanned Aerial Vehicles based Autonomous Precision Agric,True,1,1.0
+AG006,agriculture,Precision Agriculture Revolution: Integrating Digital Twins and Advanced Crop Re,True,1,1.0
+AG007,agriculture,AgroXAI: Explainable AI-Driven Crop Recommendation System for Agriculture 4.0,True,1,1.0
+AG008,agriculture,AgroSense: An Integrated Deep Learning System for Crop Recommendation via Soil I,True,1,1.0
+AG009,agriculture,Crop recommendation with machine learning: leveraging environmental and economic,True,1,1.0
+AG010,agriculture,AgroSense 2.0: Cross-Modal Transformer Fusion with Geospatial Raster Integration,True,1,1.0
+AG011,agriculture,Comparative Analysis of Deep Learning Models for Crop Disease Detection: A Trans,True,1,1.0
+AG012,agriculture,Loss-Guided Model Sharing and Local Learning Correction in Decentralized Federat,True,1,1.0
+AG013,agriculture,Towards a Multimodal System for Precision Agriculture using IoT and Machine Lear,True,1,1.0
+AG014,agriculture,"AI in Agriculture: A Survey of Deep Learning Techniques for Crops, Fisheries and",True,1,1.0
+AG015,agriculture,AgriPath: A Systematic Exploration of Architectural Trade-offs for Crop Disease ,True,1,1.0
+AG016,agriculture,Progress towards machine learning methodologies for laser-induced breakdown spec,True,1,1.0
+AG017,agriculture,Artificial intelligence enables mobile soil analysis for sustainable agriculture,True,1,1.0
+AG018,agriculture,Soil analysis with machine-learning-based processing of stepped-frequency GPR fi,True,1,1.0
+AG019,agriculture,Site-bond percolation solution to preventing the propagation of \textit{Phytopht,True,1,1.0
+AG020,agriculture,SDTN and TRN: Adaptive Spectral-Spatial Feature Extraction for Hyperspectral Ima,True,1,1.0
+AG021,agriculture,Smart Irrigation IoT Solution using Transfer Learning for Neural Networks,True,1,1.0
+AG022,agriculture,Keeping data at the edge of smart irrigation networks: A case study in strawberr,True,1,1.0
+AG023,agriculture,Data Optimisation of Machine Learning Models for Smart Irrigation in Urban Parks,True,1,1.0
+AG024,agriculture,Bilevel optimization for smart irrigation control: a framework for enhancing wat,True,1,1.0
+AG025,agriculture,Piping Botnet - Turning Green Technology into a Water Disaster,True,1,1.0
+AG026,agriculture,Hybrid Machine Learning Models for Crop Yield Prediction,True,1,1.0
+AG027,agriculture,On Convolutional Vision Transformers for Yield Prediction,True,1,1.0
+AG028,agriculture,A CNN-RNN Framework for Crop Yield Prediction,True,1,1.0
+AG029,agriculture,Corn Yield Prediction based on Remotely Sensed Variables Using Variational Autoe,True,1,1.0
+AG030,agriculture,Are we making much progress? Revisiting chemical reaction yield prediction from ,True,1,1.0
+AG031,agriculture,Can Large Multimodal Models Understand Agricultural Scenes? Benchmarking with Ag,True,1,1.0
+AG032,agriculture,Comparative study of panel and panelless-based reflectance conversion techniques,True,1,1.0
+AG033,agriculture,Weakly Supervised Few-Shot Segmentation Via Meta-Learning,True,1,1.0
+AG034,agriculture,Scene-based nonuniformity correction with homography transformation,True,1,1.0
+AG035,agriculture,A Data-Driven Review of Remote Sensing-Based Data Fusion in Precision Agricultur,True,1,1.0
+AG036,agriculture,Digital Agriculture Sandbox for Collaborative Research,True,1,1.0
+AG037,agriculture,Data-Centric Digital Agriculture: A Perspective,True,1,1.0
+AG038,agriculture,Estimating The Carbon Footprint Of Digital Agriculture Deployment: A Parametric ,True,1,1.0
+AG039,agriculture,BYON: Bring Your Own Networks for Digital Agriculture Applications,True,1,1.0
+AG040,agriculture,The Role of Digital Agriculture in Transforming Rural Areas into Smart Villages,True,1,1.0
+AG041,agriculture,Farm-LightSeek: An Edge-centric Multimodal Agricultural IoT Data Analytics Frame,True,1,1.0
+AG042,agriculture,Hybrid Knowledge Transfer through Attention and Logit Distillation for On-Device,True,1,1.0
+AG043,agriculture,Robust Base Station Placement in Agricultural IoT via Bayesian Optimization,True,1,1.0
+AG044,agriculture,"LoRa Communication for Agriculture 4.0: Opportunities, Challenges, and Future Di",True,1,1.0
+AG045,agriculture,Multi-objective Optimization for Data Collection in UAV-assisted Agricultural Io,True,1,1.0
+AG046,agriculture,Zhinong AI: A Design-Science Study of an AI-Enabled Agricultural Decision-Suppor,True,1,1.0
+AG047,agriculture,AHMoSe: A Knowledge-Based Visual Support System for Selecting Regression Machine,True,1,1.0
+AG048,agriculture,The Rosario Dataset v2: Multimodal Dataset for Agricultural Robotics,True,1,1.0
+AG049,agriculture,The Use of Agricultural Robots in Orchard Management,True,1,1.0
+AG050,agriculture,Collision-Aware Traversability Analysis for Autonomous Vehicles in the Context o,True,1,1.0
+AG051,agriculture,CWD30: A Comprehensive and Holistic Dataset for Crop Weed Recognition in Precisi,False,None,0.0
+AG052,agriculture,AgriField-40K: Adapting Vision Models to Agriculture With Efficient Continual Pr,False,None,0.0
+AG053,agriculture,Extended Agriculture-Vision: An Extension of a Large Aerial Image Dataset for Ag,False,None,0.0
+AG054,agriculture,Vision Transformers in Precision Agriculture: A Comprehensive Survey,False,None,0.0
+AG055,agriculture,Cloud gap-filling with deep learning for improved grassland monitoring,False,None,0.0
+AG056,agriculture,"AgRegNet: A Deep Regression Network for Flower and Fruit Density Estimation, Loc",False,None,0.0
+AG057,agriculture,SynthSet: Generative Diffusion Model for Semantic Segmentation in Precision Agri,False,None,0.0
+AG058,agriculture,Fusion-Driven Tree Reconstruction and Fruit Localization: Advancing Precision in,False,None,0.0
+AG059,agriculture,Modular Transformer Architecture for Precision Agriculture Imaging,False,None,0.0
+AG060,agriculture,Self-Consistency in Vision-Language Models for Precision Agriculture: Multi-Resp,False,None,0.0
+AG061,agriculture,Precision Agriculture: Crop Mapping using Machine Learning and Sentinel-2 Satell,False,None,0.0
+AG062,agriculture,Evaluation of UAV-Based RGB and Multispectral Vegetation Indices for Precision A,False,None,0.0
+AG063,agriculture,AgriSORT: A Simple Online Real-time Tracking-by-Detection framework for robotics,False,None,0.0
+AG064,agriculture,Lightweight Multispectral Crop-Weed Segmentation for Precision Agriculture,False,None,0.0
+AG065,agriculture,CropTrack: A Tracking with Re-Identification Framework for Precision Agriculture,False,None,0.0
+AG066,agriculture,A Hybrid CNN-ViT-GNN Framework with GAN-Based Augmentation for Intelligent Weed ,False,None,0.0
+AG067,agriculture,Towards practical object detection for weed spraying in precision agriculture,False,None,0.0
+AG068,agriculture,Self-Supervised Data Generation for Precision Agriculture: Blending Simulated En,False,None,0.0
+AG069,agriculture,A Rapidly Deployable Classification System using Visual Data for the Application,False,None,0.0
+AG070,agriculture,Can SAM recognize crops? Quantifying the zero-shot performance of a semantic seg,False,None,0.0
+AG071,agriculture,WeedVision: Multi-Stage Growth and Classification of Weeds using DETR and Retina,False,None,0.0
+AG072,agriculture,UAV and Machine Learning Based Refinement of a Satellite-Driven Vegetation Index,False,None,0.0
+AG073,agriculture,Geometrical Stem Detection from Image Data for Precision Agriculture,False,None,0.0
+AG074,agriculture,YOLOv1 to YOLOv10: A comprehensive review of YOLO variants and their application,False,None,0.0
+AG075,agriculture,Context-Aware Pesticide Recommendation via Few-Shot Pest Recognition for Precisi,False,None,0.0
+AG076,agriculture,Self-Supervised Backbone Framework for Diverse Agricultural Vision Tasks,False,None,0.0
+AG077,agriculture,Multi-label Instance-level Generalised Visual Grounding in Agriculture,False,None,0.0
+AG078,agriculture,DropLeaf: a precision farming smartphone application for measuring pesticide spr,False,None,0.0
+AG079,agriculture,EcoWeedNet: A Lightweight and Automated Weed Detection Method for Sustainable Ne,False,None,0.0
+AG080,agriculture,Real-time Semantic Segmentation of Crop and Weed for Precision Agriculture Robot,False,None,0.0
+AG081,agriculture,Factors Influencing Farmers' Motivation to Adopt Smart Farm Technology in South ,False,None,0.0
+AG082,agriculture,"Deep learning for smart fish farming: applications, opportunities and challenges",False,None,0.0
+AG083,agriculture,"Smart Headset, Computer Vision and Machine Learning for Efficient Prawn Farm Man",False,None,0.0
+AG084,agriculture,AI-Powered Cow Detection in Complex Farm Environments,False,None,0.0
+AG085,agriculture,Autonomous Agriculture Robot for Smart Farming,False,None,0.0
+AG086,agriculture,Visual based Tomato Size Measurement System for an Indoor Farming Environment,False,None,0.0
+AG087,agriculture,SAM3-Assisted Training of Lightweight YOLO Models for Precision Pig Farming,False,None,0.0
+AG088,agriculture,An IoT-Based Smart Plant Monitoring and Irrigation System with Real-Time Environ,False,None,0.0
+AG089,agriculture,VLLFL: A Vision-Language Model Based Lightweight Federated Learning Framework fo,False,None,0.0
+AG090,agriculture,Scene and Environment Monitoring Using Aerial Imagery and Deep Learning,True,8,0.125
+AG091,agriculture,Explainable Adversarial-Robust Vision-Language-Action Model for Robotic Manipula,False,None,0.0
+AG092,agriculture,DuckSegmentation: A segmentation model based on the AnYue Hemp Duck Dataset,False,None,0.0
+AG093,agriculture,SFN-YOLO: Towards Free-Range Poultry Detection via Scale-aware Fusion Networks,False,None,0.0
+AG094,agriculture,Cross-Camera Cow Identification via Disentangled Representation Learning,False,None,0.0
+AG095,agriculture,TP-MVCC: Tri-plane Multi-view Fusion Model for Silkie Chicken Counting,False,None,0.0
+AG096,agriculture,Pig behavior dataset and Spatial-temporal perception and enhancement networks ba,False,None,0.0
+AG097,agriculture,Early Detection of Late Blight Tomato Disease using Histogram Oriented Gradient ,False,None,0.0
+AG098,agriculture,Multimodal Data Integration for Sustainable Indoor Gardening: Tracking Anyplant ,False,None,0.0
+AG099,agriculture,weedNet: Dense Semantic Weed Classification Using Multispectral Images and MAV f,False,None,0.0
+AG100,agriculture,PesTwin: a biology-informed Digital Twin for enabling precision farming,False,None,0.0
+AG101,agriculture,Interpretable Plant Leaf Disease Detection Using Attention-Enhanced CNN,False,None,0.0
+AG102,agriculture,M18K: A Comprehensive RGB-D Dataset and Benchmark for Mushroom Detection and Ins,False,None,0.0
+AG103,agriculture,A Deep Learning-based Pest Insect Monitoring System for Ultra-low Power Pocket-s,False,None,0.0
+AG104,agriculture,"A Comprehensive Review of Fish Feeding Behavior Analysis in Aquaculture: Tasks, ",False,None,0.0
+AG105,agriculture,CBAM-STN-TPS-YOLO: Enhancing Agricultural Object Detection through Spatially Ada,True,7,0.1429
+AG106,agriculture,Automated Pest Detection with DNN on the Edge for Precision Agriculture,False,None,0.0
+AG107,agriculture,Deep-CNN based Robotic Multi-Class Under-Canopy Weed Control in Precision Farmin,False,None,0.0
+AG108,agriculture,Vision Transformers For Weeds and Crops Classification Of High Resolution UAV Im,False,None,0.0
+AG109,agriculture,Improved Cotton Leaf Disease Classification Using Parameter-Efficient Deep Learn,False,None,0.0
+AG110,agriculture,Improved Crop and Weed Detection with Diverse Data Ensemble Learning,False,None,0.0
+AG111,agriculture,Supervised learning for crop/weed classification based on color and texture feat,False,None,0.0
+AG112,agriculture,Transferring learned patterns from ground-based field imagery to predict UAV-bas,False,None,0.0
+AG113,agriculture,FoMo4Wheat: Toward reliable crop vision foundation models with globally curated ,False,None,0.0
+AG114,agriculture,Resource-Constrained UAV-Based Weed Detection for Site-Specific Management on Ed,False,None,0.0
+AG115,agriculture,Site-specific weed management in corn using UAS imagery analysis and computer vi,False,None,0.0
+AG116,agriculture,"A region-wide, multi-year set of crop field boundary labels for Africa",False,None,0.0
+AG117,agriculture,WeedCLR: Weed Contrastive Learning through Visual Representations with Class-Opt,False,None,0.0
+AG118,agriculture,Weed Density and Distribution Estimation for Precision Agriculture using Semi-Su,False,None,0.0
+AG119,agriculture,A spatially extended model to assess the role of landscape structure on the poll,False,None,0.0
+AG120,agriculture,MaskAdapt: Unsupervised Geometry-Aware Domain Adaptation Using Multimodal Contex,False,None,0.0
+AG121,agriculture,Multi-growth stage plant recognition: a case study of Palmer amaranth (Amaranthu,False,None,0.0
+AG122,agriculture,Conceptual and mathematical modeling of insect-borne plant diseases: theory and ,False,None,0.0
+AG123,agriculture,"WeedSense: Multi-Task Learning for Weed Segmentation, Height Estimation, and Gro",False,None,0.0
+AG124,agriculture,AutoPET III Challenge: Tumor Lesion Segmentation using ResEnc-Model Ensemble,False,None,0.0
+AG125,agriculture,SugarViT -- Multi-objective Regression of UAV Images with Vision Transformers an,False,None,0.0
+AG126,agriculture,Automated Multi-Class Crop Pathology Classification via Convolutional Neural Net,False,None,0.0
+AG127,agriculture,PhytoSynth: Leveraging Multi-modal Generative Models for Crop Disease Data Gener,False,None,0.0
+AG128,agriculture,AesCrop: Aesthetic-driven Cropping Guided by Composition,False,None,0.0
+AG129,agriculture,Agro-Consensus: Semantic Self-Consistency in Vision-Language Models for Crop Dis,False,None,0.0
+AG130,agriculture,Comparing representations of biological data learned with different AI paradigms,False,None,0.0
+AG131,agriculture,Active learning for efficient annotation in precision agriculture: a use-case on,False,None,0.0
+AG132,agriculture,Analysis of Convolutional Neural Network-based Image Classifications: A Multi-Fe,False,None,0.0
+AG133,agriculture,ShutterMuse: Capture-Time Photography Guidance with MLLMs,False,None,0.0
+AG134,agriculture,Beyond Image Borders: Learning Feature Extrapolation for Unbounded Image Composi,True,9,0.1111
+AG135,agriculture,Prediction of Soil Moisture Content Based On Satellite Data and Sequence-to-Sequ,False,None,0.0
+AG136,agriculture,Photography Perspective Composition: Towards Aesthetic Perspective Recommendatio,False,None,0.0
+AG137,agriculture,Quantification of groundnut leaf defects using image processing algorithms,False,None,0.0
+AG138,agriculture,"Deep learning, machine vision in agriculture in 2021",True,9,0.1111
+AG139,agriculture,Learn and Search: An Elegant Technique for Object Lookup using Contrastive Learn,False,None,0.0
+AG140,agriculture,Development of an Improved Capsule-Yolo Network for Automatic Tomato Plant Disea,False,None,0.0
+AG141,agriculture,Habitat connectivity in agricultural landscapes improving multi-functionality of,False,None,0.0
+AG142,agriculture,"Beyond Low Earth Orbit: Biological Research, Artificial Intelligence, and Self-D",False,None,0.0
+AG143,agriculture,Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Rel,False,None,0.0
+AG144,agriculture,Logo-2K+: A Large-Scale Logo Dataset for Scalable Logo Classification,False,None,0.0
+AG145,agriculture,LLM-YOLOMS: Large Language Model-based Semantic Interpretation and Fault Diagnos,False,None,0.0
+AG146,agriculture,Effect of Different Concentration and Application Method of Zinc on Yield of Chi,False,None,0.0
+AG147,agriculture,From Pixels to Semantics: A Multi-Stage AI Framework for Structural Damage Detec,False,None,0.0
+AG148,agriculture,Visually Similar Products Retrieval for Shopsy,False,None,0.0
+AG149,agriculture,Are Macula or Optic Nerve Head Structures better at Diagnosing Glaucoma? An Answ,False,None,0.0
+AG150,agriculture,"From Time-series Generation, Model Selection to Transfer Learning: A Comparative",False,None,0.0
+AG151,agriculture,Multimodal Crop Type Classification Fusing Multi-Spectral Satellite Time Series ,False,None,0.0
+AG152,agriculture,Crop identification using deep learning on LUCAS crop cover photos,False,None,0.0
+AG153,agriculture,Global Attention-Fused Image Cropping with Attention-Guided and Global-Aligned C,False,None,0.0
+AG154,agriculture,Deep learning-based Crop Row Detection for Infield Navigation of Agri-Robots,False,None,0.0
+AG155,agriculture,Using Saliency and Cropping to Improve Video Memorability,False,None,0.0
+AG156,agriculture,Embedding -based Crop Type Classification in the Groundnut Basin of Senegal,False,None,0.0
+AG157,agriculture,Deep Cropping via Attention Box Prediction and Aesthetics Assessment,False,None,0.0
+AG158,agriculture,A Modelling and Evaluation Framework for EuroCrops-Driven Sentinel-2 Crop Segmen,False,None,0.0
+AG159,agriculture,Fully Convolutional Networks with Sequential Information for Robust Crop and Wee,False,None,0.0
+AG160,agriculture,Efficient Multi-Crop Saliency Partitioning for Automatic Image Cropping,False,None,0.0
+AG161,agriculture,DFYP: A Dynamic Fusion Framework with Spectral Channel Attention and Adaptive Op,False,None,0.0
+AG162,agriculture,A novel fusion of Sentinel-1 and Sentinel-2 with climate data for crop phenology,False,None,0.0
+AG163,agriculture,An Experience-based Direct Generation approach to Automatic Image Cropping,False,None,0.0
+AG164,agriculture,Attention-Based Ensemble Learning for Crop Classification Using Landsat 8-9 Fusi,False,None,0.0
+AG165,agriculture,Joint Stem Detection and Crop-Weed Classification for Plant-specific Treatment i,False,None,0.0
+AG166,agriculture,AI for Agriculture: the Comparison of Semantic Segmentation Methods for Crop Map,False,None,0.0
+AG167,agriculture,Benchmarking for Practice: Few-Shot Time-Series Crop-Type Classification on the ,False,None,0.0
+AG168,agriculture,Crop Pest Classification Using Deep Learning Techniques: A Review,False,None,0.0
+AG169,agriculture,Enhanced Infield Agriculture with Interpretable Machine Learning Approaches for ,False,None,0.0
+AG170,agriculture,In the Search for Optimal Multi-view Learning Models for Crop Classification wit,False,None,0.0
+AG171,agriculture,Cropper: Vision-Language Model for Image Cropping through In-Context Learning,False,None,0.0
+AG172,agriculture,Crop Lodging Prediction from UAV-Acquired Images of Wheat and Canola using a DCN,False,None,0.0
+AG173,agriculture,Object-Aware Cropping for Self-Supervised Learning,False,None,0.0
+AG174,agriculture,A Comparative Assessment of Multi-view fusion learning for Crop Classification,False,None,0.0
+AG175,agriculture,Dual-band feature selection for maturity classification of specialty crops by hy,False,None,0.0
+AG176,agriculture,Automatic Model Based Dataset Generation for Fast and Accurate Crop and Weeds De,False,None,0.0
+AG177,agriculture,XAI-Guided Enhancement of Vegetation Indices for Crop Mapping,False,None,0.0
+AG178,agriculture,Quantitative Analysis of Automatic Image Cropping Algorithms: A Dataset and Comp,False,None,0.0
+AG179,agriculture,Data-driven Crop Growth Simulation on Time-varying Generated Images using Multi-,False,None,0.0
+AG180,agriculture,PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield P,False,None,0.0
+AG181,agriculture,Coupling Machine Learning and Crop Modeling Improves Crop Yield Prediction in th,False,None,0.0
+AG182,agriculture,MMCBE: Multi-modality Dataset for Crop Biomass Prediction and Beyond,False,None,0.0
+AG183,agriculture,MT-CYP-Net: Multi-Task Network for Pixel-Level Crop Yield Prediction Under Very ,False,None,0.0
+AG184,agriculture,YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Predicti,False,None,0.0
+AG185,agriculture,Predicting Crop Yield With Machine Learning: An Extensive Analysis Of Input Moda,False,None,0.0
+AG186,agriculture,MMST-ViT: Climate Change-aware Crop Yield Prediction via Multi-Modal Spatial-Tem,False,None,0.0
+AG187,agriculture,Wheat Crop Yield Prediction Using Deep LSTM Model,False,None,0.0
+AG188,agriculture,An Open and Large-Scale Dataset for Multi-Modal Climate Change-aware Crop Yield ,False,None,0.0
+AG189,agriculture,Adaptive Fusion of Multi-view Remote Sensing data for Optimal Sub-field Crop Yie,False,None,0.0
+AG190,agriculture,NeFF-BioNet: Crop Biomass Prediction from Point Cloud to Drone Imagery,False,None,0.0
+AG191,agriculture,A multi-temporal multi-spectral attention-augmented deep convolution neural netw,False,None,0.0
+AG192,agriculture,Current knowledge and future research opportunities for modeling annual crop mix,False,None,0.0
+AG193,agriculture,CYPUR-NN: Crop Yield Prediction Using Regression and Neural Networks,False,None,0.0
+AG194,agriculture,Combining Satellite and Weather Data for Crop Type Mapping: An Inverse Modelling,False,None,0.0
+AG195,agriculture,Attention-based Multi-modal Deep Learning Model of Spatio-temporal Crop Yield Pr,False,None,0.0
+AG196,agriculture,Scalable Vision-Guided Crop Yield Estimation,False,None,0.0
+AG197,agriculture,COMEX: A Composition-Grounded Benchmark and Learning Framework for Explainable A,False,None,0.0
+AG198,agriculture,Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields,False,None,0.0
+AG199,agriculture,RowDetr: End-to-End Crop Row Detection Using Polynomials,False,None,0.0
+AG200,agriculture,RWN: Robust Watermarking Network for Image Cropping Localization,False,None,0.0
+HC001,healthcare,A Survey on Active Learning and Human-in-the-Loop Deep Learning for Medical Imag,True,1,1.0
+HC002,healthcare,Explainable artificial intelligence (XAI) in deep learning-based medical image a,True,1,1.0
+HC003,healthcare,M3D: Advancing 3D Medical Image Analysis with Multi-Modal Large Language Models,True,1,1.0
+HC004,healthcare,Recent advances and clinical applications of deep learning in medical image anal,True,1,1.0
+HC005,healthcare,A comprehensive survey on deep active learning in medical image analysis,True,1,1.0
+HC006,healthcare,Enabling Patient-side Disease Prediction via the Integration of Patient Narrativ,True,1,1.0
+HC007,healthcare,Health-LLM: Personalized Retrieval-Augmented Disease Prediction System,True,1,1.0
+HC008,healthcare,InceptionGCN: Receptive Field Aware Graph Convolutional Network for Disease Pred,True,1,1.0
+HC009,healthcare,PopNet: Real-Time Population-Level Disease Prediction with Data Latency,True,1,1.0
+HC010,healthcare,Multi-View Attention Learning for Residual Disease Prediction of Ovarian Cancer,True,1,1.0
+HC011,healthcare,Towards Automatic Generation of Shareable Synthetic Clinical Notes Using Neural ,True,1,1.0
+HC012,healthcare,ClinText-SP and RigoBERTa Clinical: a new set of open resources for Spanish Clin,True,1,1.0
+HC013,healthcare,Beyond Negation Detection: Comprehensive Assertion Detection Models for Clinical,True,1,1.0
+HC014,healthcare,Exploring Text Specific and Blackbox Fairness Algorithms in Multimodal Clinical ,True,1,1.0
+HC015,healthcare,LLM-Augmented Symptom Analysis for Cardiovascular Disease Risk Prediction: A Cli,True,1,1.0
+HC016,healthcare,Beyond Accuracy: A Decision-Theoretic Framework for Allocation-Aware Healthcare ,True,1,1.0
+HC017,healthcare,SoK: Security and Privacy Risks of Healthcare AI,True,1,1.0
+HC018,healthcare,Enhancing Guardrails for Safe and Secure Healthcare AI,True,1,1.0
+HC019,healthcare,Accountability Framework for Healthcare AI Systems: Towards Joint Accountability,True,1,1.0
+HC020,healthcare,Information Governance as a Socio-Technical Process in the Development of Trustw,True,1,1.0
+HC021,healthcare,Drug Discovery SMILES-to-Pharmacokinetics Diffusion Models with Deep Molecular U,True,1,1.0
+HC022,healthcare,Domain Knowledge Infused Conditional Generative Models for Accelerating Drug Dis,True,1,1.0
+HC023,healthcare,Synthetic Data from Diffusion Models Improve Drug Discovery Prediction,True,1,1.0
+HC024,healthcare,TEDDY: A Family Of Foundation Models For Understanding Single Cell Biology,True,1,1.0
+HC025,healthcare,Visualizing Convolutional Neural Network Protein-Ligand Scoring,True,1,1.0
+HC026,healthcare,Benchmarking Retrieval-Augmented Large Language Models in Biomedical NLP: Applic,True,1,1.0
+HC027,healthcare,ELECTRAMed: a new pre-trained language representation model for biomedical NLP,True,1,1.0
+HC028,healthcare,Benchmarking for Biomedical Natural Language Processing Tasks with a Domain Spec,True,1,1.0
+HC029,healthcare,Fine-Tuning Large Neural Language Models for Biomedical Natural Language Process,True,1,1.0
+HC030,healthcare,On Adversarial Examples for Biomedical NLP Tasks,True,1,1.0
+HC031,healthcare,Clinical Decision Support System for Unani Medicine Practitioners,True,1,1.0
+HC032,healthcare,"A Governance and Evaluation Framework for Deterministic, Rule-Based Clinical Dec",True,1,1.0
+HC033,healthcare,"EHRs Connect Research and Practice: Where Predictive Modeling, Artificial Intell",True,1,1.0
+HC034,healthcare,Enhancing clinical decision support with physiological waveforms -- a multimodal,True,1,1.0
+HC035,healthcare,Artificial Intelligence-based Clinical Decision Support for COVID-19 -- Where Ar,True,1,1.0
+HC036,healthcare,A Neutrosophic Recommender System for Medical Diagnosis Based on Algebraic Neutr,True,1,1.0
+HC037,healthcare,A Model for Medical Diagnosis Based on Plantar Pressure,True,1,1.0
+HC038,healthcare,Medical diagnosis using neural network,True,1,1.0
+HC039,healthcare,Unsupervised Online Feature Selection for Cost-Sensitive Medical Diagnosis,True,1,1.0
+HC040,healthcare,Medical Diagnosis with a Novel SVM-CoDOA Based Hybrid Approach,True,1,1.0
+HC041,healthcare,Data Mining and Electronic Health Records: Selecting Optimal Clinical Treatments,True,1,1.0
+HC042,healthcare,Toward Semantic Interoperability of Electronic Health Records,True,1,1.0
+HC043,healthcare,Predicting Stroke from Electronic Health Records,True,1,1.0
+HC044,healthcare,Exploiting Multimodal Biometrics in E-Privacy Scheme for Electronic Health Recor,True,1,1.0
+HC045,healthcare,Time-Aware Attention for Enhanced Electronic Health Records Modeling,True,1,1.0
+HC046,healthcare,Explainable AI in Usable Privacy and Security: Challenges and Opportunities,True,1,1.0
+HC047,healthcare,Natural Language Interaction with Explainable AI Models,True,1,1.0
+HC048,healthcare,Multi-Modal Explainable Medical AI Assistant for Trustworthy Human-AI Collaborat,True,1,1.0
+HC049,healthcare,NEURO-GUARD: Neuro-Symbolic Generalization and Unbiased Adaptive Routing for Dia,True,1,1.0
+HC050,healthcare,"CheXplain: Enabling Physicians to Explore and UnderstandData-Driven, AI-Enabled ",True,1,1.0
+HC051,healthcare,TransMorph: Transformer for unsupervised medical image registration,False,None,0.0
+HC052,healthcare,Fréchet Radiomic Distance (FRD): A Versatile Metric for Comparing Medical Imagin,False,None,0.0
+HC053,healthcare,Building medical image classifiers with very limited data using segmentation net,False,None,0.0
+HC054,healthcare,Data synthesis and adversarial networks: A review and meta-analysis in cancer im,False,None,0.0
+HC055,healthcare,Cross-dimensional transfer learning in medical image segmentation with deep lear,False,None,0.0
+HC056,healthcare,Uncertainty-aware multi-view co-training for semi-supervised medical image segme,False,None,0.0
+HC057,healthcare,MedP-CLIP: Medical CLIP with Region-Aware Prompt Integration,False,None,0.0
+HC058,healthcare,Test-time generative augmentation for medical image segmentation,False,None,0.0
+HC059,healthcare,Test-Time Adaptable Neural Networks for Robust Medical Image Segmentation,False,None,0.0
+HC060,healthcare,GAN-GA: A Generative Model based on Genetic Algorithm for Medical Image Generati,False,None,0.0
+HC061,healthcare,MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Applic,False,None,0.0
+HC062,healthcare,Privacy Preserving Image Registration,False,None,0.0
+HC063,healthcare,Segment Anything Model for Medical Image Analysis: an Experimental Study,False,None,0.0
+HC064,healthcare,A Deep Learning Framework for Unsupervised Affine and Deformable Image Registrat,False,None,0.0
+HC065,healthcare,Recurrent Inference Machine for Medical Image Registration,False,None,0.0
+HC066,healthcare,A Generic Fundus Image Enhancement Network Boosted by Frequency Self-supervised ,False,None,0.0
+HC067,healthcare,Multi-Objective Dual Simplex-Mesh Based Deformable Image Registration for 3D Med,False,None,0.0
+HC068,healthcare,Unsupervised anomaly localization in high-resolution breast scans using deep plu,False,None,0.0
+HC069,healthcare,VoxelPrompt: A Vision Agent for End-to-End Medical Image Analysis,False,None,0.0
+HC070,healthcare,Rethinking Boundary Detection in Deep Learning-Based Medical Image Segmentation,False,None,0.0
+HC071,healthcare,A Survey on Incorporating Domain Knowledge into Deep Learning for Medical Image ,False,None,0.0
+HC072,healthcare,Attention Mechanisms in Medical Image Segmentation: A Survey,False,None,0.0
+HC073,healthcare,Self-Supervised Learning for Medical Image Data with Anatomy-Oriented Imaging Pl,False,None,0.0
+HC074,healthcare,A Systematic Benchmarking Analysis of Transfer Learning for Medical Image Analys,False,None,0.0
+HC075,healthcare,VerSe: A Vertebrae Labelling and Segmentation Benchmark for Multi-detector CT Im,False,None,0.0
+HC076,healthcare,Weakly-Supervised 3D Medical Image Segmentation using Geometric Prior and Contra,False,None,0.0
+HC077,healthcare,Learning With Context Feedback Loop for Robust Medical Image Segmentation,False,None,0.0
+HC078,healthcare,Anomaly Detection-Inspired Few-Shot Medical Image Segmentation Through Self-Supe,False,None,0.0
+HC079,healthcare,CapsNet for Medical Image Segmentation,False,None,0.0
+HC080,healthcare,Embracing Imperfect Datasets: A Review of Deep Learning Solutions for Medical Im,False,None,0.0
+HC081,healthcare,Medical Image Segmentation based on Deep Active Contour and Mean Curvature Loss ,False,None,0.0
+HC082,healthcare,Learning to segment images with classification labels,False,None,0.0
+HC083,healthcare,Implicit Anatomical Rendering for Medical Image Segmentation with Stochastic Exp,False,None,0.0
+HC084,healthcare,Segment Anything Model for Medical Images?,False,None,0.0
+HC085,healthcare,Segmentation Ability Map: Interpret deep features for medical image segmentation,False,None,0.0
+HC086,healthcare,Tree-NET: Enhancing 2D Medical Image Segmentation Through Efficient Low-Level Fe,False,None,0.0
+HC087,healthcare,Deep learning and its application to medical image segmentation,False,None,0.0
+HC088,healthcare,MIScnn: A Framework for Medical Image Segmentation with Convolutional Neural Net,False,None,0.0
+HC089,healthcare,Mutual Consistency Learning for Semi-supervised Medical Image Segmentation,False,None,0.0
+HC090,healthcare,BayeSeg: Bayesian Modeling for Medical Image Segmentation with Interpretable Gen,False,None,0.0
+HC091,healthcare,Resource Optimized Neural Architecture Search for 3D Medical Image Segmentation,False,None,0.0
+HC092,healthcare,Boundary-aware Context Neural Network for Medical Image Segmentation,False,None,0.0
+HC093,healthcare,HiDiff: Hybrid Diffusion Framework for Medical Image Segmentation,False,None,0.0
+HC094,healthcare,SynthA1c: Towards Clinically Interpretable Patient Representations for Diabetes ,False,None,0.0
+HC095,healthcare,Towards Reducing Diagnostic Errors with Interpretable Risk Prediction,False,None,0.0
+HC096,healthcare,Automated Measurement of Vascular Calcification in Femoral Endarterectomy Patien,False,None,0.0
+HC097,healthcare,Patient-Conditioned Adaptive Offsets for Reliable Diagnosis across Subgroups,False,None,0.0
+HC098,healthcare,Predicting the Long-Term Outcomes of Biologics in Psoriasis Patients Using Machi,False,None,0.0
+HC099,healthcare,Beyond Diagnostic Performance: Revealing and Quantifying Ethical Risks in Pathol,False,None,0.0
+HC100,healthcare,Predicting Patient Recovery or Mortality Using Deep Neural Decision Tree and For,False,None,0.0
+HC101,healthcare,Interpretation of the Area Under the ROC Curve for Risk Prediction Models,False,None,0.0
+HC102,healthcare,Digital Diagnostics: The Potential Of Large Language Models In Recognizing Sympt,False,None,0.0
+HC103,healthcare,Systematic analysis reveals key microRNAs as diagnostic and prognostic factors i,False,None,0.0
+HC104,healthcare,Risk-Aware Robust Learning: Reducing Clinical Risk under Label Noise in Medical ,False,None,0.0
+HC105,healthcare,Deep Learning-based Patient Re-identification Is able to Exploit the Biometric N,False,None,0.0
+HC106,healthcare,Leveraging Large Language Model as Simulated Patients for Clinical Education,False,None,0.0
+HC107,healthcare,Reduction of Surgical Risk Through the Evaluation of Medical Imaging Diagnostics,False,None,0.0
+HC108,healthcare,AGE-MIL: Anchor-Guided Evidence Learning for Patient-Level Prediction,False,None,0.0
+HC109,healthcare,LLM-Mini-CEX: Automatic Evaluation of Large Language Model for Diagnostic Conver,False,None,0.0
+HC110,healthcare,A Multimodal In Vitro Diagnostic Method for Parkinson's Disease Combining Facial,False,None,0.0
+HC111,healthcare,PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI,False,None,0.0
+HC112,healthcare,Smartphone-based point-of-care lipid blood test performance evaluation compared ,False,None,0.0
+HC113,healthcare,LLMs for Cardiovascular Risk Prediction from Structured Clinical Data,False,None,0.0
+HC114,healthcare,Reliability-Aware CT-MRI Registration: A Quality Engineering Framework with Stab,False,None,0.0
+HC115,healthcare,Predicting breast cancer with AI for individual risk-adjusted MRI screening and ,False,None,0.0
+HC116,healthcare,Malignant field signature analysis in biopsy samples at diagnosis identifies let,False,None,0.0
+HC117,healthcare,Histopathological Spectrum-Guided Prostate Stratification via Segmentation-Assis,False,None,0.0
+HC118,healthcare,Conformal uncertainty quantification to evaluate predictive fairness of foundati,False,None,0.0
+HC119,healthcare,Cross-modal linkage risk in clinical vision-language models,False,None,0.0
+HC120,healthcare,AdaFuse: Adaptive Multimodal Fusion for Lung Cancer Risk Prediction via Reinforc,False,None,0.0
+HC121,healthcare,KAISEN: Reproducible Subgroup Fairness Auditing for Clinical Risk Models,False,None,0.0
+HC122,healthcare,Diagnostic performance of deep learning for predicting glioma isocitrate dehydro,False,None,0.0
+HC123,healthcare,Artificial Intelligence-Informed Handheld Breast Ultrasound for Screening: A Sys,False,None,0.0
+HC124,healthcare,Modeling sepsis progression using hidden Markov models,False,None,0.0
+HC125,healthcare,"A Proactive EMR Assistant for Doctor-Patient Dialogue: Streaming ASR, Belief Sta",False,None,0.0
+HC126,healthcare,A multiobjective deep learning approach for predictive classification in Neurobl,False,None,0.0
+HC127,healthcare,Machine Learning and Glioblastoma: Treatment Response Monitoring Biomarkers in 2,False,None,0.0
+HC128,healthcare,Safer Skin Lesion Classification with Global Class Activation Probability Map Ev,False,None,0.0
+HC129,healthcare,Lightweight Transformers for Clinical Natural Language Processing,True,9,0.1111
+HC130,healthcare,Using Bottleneck Adapters to Identify Cancer in Clinical Notes under Low-Resourc,False,None,0.0
+HC131,healthcare,Distinguishing Clinical Sentiment: The Importance of Domain Adaptation in Psychi,False,None,0.0
+HC132,healthcare,What Do You See in this Patient? Behavioral Testing of Clinical NLP Models,False,None,0.0
+HC133,healthcare,MeDAL: Medical Abbreviation Disambiguation Dataset for Natural Language Understa,False,None,0.0
+HC134,healthcare,Teaching NLP outside Linguistics and Computer Science classrooms: Some challenge,False,None,0.0
+HC135,healthcare,Publicly Available Clinical BERT Embeddings,False,None,0.0
+HC136,healthcare,Adapting Abstract Meaning Representation Parsing to the Clinical Narrative -- th,False,None,0.0
+HC137,healthcare,Clinical ModernBERT: An efficient and long context encoder for biomedical text,False,None,0.0
+HC138,healthcare,Exploring the Value of Pre-trained Language Models for Clinical Named Entity Rec,False,None,0.0
+HC139,healthcare,Before the Labels: How Dataset Construction Shapes Suicidality Detection in Clin,False,None,0.0
+HC140,healthcare,Multiple Sclerosis Severity Classification From Clinical Text,False,None,0.0
+HC141,healthcare,The NLP Sandbox: an efficient model-to-data system to enable federated and unbia,False,None,0.0
+HC142,healthcare,Clinical BERTScore: An Improved Measure of Automatic Speech Recognition Performa,False,None,0.0
+HC143,healthcare,Principles from Clinical Research for NLP Model Generalization,False,None,0.0
+HC144,healthcare,Implementing a Portable Clinical NLP System with a Common Data Model - a Lisp Pe,False,None,0.0
+HC145,healthcare,Accelerating Clinical NLP at Scale with a Hybrid Framework with Reduced GPU Dema,False,None,0.0
+HC146,healthcare,Adverse Childhood Experiences Identification from Clinical Notes with Ontologies,False,None,0.0
+HC147,healthcare,Initial Investigation of LLM-Assisted Development of Rule-Based Clinical NLP Sys,False,None,0.0
+HC148,healthcare,BioClinical ModernBERT: A State-of-the-Art Long-Context Encoder for Biomedical a,False,None,0.0
+HC149,healthcare,NOWJ @BioCreative IX ToxHabits: An Ensemble Deep Learning Approach for Detecting,False,None,0.0
+HC150,healthcare,PromptMind Team at MEDIQA-CORR 2024: Improving Clinical Text Correction with Err,False,None,0.0
+HC151,healthcare,Statistical NLP for Optimization of Clinical Trial Success Prediction in Pharmac,False,None,0.0
+HC152,healthcare,CHiRPE: A Step Towards Real-World Clinical NLP with Clinician-Oriented Model Exp,False,None,0.0
+HC153,healthcare,SemClinBr -- a multi institutional and multi specialty semantically annotated co,False,None,0.0
+HC154,healthcare,A Parameter-Efficient Transfer Learning Approach through Multitask Prompt Distil,False,None,0.0
+HC155,healthcare,Automated Detection of Clinical Entities in Lung and Breast Cancer Reports Using,False,None,0.0
+HC156,healthcare,On the diminishing return of labeling clinical reports,False,None,0.0
+HC157,healthcare,Improving Clinical Document Understanding on COVID-19 Research with Spark NLP,False,None,0.0
+HC158,healthcare,Biomedical and Clinical English Model Packages in the Stanza Python NLP Library,False,None,0.0
+HC159,healthcare,FMI@SU ToxHabits: Evaluating LLMs Performance on Toxic Habit Extraction in Spani,False,None,0.0
+HC160,healthcare,An Open Natural Language Processing Development Framework for EHR-based Clinical,False,None,0.0
+HC161,healthcare,Clinical information extraction for Low-resource languages with Few-shot learnin,False,None,0.0
+HC162,healthcare,Dilated Convolutional Attention Network for Medical Code Assignment from Clinica,False,None,0.0
+HC163,healthcare,A Short Review of Ethical Challenges in Clinical Natural Language Processing,False,None,0.0
+HC164,healthcare,Multilingual Clinical NER: Translation or Cross-lingual Transfer?,False,None,0.0
+HC165,healthcare,Bidirectional LSTM-CRF for Clinical Concept Extraction,False,None,0.0
+HC166,healthcare,Hierarchical Annotation for Building A Suite of Clinical Natural Language Proces,False,None,0.0
+HC167,healthcare,Disentangling Ambiguity from Instability in Large Language Models: A Clinical Te,False,None,0.0
+HC168,healthcare,An Analysis of Attention over Clinical Notes for Predictive Tasks,False,None,0.0
+HC169,healthcare,A Zero-shot and Few-shot Study of Instruction-Finetuned Large Language Models Ap,False,None,0.0
+HC170,healthcare,EriBERTa: A Bilingual Pre-Trained Language Model for Clinical Natural Language P,False,None,0.0
+HC171,healthcare,Large Language Models are Few-Shot Clinical Information Extractors,False,None,0.0
+HC172,healthcare,DR.BENCH: Diagnostic Reasoning Benchmark for Clinical Natural Language Processin,False,None,0.0
+HC173,healthcare,Empowering Healthcare Practitioners with Language Models: Structuring Speech Tra,False,None,0.0
+HC174,healthcare,SECNLP: A Survey of Embeddings in Clinical Natural Language Processing,False,None,0.0
+HC175,healthcare,HealthPrompt: A Zero-shot Learning Paradigm for Clinical Natural Language Proces,False,None,0.0
+HC176,healthcare,Natural Language Processing in Biomedicine: A Unified System Architecture Overvi,False,None,0.0
+HC177,healthcare,An Introduction to Natural Language Processing Techniques and Framework for Clin,False,None,0.0
+HC178,healthcare,A Scoping Review of Publicly Available Language Tasks in Clinical Natural Langua,False,None,0.0
+HC179,healthcare,An Interactive Tool for Natural Language Processing on Clinical Text,False,None,0.0
+HC180,healthcare,Identifying Symptoms of Delirium from Clinical Narratives Using Natural Language,False,None,0.0
+HC181,healthcare,Few-Shot Learning for Clinical Natural Language Processing Using Siamese Neural ,False,None,0.0
+HC182,healthcare,Med7: a transferable clinical natural language processing model for electronic h,False,None,0.0
+HC183,healthcare,An Empirical Evaluation of Prompting Strategies for Large Language Models in Zer,False,None,0.0
+HC184,healthcare,"Natural Language Processing, Sentiment Analysis and Clinical Analytics",False,None,0.0
+HC185,healthcare,Classifying Cyber-Risky Clinical Notes by Employing Natural Language Processing,False,None,0.0
+HC186,healthcare,Building Safe and Deployable Clinical Natural Language Processing under Temporal,False,None,0.0
+HC187,healthcare,Finding Hidden Relationships Between Medical Concepts by Leveraging Metamap and ,False,None,0.0
+HC188,healthcare,GGPONC: A Corpus of German Medical Text with Rich Metadata Based on Clinical Pra,False,None,0.0
+HC189,healthcare,Exploration of Attention Mechanism-Enhanced Deep Learning Models in the Mining o,False,None,0.0
+HC190,healthcare,Exploring Diseases and Syndromes in Neurology Case Reports from 1955 to 2017 wit,False,None,0.0
+HC191,healthcare,KPL: Training-Free Medical Knowledge Mining of Vision-Language Models,False,None,0.0
+HC192,healthcare,Medical Literature Mining and Retrieval in a Conversational Setting,False,None,0.0
+HC193,healthcare,Cross-institution text mining to uncover clinical associations: a case study rel,False,None,0.0
+HC194,healthcare,Automated Spelling Correction for Clinical Text Mining in Russian,False,None,0.0
+HC195,healthcare,Cross-lingual Argument Mining in the Medical Domain,False,None,0.0
+HC196,healthcare,Generation of Synthetic Electronic Medical Record Text,False,None,0.0
+HC197,healthcare,Parameter-Efficient Fine-Tuning for Medical Text Summarization: A Comparative St,False,None,0.0
+HC198,healthcare,RuBioRoBERTa: a pre-trained biomedical language model for Russian language biome,False,None,0.0
+HC199,healthcare,Unsupervised Text Mining of COVID-19 Records,False,None,0.0
+HC200,healthcare,EasyNER: A Customizable Easy-to-Use Pipeline for Deep Learning- and Dictionary-b,False,None,0.0
+CL001,climate,Multi-Agent Reinforcement Learning and Human Social Factors in Climate Change Mi,True,1,1.0
+CL002,climate,Determining feature importance for actionable climate change mitigation policies,True,1,1.0
+CL003,climate,"Complexity, economic science and possible economic benefits of climate change mi",True,1,1.0
+CL004,climate,Optimal forest rotation age under efficient climate change mitigation,True,1,1.0
+CL005,climate,A well-timed switch from local to global agreements accelerates climate change m,True,1,1.0
+CL006,climate,Climate Modeling and Bifurcation,True,1,1.0
+CL007,climate,Machine Learning Workflows in Climate Modeling: Design Patterns and Insights fro,True,1,1.0
+CL008,climate,ClimateLearn: Benchmarking Machine Learning for Weather and Climate Modeling,True,1,1.0
+CL009,climate,"The ""teapot in a city"": a paradigm shift in urban climate modeling",True,1,1.0
+CL010,climate,AQ-PINNs: Attention-Enhanced Quantum Physics-Informed Neural Networks for Carbon,True,1,1.0
+CL011,climate,Using machine learning to parameterize moist convection: potential for modeling ,True,1,1.0
+CL012,climate,Sub-seasonal forecasting with a large ensemble of deep-learning weather predicti,True,1,1.0
+CL013,climate,Advancing Parsimonious Deep Learning Weather Prediction using the HEALPix Mesh,True,1,1.0
+CL014,climate,Dynamical Tests of a Deep-Learning Weather Prediction Model,True,1,1.0
+CL015,climate,Assessing the ability of a stretched-grid deep-learning weather prediction model,True,1,1.0
+CL016,climate,Contrastive Learning Boosts Deterministic and Generative Models for Weather Data,True,1,1.0
+CL017,climate,A Simple Baseline for Adversarial Domain Adaptation-based Unsupervised Flood For,True,1,1.0
+CL018,climate,Short-term Streamflow and Flood Forecasting based on Graph Convolutional Recurre,True,1,1.0
+CL019,climate,HydroAgent: Formalizing Forecaster Expertise into Skill-Orchestrated Flood Forec,True,1,1.0
+CL020,climate,ML for Flood Forecasting at Scale,True,1,1.0
+CL021,climate,Frequent Itemset-driven Search for Finding Minimum Node Separators in Complex Ne,True,1,1.0
+CL022,climate,Estimating On-road Transportation Carbon Emissions from Open Data of Road Networ,True,1,1.0
+CL023,climate,TriHead-GAN: A Generative Adversarial Network with Triple-Head Discriminator for,True,1,1.0
+CL024,climate,Connecting Vision and Emissions: A Behavioural AI Approach to Carbon Estimation ,True,1,1.0
+CL025,climate,Using reinforcement learning to improve drone-based inference of greenhouse gas ,True,1,1.0
+CL026,climate,Speckle Noise Analysis for Synthetic Aperture Radar (SAR) Space Data,True,1,1.0
+CL027,climate,Practical Quantum-Classical Feature Fusion for complex data Classification,True,1,1.0
+CL028,climate,SPECIAL: Zero-shot Hyperspectral Image Classification With CLIP,True,1,1.0
+CL029,climate,EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk For,True,1,1.0
+CL030,climate,Exploring Physics-Informed Neural Networks for Crop Yield Loss Forecasting,True,1,1.0
+CL031,climate,Stochastic Nonlinear Ensemble Modeling and Control for Robot Team Environmental ,True,1,1.0
+CL032,climate,Learning Non-Stationary Space-Time Models for Environmental Monitoring,True,1,1.0
+CL033,climate,A Survey of Decision-Theoretic Approaches for Robotic Environmental Monitoring,True,1,1.0
+CL034,climate,Learning Submodular Objectives for Team Environmental Monitoring,True,1,1.0
+CL035,climate,The environmental monitoring system at the COSINE-100 experiment,True,1,1.0
+CL036,climate,Enhanced Renewable Energy Forecasting using Context-Aware Conformal Prediction,True,1,1.0
+CL037,climate,Load and Renewable Energy Forecasting Using Deep Learning for Grid Stability,True,1,1.0
+CL038,climate,Weather Maps as Tokens: Transformers for Renewable Energy Forecasting,True,1,1.0
+CL039,climate,Deriving Loss Function for Value-oriented Renewable Energy Forecasting,True,1,1.0
+CL040,climate,Feature-driven Improvement of Renewable Energy Forecasting and Trading,True,1,1.0
+CL041,climate,Regional climate risk assessment from climate models using probabilistic machine,True,1,1.0
+CL042,climate,Scenario-based actuarial climate risk assessment via calibration of the DICE mod,True,1,1.0
+CL043,climate,Deep Learning-Driven Downscaling for Climate Risk Assessment of Projected Temper,True,1,1.0
+CL044,climate,Probabilistic Projections of Baseline 21st Century CO$_2$ Emissions Using a Simp,True,1,1.0
+CL045,climate,Evidential Deep Learning for Probabilistic Modelling of Extreme Storm Events,True,1,1.0
+CL046,climate,"AI, Climate, and Transparency: Operationalizing and Improving the AI Act",True,1,1.0
+CL047,climate,"AI, Climate, and Regulation: From Data Centers to the AI Act",True,1,1.0
+CL048,climate,A Generative AI-Driven Reliability Layer for Action-Oriented Disaster Resilience,True,1,1.0
+CL049,climate,Climate in a Bottle: Towards a Generative Foundation Model for the Kilometer-Sca,True,1,1.0
+CL050,climate,Beyond the Training Data: Confidence-Guided Mixing of Parameterizations in a Hyb,True,1,1.0
+CL051,climate,Active Amplification of the Terrestrial Albedo to Mitigate Climate Change: An Ex,False,None,0.0
+CL052,climate,Fragility Modeling of Power Grid Infrastructure for Addressing Climate Change Ri,False,None,0.0
+CL053,climate,"Avoiding the ""Great Filter"": An Assessment of Climate Change Solutions and Combi",False,None,0.0
+CL054,climate,Hybrid physics-based and data-driven modeling with calibrated uncertainty for li,False,None,0.0
+CL055,climate,Overcoming the disconnect between energy system and climate modeling,False,None,0.0
+CL056,climate,IPSL-AID: Generative Diffusion Models for Climate Downscaling from Global to Reg,False,None,0.0
+CL057,climate,EarthNet2021: A novel large-scale dataset and challenge for forecasting localize,False,None,0.0
+CL058,climate,Aligning long-term climate mitigation with enhanced methane action,False,None,0.0
+CL059,climate,Power Grid Cascading Failure Mitigation by Reinforcement Learning,False,None,0.0
+CL060,climate,"Detection, attribution, and modeling of climate change: key open issues",False,None,0.0
+CL061,climate,"The Reality of Climate Change: Evidence, Impacts and Engineering Solutions",False,None,0.0
+CL062,climate,Augmented CARDS: A machine learning approach to identifying triggers of climate ,False,None,0.0
+CL063,climate,Impacts of Climate Change on Photovoltaic Potential in Africa,False,None,0.0
+CL064,climate,Robustness of AI-based weather forecasts in a changing climate,False,None,0.0
+CL065,climate,The land use-climate change-biodiversity nexus in European islands stakeholders,False,None,0.0
+CL066,climate,Tackling extreme urban heat: a machine learning approach to assess the impacts o,False,None,0.0
+CL067,climate,Analyzing Regional Impacts of Climate Change using Natural Language Processing T,False,None,0.0
+CL068,climate,Climate Change and Future Food Security: Predicting the Extent of Cropland Gain ,False,None,0.0
+CL069,climate,Reinforcement Learning for Wildfire Mitigation in Simulated Disaster Environment,False,None,0.0
+CL070,climate,Fingerprinting Heatwaves and Cold Spells and Assessing Their Response to Climate,False,None,0.0
+CL071,climate,Emergent risks in the Mt. Everest region in the time of anthropogenic climate ch,False,None,0.0
+CL072,climate,"Mapping global offshore wind wake losses, layout optimisation potential, and cli",False,None,0.0
+CL073,climate,Offshore wind energy climate projection using UPSCALE climate data under the RCP,False,None,0.0
+CL074,climate,Climate Change Impact on Agricultural Land Suitability: An Interpretable Machine,False,None,0.0
+CL075,climate,Assessing the physical risks of climate change for the financial sector: a case ,False,None,0.0
+CL076,climate,Transferring climate change physical knowledge,False,None,0.0
+CL077,climate,Meta-modeling strategy for data-driven forecasting,False,None,0.0
+CL078,climate,"Assessing the climate benefits of afforestation: processes, methods, and framewo",False,None,0.0
+CL079,climate,Multivariate LSTM-Based Forecasting for Renewable Energy: Enhancing Climate Chan,False,None,0.0
+CL080,climate,The built environment and induced transport CO2 emissions: A double machine lear,False,None,0.0
+CL081,climate,Rapid Climate Model Downscaling to Assess Risk of Extreme Rainfall in Bangladesh,False,None,0.0
+CL082,climate,Toward Foundation Models for Earth Monitoring: Proposal for a Climate Change Ben,False,None,0.0
+CL083,climate,Climate uncertainty impacts on optimal mitigation pathways and social cost of ca,False,None,0.0
+CL084,climate,We must re-evaluate assumptions about carbon trading for effective climate chang,False,None,0.0
+CL085,climate,Sea ice trends in climate models only accurate in runs with biased global warmin,True,3,0.3333
+CL086,climate,Statistical significance of rising and oscillatory trends in global ocean and la,False,None,0.0
+CL087,climate,Nonequilibrium fluctuations of global warming,False,None,0.0
+CL088,climate,Estimate solar contribution to the global surface warming using the ACRIM TSI sa,False,None,0.0
+CL089,climate,Contribution of Shorter-term Radiative Forcings of Aerosols and Ozone to Global ,False,None,0.0
+CL090,climate,Atmospheric hypotheses' of Earth's global warming,False,None,0.0
+CL091,climate,Global Warming and Caspian Sea Level Fluctuations,False,None,0.0
+CL092,climate,Global Warming In Ghana's Major Cities Based on Statistical Analysis of NASA's P,False,None,0.0
+CL093,climate,Global total precipitable water variations and trends during 1958-2021,False,None,0.0
+CL094,climate,New Insights into Global Warming: End-to-End Visual Analysis and Prediction of T,False,None,0.0
+CL095,climate,On the Role of Global Warming on the Statistics of Record-Breaking Temperatures,False,None,0.0
+CL096,climate,A dynamical geography of observed trends in the global ocean,False,None,0.0
+CL097,climate,"Discussion on common errors in analyzing sea level accelerations, solar trends a",False,None,0.0
+CL098,climate,Depth-dependent warming of the Gulf of Eilat (Aqaba),False,None,0.0
+CL099,climate,A Spatial Persistence Gradient in European Warming Consistent with North Atlanti,False,None,0.0
+CL100,climate,"Implications of ""peak oil"" for atmospheric CO2 and climate",False,None,0.0
+CL101,climate,Warming inhibits Increases in Vegetation Net Primary Productivity despite Greeni,False,None,0.0
+CL102,climate,The significance of trends in long-term correlated records,False,None,0.0
+CL103,climate,Rediscover Climate Change during Global Warming Slowdown via Wasserstein Stabili,False,None,0.0
+CL104,climate,On the Warming of the Southern Hemisphere since 1955 and Recent Slowing-Down: Ro,False,None,0.0
+CL105,climate,21st Century Global and Regional Surface Temperature Projections,False,None,0.0
+CL106,climate,How much has the Sun influenced Northern Hemisphere temperature trends? An ongoi,False,None,0.0
+CL107,climate,Constraining the global mean surface temperature during 1850-1880 with new stati,False,None,0.0
+CL108,climate,Recent global temperature surge amplified by record-low planetary albedo,False,None,0.0
+CL109,climate,The Shifts Hypothesis - an alternative view of global climate change,False,None,0.0
+CL110,climate,Long Term Trends in Atmospheric Pressure and its Variance,False,None,0.0
+CL111,climate,Climate Trends of Tropical Cyclone Intensity and Energy Extremes Revealed by Dee,False,None,0.0
+CL112,climate,Planetary boundary layer depth in Global climate models induced biases in surfac,False,None,0.0
+CL113,climate,Generative deep learning improves reconstruction of global historical climate re,False,None,0.0
+CL114,climate,"Global temperatures and sunspot numbers. Are they related? Yes, but non linearly",False,None,0.0
+CL115,climate,ET-WB: water balance-based estimations of terrestrial evaporation over global la,False,None,0.0
+CL116,climate,Impact of Changing Greenhouse Gas Concentrations on Ontario's Climate,False,None,0.0
+CL117,climate,Deciphering Super El Niño: Development of a Novel Predictive Model Integrating L,False,None,0.0
+CL118,climate,Correlations of the first and second derivatives of atmospheric CO2 with global ,False,None,0.0
+CL119,climate,Evapotranspiration trends over the last 300 years reconstructed from historical ,False,None,0.0
+CL120,climate,Precipitation extremes under climate change,False,None,0.0
+CL121,climate,Assessing the Spurious Impacts of Ice-Constraining Methods on the Climate Respon,False,None,0.0
+CL122,climate,"Solar and planetary oscillation control on climate change: hind-cast, forecast a",False,None,0.0
+CL123,climate,Another Look at Climate Sensitivity,False,None,0.0
+CL124,climate,"Climate Sensitivity, Sea Level, and Atmospheric CO2",False,None,0.0
+CL125,climate,AlphaEarth Satellite Embeddings for Modelling Climate Sensitive Diseases Towards,False,None,0.0
+CL126,climate,State-dependence of climate sensitivity: attractor constraints and palaeoclimate,False,None,0.0
+CL127,climate,A new framework for climate sensitivity and prediction: a modelling perspective,False,None,0.0
+CL128,climate,The Earth's Equilibrium Climate Sensitivity and Thermal Inertia,False,None,0.0
+CL129,climate,Paleoclimate Implications for Human-Made Climate Change,False,None,0.0
+CL130,climate,Emergent constraints on climate sensitivities,False,None,0.0
+CL131,climate,Extreme sensitivity and climate tipping points,False,None,0.0
+CL132,climate,State-dependence of CO2 Forcing and its Implications for Climate Sensitivity,False,None,0.0
+CL133,climate,"Learning Climate Sensitivity from Future Observations, Fast and Slow",False,None,0.0
+CL134,climate,Can we believe in high climate sensitivity?,True,4,0.25
+CL135,climate,Thermodynamics of Climate Change: Generalized Sensitivities,False,None,0.0
+CL136,climate,On the state dependency of fast feedback processes in (palaeo) climate sensitivi,False,None,0.0
+CL137,climate,Sensitive Dependence of Global Climate to Continental Geometry,False,None,0.0
+CL138,climate,Sensitivity Analysis for Climate Science with Generative Flow Models,False,None,0.0
+CL139,climate,Precipitation efficiency amplifies climate sensitivity by enhancing tropical cir,False,None,0.0
+CL140,climate,Assessing Climate Vulnerability Risk for Substations in Massachusetts Via Sensit,False,None,0.0
+CL141,climate,Teleconnection processes linking the intensity of the Atlantic Multidecadal Vari,False,None,0.0
+CL142,climate,Climate Forcing by the Volcanic Eruption of Mount Pinatubo. Revised edition,False,None,0.0
+CL143,climate,Regional impacts poorly constrained by climate sensitivity,False,None,0.0
+CL144,climate,Greater climate sensitivity and variability on TRAPPIST-1e than Earth,False,None,0.0
+CL145,climate,mloz: A Highly Efficient Machine Learning-Based Ozone Parameterization for Clima,False,None,0.0
+CL146,climate,Considerations of Earth climate sensitivity based on peculiarities of planetary ,False,None,0.0
+CL147,climate,Climate Response and Sensitivity: Timescales and Late Tipping Points,False,None,0.0
+CL148,climate,The impact of stochastic physics on climate sensitivity in EC-Earth,True,6,0.1667
+CL149,climate,Multivariate Estimations of Equilibrium Climate Sensitivity from Short Transient,False,None,0.0
+CL150,climate,Climate sensitivity of Earth to solar irradiance: update,False,None,0.0
+CL151,climate,Finite-Response Complementarity in Fluctuation Constraints on Climate Sensitivit,False,None,0.0
+CL152,climate,The Physics of Climate Variability and Climate Change,False,None,0.0
+CL153,climate,ACE2-SOM: Coupling an ML atmospheric emulator to a slab ocean and learning the s,False,None,0.0
+CL154,climate,Uncertainty assessment in satellite-based greenhouse gas emissions estimates usi,False,None,0.0
+CL155,climate,Estimation of Corporate Greenhouse Gas Emissions via Machine Learning,False,None,0.0
+CL156,climate,Increasing and Diverging Greenhouse Gas Emissions of Urban Wastewater Treatment ,False,None,0.0
+CL157,climate,Dynamic nowcast of the New Zealand greenhouse gas inventory,False,None,0.0
+CL158,climate,Greenhouse Gas (GHG) Emissions Poised to Rocket: Modeling the Environmental Impa,False,None,0.0
+CL159,climate,Greenhouse Gas Emission Prediction on Road Network using Deep Sequence Learning,False,None,0.0
+CL160,climate,Air Quality and Greenhouse Gas Emissions Assessment of Data Centers in Texas: Qu,False,None,0.0
+CL161,climate,The safe operating space for greenhouse gas emissions,False,None,0.0
+CL162,climate,Mitigating Greenhouse Gas Emissions Through Generative Adversarial Networks Base,False,None,0.0
+CL163,climate,Abominable greenhouse gas bookkeeping casts serious doubts on climate intentions,False,None,0.0
+CL164,climate,The effective mitigation of greenhouse gas emissions from rice paddies without c,False,None,0.0
+CL165,climate,Analysis of Greenhouse Gases,False,None,0.0
+CL166,climate,Urban Street Network Design and Transport-Related Greenhouse Gas Emissions aroun,False,None,0.0
+CL167,climate,Multi-Agent Reinforcement Learning for Greenhouse Gas Offset Credit Markets,False,None,0.0
+CL168,climate,GeoFormer: A Vision and Sequence Transformer-based Approach for Greenhouse Gas M,False,None,0.0
+CL169,climate,Estimation of Air Pollution with Remote Sensing Data: Revealing Greenhouse Gas E,False,None,0.0
+CL170,climate,"The Runaway Greenhouse: implications for future climate change, geoengineering a",False,None,0.0
+CL171,climate,Towards Operational Automated Greenhouse Gas Plume Detection and Delineation,False,None,0.0
+CL172,climate,Global temperature goals should determine the time horizons for greenhouse gas e,False,None,0.0
+CL173,climate,Deep Learning Surrogates for Real-Time Gas Emission Inversion,False,None,0.0
+CL174,climate,"Habitability of waterworlds: runaway greenhouses, atmospheric expansion and mult",False,None,0.0
+CL175,climate,Model estimates for contribution of natural and anthropogenic CO$_2$ and CH$_4$ ,False,None,0.0
+CL176,climate,Social Cost of Greenhouse Gases -- OPTiMEM and the Heat Conjecture(s),False,None,0.0
+CL177,climate,Thermal emissions and climate change: Cooler options for future energy technolog,False,None,0.0
+CL178,climate,Satellite monitoring of annual US landfill methane emissions and trends,False,None,0.0
+CL179,climate,Quantifying urban and landfill methane emissions in the United States using TROP,False,None,0.0
+CL180,climate,Averaging Atmospheric Gas Concentration Data using Wasserstein Barycenters,False,None,0.0
+CL181,climate,Counting Carbon: A Survey of Factors Influencing the Emissions of Machine Learni,False,None,0.0
+CL182,climate,Modeling the Sea-Level Change from U.S. Vehicle Emissions,False,None,0.0
+CL183,climate,Towards Indirect Top-Down Road Transport Emissions Estimation,False,None,0.0
+CL184,climate,Closing Gaps in Emissions Monitoring with Climate TRACE,False,None,0.0
+CL185,climate,Quantitative implications of the secondary role of carbon dioxide climate forcin,False,None,0.0
+CL186,climate,Macroscopic Emission Modeling of Urban Traffic Using Probe Vehicle Data: A Machi,False,None,0.0
+CL187,climate,Future Climate Change Projections over the Indian Region,False,None,0.0
+CL188,climate,Impact of anthropogenic climate change on the East Asian summer monsoon,False,None,0.0
+CL189,climate,Climate Adaptation with Reinforcement Learning: Experiments with Flooding and Tr,False,None,0.0
+CL190,climate,Dimensionality-Reduction of Climate Data using Deep Autoencoders,False,None,0.0
+CL191,climate,Loosely Conditioned Emulation of Global Climate Models With Generative Adversari,False,None,0.0
+CL192,climate,Weathering Adaptation: Grid Infrastructure Planning in a Changing Climate,False,None,0.0
+CL193,climate,Deep Learning for Climate Model Output Statistics,False,None,0.0
+CL194,climate,Climate simulations for 1880-2003 with GISS modelE,False,None,0.0
+CL195,climate,Improving the predictions of ML-corrected climate models with novelty detection,False,None,0.0
+CL196,climate,Foundation Models for Weather and Climate Data Understanding: A Comprehensive Su,False,None,0.0
+CL197,climate,Achieving Conservation of Energy in Neural Network Emulators for Climate Modelin,False,None,0.0
+CL198,climate,RAIN: Reinforcement Algorithms for Improving Numerical Weather and Climate Model,False,None,0.0
+CL199,climate,Machine learning for weather and climate are worlds apart,False,None,0.0
+CL200,climate,Maximum-Entropy Weighting of Multi-Component Earth Climate Models,False,None,0.0

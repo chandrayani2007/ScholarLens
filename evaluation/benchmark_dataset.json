@@ -1,0 +1,1900 @@
+[
+  {
+    "id": "BENCH-001",
+    "question": "What is retrieval-augmented generation in large language models?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AI001",
+      "AI002"
+    ],
+    "expected_evidence_criteria": "Must define RAG and mention external vector/document retrieval.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-002",
+    "question": "What is explainable AI and why is it important?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AI005",
+      "AI006"
+    ],
+    "expected_evidence_criteria": "Must explain XAI concept and feature attribution.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-003",
+    "question": "What is a Transformer neural network architecture?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AI010"
+    ],
+    "expected_evidence_criteria": "Must define self-attention and transformer blocks.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-004",
+    "question": "How does self-attention compute token dependencies in transformers?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AI011"
+    ],
+    "expected_evidence_criteria": "Explain query, key, value matrix multiplications and softmax attention weights.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-005",
+    "question": "How do diffusion models generate high-fidelity images step-by-step?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AI015"
+    ],
+    "expected_evidence_criteria": "Explain forward noise addition and reverse denoising process.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-006",
+    "question": "How does policy gradient optimization work in deep reinforcement learning?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AI020"
+    ],
+    "expected_evidence_criteria": "Explain policy optimization, rewards, and action distribution updates.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-007",
+    "question": "What are the primary advantages of parameter-efficient fine-tuning like LoRA?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AI025"
+    ],
+    "expected_evidence_criteria": "Highlight reduced memory footprint, low-rank matrices, and fast adaptation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-008",
+    "question": "What are the advantages of agentic AI workflows over single-prompt LLM generation?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AI030"
+    ],
+    "expected_evidence_criteria": "Discuss multi-step reasoning, tool use, self-reflection, and execution loops.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-009",
+    "question": "What are the benefits of dense vector retrieval over keyword search in RAG systems?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AI035"
+    ],
+    "expected_evidence_criteria": "Discuss semantic matching, synonym handling, and dense vector embeddings.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-010",
+    "question": "What are the major limitations of current large language models in logical reasoning?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "AI040"
+    ],
+    "expected_evidence_criteria": "Discuss hallucinations, context window limits, and error propagation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-011",
+    "question": "What challenges impede real-time deployment of vision transformer models?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "AI045"
+    ],
+    "expected_evidence_criteria": "Discuss quadratic computational complexity, high memory overhead, and latency.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-012",
+    "question": "What are the main safety challenges in autonomous AI agent execution?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "AI050"
+    ],
+    "expected_evidence_criteria": "Discuss reward hacking, alignment drift, and unconstrained action execution.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-013",
+    "question": "How is computer vision applied in autonomous vehicle navigation?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI055"
+    ],
+    "expected_evidence_criteria": "Discuss object detection, lane segmentation, and depth estimation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-014",
+    "question": "How are graph neural networks applied to molecular structure prediction?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI060"
+    ],
+    "expected_evidence_criteria": "Discuss node/edge representations for atoms and chemical bonds.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-015",
+    "question": "How is reinforcement learning used in robotic manipulation tasks?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI065"
+    ],
+    "expected_evidence_criteria": "Discuss trajectory optimization, motor control, and feedback loops.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-016",
+    "question": "Compare convolutional neural networks and vision transformers for image classification.",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AI070"
+    ],
+    "expected_evidence_criteria": "Compare inductive bias, patch embeddings, and computational efficiency.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-017",
+    "question": "Compare dense retrieval and hybrid BM25 vector retrieval in RAG architectures.",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AI075"
+    ],
+    "expected_evidence_criteria": "Compare exact keyword precision vs semantic recall.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-018",
+    "question": "Compare supervised fine-tuning and reinforcement learning from human feedback.",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AI080"
+    ],
+    "expected_evidence_criteria": "Compare token likelihood optimization vs human preference alignment.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-019",
+    "question": "How are hallucinations evaluated in retrieval-augmented language models?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "AI085"
+    ],
+    "expected_evidence_criteria": "Discuss claim verification, groundedness metrics, and NLI models.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-020",
+    "question": "How do explainability methods detect bias in deep neural networks?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "AI090"
+    ],
+    "expected_evidence_criteria": "Discuss SHAP, LIME, and feature attribution heatmaps.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-021",
+    "question": "How can machine learning predict model drift in production AI pipelines?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "AI095"
+    ],
+    "expected_evidence_criteria": "Discuss feature distribution shifts and monitoring statistical metrics.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-022",
+    "question": "What is deep reinforcement learning?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AI100"
+    ],
+    "expected_evidence_criteria": "Define Q-learning and deep neural policy networks.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-023",
+    "question": "How do generative adversarial networks train generator and discriminator models?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AI105"
+    ],
+    "expected_evidence_criteria": "Explain min-max adversarial loss game between generator and discriminator.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-024",
+    "question": "What are the limitations of zero-shot prompting in complex math problems?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "AI110"
+    ],
+    "expected_evidence_criteria": "Discuss lack of step-by-step scratchpads and arithmetic errors.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-025",
+    "question": "How is natural language processing applied to automated code synthesis?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI115"
+    ],
+    "expected_evidence_criteria": "Discuss code LLMs, syntax trees, and unit test generation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-026",
+    "question": "Evaluate the effectiveness of chain-of-thought prompting in LLM reasoning.",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "AI120"
+    ],
+    "expected_evidence_criteria": "Discuss step-by-step intermediate reasoning steps and accuracy gains.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-027",
+    "question": "How does contrastive learning pre-train visual representations?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AI125"
+    ],
+    "expected_evidence_criteria": "Explain positive and negative pair similarity losses like SimCLR/CLIP.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-028",
+    "question": "What are the advantages of sparse mixture-of-experts architectures?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AI130"
+    ],
+    "expected_evidence_criteria": "Discuss active parameter routing, reduced compute per token, and scaling.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-029",
+    "question": "What challenges affect multi-agent coordination in game theory scenarios?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "AI135"
+    ],
+    "expected_evidence_criteria": "Discuss non-stationary environments and communication bottlenecks.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-030",
+    "question": "How is RAG evaluated for factual faithfulness?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "AI140"
+    ],
+    "expected_evidence_criteria": "Discuss RAGAS, faithfulness scoring, and context relevance metrics.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-031",
+    "question": "What is network intrusion detection and how does it safeguard enterprise systems?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CY001",
+      "CY002"
+    ],
+    "expected_evidence_criteria": "Define IDS and distinguish signature vs anomaly based detection.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-032",
+    "question": "What is zero trust network architecture?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CY005"
+    ],
+    "expected_evidence_criteria": "Explain continuous authentication and least privilege access.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-033",
+    "question": "What is homomorphic encryption in privacy-preserving computation?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CY010"
+    ],
+    "expected_evidence_criteria": "Explain performing computations directly on encrypted ciphertext.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-034",
+    "question": "How does machine learning detect zero-day malware variants?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CY015"
+    ],
+    "expected_evidence_criteria": "Discuss dynamic API call sequence analysis and behavioral embeddings.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-035",
+    "question": "How do ransomware detection systems detect unauthorized file encryption in real time?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CY020"
+    ],
+    "expected_evidence_criteria": "Explain monitoring I/O entropy, file header changes, and shadow copy deletion.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-036",
+    "question": "How does multi-factor authentication prevent credential stuffing attacks?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CY025"
+    ],
+    "expected_evidence_criteria": "Explain combining password, TOTP, and hardware token verification.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-037",
+    "question": "What are the key advantages of differential privacy in sensitive dataset analytics?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "CY030"
+    ],
+    "expected_evidence_criteria": "Discuss mathematical privacy guarantees and bounded noise injection.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-038",
+    "question": "What are the benefits of AI-driven automated threat response in SOC environments?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "CY035"
+    ],
+    "expected_evidence_criteria": "Discuss sub-second response times, playbook automation, and reduced triage fatigue.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-039",
+    "question": "What are the advantages of container isolation in cloud security?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "CY040"
+    ],
+    "expected_evidence_criteria": "Discuss process namespace separation and lightweight security boundaries.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-040",
+    "question": "What are the major limitations of signature-based intrusion detection systems?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "CY045"
+    ],
+    "expected_evidence_criteria": "Discuss inability to detect novel obfuscated attacks and zero-day exploits.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-041",
+    "question": "What challenges hinder widespread adoption of fully homomorphic encryption?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "CY050"
+    ],
+    "expected_evidence_criteria": "Discuss extreme computational overhead, noise expansion, and latency.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-042",
+    "question": "What are the primary security challenges in securing IoT edge devices?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "CY055"
+    ],
+    "expected_evidence_criteria": "Discuss constrained hardware, unpatched firmware, and weak default credentials.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-043",
+    "question": "How is deep learning applied to phishing URL and malicious email detection?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CY060"
+    ],
+    "expected_evidence_criteria": "Discuss character-level CNNs, domain age analysis, and NLP email parsing.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-044",
+    "question": "How is machine learning used in cyber threat intelligence forecasting?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CY065"
+    ],
+    "expected_evidence_criteria": "Discuss dark web forum scraping, IOC extraction, and threat actor profiling.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-045",
+    "question": "How is cryptography applied to secure hardware enclaves like Intel SGX?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CY070"
+    ],
+    "expected_evidence_criteria": "Discuss memory encryption, remote attestation, and isolated enclaves.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-046",
+    "question": "Compare static code analysis and dynamic sandbox analysis for malware detection.",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CY075"
+    ],
+    "expected_evidence_criteria": "Compare code inspection without execution vs behavioral observation in sandbox.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-047",
+    "question": "Compare symmetric encryption and asymmetric cryptography in network protocols.",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CY080"
+    ],
+    "expected_evidence_criteria": "Compare key exchange overhead and computational speed.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-048",
+    "question": "Compare signature-based detection and anomaly-based detection in network firewalls.",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CY085"
+    ],
+    "expected_evidence_criteria": "Compare false positive rates and zero-day detection capability.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-049",
+    "question": "How do neural networks detect adversarial perturbations in malware samples?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "CY090"
+    ],
+    "expected_evidence_criteria": "Discuss adversarial training, gradient masking, and robust classifiers.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-050",
+    "question": "How can machine learning predict network vulnerability exploitation likelihood?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "CY095"
+    ],
+    "expected_evidence_criteria": "Discuss CVSS scoring, exploit database analysis, and threat telemetry.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-051",
+    "question": "Evaluate the effectiveness of user behavior analytics in detecting insider threats.",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "CY100"
+    ],
+    "expected_evidence_criteria": "Discuss baseline activity profiling, anomaly thresholds, and privacy trade-offs.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-052",
+    "question": "What is an adversarial attack against machine learning malware classifiers?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CY105"
+    ],
+    "expected_evidence_criteria": "Define evasion attacks and feature perturbation in malware binaries.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-053",
+    "question": "How does DNS sinkholing mitigate botnet command and control traffic?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CY110"
+    ],
+    "expected_evidence_criteria": "Explain redirecting malicious domain queries to controlled isolation servers.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-054",
+    "question": "What are the limitations of air-gapped networks against sophisticated malware?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "CY115"
+    ],
+    "expected_evidence_criteria": "Discuss acoustic, electromagnetic, and USB supply chain bridge attacks.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-055",
+    "question": "How is federated learning used for privacy-preserving intrusion detection across banks?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CY120"
+    ],
+    "expected_evidence_criteria": "Discuss local model training and secure parameter aggregation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-056",
+    "question": "How do security systems detect SQL injection attacks in web application firewalls?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "CY125"
+    ],
+    "expected_evidence_criteria": "Discuss syntax tree parsing, regex matching, and input sanitization.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-057",
+    "question": "What are the challenges of securing serverless microservice architectures?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "CY130"
+    ],
+    "expected_evidence_criteria": "Discuss short lifecycle functions, broad permission scopes, and event spoofing.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-058",
+    "question": "Compare OAuth 2.0 and SAML authentication protocols.",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CY135"
+    ],
+    "expected_evidence_criteria": "Compare API authorization tokens vs XML-based enterprise SSO assertions.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-059",
+    "question": "How does machine learning predict cyber attack escalation patterns?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "CY140"
+    ],
+    "expected_evidence_criteria": "Discuss temporal attack graphs and state machine transition probabilities.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-060",
+    "question": "Evaluate the resilience of lattice-based post-quantum cryptography algorithms.",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "CY145"
+    ],
+    "expected_evidence_criteria": "Discuss resistance to Shor's algorithm and key size trade-offs.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-061",
+    "question": "What is precision agriculture and how does site-specific management function?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AG001",
+      "AG002"
+    ],
+    "expected_evidence_criteria": "Define precision farming, GPS mapping, and variable rate application.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-062",
+    "question": "What is climate-smart agriculture?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AG005"
+    ],
+    "expected_evidence_criteria": "Explain sustainable productivity, climate adaptation, and emissions reduction.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-063",
+    "question": "What is soil organic matter and why is it critical for crop health?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AG010"
+    ],
+    "expected_evidence_criteria": "Explain soil carbon, water retention, and microbial nutrient cycling.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-064",
+    "question": "How do deep learning convolutional networks identify crop foliar diseases from leaf images?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AG015"
+    ],
+    "expected_evidence_criteria": "Explain image feature extraction, lesion segmentation, and disease classification.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-065",
+    "question": "How does automated smart irrigation optimize water delivery based on soil moisture sensors?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AG020"
+    ],
+    "expected_evidence_criteria": "Explain sensor reading thresholds, weather forecasts, and automated valve actuation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-066",
+    "question": "How do machine learning algorithms compute optimal crop selection recommendations?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AG025"
+    ],
+    "expected_evidence_criteria": "Explain analyzing soil NPK levels, rainfall, temperature, and yield potential.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-067",
+    "question": "What are the main advantages of drone-based hyperspectral remote sensing in crop monitoring?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AG030"
+    ],
+    "expected_evidence_criteria": "Discuss high spatial resolution, early stress detection, and rapid acreage coverage.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-068",
+    "question": "What are the benefits of conservation tillage in soil moisture preservation?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AG035"
+    ],
+    "expected_evidence_criteria": "Discuss reduced soil erosion, enhanced organic carbon, and moisture retention.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-069",
+    "question": "What are the advantages of IoT sensor networks in greenhouse climate control?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "AG040"
+    ],
+    "expected_evidence_criteria": "Discuss real-time humidity/temp tracking, energy savings, and automated ventilation.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-070",
+    "question": "What are the main limitations of computer vision models deployed for weed detection in fields?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "AG045"
+    ],
+    "expected_evidence_criteria": "Discuss lighting variations, occlusion by crop canopy, and visual weed overlap.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-071",
+    "question": "What challenges hinder adoption of precision farming technologies among smallholder farmers?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "AG050"
+    ],
+    "expected_evidence_criteria": "Discuss high initial hardware costs, lack of digital connectivity, and technical literacy.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-072",
+    "question": "What are the challenges of predicting crop yields under extreme weather events?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "AG055"
+    ],
+    "expected_evidence_criteria": "Discuss nonlinear heat stress, flash droughts, and sparse localized weather data.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-073",
+    "question": "How is remote sensing applied to monitor global crop health using NDVI vegetation indices?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AG060"
+    ],
+    "expected_evidence_criteria": "Discuss near-infrared reflectance, chlorophyll absorption, and crop biomass tracking.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-074",
+    "question": "How are robotics and AI applied to selective automated fruit harvesting?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AG065"
+    ],
+    "expected_evidence_criteria": "Discuss 3D vision systems, soft robotic end-effectors, and ripeness classification.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-075",
+    "question": "How is machine learning used for soil nutrient analysis and fertilizer recommendation?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AG070"
+    ],
+    "expected_evidence_criteria": "Discuss spectroscopy data, NPK mapping, and site-specific fertilizer rates.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-076",
+    "question": "Compare optical satellite imagery and UAV drone imagery for agricultural crop assessment.",
+    "expected_domain": "agriculture",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AG075"
+    ],
+    "expected_evidence_criteria": "Compare spatial resolution, flight operational costs, and revisit frequency.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-077",
+    "question": "Compare drip irrigation and sprinkler irrigation in water use efficiency.",
+    "expected_domain": "agriculture",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AG080"
+    ],
+    "expected_evidence_criteria": "Compare root-zone direct delivery vs evaporation losses.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-078",
+    "question": "Compare organic farming and conventional precision agriculture in environmental footprint.",
+    "expected_domain": "agriculture",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AG085"
+    ],
+    "expected_evidence_criteria": "Compare chemical input elimination vs yield per hectare efficiency.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-079",
+    "question": "How can multispectral camera sensors detect plant water stress before visual wilting occurs?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "AG090"
+    ],
+    "expected_evidence_criteria": "Discuss thermal canopy temperature elevation and stomatal closure signs.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-080",
+    "question": "How do machine learning models predict regional crop yield prior to harvest?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "AG095"
+    ],
+    "expected_evidence_criteria": "Discuss combining satellite NDVI time series, soil moisture, and weather metrics.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-081",
+    "question": "Evaluate the effectiveness of biological pest control compared to chemical pesticides.",
+    "expected_domain": "agriculture",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "AG100"
+    ],
+    "expected_evidence_criteria": "Discuss ecological balance, predator efficacy, and environmental safety.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-082",
+    "question": "What is vertical farming and how does hydroponic nutrient delivery work?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "AG105"
+    ],
+    "expected_evidence_criteria": "Define indoor controlled environment agriculture and recirculating nutrients.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-083",
+    "question": "How do NIR spectroscopy sensors measure soil nitrogen content?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AG110"
+    ],
+    "expected_evidence_criteria": "Explain light absorption at specific NIR wavelengths correlated with organic N bonds.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-084",
+    "question": "What are the limitations of satellite NDVI in dense crop canopies?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "AG115"
+    ],
+    "expected_evidence_criteria": "Discuss spectral saturation at high leaf area index (LAI).",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-085",
+    "question": "How is artificial intelligence applied to automated livestock monitoring?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AG120"
+    ],
+    "expected_evidence_criteria": "Discuss computer vision tracking for cattle health, lameness, and feeding behavior.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-086",
+    "question": "How do machine learning models detect weed infestations in soybean crops?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "AG125"
+    ],
+    "expected_evidence_criteria": "Discuss semantic segmentation networks distinguishing crop leaves from weed species.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-087",
+    "question": "What challenges affect autonomous agricultural tractor navigation in muddy terrain?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "AG130"
+    ],
+    "expected_evidence_criteria": "Discuss wheel slip, GPS signal degradation under canopy, and obstacle detection.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-088",
+    "question": "Compare hydroponic and aeroponic cultivation systems in water consumption.",
+    "expected_domain": "agriculture",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "AG135"
+    ],
+    "expected_evidence_criteria": "Compare nutrient misting vs liquid nutrient bath efficiency.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-089",
+    "question": "How does machine learning predict frost damage risk in fruit orchards?",
+    "expected_domain": "agriculture",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "AG140"
+    ],
+    "expected_evidence_criteria": "Discuss nocturnal microclimate temperature inversion forecasting.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-090",
+    "question": "Evaluate the impact of cover crops on soil health and weed suppression.",
+    "expected_domain": "agriculture",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "AG145"
+    ],
+    "expected_evidence_criteria": "Discuss nitrogen fixation, biomass mulch layer, and weed seed germination reduction.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-091",
+    "question": "What is clinical decision support system in modern healthcare?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "HC001",
+      "HC002"
+    ],
+    "expected_evidence_criteria": "Define CDSS, EHR integration, and diagnostic alert mechanisms.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-092",
+    "question": "What is federated learning in healthcare research?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "HC005"
+    ],
+    "expected_evidence_criteria": "Explain decentralized patient data training without centralizing sensitive records.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-093",
+    "question": "What is medical image segmentation?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "HC010"
+    ],
+    "expected_evidence_criteria": "Explain delineating anatomical structures, tumors, and lesions in medical scans.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-094",
+    "question": "How do deep convolutional networks detect lung nodules in chest CT scans?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "HC015"
+    ],
+    "expected_evidence_criteria": "Explain 3D convolution, candidate nodule detection, and false positive reduction.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-095",
+    "question": "How do medical natural language processing models extract clinical entities from physician notes?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "HC020"
+    ],
+    "expected_evidence_criteria": "Explain bio-NER, assertion status detection, and medical ontology mapping.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-096",
+    "question": "How does explainable AI generate saliency maps for clinical radiologist verification?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "HC025"
+    ],
+    "expected_evidence_criteria": "Explain Grad-CAM, attention visualization, and region-of-interest highlighting.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-097",
+    "question": "What are the advantages of AI-assisted radiology in early cancer detection?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "HC030"
+    ],
+    "expected_evidence_criteria": "Discuss higher sensitivity for micro-calcifications, reduced reader fatigue, and speed.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-098",
+    "question": "What are the benefits of federated learning in multi-hospital collaborative research?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "HC035"
+    ],
+    "expected_evidence_criteria": "Discuss HIPAA compliance, data sovereignty, and larger multi-institutional cohorts.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-099",
+    "question": "What are the advantages of generative AI in de-novo drug molecule design?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "HC040"
+    ],
+    "expected_evidence_criteria": "Discuss rapid chemical space exploration, binding affinity optimization, and low cost.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-100",
+    "question": "What are the major limitations of deep learning models trained on single-site hospital datasets?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "HC045"
+    ],
+    "expected_evidence_criteria": "Discuss domain shift, scanner model bias, and poor out-of-distribution generalization.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-101",
+    "question": "What ethical and regulatory challenges affect clinical deployment of autonomous diagnostic AI?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "HC050"
+    ],
+    "expected_evidence_criteria": "Discuss medical liability, FDA software certification, and algorithmic bias.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-102",
+    "question": "What challenges hinder accurate clinical risk prediction from unstructured electronic health records?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "HC055"
+    ],
+    "expected_evidence_criteria": "Discuss missing values, noisy dictation text, and irregular temporal visits.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-103",
+    "question": "How is machine learning applied to early sepsis prediction in intensive care units?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "HC060"
+    ],
+    "expected_evidence_criteria": "Discuss continuous vital sign streaming, physiological alert scores, and early intervention.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-104",
+    "question": "How is deep learning used in automated diabetic retinopathy screening from retinal fundus images?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "HC065"
+    ],
+    "expected_evidence_criteria": "Discuss microaneurysm detection, exudate grading, and tele-ophthalmology screening.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-105",
+    "question": "How is natural language processing applied to clinical trial matching for oncology patients?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "HC070"
+    ],
+    "expected_evidence_criteria": "Discuss extracting eligibility criteria, genomic markers, and patient EHR matching.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-106",
+    "question": "Compare 2D CNNs and 3D vision transformers in volumetric MRI brain tumor segmentation.",
+    "expected_domain": "healthcare",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "HC075"
+    ],
+    "expected_evidence_criteria": "Compare slice-by-slice processing vs full 3D spatial context encoding.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-107",
+    "question": "Compare rule-based expert systems and deep learning models in clinical decision support.",
+    "expected_domain": "healthcare",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "HC080"
+    ],
+    "expected_evidence_criteria": "Compare explicit clinical guidelines vs data-driven pattern discovery.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-108",
+    "question": "Compare centralized medical data warehousing and federated learning in health privacy.",
+    "expected_domain": "healthcare",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "HC085"
+    ],
+    "expected_evidence_criteria": "Compare central attack risks vs encrypted gradient communication.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-109",
+    "question": "How do machine learning algorithms detect cardiac arrhythmias from wearable ECG signals?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "HC090"
+    ],
+    "expected_evidence_criteria": "Discuss QRS complex detection, R-R interval variability, and temporal classification.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-110",
+    "question": "How do AI models predict 30-day hospital readmission risk for heart failure patients?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "HC095"
+    ],
+    "expected_evidence_criteria": "Discuss combining demographic factors, lab values, medication history, and past admissions.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-111",
+    "question": "Evaluate the clinical accuracy of automated mammography AI screening systems.",
+    "expected_domain": "healthcare",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "HC100"
+    ],
+    "expected_evidence_criteria": "Discuss sensitivity, specificity, recall rate, and false positive reduction.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-112",
+    "question": "What is BioBERT and how is it pre-trained for biomedical text mining?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "HC105"
+    ],
+    "expected_evidence_criteria": "Define domain-specific BERT pre-trained on PubMed abstracts and PMC full text.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-113",
+    "question": "How does AlphaFold predict 3D protein structures from amino acid sequences?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "HC110"
+    ],
+    "expected_evidence_criteria": "Explain evoformer blocks, pair representation, and spatial coordinate refinement.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-114",
+    "question": "What are the limitations of pulse oximetry AI algorithms in diverse skin tones?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "HC115"
+    ],
+    "expected_evidence_criteria": "Discuss optical absorption differences and systematic calibration bias.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-115",
+    "question": "How is computer vision applied to surgical phase recognition in laparoscopic procedures?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "HC120"
+    ],
+    "expected_evidence_criteria": "Discuss video frame feature extraction and temporal state modeling.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-116",
+    "question": "How do deep learning models detect ischemic stroke lesions in non-contrast head CT?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "HC125"
+    ],
+    "expected_evidence_criteria": "Discuss subtle hypodensity detection and Alberta Stroke Program Early CT Score.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-117",
+    "question": "What challenges affect the integration of AI models into hospital electronic health record systems?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "HC130"
+    ],
+    "expected_evidence_criteria": "Discuss HL7/FHIR interoperability, real-time latency, and clinical workflow friction.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-118",
+    "question": "Compare CT scans and MRI imaging modalities for deep learning stroke classification.",
+    "expected_domain": "healthcare",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "HC135"
+    ],
+    "expected_evidence_criteria": "Compare bone contrast / acquisition speed vs soft tissue resolution.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-119",
+    "question": "How does AI predict acute kidney injury onset 48 hours prior to clinical diagnosis?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "HC140"
+    ],
+    "expected_evidence_criteria": "Discuss longitudinal serum creatinine, urine output, and vital sign gradient models.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-120",
+    "question": "Evaluate the diagnostic performance of AI chatbots in triage symptom assessment.",
+    "expected_domain": "healthcare",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "HC145"
+    ],
+    "expected_evidence_criteria": "Discuss safety thresholds, misdiagnosis risk, and concordance with physician triage.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-121",
+    "question": "What is climate modeling and how do Earth System Models operate?",
+    "expected_domain": "climate",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CL001",
+      "CL002"
+    ],
+    "expected_evidence_criteria": "Define ESMs, atmosphere-ocean fluid dynamics, and thermodynamic coupling.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-122",
+    "question": "What is equilibrium climate sensitivity?",
+    "expected_domain": "climate",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CL005"
+    ],
+    "expected_evidence_criteria": "Explain global mean surface temperature change resulting from doubled atmospheric CO2.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-123",
+    "question": "What is greenhouse gas flux in atmospheric monitoring?",
+    "expected_domain": "climate",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CL010"
+    ],
+    "expected_evidence_criteria": "Explain exchange rate of carbon dioxide and methane between surface and atmosphere.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-124",
+    "question": "How do deep learning atmospheric emulators accelerate global weather forecasting?",
+    "expected_domain": "climate",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CL015"
+    ],
+    "expected_evidence_criteria": "Explain neural operators, spherical mesh convolutions, and autoregressive stepping.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-125",
+    "question": "How does remote sensing satellite spectroscopy measure atmospheric methane emissions?",
+    "expected_domain": "climate",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CL020"
+    ],
+    "expected_evidence_criteria": "Explain shortwave infrared solar backscatter absorption at specific gas bands.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-126",
+    "question": "How do climate models simulate cloud feedback mechanisms under global warming?",
+    "expected_domain": "climate",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CL025"
+    ],
+    "expected_evidence_criteria": "Explain cloud optical depth, cloud fraction parameterization, and thermal radiative forcing.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-127",
+    "question": "What are the advantages of AI surrogate models over traditional numerical weather prediction?",
+    "expected_domain": "climate",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "CL030"
+    ],
+    "expected_evidence_criteria": "Discuss orders of magnitude faster execution time, reduced supercomputing cost, and scalability.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-128",
+    "question": "What are the benefits of high-resolution satellite remote sensing in forest carbon stock estimation?",
+    "expected_domain": "climate",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "CL035"
+    ],
+    "expected_evidence_criteria": "Discuss wall-to-wall global coverage, canopy height LiDAR metrics, and temporal tracking.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-129",
+    "question": "What are the advantages of physics-informed neural networks in ocean dynamics modeling?",
+    "expected_domain": "climate",
+    "expected_intent": "Advantages",
+    "relevant_paper_ids": [
+      "CL040"
+    ],
+    "expected_evidence_criteria": "Discuss enforcing mass/energy conservation equations within loss functions.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-130",
+    "question": "What are the major limitations of current machine learning weather forecasting models for extreme events?",
+    "expected_domain": "climate",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "CL045"
+    ],
+    "expected_evidence_criteria": "Discuss blurring of out-of-distribution extremes and lack of physical conservation guarantees.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-131",
+    "question": "What challenges hinder accurate long-term precipitation forecasting in climate models?",
+    "expected_domain": "climate",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "CL050"
+    ],
+    "expected_evidence_criteria": "Discuss sub-grid convection scale, complex aerosol-cloud microphysics, and topography.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-132",
+    "question": "What are the primary challenges in quantifying urban greenhouse gas emission inventories?",
+    "expected_domain": "climate",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "CL055"
+    ],
+    "expected_evidence_criteria": "Discuss point-source plume dispersion, background atmospheric noise, and sparse sensors.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-133",
+    "question": "How is machine learning applied to tropical cyclone intensity and track prediction?",
+    "expected_domain": "climate",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CL060"
+    ],
+    "expected_evidence_criteria": "Discuss satellite infrared imagery analysis, sea surface temperature, and pressure gradients.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-134",
+    "question": "How are deep learning models used for automated flood risk mapping and inundation prediction?",
+    "expected_domain": "climate",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CL065"
+    ],
+    "expected_evidence_criteria": "Discuss synthetic aperture radar (SAR) imagery, elevation DEMs, and hydrological flow.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-135",
+    "question": "How is remote sensing applied to monitor polar ice sheet melting and sea level rise?",
+    "expected_domain": "climate",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CL070"
+    ],
+    "expected_evidence_criteria": "Discuss satellite radar altimetry, ice velocity tracking, and grounding line retreat.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-136",
+    "question": "Compare global climate models (GCMs) and regional climate downscaling models (RCMs).",
+    "expected_domain": "climate",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CL075"
+    ],
+    "expected_evidence_criteria": "Compare coarse global grid resolution vs fine-scale regional topographical detail.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-137",
+    "question": "Compare machine learning weather forecasting (FourCastNet/Pangu-Weather) and numerical NWP.",
+    "expected_domain": "climate",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CL080"
+    ],
+    "expected_evidence_criteria": "Compare data-driven inference speed vs physical partial differential equation solvers.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-138",
+    "question": "Compare optical remote sensing and microwave Synthetic Aperture Radar (SAR) for flood monitoring.",
+    "expected_domain": "climate",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CL085"
+    ],
+    "expected_evidence_criteria": "Compare sunlight dependence vs cloud-penetrating night/day SAR imaging.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-139",
+    "question": "How do satellite algorithms detect methane super-emitter plumes from industrial facilities?",
+    "expected_domain": "climate",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "CL090"
+    ],
+    "expected_evidence_criteria": "Discuss spectral matched filter analysis and column enhancement ratio detection.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-140",
+    "question": "How do climate ML models predict sub-seasonal to seasonal drought conditions?",
+    "expected_domain": "climate",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "CL095"
+    ],
+    "expected_evidence_criteria": "Discuss soil moisture deficit indices, El Nino Southern Oscillation (ENSO) anomalies.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-141",
+    "question": "Evaluate the accuracy of machine learning models in predicting heatwave duration and peak temperatures.",
+    "expected_domain": "climate",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "CL100"
+    ],
+    "expected_evidence_criteria": "Discuss mean absolute error, peak temperature underestimation, and lead time metrics.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-142",
+    "question": "What is atmospheric aerosol radiative forcing in climate dynamics?",
+    "expected_domain": "climate",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [
+      "CL105"
+    ],
+    "expected_evidence_criteria": "Define aerosol light scattering and absorption altering Earth's energy balance.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-143",
+    "question": "How do neural network surrogates emulate atmospheric chemistry in Earth System Models?",
+    "expected_domain": "climate",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "CL110"
+    ],
+    "expected_evidence_criteria": "Explain approximating stiff chemical reaction differential equations with deep neural nets.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-144",
+    "question": "What are the limitations of satellite radar altimetry in coastal sea level measurement?",
+    "expected_domain": "climate",
+    "expected_intent": "Limitations",
+    "relevant_paper_ids": [
+      "CL115"
+    ],
+    "expected_evidence_criteria": "Discuss land contamination of radar footprints near coastlines.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-145",
+    "question": "How is machine learning applied to renewable wind and solar power generation forecasting?",
+    "expected_domain": "climate",
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CL120"
+    ],
+    "expected_evidence_criteria": "Discuss numerical weather prediction inputs, cloud movement tracking, and grid balancing.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-146",
+    "question": "How do deep learning models detect wildfire ignition and burn scar extent from satellite images?",
+    "expected_domain": "climate",
+    "expected_intent": "Detection",
+    "relevant_paper_ids": [
+      "CL125"
+    ],
+    "expected_evidence_criteria": "Discuss active thermal hotspot detection and post-fire NDVI spectral burn ratios.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-147",
+    "question": "What challenges affect modeling ocean overturning circulation under ice sheet melting scenarios?",
+    "expected_domain": "climate",
+    "expected_intent": "Challenges",
+    "relevant_paper_ids": [
+      "CL130"
+    ],
+    "expected_evidence_criteria": "Discuss freshwater hosing feedback, brine rejection physics, and decadal simulation lengths.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-148",
+    "question": "Compare carbon capture efficiency metrics across direct air capture and point-source capture.",
+    "expected_domain": "climate",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [
+      "CL135"
+    ],
+    "expected_evidence_criteria": "Compare low ambient CO2 concentration energetic cost vs high-purity flue gas energy.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-149",
+    "question": "How does machine learning predict sea surface temperature anomalies during El Nino events?",
+    "expected_domain": "climate",
+    "expected_intent": "Prediction",
+    "relevant_paper_ids": [
+      "CL140"
+    ],
+    "expected_evidence_criteria": "Discuss spatio-temporal graph convolutional networks modeling Pacific trade winds.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-150",
+    "question": "Evaluate the performance of machine learning downscaling for extreme urban heat island mapping.",
+    "expected_domain": "climate",
+    "expected_intent": "Evaluation",
+    "relevant_paper_ids": [
+      "CL145"
+    ],
+    "expected_evidence_criteria": "Discuss spatial resolution improvements, land surface temperature accuracy, and canopy bias.",
+    "category": "single_domain"
+  },
+  {
+    "id": "BENCH-151",
+    "question": "How is artificial intelligence applied in healthcare medical imaging to assist clinical diagnosis?",
+    "expected_domain": [
+      "artificial_intelligence",
+      "healthcare"
+    ],
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI001",
+      "HC001"
+    ],
+    "expected_evidence_criteria": "Requires evidence from both AI and Healthcare domains.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-152",
+    "question": "How does smart agriculture utilize AI-based computer vision for crop disease detection?",
+    "expected_domain": [
+      "agriculture",
+      "artificial_intelligence"
+    ],
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AG001",
+      "AI002"
+    ],
+    "expected_evidence_criteria": "Requires evidence from both Agriculture and AI domains.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-153",
+    "question": "How do climate change weather predictions impact agricultural crop yield forecasting?",
+    "expected_domain": [
+      "climate",
+      "agriculture"
+    ],
+    "expected_intent": "Effect",
+    "relevant_paper_ids": [
+      "CL001",
+      "AG002"
+    ],
+    "expected_evidence_criteria": "Requires evidence from both Climate and Agriculture domains.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-154",
+    "question": "How is machine learning used to enhance cybersecurity threat detection in healthcare medical devices?",
+    "expected_domain": [
+      "cybersecurity",
+      "healthcare"
+    ],
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CY001",
+      "HC002"
+    ],
+    "expected_evidence_criteria": "Requires evidence from both Cybersecurity and Healthcare domains.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-155",
+    "question": "How does AI-driven remote sensing help evaluate climate change impacts on forest carbon sinks?",
+    "expected_domain": [
+      "artificial_intelligence",
+      "climate"
+    ],
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI005",
+      "CL002"
+    ],
+    "expected_evidence_criteria": "Requires evidence from both AI and Climate domains.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-156",
+    "question": "How are IoT sensors used in precision agriculture for climate-resilient water management?",
+    "expected_domain": [
+      "agriculture",
+      "climate"
+    ],
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AG005",
+      "CL005"
+    ],
+    "expected_evidence_criteria": "Requires evidence from both Agriculture and Climate domains.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-157",
+    "question": "How do federated machine learning methods preserve patient privacy in multi-hospital healthcare AI?",
+    "expected_domain": [
+      "healthcare",
+      "cybersecurity",
+      "artificial_intelligence"
+    ],
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "HC005",
+      "CY010",
+      "AI025"
+    ],
+    "expected_evidence_criteria": "Requires cross-domain evidence from Healthcare, Cybersecurity, and AI.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-158",
+    "question": "How are explainable AI models deployed in clinical decision support for oncology diagnosis?",
+    "expected_domain": [
+      "artificial_intelligence",
+      "healthcare"
+    ],
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "AI005",
+      "HC001"
+    ],
+    "expected_evidence_criteria": "Requires cross-domain evidence from AI and Healthcare.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-159",
+    "question": "How do autonomous agricultural drones integrate computer vision for real-time pest detection?",
+    "expected_domain": [
+      "agriculture",
+      "artificial_intelligence"
+    ],
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [
+      "AG015",
+      "AI035"
+    ],
+    "expected_evidence_criteria": "Requires evidence from Agriculture and AI.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-160",
+    "question": "How does cybersecurity privacy-preserving homomorphic encryption safeguard cloud-based climate data?",
+    "expected_domain": [
+      "cybersecurity",
+      "climate"
+    ],
+    "expected_intent": "Applications",
+    "relevant_paper_ids": [
+      "CY010",
+      "CL010"
+    ],
+    "expected_evidence_criteria": "Requires evidence from Cybersecurity and Climate.",
+    "category": "multi_domain"
+  },
+  {
+    "id": "BENCH-161",
+    "question": "What is surface code quantum error correction?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback [O1][O2].",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-162",
+    "question": "How do topological qudit decoders compute stabilizer syndromes in fault-tolerant quantum computing?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-163",
+    "question": "What is room-temperature superconductivity in ambient pressure hydride compounds?",
+    "expected_domain": "climate",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-164",
+    "question": "How do Mamba state space models compare to Transformers in long-context sequence modeling?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Comparison",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-165",
+    "question": "What are the key mechanisms of CRISPR-Cas13 RNA editing in viral disease therapeutics?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-166",
+    "question": "How does Neuromorphic Computing implement spiking neural hardware for event camera processing?",
+    "expected_domain": "artificial_intelligence",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-167",
+    "question": "What are zero-knowledge succinct non-interactive arguments of knowledge (zk-SNARKs) in blockchain privacy?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-168",
+    "question": "How do peristaltic micropumps function in organ-on-a-chip microfluidic drug screening?",
+    "expected_domain": "healthcare",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-169",
+    "question": "What is gravitational wave interferometry detection using pulsar timing arrays?",
+    "expected_domain": "climate",
+    "expected_intent": "Definition",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  },
+  {
+    "id": "BENCH-170",
+    "question": "How do post-quantum lattice-based Kyber and Dilithium algorithms resist quantum decryption?",
+    "expected_domain": "cybersecurity",
+    "expected_intent": "Mechanism",
+    "relevant_paper_ids": [],
+    "expected_evidence_criteria": "Out-of-corpus: Must trigger ArXiv online academic fallback.",
+    "category": "online_fallback"
+  }
+]

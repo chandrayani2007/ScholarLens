@@ -1,0 +1,352 @@
+[
+  {
+    "query_id": "AI_Q001",
+    "domain": "artificial_intelligence",
+    "subtopic": "retrieval_augmented_generation",
+    "question": "What is retrieval augmented generation?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "AI_Q002",
+    "domain": "artificial_intelligence",
+    "subtopic": "retrieval_augmented_generation",
+    "question": "How does retrieval augmented generation reduce hallucination in large language models?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AI_Q003",
+    "domain": "artificial_intelligence",
+    "subtopic": "large_language_models",
+    "question": "What are the key architectural components of transformer language models?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AI_Q004",
+    "domain": "artificial_intelligence",
+    "subtopic": "large_language_models",
+    "question": "How is parameter-efficient fine-tuning used for adapter modules?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "AI_Q005",
+    "domain": "artificial_intelligence",
+    "subtopic": "multi_agent_systems",
+    "question": "How do multi-agent coordination frameworks handle role assignment?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AI_Q006",
+    "domain": "artificial_intelligence",
+    "subtopic": "multi_agent_systems",
+    "question": "What mechanisms enable consensus protocol in autonomous multi-agent networks?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "AI_Q007",
+    "domain": "artificial_intelligence",
+    "subtopic": "computer_vision",
+    "question": "How do vision transformers process image patches?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "AI_Q008",
+    "domain": "artificial_intelligence",
+    "subtopic": "computer_vision",
+    "question": "What methods improve zero-shot object detection performance?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AI_Q009",
+    "domain": "artificial_intelligence",
+    "subtopic": "reinforcement_learning",
+    "question": "How does deep Q-learning address policy gradient variance?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "AI_Q010",
+    "domain": "artificial_intelligence",
+    "subtopic": "reinforcement_learning",
+    "question": "What role does reward modeling play in human preference alignment?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CY_Q001",
+    "domain": "cybersecurity",
+    "subtopic": "network_security",
+    "question": "How are network attacks detected?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "CY_Q002",
+    "domain": "cybersecurity",
+    "subtopic": "network_security",
+    "question": "How do intrusion detection systems analyze encrypted network traffic for anomalies?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CY_Q003",
+    "domain": "cybersecurity",
+    "subtopic": "threat_intelligence",
+    "question": "What are the primary indicators of compromise in ransomware incidents?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CY_Q004",
+    "domain": "cybersecurity",
+    "subtopic": "threat_intelligence",
+    "question": "How is automated malware lineage tracking implemented using behavioral graph embeddings?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "CY_Q005",
+    "domain": "cybersecurity",
+    "subtopic": "zero_trust_architecture",
+    "question": "What are the main principles of zero trust architecture?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "CY_Q006",
+    "domain": "cybersecurity",
+    "subtopic": "zero_trust_architecture",
+    "question": "How does continuous identity verification enforce microsegmentation policies?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "CY_Q007",
+    "domain": "cybersecurity",
+    "subtopic": "vulnerability_assessment",
+    "question": "How are zero-day software vulnerabilities discovered using automated fuzzing?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CY_Q008",
+    "domain": "cybersecurity",
+    "subtopic": "vulnerability_assessment",
+    "question": "What techniques quantify static code analysis false positive rates?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "CY_Q009",
+    "domain": "cybersecurity",
+    "subtopic": "cryptography",
+    "question": "What are post-quantum lattice-based encryption algorithms?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CY_Q010",
+    "domain": "cybersecurity",
+    "subtopic": "cryptography",
+    "question": "How does homomorphic encryption preserve data privacy during cloud computation?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AG_Q001",
+    "domain": "agriculture",
+    "subtopic": "smart_farming",
+    "question": "How is IoT used in smart farming?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "AG_Q002",
+    "domain": "agriculture",
+    "subtopic": "smart_farming",
+    "question": "How do Wireless Sensor Networks optimize automated irrigation schedules?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AG_Q003",
+    "domain": "agriculture",
+    "subtopic": "crop_monitoring",
+    "question": "What multispectral imagery techniques detect crop stress and disease?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AG_Q004",
+    "domain": "agriculture",
+    "subtopic": "crop_monitoring",
+    "question": "How do drone-based thermal sensors estimate canopy cover index?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "AG_Q005",
+    "domain": "agriculture",
+    "subtopic": "precision_agriculture",
+    "question": "What technologies support variable rate fertilizer application?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "AG_Q006",
+    "domain": "agriculture",
+    "subtopic": "precision_agriculture",
+    "question": "How do yield prediction models incorporate soil nutrient sensors and weather telemetry?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "AG_Q007",
+    "domain": "agriculture",
+    "subtopic": "soil_health",
+    "question": "What methods analyze soil organic matter decomposition rates?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "AG_Q008",
+    "domain": "agriculture",
+    "subtopic": "soil_health",
+    "question": "How does microbial diversity affect nitrogen fixation efficiency?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "AG_Q009",
+    "domain": "agriculture",
+    "subtopic": "sustainable_agriculture",
+    "question": "What management practices reduce agrochemical runoff into watersheds?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "AG_Q010",
+    "domain": "agriculture",
+    "subtopic": "sustainable_agriculture",
+    "question": "How do cover crop rotations sequester soil carbon in conservation tillage systems?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "HC_Q001",
+    "domain": "healthcare",
+    "subtopic": "medical_imaging",
+    "question": "How does medical image analysis support diagnosis?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "HC_Q002",
+    "domain": "healthcare",
+    "subtopic": "medical_imaging",
+    "question": "How do convolutional neural networks perform lung nodule segmentation on CT scans?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "HC_Q003",
+    "domain": "healthcare",
+    "subtopic": "clinical_decision_support",
+    "question": "What clinical decision support systems predict patient sepsis onset?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "HC_Q004",
+    "domain": "healthcare",
+    "subtopic": "clinical_decision_support",
+    "question": "How are real-time EHR alert triggers evaluated for alert fatigue reduction?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "HC_Q005",
+    "domain": "healthcare",
+    "subtopic": "genomics",
+    "question": "How is deep learning applied to variant calling in whole genome sequencing?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "HC_Q006",
+    "domain": "healthcare",
+    "subtopic": "genomics",
+    "question": "What tools identify gene expression patterns associated with drug resistance?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "HC_Q007",
+    "domain": "healthcare",
+    "subtopic": "telemedicine",
+    "question": "What remote monitoring devices track chronic cardiovascular condition metrics?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "HC_Q008",
+    "domain": "healthcare",
+    "subtopic": "telemedicine",
+    "question": "How is wearable ECG signal processing optimized for real-time arrhythmia detection?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "HC_Q009",
+    "domain": "healthcare",
+    "subtopic": "electronic_health_records",
+    "question": "How is clinical natural language processing used to extract unstructured physician notes?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "HC_Q010",
+    "domain": "healthcare",
+    "subtopic": "electronic_health_records",
+    "question": "What privacy-preserving federated learning architectures protect patient health records?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CL_Q001",
+    "domain": "climate",
+    "subtopic": "climate_modeling",
+    "question": "How is machine learning used for climate prediction?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "CL_Q002",
+    "domain": "climate",
+    "subtopic": "climate_modeling",
+    "question": "How do atmospheric parameterization schemes emulate cloud microphysics using neural networks?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "CL_Q003",
+    "domain": "climate",
+    "subtopic": "extreme_weather",
+    "question": "What models forecast tropical cyclone intensity and landfall trajectory?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CL_Q004",
+    "domain": "climate",
+    "subtopic": "extreme_weather",
+    "question": "How is deep learning used for short-term precipitation nowcasting?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CL_Q005",
+    "domain": "climate",
+    "subtopic": "carbon_cycle",
+    "question": "What mechanisms drive global ocean carbon sink variability?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CL_Q006",
+    "domain": "climate",
+    "subtopic": "carbon_cycle",
+    "question": "How do terrestrial ecosystem models estimate net biome productivity?",
+    "difficulty": "difficult"
+  },
+  {
+    "query_id": "CL_Q007",
+    "domain": "climate",
+    "subtopic": "sea_level_rise",
+    "question": "What satellite altimetry techniques measure ice sheet mass loss rate?",
+    "difficulty": "moderate"
+  },
+  {
+    "query_id": "CL_Q008",
+    "domain": "climate",
+    "subtopic": "sea_level_rise",
+    "question": "How do coastal storm surge models simulate sea level rise impact?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "CL_Q009",
+    "domain": "climate",
+    "subtopic": "renewable_energy_integration",
+    "question": "How do machine learning algorithms forecast solar irradiance and wind power generation?",
+    "difficulty": "easy"
+  },
+  {
+    "query_id": "CL_Q010",
+    "domain": "climate",
+    "subtopic": "renewable_energy_integration",
+    "question": "What grid optimization frameworks balance intermittent renewable energy supply with demand?",
+    "difficulty": "difficult"
+  }
+]

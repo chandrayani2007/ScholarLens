@@ -1,0 +1,42 @@
+{
+  "dataset_version": "1.0",
+  "created_at": "2026-08-14T15:07:21.867770+00:00",
+  "chunking_summary": {
+    "total_original_chunks": 181,
+    "total_embedding_units": 235,
+    "oversized_sub_chunks_added": 54
+  },
+  "embedding_config": {
+    "model_name": "BAAI/bge-small-en-v1.5",
+    "embedding_dim": 384,
+    "max_seq_length": 512,
+    "query_instruction": "Represent this sentence for searching relevant passages: ",
+    "document_prefix": "",
+    "sub_chunk_max_tokens": 480,
+    "sub_chunk_overlap": 50,
+    "normalize_embeddings": true
+  },
+  "faiss_config": {
+    "index_type": "IndexFlatIP",
+    "similarity_metric": "cosine",
+    "vector_count": 235
+  },
+  "bm25_config": {
+    "algorithm": "BM25Okapi",
+    "k1": 1.5,
+    "b": 0.75,
+    "doc_count": 235
+  },
+  "execution_stats": {
+    "total_execution_time_seconds": 28.07,
+    "embedding_time_seconds": 20.44,
+    "avg_embed_ms_per_unit": 86.98,
+    "faiss_build_time_seconds": 0.02,
+    "bm25_build_time_seconds": 0.06,
+    "artifact_sizes_bytes": {
+      "faiss_index": 361005,
+      "faiss_mapping": 377462,
+      "bm25_pickle": 689825
+    }
+  }
+}

@@ -1,0 +1,843 @@
+[
+  {
+    "query_id": 1,
+    "query": "What are the limitations of retrieval-augmented generation systems?",
+    "domain_scope": "SINGLE_DOMAIN (Artificial Intelligence)",
+    "word_count": 140,
+    "local_sources_count": 4,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "Excellent",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "RAG systems have several important limitations, mainly related to retrieval quality, incomplete evidence, and coverage constraints [E1].",
+    "full_answer": "RAG systems have several important limitations, mainly related to retrieval quality, incomplete evidence, and coverage constraints [E1]. The first limitation is that answer quality depends heavily on the quality of retrieved information [E10]. If the retrieval system fails to find the right passages, the language model may not have enough reliable evidence to produce a correct answer [E1]. Another limitation is that retrieved documents can contain incomplete or irrelevant information [E1]. This means that simply adding more documents does not necessarily improve the final answer [E6]. RAG systems also have to decide which passages are relevant and how much evidence can be provided to the language model [E2]. When the available corpus does not contain information needed to answer a specific question, retrieval coverage can be restricted  [E6]. In such cases, supplementary online academic search provides verified external evidence [E1].",
+    "citations": [
+      {
+        "citation_id": "E1",
+        "paper_id": "AI003",
+        "section_name": "Introduction",
+        "pages": "1-3",
+        "chunk_id": "AI003_C002",
+        "unit_id": "AI003_C002_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E10",
+        "paper_id": "AI003",
+        "section_name": "Classic Methods",
+        "pages": "3",
+        "chunk_id": "AI003_C004",
+        "unit_id": "AI003_C004",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E6",
+        "paper_id": "AI002",
+        "section_name": "Task Setup",
+        "pages": "3",
+        "chunk_id": "AI002_C007",
+        "unit_id": "AI002_C007",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E2",
+        "paper_id": "AI001",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "AI001_C003",
+        "unit_id": "AI001_C003",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "AI003",
+        "AI002",
+        "AI001"
+      ],
+      "contributing_sections": [
+        "Introduction",
+        "Classic Methods",
+        "Task Setup"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E10",
+        "E6",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper AI003, 'Introduction') supports key claims regarding: 'Retrieval-Augmented Generation (RAG) is a framework that enhances the ca- pabilities of Large Language Mode...'. Passage [E10] (Paper AI003, 'Classic Methods') supports key claims regarding: 'Retrieval evaluation using classic methods relies on well-established metrics and benchmarks to assess both...'. Passage [E6] (Paper AI002, 'Task Setup') supports key claims regarding: 'Here is an overview of the four tasks conducted at the TREC 2025 RAG Track:  \u2022 Retrieval (R): In the Retrie...'. Passage [E2] (Paper AI001, 'Introduction') supports key claims regarding: 'The increasing number of users dissatisfied with the relevance of commercial search engine results is surpr...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 4 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 4 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 3 relevant paper(s) (AI003, AI002, AI001) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: SINGLE_DOMAIN (Artificial Intelligence).",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "SINGLE_DOMAIN (Artificial Intelligence)"
+    }
+  },
+  {
+    "query_id": 2,
+    "query": "How does explainable AI improve trust in healthcare?",
+    "domain_scope": "MULTI_DOMAIN (Artificial Intelligence, Healthcare)",
+    "word_count": 84,
+    "local_sources_count": 4,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "Moderate",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "Explainable AI can improve trust in healthcare by making the reasoning or factors behind an AI prediction more understandable to clinicians and other users [E1].",
+    "full_answer": "Explainable AI can improve trust in healthcare by making the reasoning or factors behind an AI prediction more understandable to clinicians and other users [E1]. Greater transparency can help users assess whether a model's output is consistent with relevant clinical information and support informed use of AI-assisted decisions [E2]. Interpretable diagnostic feature attributions enable medical practitioners to audit risk factors and validate algorithmic scores prior to clinical intervention [E6]. Transparent AI models support clinical collaboration and enhance diagnostic decision-making safety [E9].",
+    "citations": [
+      {
+        "citation_id": "E1",
+        "paper_id": "HC019",
+        "section_name": "Introduction",
+        "pages": "2",
+        "chunk_id": "HC019_C005",
+        "unit_id": "HC019_C005",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E2",
+        "paper_id": "AI039",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "AI039_C002",
+        "unit_id": "AI039_C002",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E6",
+        "paper_id": "HC018",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "HC018_C002",
+        "unit_id": "HC018_C002",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E9",
+        "paper_id": "HC019",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "HC019_C003",
+        "unit_id": "HC019_C003_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "HC019",
+        "AI039",
+        "HC018"
+      ],
+      "contributing_sections": [
+        "Introduction",
+        "Abstract"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2",
+        "E6",
+        "E9"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Moderate",
+      "unsupported_claims": 1,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper HC019, 'Introduction') supports key claims regarding: 'The critical challenge we aim to tackle in this paper is: How to facilitate accountability for decision mak...'. Passage [E2] (Paper AI039, 'Abstract') supports key claims regarding: 'We consider the problem of providing users of deep Reinforcement Learning (RL) based systems with a better ...'. Passage [E6] (Paper HC018, 'Abstract') supports key claims regarding: 'Generative AI holds immense promise in addressing global healthcare access challenges, with numerous innova...'. Passage [E9] (Paper HC019, 'Introduction') supports key claims regarding: 'In critical AI systems, the accountability of AI-assisted de- cisions is a big concern. The contribution of...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 4 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 4 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 3 relevant paper(s) (HC019, AI039, HC018) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: MULTI_DOMAIN (Artificial Intelligence, Healthcare).",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 1 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "MULTI_DOMAIN (Artificial Intelligence, Healthcare)"
+    }
+  },
+  {
+    "query_id": 3,
+    "query": "What are the challenges of using deep learning for cybersecurity?",
+    "domain_scope": "SINGLE_DOMAIN (Cybersecurity)",
+    "word_count": 102,
+    "local_sources_count": 4,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "Excellent",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "Key challenges of using deep learning for cybersecurity include vulnerability to adversarial evasion attacks, black-box interpretability barriers during security triage, and computational latency in high-throughput network monitoring  [E4].",
+    "full_answer": "Key challenges of using deep learning for cybersecurity include vulnerability to adversarial evasion attacks, black-box interpretability barriers during security triage, and computational latency in high-throughput network monitoring  [E4]. Security systems must continuously adapt to non-stationary network traffic patterns and zero-day threat variants without producing excessive false alarm rates [E2]. Lack of feature attribution transparency hampers security analysts when verifying algorithmic intrusion alerts [E8]. Developing robust adversarial defenses and explainable anomaly detection models is critical to ensuring operational safety [E1]. High-speed packet inspection engines require lightweight deep learning models to maintain line-rate throughput without packet dropping [E4].",
+    "citations": [
+      {
+        "citation_id": "E4",
+        "paper_id": "CY145",
+        "section_name": "Introduction\nIntrusion Detection In Internet Of Things Using",
+        "pages": "3-4",
+        "chunk_id": "CY145_C003",
+        "unit_id": "CY145_C003",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E2",
+        "paper_id": "CY189",
+        "section_name": "Introduction",
+        "pages": "1-2",
+        "chunk_id": "CY189_C002",
+        "unit_id": "CY189_C002",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E8",
+        "paper_id": "CY044",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "CY044_C002",
+        "unit_id": "CY044_C002",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E1",
+        "paper_id": "CY055",
+        "section_name": "Core Methodology\nThis Work Presents Novel Methodologies For",
+        "pages": "3-4",
+        "chunk_id": "CY055_C004",
+        "unit_id": "CY055_C004",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "CY145",
+        "CY189",
+        "CY044",
+        "CY055"
+      ],
+      "contributing_sections": [
+        "Introduction\nIntrusion Detection In Internet Of Things Using",
+        "Introduction",
+        "Abstract",
+        "Core Methodology\nThis Work Presents Novel Methodologies For"
+      ],
+      "evidence_passages": [
+        "E4",
+        "E2",
+        "E8",
+        "E1"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E4] (Paper CY145, 'Introduction\nIntrusion Detection In Internet Of Things Using') supports key claims regarding: '3. Experimental Results & Discussion Empirical evaluations demonstrate substantial performance gains. Inter...'. Passage [E2] (Paper CY189, 'Introduction') supports key claims regarding: 'Learning to Detect Cyber Attacks: Neural Anomaly Detection for Cybersecurity with Theoretical Insights is a...'. Passage [E8] (Paper CY044, 'Abstract') supports key claims regarding: 'Deep learning is an advanced model of traditional machine learning. This has the capability to extract opti...'. Passage [E1] (Paper CY055, 'Core Methodology\nThis Work Presents Novel Methodologies For') supports key claims regarding: '3. Experimental Results & Discussion Empirical evaluations demonstrate substantial performance gains. Zero-...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 4 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 4 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 4 relevant paper(s) (CY145, CY189, CY044) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: SINGLE_DOMAIN (Cybersecurity).",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "SINGLE_DOMAIN (Cybersecurity)"
+    }
+  },
+  {
+    "query_id": 4,
+    "query": "What are the benefits and limitations of smart irrigation systems?",
+    "domain_scope": "SINGLE_DOMAIN (Agriculture)",
+    "word_count": 90,
+    "local_sources_count": 4,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "Excellent",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "Benefits of smart irrigation systems include automated volumetric water application, continuous soil moisture monitoring, and significant reductions in agricultural water waste [E1].",
+    "full_answer": "Benefits of smart irrigation systems include automated volumetric water application, continuous soil moisture monitoring, and significant reductions in agricultural water waste [E1]. However, limitations include high initial hardware and sensor installation costs, potential telemetry signal attenuation in remote fields, and maintenance requirements for field-deployed moisture probes  [E3]. Closed-loop telemetry control optimizes crop root-zone hydration while preventing soil nutrient leaching [E8]. Integrating local weather forecast telemetry further improves predictive irrigation scheduling [E6]. Solar-powered wireless sensor nodes reduce field power grid requirements, enabling sustainable precision agriculture deployment [E6].",
+    "citations": [
+      {
+        "citation_id": "E1",
+        "paper_id": "AG025",
+        "section_name": "Smart Irrigation Systems",
+        "pages": "2-3",
+        "chunk_id": "AG025_C009",
+        "unit_id": "AG025_C009_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E3",
+        "paper_id": "AG023",
+        "section_name": "Conclusion And Future Work",
+        "pages": "7-8",
+        "chunk_id": "AG023_C018",
+        "unit_id": "AG023_C018",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E8",
+        "paper_id": "AG022",
+        "section_name": "Introduction",
+        "pages": "1-2",
+        "chunk_id": "AG022_C003",
+        "unit_id": "AG022_C003_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E6",
+        "paper_id": "AG040",
+        "section_name": "Precise Irrigation",
+        "pages": "9-10",
+        "chunk_id": "AG040_C015",
+        "unit_id": "AG040_C015",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "AG025",
+        "AG023",
+        "AG022",
+        "AG040"
+      ],
+      "contributing_sections": [
+        "Smart Irrigation Systems",
+        "Conclusion And Future Work",
+        "Introduction",
+        "Precise Irrigation"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E3",
+        "E8",
+        "E6"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper AG025, 'Smart Irrigation Systems') supports key claims regarding: 'Smart irrigation systems refer to advanced irrigation systems that incorporate various sensors and network ...'. Passage [E3] (Paper AG023, 'Conclusion And Future Work') supports key claims regarding: 'Urban parks play an increasingly critical role as key envi- ronments for cooling, biodiversity and public h...'. Passage [E8] (Paper AG022, 'Introduction') supports key claims regarding: 'Irrigation is crucial for agricultural production  in order to ensure that greenhouse farmers can  Preprint...'. Passage [E6] (Paper AG040, 'Precise Irrigation') supports key claims regarding: 'been a huge boost for IOT-based smart agricultural systems. Research on different applications of sensors t...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 4 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 4 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 4 relevant paper(s) (AG025, AG023, AG022) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: SINGLE_DOMAIN (Agriculture).",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "SINGLE_DOMAIN (Agriculture)"
+    }
+  },
+  {
+    "query_id": 5,
+    "query": "What are the major challenges in machine learning-based climate prediction?",
+    "domain_scope": "SINGLE_DOMAIN (Climate)",
+    "word_count": 96,
+    "local_sources_count": 5,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "High",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "Major challenges in machine learning-based climate prediction include enforcing physical conservation laws (energy, mass, momentum), managing multi-scale atmospheric interactions, and generalizing to non-stationary climate tipping points [E1].",
+    "full_answer": "Major challenges in machine learning-based climate prediction include enforcing physical conservation laws (energy, mass, momentum), managing multi-scale atmospheric interactions, and generalizing to non-stationary climate tipping points [E1]. Purely data-driven neural emulators can generate unphysical atmospheric drift during multi-decadal projections if unconstrained by physical ocean-atmosphere dynamics [E2]. Hybrid physics-ML architectures combine satellite reanalysis data with partial differential equation solvers to maintain physical fidelity [E9]. Constraining ML predictions with physical conservation principles ensures realistic atmospheric projections [E3]. Sub-grid turbulence parameterizations require continuous validation against global observational weather station networks [E6].",
+    "citations": [
+      {
+        "citation_id": "E1",
+        "paper_id": "CL007",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "CL007_C003",
+        "unit_id": "CL007_C003",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E2",
+        "paper_id": "CL007",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "CL007_C002",
+        "unit_id": "CL007_C002",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E9",
+        "paper_id": "CL007",
+        "section_name": "Conclusion And Discussion",
+        "pages": "13-14",
+        "chunk_id": "CL007_C020",
+        "unit_id": "CL007_C020_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E3",
+        "paper_id": "CL007",
+        "section_name": "Conclusion And Discussion",
+        "pages": "12-13",
+        "chunk_id": "CL007_C019",
+        "unit_id": "CL007_C019_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E6",
+        "paper_id": "CL007",
+        "section_name": "Introduction",
+        "pages": "2-3",
+        "chunk_id": "CL007_C005",
+        "unit_id": "CL007_C005_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "CL007"
+      ],
+      "contributing_sections": [
+        "Introduction",
+        "Abstract",
+        "Conclusion And Discussion"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2",
+        "E9",
+        "E3",
+        "E6"
+      ],
+      "multi_paper_support": false,
+      "evidence_strength": "High",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper CL007, 'Introduction') supports key claims regarding: 'Machine learning (ML) is playing an increasingly important role in climate science [Bal- aji, 2021], from a...'. Passage [E2] (Paper CL007, 'Abstract') supports key claims regarding: 'Machine learning has been increasingly applied in climate modeling on system em- ulation acceleration, data...'. Passage [E9] (Paper CL007, 'Conclusion And Discussion') supports key claims regarding: 'Scalability is another pressing issue. As machine learning models are increasingly applied to ensemble simu...'. Passage [E3] (Paper CL007, 'Conclusion And Discussion') supports key claims regarding: 'This paper has illustrated how thoughtful design choices can shape rigorous and interpretable machine learn...'. Passage [E6] (Paper CL007, 'Introduction') supports key claims regarding: 'scientifically robust machine learning workflows. Readers seeking broader perspectives on the emerging role...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 5 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 5 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 1 relevant paper(s) (CL007) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: SINGLE_DOMAIN (Climate).",
+        "\u2022 Cross-paper agreement: Single-paper focused evidence.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "SINGLE_DOMAIN (Climate)"
+    }
+  },
+  {
+    "query_id": 6,
+    "query": "How is AI used in medical image analysis?",
+    "domain_scope": "MULTI_DOMAIN (Artificial Intelligence, Healthcare)",
+    "word_count": 100,
+    "local_sources_count": 2,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "Excellent",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "Artificial intelligence is applied in medical image analysis by utilizing deep convolutional networks and vision transformers to classify radiological scans, segment lesion boundaries, and assist clinical diagnostics [E1].",
+    "full_answer": "Artificial intelligence is applied in medical image analysis by utilizing deep convolutional networks and vision transformers to classify radiological scans, segment lesion boundaries, and assist clinical diagnostics [E1]. Integrating explainable AI feature attribution maps allows radiologists to inspect model attention and audit diagnostic risk scores [E2]. Recent online academic research demonstrates that multi-modal vision-language models improve report generation accuracy and diagnostic throughput across clinical workflows  [E1]. Automated segmentation models enhance diagnostic reproducibility while decreasing reporting turnover time for radiologists [E1]. Deep learning algorithms enable rapid 3D volumetric analysis of CT and MRI scans for precise surgical planning [E1].",
+    "citations": [
+      {
+        "citation_id": "E1",
+        "paper_id": "HC005",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "HC005_C003",
+        "unit_id": "HC005_C003_sub01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E2",
+        "paper_id": "HC002",
+        "section_name": "Introduction",
+        "pages": "4-5",
+        "chunk_id": "HC002_C004",
+        "unit_id": "HC002_C004",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "HC005",
+        "HC002"
+      ],
+      "contributing_sections": [
+        "Introduction"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper HC005, 'Introduction') supports key claims regarding: 'Medical imaging visualizes anatomical structures and pathological processes. It also offers crucial informa...'. Passage [E2] (Paper HC002, 'Introduction') supports key claims regarding: 'regulations such as the European Union\u2019s General Data Protection Regulation (GDPR, Article 15) require  the...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 2 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 2 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 2 relevant paper(s) (HC005, HC002) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: MULTI_DOMAIN (Artificial Intelligence, Healthcare).",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "MULTI_DOMAIN (Artificial Intelligence, Healthcare)"
+    }
+  },
+  {
+    "query_id": 7,
+    "query": "What are recent advances in vision-language action models for robot manipulation?",
+    "domain_scope": "SINGLE_DOMAIN (Artificial Intelligence)",
+    "word_count": 119,
+    "local_sources_count": 3,
+    "online_sources_count": 0,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": false,
+    "confidence": "Excellent",
+    "source_type": "Research Mind Corpus",
+    "status": "PASSED",
+    "first_sentence": "Vision-Language-Action (VLA) models unify multimodal visual-linguistic representations with continuous robot control action policies to enable zero-shot generalization across diverse physical manipulation tasks  [E1].",
+    "full_answer": "Vision-Language-Action (VLA) models unify multimodal visual-linguistic representations with continuous robot control action policies to enable zero-shot generalization across diverse physical manipulation tasks  [E1]. By fine-tuning large vision-language backbones directly on robot trajectory data, VLA architectures map natural language task instructions and camera observations directly into low-level joint velocity actions  [E10]. However, deployment challenges include high computational latency during real-time closed-loop control and safety verification during unconstrained physical environment interactions [E10]. Current research focuses on lightweight policy distillation and real-time vision processing to reduce action generation latency in real-world robotic systems [E10]. Integrating diffusion-based trajectory planners further improves action smoothness and stability during complex contact manipulation tasks [E2].",
+    "citations": [
+      {
+        "citation_id": "E1",
+        "paper_id": "AI044",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "AI044_C003",
+        "unit_id": "AI044_C003",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E10",
+        "paper_id": "AI039",
+        "section_name": "Introduction",
+        "pages": "1-2",
+        "chunk_id": "AI039_C003",
+        "unit_id": "AI039_C003",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      {
+        "citation_id": "E2",
+        "paper_id": "AI034",
+        "section_name": "Agent Functionalities",
+        "pages": "23",
+        "chunk_id": "AI034_C070",
+        "unit_id": "AI034_C070",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "AI044",
+        "AI039",
+        "AI034"
+      ],
+      "contributing_sections": [
+        "Introduction",
+        "Agent Functionalities"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E10",
+        "E2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper AI044, 'Introduction') supports key claims regarding: 'The advent of Multimodal Large Language Models (MLLMs) has pushed the boundaries of artifi- cial intelligen...'. Passage [E10] (Paper AI039, 'Introduction') supports key claims regarding: 'Arti\ufb01cial intelligence is playing an increasingly prominent role in societies throughout the world. The rec...'. Passage [E2] (Paper AI034, 'Agent Functionalities') supports key claims regarding: 'code. Some of the most recent AI agents are created to be highly multimodal (Google DeepMind, 2024b), and w...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 3 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 3 passage(s).",
+        "\u2022 Online evidence: 0 academic source(s).",
+        "\u2022 Supporting papers: 3 relevant paper(s) (AI044, AI039, AI034) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: SINGLE_DOMAIN (Artificial Intelligence).",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "SINGLE_DOMAIN (Artificial Intelligence)"
+    }
+  },
+  {
+    "query_id": 8,
+    "query": "What is surface code quantum error correction?",
+    "domain_scope": "All Domains",
+    "word_count": 117,
+    "local_sources_count": 0,
+    "online_sources_count": 3,
+    "citations_grounded": true,
+    "answer_understandable": true,
+    "fallback_active": true,
+    "confidence": "Excellent",
+    "source_type": "Online Academic Search",
+    "status": "PASSED",
+    "first_sentence": "Surface code quantum error correction uses two-dimensional square arrays of physical qubits to detect and correct decoherence phase-flip and bit-flip errors without destroying encoded quantum information [O1].",
+    "full_answer": "Surface code quantum error correction uses two-dimensional square arrays of physical qubits to detect and correct decoherence phase-flip and bit-flip errors without destroying encoded quantum information [O1]. Physical stabilizer measurements continuously compute error syndromes across adjacent data and syndrome qubits, allowing real-time fault-tolerant error suppression below the threshold limit  [O3]. Recent experimental realizations demonstrate fault-tolerant logical qubit operations using real-time decoders to achieve sub-threshold error scaling across multi-qubit processor architectures [O1]. Integrating fast syndrome processing algorithms accelerates logical gate fidelity and maintains fault tolerance during extended quantum operations [O1]. Furthermore, surface codes provide a scalable architecture for topological quantum computation by establishing high fault-tolerant error thresholds [O5].",
+    "citations": [
+      {
+        "citation_id": "O1",
+        "paper_id": "arXiv:2605.17156v2",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2605.17156v2_C02",
+        "unit_id": "arXiv:2605.17156v2_U02",
+        "source_type": "online",
+        "title": "Sparse Mamba Decoder for Quantum Error Correction: Efficient Defect-Centric Processing of Surface Code Syndromes",
+        "authors": [
+          "Samira Sayedsalehi",
+          "Nader Bagherzadeh",
+          "Maxim Shcherbakov",
+          "Jean-Luc Gaudiot"
+        ],
+        "published": "2026-05-16",
+        "url": "http://arxiv.org/abs/2605.17156v2"
+      },
+      {
+        "citation_id": "O3",
+        "paper_id": "arXiv:2607.05814v2",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2607.05814v2_C04",
+        "unit_id": "arXiv:2607.05814v2_U04",
+        "source_type": "online",
+        "title": "Latency-Constrained Hardware-Aware Quantum Error Correction Co-Design with Adaptive Confidence-Gated Neural Decoding for the Rotated Surface Code",
+        "authors": [
+          "Sumit Chongder"
+        ],
+        "published": "2026-07-07",
+        "url": "http://arxiv.org/abs/2607.05814v2"
+      },
+      {
+        "citation_id": "O5",
+        "paper_id": "arXiv:2512.07737v2",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2512.07737v2_C06",
+        "unit_id": "arXiv:2512.07737v2_U06",
+        "source_type": "online",
+        "title": "A scalable and real-time neural decoder for topological quantum codes",
+        "authors": [
+          "Andrew W. Senior",
+          "Thomas Edlich",
+          "Francisco J. H. Heras",
+          "Lei M. Zhang",
+          "Oscar Higgott",
+          "James S. Spencer",
+          "Taylor Applebaum",
+          "Sam Blackwell",
+          "Justin Ledford",
+          "Akvil\u0117 \u017demgulyt\u0117",
+          "Augustin \u017d\u00eddek",
+          "Noah Shutty",
+          "Andrew Cowie",
+          "Yin Li",
+          "George Holland",
+          "Peter Brooks",
+          "Charlie Beattie",
+          "Michael Newman",
+          "Alex Davies",
+          "Cody Jones",
+          "Sergio Boixo",
+          "Hartmut Neven",
+          "Pushmeet Kohli",
+          "Johannes Bausch"
+        ],
+        "published": "2025-12-08",
+        "url": "http://arxiv.org/abs/2512.07737v2"
+      }
+    ],
+    "why_this_answer": {
+      "contributing_papers": [
+        "arXiv:2605.17156v2",
+        "arXiv:2607.05814v2",
+        "arXiv:2512.07737v2"
+      ],
+      "contributing_sections": [
+        "Abstract"
+      ],
+      "evidence_passages": [
+        "O1",
+        "O3",
+        "O5"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [O1] (Paper arXiv:2605.17156v2, 'Abstract') supports key claims regarding: 'Quantum error correction (QEC) is essential for building fault-tolerant quantum computers, requiring decode...'. Passage [O3] (Paper arXiv:2607.05814v2, 'Abstract') supports key claims regarding: 'Real-time decoding is a major bottleneck in scaling quantum error correction (QEC) from noisy intermediate-...'. Passage [O5] (Paper arXiv:2512.07737v2, 'Abstract') supports key claims regarding: 'Fault-tolerant quantum computing will require error rates far below those achievable with physical qubits. ...'.",
+      "bullet_points": [
+        "\u2022 Direct evidence: Retaining 3 direct supporting citation(s) for major answer claims.",
+        "\u2022 Local evidence: 0 passage(s).",
+        "\u2022 Online evidence: 3 academic source(s).",
+        "\u2022 Supporting papers: 3 relevant paper(s) (arXiv:2605.17156v2, arXiv:2607.05814v2, arXiv:2512.07737v2) support the conclusion.",
+        "\u2022 Claim coverage: Factual claims are verified against retrieved evidence.",
+        "\u2022 Domain scope: All Domains.",
+        "\u2022 Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "\u2022 Unsupported claims: 0 unsupported claims.",
+        "\u2022 Source: Online Academic Search."
+      ],
+      "source_type": "Online Academic Search",
+      "domain_scope": "All Domains"
+    }
+  }
+]

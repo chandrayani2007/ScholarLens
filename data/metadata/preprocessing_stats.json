@@ -1,0 +1,33 @@
+{
+  "total_papers_processed": 1000,
+  "successful_papers": 1000,
+  "failed_papers_count": 0,
+  "failed_papers": [],
+  "average_pages": 7.3,
+  "average_sections": 4.7,
+  "average_text_length": 19132.0,
+  "total_sections_extracted": 4651,
+  "scanned_pdf_count": 0,
+  "section_distribution": {
+    "Header": 999,
+    "References": 243,
+    "Introduction": 240,
+    "Abstract": 133,
+    "Conclusion": 129,
+    "Related Work": 59,
+    "Results": 47,
+    "Methodology": 34,
+    "Conclusions": 31,
+    "Discussion": 26,
+    "Acknowledgements": 24,
+    "Proposed Method": 23,
+    "Experiments": 21,
+    "Methods": 19,
+    "Mariam Wehbe And Laurent Bobelin": 17,
+    "Decision-Theoretic Optimization To Solve Tasks": 16,
+    "Core Methodology": 15,
+    "Mse": 15,
+    "Evaluation": 14,
+    "Experimental Setup": 14
+  }
+}

@@ -1,0 +1,1273 @@
+{
+  "metadata": {
+    "evaluation_dataset_version": "2.0_refined",
+    "ground_truth_version": "2.0_precision_focused",
+    "average_ground_truth_units_per_query": 19.4,
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "chroma_version": "1.5.9",
+    "collection_name": "research_mind_chunks",
+    "bm25_config": "BM25Okapi (k1=1.5, b=0.75)",
+    "rrf_config": "k=60, dense_weight=1.0, lexical_weight=1.0",
+    "section_filtering": {
+      "enabled": true,
+      "excluded_sections": [
+        "Header",
+        "References",
+        "Bibliography",
+        "Acknowledgements"
+      ]
+    },
+    "total_queries": 50
+  },
+  "historical_comparison": {
+    "phase5_previous_uncorrected_gt": {
+      "hit_at_1": 0.54,
+      "hit_at_5": 0.7,
+      "hit_at_10": 0.84,
+      "precision_at_5": 0.564,
+      "precision_at_10": 0.55,
+      "recall_at_5": 0.0069,
+      "recall_at_10": 0.0144,
+      "mrr": 0.6253,
+      "ndcg_at_10": 0.386
+    },
+    "unfiltered_baseline_corrected_gt": {
+      "hit_at_1": 0.16,
+      "hit_at_5": 0.4,
+      "hit_at_10": 0.52,
+      "precision_at_5": 0.168,
+      "precision_at_10": 0.142,
+      "recall_at_5": 0.0444,
+      "recall_at_10": 0.075,
+      "mrr": 0.2708,
+      "ndcg_at_10": 0.1425
+    },
+    "production_filtered_corrected_gt": {
+      "hit_at_1": 0.26,
+      "hit_at_5": 0.48,
+      "hit_at_10": 0.54,
+      "precision_at_5": 0.22,
+      "precision_at_10": 0.184,
+      "recall_at_5": 0.0593,
+      "recall_at_10": 0.0941,
+      "mrr": 0.3477,
+      "ndcg_at_10": 0.1816
+    }
+  },
+  "production_systems_comparison": {
+    "overall": {
+      "ChromaDB_Filtered": {
+        "hit_at_1": 0.2,
+        "hit_at_5": 0.42,
+        "hit_at_10": 0.5,
+        "precision_at_5": 0.196,
+        "precision_at_10": 0.154,
+        "recall_at_5": 0.0451,
+        "recall_at_10": 0.0765,
+        "mrr": 0.2947,
+        "ndcg_at_10": 0.1449
+      },
+      "BM25_Filtered": {
+        "hit_at_1": 0.14,
+        "hit_at_5": 0.44,
+        "hit_at_10": 0.56,
+        "precision_at_5": 0.196,
+        "precision_at_10": 0.164,
+        "recall_at_5": 0.0546,
+        "recall_at_10": 0.0888,
+        "mrr": 0.276,
+        "ndcg_at_10": 0.1537
+      },
+      "Production_Hybrid_RRF": {
+        "hit_at_1": 0.26,
+        "hit_at_5": 0.48,
+        "hit_at_10": 0.54,
+        "precision_at_5": 0.22,
+        "precision_at_10": 0.184,
+        "recall_at_5": 0.0593,
+        "recall_at_10": 0.0941,
+        "mrr": 0.3477,
+        "ndcg_at_10": 0.1816
+      }
+    },
+    "domain_wise": {
+      "artificial_intelligence": {
+        "ChromaDB_Filtered": {
+          "hit_at_1": 0.2,
+          "hit_at_5": 0.5,
+          "hit_at_10": 0.6,
+          "precision_at_5": 0.28,
+          "precision_at_10": 0.22,
+          "recall_at_5": 0.0655,
+          "recall_at_10": 0.1027,
+          "mrr": 0.325,
+          "ndcg_at_10": 0.1837
+        },
+        "BM25_Filtered": {
+          "hit_at_1": 0.3,
+          "hit_at_5": 0.4,
+          "hit_at_10": 0.7,
+          "precision_at_5": 0.26,
+          "precision_at_10": 0.23,
+          "recall_at_5": 0.0609,
+          "recall_at_10": 0.1068,
+          "mrr": 0.361,
+          "ndcg_at_10": 0.2026
+        },
+        "Production_Hybrid_RRF": {
+          "hit_at_1": 0.3,
+          "hit_at_5": 0.5,
+          "hit_at_10": 0.6,
+          "precision_at_5": 0.26,
+          "precision_at_10": 0.29,
+          "recall_at_5": 0.0609,
+          "recall_at_10": 0.1355,
+          "mrr": 0.3933,
+          "ndcg_at_10": 0.245
+        }
+      },
+      "cybersecurity": {
+        "ChromaDB_Filtered": {
+          "hit_at_1": 0.2,
+          "hit_at_5": 0.5,
+          "hit_at_10": 0.6,
+          "precision_at_5": 0.26,
+          "precision_at_10": 0.2,
+          "recall_at_5": 0.0591,
+          "recall_at_10": 0.1197,
+          "mrr": 0.32,
+          "ndcg_at_10": 0.1903
+        },
+        "BM25_Filtered": {
+          "hit_at_1": 0.1,
+          "hit_at_5": 0.5,
+          "hit_at_10": 0.6,
+          "precision_at_5": 0.18,
+          "precision_at_10": 0.21,
+          "recall_at_5": 0.0735,
+          "recall_at_10": 0.128,
+          "mrr": 0.3,
+          "ndcg_at_10": 0.1576
+        },
+        "Production_Hybrid_RRF": {
+          "hit_at_1": 0.2,
+          "hit_at_5": 0.5,
+          "hit_at_10": 0.7,
+          "precision_at_5": 0.26,
+          "precision_at_10": 0.21,
+          "recall_at_5": 0.0879,
+          "recall_at_10": 0.128,
+          "mrr": 0.3417,
+          "ndcg_at_10": 0.1948
+        }
+      },
+      "agriculture": {
+        "ChromaDB_Filtered": {
+          "hit_at_1": 0.2,
+          "hit_at_5": 0.3,
+          "hit_at_10": 0.4,
+          "precision_at_5": 0.1,
+          "precision_at_10": 0.09,
+          "recall_at_5": 0.0227,
+          "recall_at_10": 0.0409,
+          "mrr": 0.26,
+          "ndcg_at_10": 0.0967
+        },
+        "BM25_Filtered": {
+          "hit_at_1": 0.1,
+          "hit_at_5": 0.3,
+          "hit_at_10": 0.4,
+          "precision_at_5": 0.14,
+          "precision_at_10": 0.12,
+          "recall_at_5": 0.0318,
+          "recall_at_10": 0.0545,
+          "mrr": 0.1893,
+          "ndcg_at_10": 0.1185
+        },
+        "Production_Hybrid_RRF": {
+          "hit_at_1": 0.2,
+          "hit_at_5": 0.4,
+          "hit_at_10": 0.4,
+          "precision_at_5": 0.16,
+          "precision_at_10": 0.12,
+          "recall_at_5": 0.0364,
+          "recall_at_10": 0.0545,
+          "mrr": 0.245,
+          "ndcg_at_10": 0.1299
+        }
+      },
+      "healthcare": {
+        "ChromaDB_Filtered": {
+          "hit_at_1": 0.3,
+          "hit_at_5": 0.4,
+          "hit_at_10": 0.4,
+          "precision_at_5": 0.18,
+          "precision_at_10": 0.1,
+          "recall_at_5": 0.0418,
+          "recall_at_10": 0.0463,
+          "mrr": 0.3333,
+          "ndcg_at_10": 0.118
+        },
+        "BM25_Filtered": {
+          "hit_at_1": 0.1,
+          "hit_at_5": 0.4,
+          "hit_at_10": 0.5,
+          "precision_at_5": 0.14,
+          "precision_at_10": 0.11,
+          "recall_at_5": 0.032,
+          "recall_at_10": 0.0711,
+          "mrr": 0.2267,
+          "ndcg_at_10": 0.1232
+        },
+        "Production_Hybrid_RRF": {
+          "hit_at_1": 0.1,
+          "hit_at_5": 0.4,
+          "hit_at_10": 0.4,
+          "precision_at_5": 0.18,
+          "precision_at_10": 0.12,
+          "recall_at_5": 0.0416,
+          "recall_at_10": 0.0554,
+          "mrr": 0.2083,
+          "ndcg_at_10": 0.1004
+        }
+      },
+      "climate": {
+        "ChromaDB_Filtered": {
+          "hit_at_1": 0.1,
+          "hit_at_5": 0.4,
+          "hit_at_10": 0.5,
+          "precision_at_5": 0.16,
+          "precision_at_10": 0.16,
+          "recall_at_5": 0.0364,
+          "recall_at_10": 0.0727,
+          "mrr": 0.235,
+          "ndcg_at_10": 0.1356
+        },
+        "BM25_Filtered": {
+          "hit_at_1": 0.1,
+          "hit_at_5": 0.6,
+          "hit_at_10": 0.6,
+          "precision_at_5": 0.26,
+          "precision_at_10": 0.15,
+          "recall_at_5": 0.0745,
+          "recall_at_10": 0.0836,
+          "mrr": 0.3033,
+          "ndcg_at_10": 0.1664
+        },
+        "Production_Hybrid_RRF": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 0.6,
+          "hit_at_10": 0.6,
+          "precision_at_5": 0.24,
+          "precision_at_10": 0.18,
+          "recall_at_5": 0.07,
+          "recall_at_10": 0.0973,
+          "mrr": 0.55,
+          "ndcg_at_10": 0.2378
+        }
+      }
+    }
+  },
+  "query_details": [
+    {
+      "query_id": "AI_Q001",
+      "domain": "artificial_intelligence",
+      "subtopic": "retrieval_augmented_generation",
+      "question": "What is retrieval augmented generation?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.9,
+        "recall_at_5": 0.1818,
+        "recall_at_10": 0.4091,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.7706
+      },
+      "retrieved_top_unit": "AI001_C003",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "AI_Q002",
+      "domain": "artificial_intelligence",
+      "subtopic": "retrieval_augmented_generation",
+      "question": "How does retrieval augmented generation reduce hallucination in large language models?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.0909,
+        "mrr": 0.3333,
+        "ndcg_at_10": 0.1884
+      },
+      "retrieved_top_unit": "AI030_C044",
+      "retrieved_top_section": "Failure Modes, Safety, And Reliability"
+    },
+    {
+      "query_id": "AI_Q003",
+      "domain": "artificial_intelligence",
+      "subtopic": "large_language_models",
+      "question": "What are the key architectural components of transformer language models?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG035_C027_sub01",
+      "retrieved_top_section": "Remote Sensing-Based Data Fusion Methods"
+    },
+    {
+      "query_id": "AI_Q004",
+      "domain": "artificial_intelligence",
+      "subtopic": "large_language_models",
+      "question": "How is parameter-efficient fine-tuning used for adapter modules?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CL047_C008",
+      "retrieved_top_section": "Technical Background"
+    },
+    {
+      "query_id": "AI_Q005",
+      "domain": "artificial_intelligence",
+      "subtopic": "multi_agent_systems",
+      "question": "How do multi-agent coordination frameworks handle role assignment?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.1364,
+        "recall_at_10": 0.2727,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.4584
+      },
+      "retrieved_top_unit": "AI030_C016",
+      "retrieved_top_section": "Taxonomy Of Agentic Rag Systems"
+    },
+    {
+      "query_id": "AI_Q006",
+      "domain": "artificial_intelligence",
+      "subtopic": "multi_agent_systems",
+      "question": "What mechanisms enable consensus protocol in autonomous multi-agent networks?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0455,
+        "mrr": 0.1,
+        "ndcg_at_10": 0.0572
+      },
+      "retrieved_top_unit": "AI017_C008",
+      "retrieved_top_section": "Related Work"
+    },
+    {
+      "query_id": "AI_Q007",
+      "domain": "artificial_intelligence",
+      "subtopic": "computer_vision",
+      "question": "How do vision transformers process image patches?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG027_C007_sub01",
+      "retrieved_top_section": "Vision Transformer"
+    },
+    {
+      "query_id": "AI_Q008",
+      "domain": "artificial_intelligence",
+      "subtopic": "computer_vision",
+      "question": "What methods improve zero-shot object detection performance?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CY046_C014_sub01",
+      "retrieved_top_section": "Auroc And Auprc Curves"
+    },
+    {
+      "query_id": "AI_Q009",
+      "domain": "artificial_intelligence",
+      "subtopic": "reinforcement_learning",
+      "question": "How does deep Q-learning address policy gradient variance?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.1364,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.1315
+      },
+      "retrieved_top_unit": "AI039_C008_sub01",
+      "retrieved_top_section": "Metrics"
+    },
+    {
+      "query_id": "AI_Q010",
+      "domain": "artificial_intelligence",
+      "subtopic": "reinforcement_learning",
+      "question": "What role does reward modeling play in human preference alignment?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.8,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.4,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.8435
+      },
+      "retrieved_top_unit": "AI044_C006",
+      "retrieved_top_section": "Reinforcement Learning For Language Model Alignment"
+    },
+    {
+      "query_id": "CY_Q001",
+      "domain": "cybersecurity",
+      "subtopic": "network_security",
+      "question": "How are network attacks detected?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0455,
+        "mrr": 0.1667,
+        "ndcg_at_10": 0.0784
+      },
+      "retrieved_top_unit": "CY035_C011_sub02",
+      "retrieved_top_section": "Detection Techniques"
+    },
+    {
+      "query_id": "CY_Q002",
+      "domain": "cybersecurity",
+      "subtopic": "network_security",
+      "question": "How do intrusion detection systems analyze encrypted network traffic for anomalies?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CY035_C011_sub02",
+      "retrieved_top_section": "Detection Techniques"
+    },
+    {
+      "query_id": "CY_Q003",
+      "domain": "cybersecurity",
+      "subtopic": "threat_intelligence",
+      "question": "What are the primary indicators of compromise in ransomware incidents?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.1818,
+        "recall_at_10": 0.2727,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.6509
+      },
+      "retrieved_top_unit": "CY027_C079_sub01",
+      "retrieved_top_section": "Net-Gpt"
+    },
+    {
+      "query_id": "CY_Q004",
+      "domain": "cybersecurity",
+      "subtopic": "threat_intelligence",
+      "question": "How is automated malware lineage tracking implemented using behavioral graph embeddings?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CY044_C008",
+      "retrieved_top_section": "Malware Detection"
+    },
+    {
+      "query_id": "CY_Q005",
+      "domain": "cybersecurity",
+      "subtopic": "zero_trust_architecture",
+      "question": "What are the main principles of zero trust architecture?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.1364,
+        "recall_at_10": 0.2273,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.4706
+      },
+      "retrieved_top_unit": "CY025_C077",
+      "retrieved_top_section": "Steps To Zero Trust For Unman-"
+    },
+    {
+      "query_id": "CY_Q006",
+      "domain": "cybersecurity",
+      "subtopic": "zero_trust_architecture",
+      "question": "How does continuous identity verification enforce microsegmentation policies?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0833,
+        "mrr": 0.1667,
+        "ndcg_at_10": 0.0456
+      },
+      "retrieved_top_unit": "AI030_C032_sub01",
+      "retrieved_top_section": "Tool-Augmented Retrieval Loop Pattern"
+    },
+    {
+      "query_id": "CY_Q007",
+      "domain": "cybersecurity",
+      "subtopic": "vulnerability_assessment",
+      "question": "How are zero-day software vulnerabilities discovered using automated fuzzing?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.3333,
+        "recall_at_10": 0.3333,
+        "mrr": 0.3333,
+        "ndcg_at_10": 0.2346
+      },
+      "retrieved_top_unit": "CY027_C074",
+      "retrieved_top_section": "Llm4Vuln"
+    },
+    {
+      "query_id": "CY_Q008",
+      "domain": "cybersecurity",
+      "subtopic": "vulnerability_assessment",
+      "question": "What techniques quantify static code analysis false positive rates?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CY029_C006",
+      "retrieved_top_section": "An Overview Of The Analysis Method"
+    },
+    {
+      "query_id": "CY_Q009",
+      "domain": "cybersecurity",
+      "subtopic": "cryptography",
+      "question": "What are post-quantum lattice-based encryption algorithms?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.1818,
+        "recall_at_10": 0.2273,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.3697
+      },
+      "retrieved_top_unit": "CY004_C040",
+      "retrieved_top_section": "Volume ,"
+    },
+    {
+      "query_id": "CY_Q010",
+      "domain": "cybersecurity",
+      "subtopic": "cryptography",
+      "question": "How does homomorphic encryption preserve data privacy during cloud computation?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.0909,
+        "mrr": 0.25,
+        "ndcg_at_10": 0.0979
+      },
+      "retrieved_top_unit": "CY028_C003",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "AG_Q001",
+      "domain": "agriculture",
+      "subtopic": "smart_farming",
+      "question": "How is IoT used in smart farming?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.0909,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.3909
+      },
+      "retrieved_top_unit": "AG040_C015",
+      "retrieved_top_section": "Precise Irrigation"
+    },
+    {
+      "query_id": "AG_Q002",
+      "domain": "agriculture",
+      "subtopic": "smart_farming",
+      "question": "How do Wireless Sensor Networks optimize automated irrigation schedules?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG022_C003_sub01",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "AG_Q003",
+      "domain": "agriculture",
+      "subtopic": "crop_monitoring",
+      "question": "What multispectral imagery techniques detect crop stress and disease?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.0909,
+        "mrr": 0.2,
+        "ndcg_at_10": 0.1514
+      },
+      "retrieved_top_unit": "AG046_C005",
+      "retrieved_top_section": "Machine Learning In Agriculture"
+    },
+    {
+      "query_id": "AG_Q004",
+      "domain": "agriculture",
+      "subtopic": "crop_monitoring",
+      "question": "How do drone-based thermal sensors estimate canopy cover index?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG049_C011",
+      "retrieved_top_section": "Robotic Spraying"
+    },
+    {
+      "query_id": "AG_Q005",
+      "domain": "agriculture",
+      "subtopic": "precision_agriculture",
+      "question": "What technologies support variable rate fertilizer application?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.0909,
+        "recall_at_10": 0.0909,
+        "mrr": 0.25,
+        "ndcg_at_10": 0.1935
+      },
+      "retrieved_top_unit": "AG040_C023",
+      "retrieved_top_section": "Soil Mapping, Fertility Analysis, And Fertilization"
+    },
+    {
+      "query_id": "AG_Q006",
+      "domain": "agriculture",
+      "subtopic": "precision_agriculture",
+      "question": "How do yield prediction models incorporate soil nutrient sensors and weather telemetry?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG006_C005_sub01",
+      "retrieved_top_section": "Background"
+    },
+    {
+      "query_id": "AG_Q007",
+      "domain": "agriculture",
+      "subtopic": "soil_health",
+      "question": "What methods analyze soil organic matter decomposition rates?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.1818,
+        "recall_at_10": 0.2727,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.5633
+      },
+      "retrieved_top_unit": "AG016_C028_sub01",
+      "retrieved_top_section": "Soil Quantitative Analysis"
+    },
+    {
+      "query_id": "AG_Q008",
+      "domain": "agriculture",
+      "subtopic": "soil_health",
+      "question": "How does microbial diversity affect nitrogen fixation efficiency?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG010_C020_sub01",
+      "retrieved_top_section": "Interpretability: Treeshap Analysis"
+    },
+    {
+      "query_id": "AG_Q009",
+      "domain": "agriculture",
+      "subtopic": "sustainable_agriculture",
+      "question": "What management practices reduce agrochemical runoff into watersheds?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG037_C006_sub01",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "AG_Q010",
+      "domain": "agriculture",
+      "subtopic": "sustainable_agriculture",
+      "question": "How do cover crop rotations sequester soil carbon in conservation tillage systems?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CL004_C019",
+      "retrieved_top_section": "Numerical Examples"
+    },
+    {
+      "query_id": "HC_Q001",
+      "domain": "healthcare",
+      "subtopic": "medical_imaging",
+      "question": "How does medical image analysis support diagnosis?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.0909,
+        "recall_at_10": 0.0909,
+        "mrr": 0.3333,
+        "ndcg_at_10": 0.1952
+      },
+      "retrieved_top_unit": "HC004_C006",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "HC_Q002",
+      "domain": "healthcare",
+      "subtopic": "medical_imaging",
+      "question": "How do convolutional neural networks perform lung nodule segmentation on CT scans?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.1364,
+        "mrr": 0.25,
+        "ndcg_at_10": 0.1763
+      },
+      "retrieved_top_unit": "HC004_C062_sub01",
+      "retrieved_top_section": "Overview Of The Detection Frameworks"
+    },
+    {
+      "query_id": "HC_Q003",
+      "domain": "healthcare",
+      "subtopic": "clinical_decision_support",
+      "question": "What clinical decision support systems predict patient sepsis onset?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1364,
+        "recall_at_10": 0.1364,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.3188
+      },
+      "retrieved_top_unit": "HC034_C002",
+      "retrieved_top_section": "Abstract"
+    },
+    {
+      "query_id": "HC_Q004",
+      "domain": "healthcare",
+      "subtopic": "clinical_decision_support",
+      "question": "How are real-time EHR alert triggers evaluated for alert fatigue reduction?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "HC045_C005",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "HC_Q005",
+      "domain": "healthcare",
+      "subtopic": "genomics",
+      "question": "How is deep learning applied to variant calling in whole genome sequencing?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CL033_C085",
+      "retrieved_top_section": "Decision-Theoretic Optimization To Solve Tasks"
+    },
+    {
+      "query_id": "HC_Q006",
+      "domain": "healthcare",
+      "subtopic": "genomics",
+      "question": "What tools identify gene expression patterns associated with drug resistance?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "HC024_C036_sub02",
+      "retrieved_top_section": "Appendix"
+    },
+    {
+      "query_id": "HC_Q007",
+      "domain": "healthcare",
+      "subtopic": "telemedicine",
+      "question": "What remote monitoring devices track chronic cardiovascular condition metrics?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.1429,
+        "recall_at_10": 0.1905,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.3134
+      },
+      "retrieved_top_unit": "HC031_C124",
+      "retrieved_top_section": "Longitudinal Patient Monitoring"
+    },
+    {
+      "query_id": "HC_Q008",
+      "domain": "healthcare",
+      "subtopic": "telemedicine",
+      "question": "How is wearable ECG signal processing optimized for real-time arrhythmia detection?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "HC017_C020",
+      "retrieved_top_section": "Electrogram Diagnostics"
+    },
+    {
+      "query_id": "HC_Q009",
+      "domain": "healthcare",
+      "subtopic": "electronic_health_records",
+      "question": "How is clinical natural language processing used to extract unstructured physician notes?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "HC011_C004",
+      "retrieved_top_section": "Clinical Notes"
+    },
+    {
+      "query_id": "HC_Q010",
+      "domain": "healthcare",
+      "subtopic": "electronic_health_records",
+      "question": "What privacy-preserving federated learning architectures protect patient health records?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CY021_C005",
+      "retrieved_top_section": "Advancements Of Privacy Preserving Machine"
+    },
+    {
+      "query_id": "CL_Q001",
+      "domain": "climate",
+      "subtopic": "climate_modeling",
+      "question": "How is machine learning used for climate prediction?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.0455,
+        "recall_at_10": 0.1364,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.15
+      },
+      "retrieved_top_unit": "CL007_C003",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "CL_Q002",
+      "domain": "climate",
+      "subtopic": "climate_modeling",
+      "question": "How do atmospheric parameterization schemes emulate cloud microphysics using neural networks?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CL050_C004",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "CL_Q003",
+      "domain": "climate",
+      "subtopic": "extreme_weather",
+      "question": "What models forecast tropical cyclone intensity and landfall trajectory?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CL041_C012",
+      "retrieved_top_section": "Abstract"
+    },
+    {
+      "query_id": "CL_Q004",
+      "domain": "climate",
+      "subtopic": "extreme_weather",
+      "question": "How is deep learning used for short-term precipitation nowcasting?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.214
+      },
+      "retrieved_top_unit": "CL018_C008",
+      "retrieved_top_section": "Short-Term Streamflow Forecasting Based On Machine Learning"
+    },
+    {
+      "query_id": "CL_Q005",
+      "domain": "climate",
+      "subtopic": "carbon_cycle",
+      "question": "What mechanisms drive global ocean carbon sink variability?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.0909,
+        "recall_at_10": 0.1364,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.5006
+      },
+      "retrieved_top_unit": "CL003_C015",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "CL_Q006",
+      "domain": "climate",
+      "subtopic": "carbon_cycle",
+      "question": "How do terrestrial ecosystem models estimate net biome productivity?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "AG004_C004",
+      "retrieved_top_section": "A Review Of Models In Agriculture"
+    },
+    {
+      "query_id": "CL_Q007",
+      "domain": "climate",
+      "subtopic": "sea_level_rise",
+      "question": "What satellite altimetry techniques measure ice sheet mass loss rate?",
+      "difficulty": "moderate",
+      "metrics": {
+        "hit_at_1": 0.0,
+        "hit_at_5": 0.0,
+        "hit_at_10": 0.0,
+        "precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "retrieved_top_unit": "CL026_C005",
+      "retrieved_top_section": "Abstract"
+    },
+    {
+      "query_id": "CL_Q008",
+      "domain": "climate",
+      "subtopic": "sea_level_rise",
+      "question": "How do coastal storm surge models simulate sea level rise impact?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.0909,
+        "recall_at_10": 0.1364,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.4384
+      },
+      "retrieved_top_unit": "CL014_C013",
+      "retrieved_top_section": "Atlantic Hurricane Development"
+    },
+    {
+      "query_id": "CL_Q009",
+      "domain": "climate",
+      "subtopic": "renewable_energy_integration",
+      "question": "How do machine learning algorithms forecast solar irradiance and wind power generation?",
+      "difficulty": "easy",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.1364,
+        "recall_at_10": 0.2273,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.5645
+      },
+      "retrieved_top_unit": "CL037_C004_sub01",
+      "retrieved_top_section": "Introduction"
+    },
+    {
+      "query_id": "CL_Q010",
+      "domain": "climate",
+      "subtopic": "renewable_energy_integration",
+      "question": "What grid optimization frameworks balance intermittent renewable energy supply with demand?",
+      "difficulty": "difficult",
+      "metrics": {
+        "hit_at_1": 1.0,
+        "hit_at_5": 1.0,
+        "hit_at_10": 1.0,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1364,
+        "recall_at_10": 0.1364,
+        "mrr": 1.0,
+        "ndcg_at_10": 0.5102
+      },
+      "retrieved_top_unit": "CL037_C002",
+      "retrieved_top_section": "Abstract"
+    }
+  ]
+}

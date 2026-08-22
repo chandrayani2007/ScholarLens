@@ -1,0 +1,450 @@
+[
+  {
+    "test_label": "TEST 1 — In-Corpus Query",
+    "query": "What are the limitations of retrieval-augmented generation systems?",
+    "answer": "RAG systems have several important limitations, mainly related to retrieval quality, incomplete evidence, and coverage constraints [E1]. The first limitation is that answer quality depends heavily on the quality of retrieved information [E1]. If the retrieval system fails to find the right passages, the language model may not have enough reliable evidence to produce a correct answer [E1]. Another limitation is that retrieved documents can contain incomplete or irrelevant information [E1]. This means that simply adding more documents does not necessarily improve the final answer [E1]. RAG systems also have to decide which passages are relevant and how much evidence can be provided to the language model [E2]. When the available corpus does not contain information needed to answer a specific question, retrieval coverage can be restricted  [E8]. In such cases, supplementary online academic search provides verified external evidence [E1].",
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "AI003",
+        "section_name": "Introduction",
+        "pages": "1",
+        "chunk_id": "AI003_C03",
+        "unit_id": "AI003_C03",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "AI003",
+        "section_name": "Main Content",
+        "pages": "1",
+        "chunk_id": "AI003_C01",
+        "unit_id": "AI003_C01",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      "E8": {
+        "citation_id": "E8",
+        "paper_id": "AI002",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "AI002_C02",
+        "unit_id": "AI002_C02",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    },
+    "why_this_answer": {
+      "contributing_papers": [
+        "AI003",
+        "AI002"
+      ],
+      "contributing_sections": [
+        "Introduction",
+        "Main Content",
+        "Abstract"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2",
+        "E8"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper AI003, 'Introduction') supports key claims regarding: 'Introduction Retrieval-Augmented Generation (RAG) is a framework that enhances the ca- pabilities of Large ...'. Passage [E2] (Paper AI003, 'Main Content') supports key claims regarding: 'Deepchecks: Evaluating Retrieval-Augmented Generation (RAG) Assaf Gerner1, Netta Madvil1, Nadav Barak1, Ale...'. Passage [E8] (Paper AI002, 'Abstract') supports key claims regarding: 'Abstract The second edition of the TREC Retrieval Augmented Generation (RAG) Track advances research on sys...'.",
+      "bullet_points": [
+        "• Direct evidence: Retaining 3 direct supporting citation(s) for major answer claims.",
+        "• Local evidence: 3 passage(s).",
+        "• Online evidence: 0 academic source(s).",
+        "• Supporting papers: 2 relevant paper(s) (AI003, AI002) support the conclusion.",
+        "• Claim coverage: Factual claims are verified against retrieved evidence.",
+        "• Domain scope: All Domains.",
+        "• Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "• Unsupported claims: 0 unsupported claims.",
+        "• Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "All Domains"
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 3,
+      "top_unit_id": "AI003_C03",
+      "intent": "Limitation",
+      "match_ratio": 1.0,
+      "unsupported_claims": 0,
+      "used_citations_count": 3,
+      "local_evidence_count": 3,
+      "online_evidence_count": 0,
+      "online_fallback_active": false,
+      "source_type": "corpus",
+      "scope_type": "ALL_DOMAINS",
+      "domain_scope": "All Domains",
+      "allowed_domains": [
+        "artificial_intelligence",
+        "cybersecurity",
+        "agriculture",
+        "healthcare",
+        "climate"
+      ]
+    },
+    "domain_scope": [
+      "artificial_intelligence",
+      "cybersecurity",
+      "agriculture",
+      "healthcare",
+      "climate"
+    ],
+    "confidence": "Excellent"
+  },
+  {
+    "test_label": "TEST 2 — Out-of-Corpus Query 1",
+    "query": "What is quantum teleportation?",
+    "answer": "Recent online academic research investigates quantum teleportation using verifiable scientific evidence [O1]. Specifically, findings presented in 'Three particle Hyper Entanglement: Teleportation and Quantum Key Distribution' demonstrate that We present a scheme to generate three particle hyper-entanglement utilizing polarization and orbital angular momentum (OAM) of a photon [O1]. We show that the generated state can be used to teleport a two-qubit state described by the polarization and the OAM [O1]. The proposed quantum syst [O1]. Further online scientific evidence indicates that We present a simple quantum interactive proof (QIP) protocol using the quantum state teleportation (QST) and quantum energy teleportation (QET) protocols [O2]. QET is a technique that allows a receiver at a distance to extract the local energy by local operations and classical communi [O2]. These scientific insights provide verifiable evidence and operational frameworks for understanding the core mechanisms [O1, O2]. These results demonstrate the broader applicability and scientific validity of recent academic advances in this domain  [O5].",
+    "citations": {
+      "O1": {
+        "citation_id": "O1",
+        "paper_id": "arXiv:1311.7318v5",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:1311.7318v5_C02",
+        "unit_id": "arXiv:1311.7318v5_U02",
+        "source_type": "online",
+        "title": "Three particle Hyper Entanglement: Teleportation and Quantum Key Distribution",
+        "authors": [
+          "P. Chithrabhanu",
+          "A. Aadhi",
+          "Salla Gangi Reddy",
+          "Shashi Prabhakar",
+          "G. K. Samanta",
+          "Goutam Paul",
+          "R. P. Singh"
+        ],
+        "published": "2013-11-28",
+        "url": "http://arxiv.org/abs/1311.7318v5"
+      },
+      "O2": {
+        "citation_id": "O2",
+        "paper_id": "arXiv:2306.08242v1",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2306.08242v1_C03",
+        "unit_id": "arXiv:2306.08242v1_U03",
+        "source_type": "online",
+        "title": "Quantum interactive proofs using quantum energy teleportation",
+        "authors": [
+          "Kazuki Ikeda",
+          "Adam Lowe"
+        ],
+        "published": "2023-06-14",
+        "url": "http://arxiv.org/abs/2306.08242v1"
+      },
+      "O5": {
+        "citation_id": "O5",
+        "paper_id": "arXiv:2412.20762v1",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2412.20762v1_C06",
+        "unit_id": "arXiv:2412.20762v1_U06",
+        "source_type": "online",
+        "title": "Enhancing Privacy in Federated Learning through Quantum Teleportation Integration",
+        "authors": [
+          "Koffka Khan"
+        ],
+        "published": "2024-12-30",
+        "url": "http://arxiv.org/abs/2412.20762v1"
+      }
+    },
+    "why_this_answer": {
+      "contributing_papers": [
+        "arXiv:1311.7318v5",
+        "arXiv:2306.08242v1",
+        "arXiv:2412.20762v1"
+      ],
+      "contributing_sections": [
+        "Abstract"
+      ],
+      "evidence_passages": [
+        "O1",
+        "O2",
+        "O5"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [O1] (Paper arXiv:1311.7318v5, 'Abstract') supports key claims regarding: 'We present a scheme to generate three particle hyper-entanglement utilizing polarization and orbital angula...'. Passage [O2] (Paper arXiv:2306.08242v1, 'Abstract') supports key claims regarding: 'We present a simple quantum interactive proof (QIP) protocol using the quantum state teleportation (QST) an...'. Passage [O5] (Paper arXiv:2412.20762v1, 'Abstract') supports key claims regarding: 'Federated learning enables collaborative model training across multiple clients without sharing raw data, t...'.",
+      "bullet_points": [
+        "• Direct evidence: Retaining 3 direct supporting citation(s) for major answer claims.",
+        "• Local evidence: 0 passage(s).",
+        "• Online evidence: 3 academic source(s).",
+        "• Supporting papers: 3 relevant paper(s) (arXiv:1311.7318v5, arXiv:2306.08242v1, arXiv:2412.20762v1) support the conclusion.",
+        "• Claim coverage: Factual claims are verified against retrieved evidence.",
+        "• Domain scope: All Domains.",
+        "• Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "• Unsupported claims: 0 unsupported claims.",
+        "• Source: Online Academic Search."
+      ],
+      "source_type": "Online Academic Search",
+      "domain_scope": "All Domains"
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 3,
+      "top_unit_id": "arXiv:1311.7318v5_U02",
+      "intent": "Definition",
+      "match_ratio": 0.85,
+      "unsupported_claims": 0,
+      "used_citations_count": 3,
+      "local_evidence_count": 0,
+      "online_evidence_count": 3,
+      "online_fallback_active": true,
+      "source_type": "online",
+      "scope_type": "ALL_DOMAINS",
+      "domain_scope": "All Domains",
+      "allowed_domains": [
+        "artificial_intelligence",
+        "cybersecurity",
+        "agriculture",
+        "healthcare",
+        "climate"
+      ]
+    },
+    "domain_scope": [
+      "artificial_intelligence",
+      "cybersecurity",
+      "agriculture",
+      "healthcare",
+      "climate"
+    ],
+    "confidence": "Excellent"
+  },
+  {
+    "test_label": "TEST 3 — Out-of-Corpus Query 2",
+    "query": "What are recent advances in tokamak fusion energy confinement?",
+    "answer": "Recent online academic research investigates recent advances in tokamak fusion energy confinement using verifiable scientific evidence [O1]. Specifically, findings presented in 'Improved Dimensionality Reduction for Inverse Problems in Nuclear Fusion and High-Energy Astrophysics' demonstrate that Many inverse problems in nuclear fusion and high-energy astrophysics research, such as the optimization of tokamak reactor geometries or the inference of black hole parameters from interferometric images, necessitate high-dimensional parameter scans and large ensembles of simulat [O1]. Further online scientific evidence indicates that Nuclear fusion has made significant progress in recent years and is expected to become one of the most important pathways to addressing global energy challenges [O2]. This paper focuses on observing plasma using visible-light cameras, analyzing its spatio-temporal motion cues, and pre [O2]. These scientific insights provide verifiable evidence and operational frameworks for understanding the core mechanisms [O1, O2]. These results demonstrate the broader applicability and scientific validity of recent academic advances in this domain [O1].",
+    "citations": {
+      "O1": {
+        "citation_id": "O1",
+        "paper_id": "arXiv:2505.03849v1",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2505.03849v1_C02",
+        "unit_id": "arXiv:2505.03849v1_U02",
+        "source_type": "online",
+        "title": "Improved Dimensionality Reduction for Inverse Problems in Nuclear Fusion and High-Energy Astrophysics",
+        "authors": [
+          "Jonathan Gorard",
+          "Ammar Hakim",
+          "Hong Qin",
+          "Kyle Parfrey",
+          "Shantenu Jha"
+        ],
+        "published": "2025-05-05",
+        "url": "http://arxiv.org/abs/2505.03849v1"
+      },
+      "O2": {
+        "citation_id": "O2",
+        "paper_id": "arXiv:2607.22704v1",
+        "section_name": "Abstract",
+        "pages": "1",
+        "chunk_id": "arXiv:2607.22704v1_C03",
+        "unit_id": "arXiv:2607.22704v1_U03",
+        "source_type": "online",
+        "title": "Visible-Light Imaging Diagnosis of Neutral Particle Emission Tomography in the Tokamak Divertor: An Efficient Transformer-based Surrogate Model",
+        "authors": [
+          "Xiao Wang",
+          "Hao Si",
+          "Qiang Chen",
+          "Yu-Xiang Zhang",
+          "Beihe Zhang",
+          "Jianhua Yang",
+          "Qingquan Yang",
+          "Dengdi Sun",
+          "Wanli Lyu",
+          "Guosheng Xu",
+          "Jin Tang"
+        ],
+        "published": "2026-07-19",
+        "url": "http://arxiv.org/abs/2607.22704v1"
+      }
+    },
+    "why_this_answer": {
+      "contributing_papers": [
+        "arXiv:2505.03849v1",
+        "arXiv:2607.22704v1"
+      ],
+      "contributing_sections": [
+        "Abstract"
+      ],
+      "evidence_passages": [
+        "O1",
+        "O2"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [O1] (Paper arXiv:2505.03849v1, 'Abstract') supports key claims regarding: 'Many inverse problems in nuclear fusion and high-energy astrophysics research, such as the optimization of ...'. Passage [O2] (Paper arXiv:2607.22704v1, 'Abstract') supports key claims regarding: 'Nuclear fusion has made significant progress in recent years and is expected to become one of the most impo...'.",
+      "bullet_points": [
+        "• Direct evidence: Retaining 2 direct supporting citation(s) for major answer claims.",
+        "• Local evidence: 0 passage(s).",
+        "• Online evidence: 2 academic source(s).",
+        "• Supporting papers: 2 relevant paper(s) (arXiv:2505.03849v1, arXiv:2607.22704v1) support the conclusion.",
+        "• Claim coverage: Factual claims are verified against retrieved evidence.",
+        "• Domain scope: All Domains.",
+        "• Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "• Unsupported claims: 0 unsupported claims.",
+        "• Source: Online Academic Search."
+      ],
+      "source_type": "Online Academic Search",
+      "domain_scope": "All Domains"
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 2,
+      "top_unit_id": "arXiv:2505.03849v1_U02",
+      "intent": "Definition",
+      "match_ratio": 0.85,
+      "unsupported_claims": 0,
+      "used_citations_count": 2,
+      "local_evidence_count": 0,
+      "online_evidence_count": 2,
+      "online_fallback_active": true,
+      "source_type": "online",
+      "scope_type": "ALL_DOMAINS",
+      "domain_scope": "All Domains",
+      "allowed_domains": [
+        "artificial_intelligence",
+        "cybersecurity",
+        "agriculture",
+        "healthcare",
+        "climate"
+      ]
+    },
+    "domain_scope": [
+      "artificial_intelligence",
+      "cybersecurity",
+      "agriculture",
+      "healthcare",
+      "climate"
+    ],
+    "confidence": "Excellent"
+  },
+  {
+    "test_label": "TEST 4 — Multi-Domain Query",
+    "query": "How is AI used in medical image analysis?",
+    "answer": "Artificial intelligence is applied in medical image analysis by utilizing deep convolutional networks and vision transformers to classify radiological scans, segment lesion boundaries, and assist clinical diagnostics [E1]. Integrating explainable AI feature attribution maps allows radiologists to inspect model attention and audit diagnostic risk scores [E2]. Recent online academic research demonstrates that multi-modal vision-language models improve report generation accuracy and diagnostic throughput across clinical workflows  [E6]. Automated segmentation models enhance diagnostic reproducibility while decreasing reporting turnover time for radiologists [E6]. Deep learning algorithms enable rapid 3D volumetric analysis of CT and MRI scans for precise surgical planning [E2].",
+    "citations": {
+      "E1": {
+        "citation_id": "E1",
+        "paper_id": "HC002",
+        "section_name": "3. XAI in medical image analysis",
+        "pages": "1",
+        "chunk_id": "HC002_C19",
+        "unit_id": "HC002_C19",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      "E2": {
+        "citation_id": "E2",
+        "paper_id": "HC005",
+        "section_name": "1. Introduction",
+        "pages": "1",
+        "chunk_id": "HC005_C03",
+        "unit_id": "HC005_C03",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      },
+      "E6": {
+        "citation_id": "E6",
+        "paper_id": "HC005",
+        "section_name": "The AI-powered systems for medical image analysis have",
+        "pages": "1",
+        "chunk_id": "HC005_C04",
+        "unit_id": "HC005_C04",
+        "source_type": "corpus",
+        "title": null,
+        "authors": [],
+        "published": null,
+        "url": null
+      }
+    },
+    "why_this_answer": {
+      "contributing_papers": [
+        "HC002",
+        "HC005"
+      ],
+      "contributing_sections": [
+        "3. XAI in medical image analysis",
+        "1. Introduction",
+        "The AI-powered systems for medical image analysis have"
+      ],
+      "evidence_passages": [
+        "E1",
+        "E2",
+        "E6"
+      ],
+      "multi_paper_support": true,
+      "evidence_strength": "Excellent",
+      "unsupported_claims": 0,
+      "inference_present": false,
+      "conflicts_detected": false,
+      "explanation_summary": "Passage [E1] (Paper HC002, '3. XAI in medical image analysis') supports key claims regarding: '3. XAI in medical image analysis  In this section, we will present which XAI techniques are used in medical...'. Passage [E2] (Paper HC005, '1. Introduction') supports key claims regarding: '1. Introduction Medical imaging visualizes anatomical structures and pathological processes. It also offers...'. Passage [E6] (Paper HC005, 'The AI-powered systems for medical image analysis have') supports key claims regarding: 'The AI-powered systems for medical image analysis have approached the performance of human experts in certa...'.",
+      "bullet_points": [
+        "• Direct evidence: Retaining 3 direct supporting citation(s) for major answer claims.",
+        "• Local evidence: 3 passage(s).",
+        "• Online evidence: 0 academic source(s).",
+        "• Supporting papers: 2 relevant paper(s) (HC002, HC005) support the conclusion.",
+        "• Claim coverage: Factual claims are verified against retrieved evidence.",
+        "• Domain scope: MULTI_DOMAIN (Artificial Intelligence, Healthcare).",
+        "• Cross-paper agreement: Multiple independent papers support main conclusion.",
+        "• Unsupported claims: 0 unsupported claims.",
+        "• Source: Research Mind Corpus."
+      ],
+      "source_type": "Research Mind Corpus",
+      "domain_scope": "MULTI_DOMAIN (Artificial Intelligence, Healthcare)"
+    },
+    "retrieval_metadata": {
+      "retrieved_count": 3,
+      "top_unit_id": "HC002_C19",
+      "intent": "Application",
+      "match_ratio": 1.0,
+      "unsupported_claims": 0,
+      "used_citations_count": 3,
+      "local_evidence_count": 3,
+      "online_evidence_count": 0,
+      "online_fallback_active": false,
+      "source_type": "corpus",
+      "scope_type": "MULTI_DOMAIN",
+      "domain_scope": "MULTI_DOMAIN (Artificial Intelligence, Healthcare)",
+      "allowed_domains": [
+        "artificial_intelligence",
+        "healthcare"
+      ]
+    },
+    "domain_scope": [
+      "artificial_intelligence",
+      "healthcare"
+    ],
+    "confidence": "Excellent"
+  }
+]
