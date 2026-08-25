@@ -702,3 +702,50 @@ class TestRAGPipelineGenericAnswerability:
             assert res is not None, f"Pipeline returned None for: {q}"
             assert res.answer is not None, f"No answer for: {q}"
             assert res.why_this_answer is not None, f"No WhyThisAnswer for: {q}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part 8: Explicit Related-But-Wrong Evidence Tests (User Directives)
+# ─────────────────────────────────────────────────────────────────────────────
+
+class TestRelatedButWrongEvidence:
+    """
+    Directly tests the core requirement:
+    TOPICALLY RELATED passages MUST NOT be marked as answerable unless they contain
+    the exact requested aspect.
+    """
+
+    def test_agentic_rag_evaluation_passages_rejected_for_limitations_query(self):
+        """
+        Question: 'What are the limitations of Agentic RAG?'
+        Evidence: Passages discussing evaluation methodology of Agentic RAG.
+        Expected: RELATED=True, ANSWERABLE=False.
+        """
+        q = "What are the limitations of Agentic RAG?"
+        q_repr = GenericQuestionAnalyzer.analyze(q)
+        passage = make_passage(
+            "Evaluation practices for Agentic RAG systems focus on measuring retrieval precision, "
+            "generation faithfulness, and task completion latency using benchmark datasets.",
+            paper_id="AGENT001"
+        )
+        res = GenericEvidenceEvaluator.evaluate(q, q_repr, [passage], "LOCAL")
+        assert res.related is True, "Passage discusses Agentic RAG so related should be True"
+        assert res.answerable is False, "Passage discusses evaluation methodology, NOT limitations of Agentic RAG"
+
+    def test_intrusion_detection_general_discussion_rejected_for_algorithm_query(self):
+        """
+        Question: 'What algorithms are commonly used for intrusion detection?'
+        Evidence: Passages discussing intrusion detection importance generally without naming algorithms.
+        Expected: RELATED=True, ANSWERABLE=False.
+        """
+        q = "What algorithms are commonly used for intrusion detection?"
+        q_repr = GenericQuestionAnalyzer.analyze(q)
+        passage = make_passage(
+            "Intrusion detection plays a vital role in modern network security by monitoring traffic "
+            "and identifying suspicious activity across enterprise networks.",
+            paper_id="SEC001"
+        )
+        res = GenericEvidenceEvaluator.evaluate(q, q_repr, [passage], "LOCAL")
+        assert res.related is True, "Passage discusses intrusion detection so related should be True"
+        assert res.answerable is False, "Passage contains no specific algorithm names"
+

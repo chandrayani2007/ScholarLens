@@ -1,0 +1,61 @@
+[
+  {
+    "question": "What methodology is used in this paper?",
+    "source_type": "Uploaded Academic Paper",
+    "uploaded_citations": 5,
+    "citations": [
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5"
+    ],
+    "answer": "6Carnegie Mellon University, Pittsburgh, PA, USA [U1]. [U1]\n\n7These authors contributed equally: Jacqueline He, Rulin Shao [U1]. [U2]\n\n\u2709e-mail: hannaneh@ cs.washington.edu Nature | Vol 650 | 26 February 2026 | 857 Article OpenScholar system overview OSDS OpenScholar self-feedback inference Intial draft Currently, the most commonly used cooling method is feedback cooling  [U1]. [U3]\n\nAn alternative method involves levitating the [U4]\n\nArticle Methods OpenScholar OpenScholar (detailed in Extended Data Fig [U1]. [U5]"
+  },
+  {
+    "question": "What are the main findings of this paper?",
+    "source_type": "Uploaded Academic Paper",
+    "uploaded_citations": 5,
+    "citations": [
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5"
+    ],
+    "answer": "scientific disciplines and we introduce automatic and human evaluation protocols for ScholarQABench [U1]. [U1]\n\nBottom, automatic and human evaluation results: experimental results from the ScholarQABench computer science subset (Scholar-CS, 100 questions) show that OpenScholar with our trained 8B or GPT-4o substantially outperforms other systems and is preferred over experts more than 50% of the time in human evaluations [U1]. [U2]\n\nOur human evaluations were conducted by 16 experts with PhDs across 108 questions from Scholar-Multi [U2]. [U3]\n\nquestions and 250 expert-written answers across computer science, physics, biomedicine and neuroscience, authored by experienced PhD students and postdocs to reflect real-world literature review practices [U2]. [U4]\n\nTo overcome the difficulties of evaluating long-form, comprehensive responses13\u201316, ScholarQABench introduces a rigorous evaluation pro- tocol combining automatic metrics (for example, citation accuracy) with human rubric-based assessments of coverage, coherence, writing quality and factual correctness to enable reliable assessments of the [U5] [U2]."
+  },
+  {
+    "question": "What are the key contributions of this paper?",
+    "source_type": "Research Mind Corpus",
+    "uploaded_citations": 0,
+    "citations": [],
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  },
+  {
+    "question": "What datasets are used in this paper?",
+    "source_type": "Uploaded Academic Paper",
+    "uploaded_citations": 5,
+    "citations": [
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5"
+    ],
+    "answer": "OpenScholar\u2019s data store, retriever and self-feedback inference loop improve off-the-shelf LMs: for instance, OpenScholar-GPT-4o improves the correctness of GPT-4o by 12% [U1]. [U1]\n\nIn human evaluations, experts preferred OpenScholar-8B and OpenScholar-GPT-4o responses over expert-written ones 51% and 70% of the time, respectively, compared with 32% for GPT-4o [U1]. [U2]\n\nWe open-source all artefacts, including our code, models, data store, datasets and a public demo [U1]. [U3]\n\nSynthesizing knowledge from the scientific literature is essential for [U4]\n\ndiscovering new directions, refining methodologies and supporting evidence-based decisions, yet the rapid growth of publications makes it increasingly difficult for researchers to stay informed [U2]. [U5]"
+  },
+  {
+    "question": "What are the limitations of this paper?",
+    "source_type": "Uploaded Academic Paper",
+    "uploaded_citations": 5,
+    "citations": [
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5"
+    ],
+    "answer": "key factors for improving scientific literature synthesis [U1]. [U1]\n\nLimitations of parametric LMs On both single-paper and multi-paper tasks, we observe that non- retrieval augmented baselines struggle\u2014retrieval is almost always conducive to achieving better performance\u2014and models without any retrieval often struggle to generate correct citations and show limited coverage on multi-paper tasks [U1]. [U2]\n\nWe report the number of fully fabricated citations (\u2018No [U1]. [U3]\n\nof hallucinated\u2019) by verifying whether the [U4]\n\ncited paper titles exist using the Semantic Scholar API [U2]. [U5]"
+  }
+]

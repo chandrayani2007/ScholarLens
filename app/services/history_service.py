@@ -15,14 +15,17 @@ from app.schemas.response import ResearchQueryResponse
 
 
 def log_query_history(
-    db: Session,
+    db: Optional[Session],
     user_id: int,
     rag_response: ResearchQueryResponse,
     domain: Optional[str] = None,
     subtopic: Optional[str] = None,
     paper_id: Optional[str] = None,
-) -> QueryHistory:
+) -> Optional[QueryHistory]:
     """Save user query response summary and full evidence into SQL application database."""
+    if db is None:
+        return None
+
     evidence_data = [
         ev.model_dump() if hasattr(ev, "model_dump") else ev.dict()
         for ev in rag_response.evidence

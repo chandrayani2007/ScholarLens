@@ -1,0 +1,193 @@
+[
+  {
+    "index": 1,
+    "QUESTION": "What are the limitations of Agentic RAG?",
+    "DOMAIN": [
+      "artificial_intelligence"
+    ],
+    "INTENT": "Limitation",
+    "LOCAL PAPERS": [],
+    "LOCAL ANSWERABILITY": "INSUFFICIENT (FALLBACK)",
+    "ONLINE PAPERS": [],
+    "ONLINE ANSWERABILITY": "INSUFFICIENT",
+    "FINAL ANSWER PREVIEW": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+    "CITATIONS": [],
+    "FINAL QUALITY": "High (Honest Insufficiency)",
+    "PASS/FAIL": "PASS (Honest Insufficiency)"
+  },
+  {
+    "index": 2,
+    "QUESTION": "What are the limitations of large language models?",
+    "DOMAIN": [
+      "artificial_intelligence"
+    ],
+    "INTENT": "Limitation",
+    "LOCAL PAPERS": [
+      "AI025",
+      "AI125"
+    ],
+    "LOCAL ANSWERABILITY": "SUFFICIENT",
+    "ONLINE PAPERS": [],
+    "ONLINE ANSWERABILITY": "N/A",
+    "FINAL ANSWER PREVIEW": "Limitations Our study covers three open-weight models of different architectures and sizes released from 2022 to 2025, but does not cover the latest versions released in 2026 [E1]. A further limitation is that not all current locate-then-edit baselin",
+    "CITATIONS": [
+      "E1",
+      "E5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  },
+  {
+    "index": 3,
+    "QUESTION": "What algorithms are commonly used for intrusion detection?",
+    "DOMAIN": [
+      "cybersecurity"
+    ],
+    "INTENT": "Algorithm",
+    "LOCAL PAPERS": [],
+    "LOCAL ANSWERABILITY": "INSUFFICIENT (FALLBACK)",
+    "ONLINE PAPERS": [
+      "arXiv:1907.04098v1",
+      "arXiv:1305.7416v1",
+      "arXiv:2104.10015v2"
+    ],
+    "ONLINE ANSWERABILITY": "SUFFICIENT",
+    "FINAL ANSWER PREVIEW": "As one of the solutions to intrusion detection problems, Artificial Immune Systems (AIS) have shown their advantages [O1]. Unlike genetic algorithms, there is no one archetypal AIS, instead there are four major paradigms [O1]. Among them, the Dendrit",
+    "CITATIONS": [
+      "O1",
+      "O4",
+      "O5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  },
+  {
+    "index": 4,
+    "QUESTION": "How does federated learning preserve privacy?",
+    "DOMAIN": [
+      "artificial_intelligence"
+    ],
+    "INTENT": "Mechanism",
+    "LOCAL PAPERS": [
+      "AI049",
+      "AI053",
+      "AI121"
+    ],
+    "LOCAL ANSWERABILITY": "SUFFICIENT",
+    "ONLINE PAPERS": [],
+    "ONLINE ANSWERABILITY": "N/A",
+    "FINAL ANSWER PREVIEW": "IEEE TRANSACTIONS ON MOBILE COMPUTING 1 Efficient Resource Optimization for Split Federated Learning Wei Wei, Graduate Student Member, IEEE and Xianhao Chen, Member, IEEE \n\nThis formulation is consistent with privacy-preserving and anonymous authenti",
+    "CITATIONS": [
+      "E1",
+      "E3",
+      "E5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  },
+  {
+    "index": 5,
+    "QUESTION": "What are the main challenges of deploying deep learning models on edge devices?",
+    "DOMAIN": [
+      "artificial_intelligence"
+    ],
+    "INTENT": "Limitation",
+    "LOCAL PAPERS": [
+      "AI026",
+      "AI145"
+    ],
+    "LOCAL ANSWERABILITY": "SUFFICIENT",
+    "ONLINE PAPERS": [],
+    "ONLINE ANSWERABILITY": "N/A",
+    "FINAL ANSWER PREVIEW": "also highlight the inefficiency of simply scaling up model capacity [E1]. Moreover, deploying such large models imposes sig- nificant hardware demands and inference latency, making them impractical for resource-constrained edge devices, whereas light",
+    "CITATIONS": [
+      "E1",
+      "E2",
+      "E5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  },
+  {
+    "index": 6,
+    "QUESTION": "What is quantum teleportation?",
+    "DOMAIN": [
+      "artificial_intelligence",
+      "cybersecurity",
+      "agriculture",
+      "healthcare",
+      "climate"
+    ],
+    "INTENT": "Definition",
+    "LOCAL PAPERS": [],
+    "LOCAL ANSWERABILITY": "INSUFFICIENT (FALLBACK)",
+    "ONLINE PAPERS": [
+      "arXiv:2306.08242v1",
+      "arXiv:2412.20762v1",
+      "arXiv:2604.16101v1",
+      "arXiv:1311.7318v5"
+    ],
+    "ONLINE ANSWERABILITY": "SUFFICIENT",
+    "FINAL ANSWER PREVIEW": "We present a scheme to generate three particle hyper-entanglement utilizing polarization and orbital angular momentum (OAM) of a photon [O1]. We show that the generated state can be used to teleport a two-qubit state described by the polarization and",
+    "CITATIONS": [
+      "O1",
+      "O2",
+      "O3",
+      "O5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  },
+  {
+    "index": 7,
+    "QUESTION": "Compare cloud computing and edge computing.",
+    "DOMAIN": [
+      "artificial_intelligence",
+      "cybersecurity",
+      "agriculture",
+      "healthcare",
+      "climate"
+    ],
+    "INTENT": "Comparison",
+    "LOCAL PAPERS": [
+      "AI026",
+      "CY023",
+      "AG123",
+      "HC181"
+    ],
+    "LOCAL ANSWERABILITY": "SUFFICIENT",
+    "ONLINE PAPERS": [],
+    "ONLINE ANSWERABILITY": "N/A",
+    "FINAL ANSWER PREVIEW": "On the other hand, edge computing can bridge the gap between the deployment of cloud computing with powerful resources but high latency and the onboard deployment with no latency but limited resources [E1]. The deployment of ML/DL for IoT system secu",
+    "CITATIONS": [
+      "E1",
+      "E2",
+      "E3",
+      "E5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  },
+  {
+    "index": 8,
+    "QUESTION": "What are the main components of a transformer architecture?",
+    "DOMAIN": [
+      "artificial_intelligence"
+    ],
+    "INTENT": "Algorithm",
+    "LOCAL PAPERS": [
+      "AI084",
+      "AI186"
+    ],
+    "LOCAL ANSWERABILITY": "SUFFICIENT",
+    "ONLINE PAPERS": [],
+    "ONLINE ANSWERABILITY": "N/A",
+    "FINAL ANSWER PREVIEW": "For didactic purposes, we first discuss looped transformers and then characterize their relationship to recirculation [E1]. A looped transformer is a parameter-efficient variant of the standard architecture [E1]. Whereas a standard transformer stacks",
+    "CITATIONS": [
+      "E1",
+      "E5"
+    ],
+    "FINAL QUALITY": "High (Excellent)",
+    "PASS/FAIL": "PASS (Grounded Direct Answer)"
+  }
+]

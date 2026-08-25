@@ -70,6 +70,8 @@ class ResearchService:
             top_k=top_k,
             request_id=request_id,
             question_hash=question_hash,
+            uploaded_paper_text=req.uploaded_paper_text,
+            uploaded_paper_name=req.uploaded_paper_name,
         )
 
         # Convert RAGResponse to Pydantic ResearchQueryResponse schema

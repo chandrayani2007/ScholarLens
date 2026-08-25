@@ -7,8 +7,9 @@ Features:
 3. Multi-Domain Category Mapping (cs.AI, cs.RO, cs.CV, cs.CR, q-bio.NC, physics.ao-ph).
 4. Real paper metadata parsing (title, authors, summary/abstract, url, published_date, paper_id).
 5. Real evidence tags: [O1], [O2], [O3]...
-6. Robust network exception handling and timeout (8s) preventing application crashes.
-7. Strict non-fabrication rule: Returns real online academic metadata or empty list.
+6. Robust network exception handling and timeout (10s) preventing application crashes.
+7. Query Expansion & Retry Mechanism (performs up to 2 query reformulations if initial online evidence is insufficient).
+8. Strict non-fabrication rule: Returns real online academic metadata or empty list.
 """
 
 import logging
@@ -105,7 +106,7 @@ class OnlineAcademicRetriever:
 
         default_dom = target_domains[0] if target_domains else "online_academic"
 
-        # Attempt 1: Broad or category search with top 3 terms
+        # Attempt 1: Broad or category search with top terms
         search_queries_to_try = []
         if cat_terms:
             cat_query = " OR ".join(cat_terms)
@@ -141,6 +142,53 @@ class OnlineAcademicRetriever:
                 logger.warning(f"[ONLINE RETRIEVAL QUERY FAILED] {e}")
 
         return []
+
+    def retrieve_with_retry(
+        self,
+        query: str,
+        q_repr: Optional[Any] = None,
+        domain: Optional[str] = None,
+        allowed_domains: Optional[List[str]] = None,
+        evaluator_fn: Optional[Any] = None,
+        max_results: int = 5,
+    ) -> List[OnlineEvidenceItem]:
+        """
+        Query Expansion & Retry Mechanism (Directive 3):
+        If initial search returns 0 or insufficient evidence, perform up to 2 query reformulations
+        using extracted subject + intent + requested aspect keywords before declaring online insufficiency.
+        """
+        # Attempt 1: Standard query search
+        items = self.retrieve(query, domain=domain, allowed_domains=allowed_domains, max_results=max_results)
+        if items and (not evaluator_fn or evaluator_fn(query, q_repr, items)):
+            return items
+
+        logger.info("[ONLINE RETRIEVAL RETRY] Initial online search insufficient. Attempting query expansion retry 1...")
+        
+        # Reformulation 1: Subject + Intent + Aspect
+        subj_str = " ".join(getattr(q_repr, "main_subject", [])).strip() if q_repr else ""
+        aspect_str = getattr(q_repr, "requested_aspect", "").strip() if q_repr else ""
+        intent_str = getattr(q_repr, "intent", "").strip() if q_repr else ""
+
+        retry_query_1 = f"{subj_str} {intent_str} {aspect_str}".strip()
+        if not retry_query_1:
+            retry_query_1 = f"{query} research analysis"
+
+        items_r1 = self.retrieve(retry_query_1, domain=domain, allowed_domains=allowed_domains, max_results=max_results)
+        if items_r1 and (not evaluator_fn or evaluator_fn(query, q_repr, items_r1)):
+            logger.info("[ONLINE RETRIEVAL SUCCESS] Retry 1 succeeded with expanded query.")
+            return items_r1
+
+        logger.info("[ONLINE RETRIEVAL RETRY] Retry 1 insufficient. Attempting query expansion retry 2...")
+
+        # Reformulation 2: Subtopic & Keyword Expansion
+        retry_query_2 = f"{subj_str} {aspect_str} challenges limitations evaluation".strip()
+        items_r2 = self.retrieve(retry_query_2, domain=domain, allowed_domains=allowed_domains, max_results=max_results)
+        if items_r2 and (not evaluator_fn or evaluator_fn(query, q_repr, items_r2)):
+            logger.info("[ONLINE RETRIEVAL SUCCESS] Retry 2 succeeded with subtopic keyword query.")
+            return items_r2
+
+        # Return best candidate pool or empty list
+        return items or items_r1 or items_r2 or []
 
     def _parse_arxiv_response(self, xml_data: bytes, domain: str) -> List[OnlineEvidenceItem]:
         """Parse Atom XML response from ArXiv API into real OnlineEvidenceItem objects."""

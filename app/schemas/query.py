@@ -12,3 +12,5 @@ class ResearchQueryRequest(BaseModel):
     subtopic: Optional[str] = Field(None, description="Optional subtopic filter")
     paper_id: Optional[str] = Field(None, description="Optional paper ID filter (e.g. AI001)")
     top_k: Optional[int] = Field(10, ge=1, le=50, description="Top-K evidence passages to retrieve")
+    uploaded_paper_text: Optional[str] = Field(None, description="Optional raw text content of user-uploaded paper PDF/document")
+    uploaded_paper_name: Optional[str] = Field(None, description="Optional title/filename of user-uploaded paper")

@@ -1,0 +1,52 @@
+[
+  {
+    "query": "What are the limitations of Agentic RAG?",
+    "source_type": "Research Mind Corpus",
+    "evidence_strength": "Insufficient",
+    "citations": [],
+    "answer_preview": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  },
+  {
+    "query": "What are the limitations of large language models?",
+    "source_type": "Research Mind Corpus",
+    "evidence_strength": "Excellent",
+    "citations": [
+      "E1",
+      "E5"
+    ],
+    "answer_preview": "Limitations Our study covers three open-weight models of different architectures and sizes released from 2022 to 2025, but does not cover the latest versions released in 2026 [E1]. A further limitation is that not all current locate-then-edit baselines are tested with our prefix modification [E1]. G"
+  },
+  {
+    "query": "What algorithms are commonly used for intrusion detection?",
+    "source_type": "Online Academic Search",
+    "evidence_strength": "Excellent",
+    "citations": [
+      "O1",
+      "O4",
+      "O5"
+    ],
+    "answer_preview": "As one of the solutions to intrusion detection problems, Artificial Immune Systems (AIS) have shown their advantages [O1]. Unlike genetic algorithms, there is no one archetypal AIS, instead there are four major paradigms [O1]. Among them, the Dendritic Cell Algorithm (DCA) has produced promising res"
+  },
+  {
+    "query": "How does federated learning preserve privacy?",
+    "source_type": "Research Mind Corpus",
+    "evidence_strength": "Excellent",
+    "citations": [
+      "E1",
+      "E3",
+      "E5"
+    ],
+    "answer_preview": "IEEE TRANSACTIONS ON MOBILE COMPUTING 1 Efficient Resource Optimization for Split Federated Learning Wei Wei, Graduate Student Member, IEEE and Xianhao Chen, Member, IEEE \n\nThis formulation is consistent with privacy-preserving and anonymous authentica- tion protocols, where commitments allow a prov"
+  },
+  {
+    "query": "What are the main challenges of deploying deep learning models on edge devices?",
+    "source_type": "Research Mind Corpus",
+    "evidence_strength": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E5"
+    ],
+    "answer_preview": "also highlight the inefficiency of simply scaling up model capacity [E1]. Moreover, deploying such large models imposes sig- nificant hardware demands and inference latency, making them impractical for resource-constrained edge devices, whereas lightweight scene-specific models enable efficient on-d"
+  }
+]

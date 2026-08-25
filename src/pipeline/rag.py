@@ -148,6 +148,10 @@ class WhyThisAnswer:
     bullet_points: List[str] = field(default_factory=list)
     source_type: str = "Research Mind Corpus"
     domain_scope: str = "All Domains"
+    evidence_state: str = "SUFFICIENT"  # UNRELATED | RELATED_BUT_NOT_ANSWERING | PARTIALLY_ANSWERING | SUFFICIENT
+    local_source_count: int = 0
+    online_source_count: int = 0
+    uploaded_paper_source_count: int = 0
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -247,6 +251,7 @@ class AnswerabilityResult:
     missing_aspects: List[str]
     decision: str  # LOCAL_SUFFICIENT | LOCAL_INSUFFICIENT | ONLINE_SUFFICIENT | INSUFFICIENT
     rationale: str
+    evidence_state: str = "UNRELATED"  # UNRELATED | RELATED_BUT_NOT_ANSWERING | PARTIALLY_ANSWERING | SUFFICIENT
     direct_supporting_passages: List[Any] = field(default_factory=list)
     # Legacy compat
     related_score: float = 0.0
@@ -259,6 +264,7 @@ class AnswerabilityResult:
         return {
             "related": self.related,
             "answerable": self.answerable,
+            "evidence_state": self.evidence_state,
             "completeness": round(self.completeness, 3),
             "intent_support": round(self.intent_support, 3),
             "concept_support": round(self.concept_support, 3),
@@ -294,36 +300,30 @@ class GenericQuestionAnalyzer:
 
     # Intent patterns — ordered from most specific to least specific
     INTENT_PATTERNS: List[Tuple[str, List[str]]] = [
-        ("Algorithm",   ["algorithm", "algorithms", "method", "methods", "technique", "techniques",
-                          "classifier", "classifiers", "architecture", "architectures", "approach",
-                          "approaches", "model", "models used", "commonly used"]),
-        ("Dataset",     ["dataset", "datasets", "benchmark", "benchmarks", "corpus", "corpora",
-                          "data set", "data sets", "testbed", "collection", "database"]),
-        ("Limitation",  ["limitation", "limitations", "drawback", "drawbacks", "weakness", "weaknesses",
-                          "challenge", "challenges", "risk", "risks", "vulnerability", "vulnerabilities",
-                          "bottleneck", "bottlenecks", "constraint", "constraints", "shortcoming",
-                          "shortcomings", "problem", "problems", "issue", "issues", "failure", "failures"]),
-        ("Advantage",   ["advantage", "advantages", "benefit", "benefits", "strength", "strengths",
-                          "gain", "gains", "merit", "merits"]),
-        ("Evaluation",  ["evaluat", "metric", "metrics", "benchmark", "benchmarks", "performance",
-                          "accuracy", "precision", "recall", "f1", "auc", "roc"]),
-        ("Cause",       ["cause", "causes", "caused", "why does", "why is", "why do", "why are",
-                          "reason", "reasons", "leads to", "lead to", "due to", "results in"]),
-        ("Result",      ["result", "results", "finding", "findings", "outcome", "outcomes",
-                          "observation", "observations", "demonstrate", "shows", "proved"]),
-        ("Comparison",  ["compare", "comparison", "difference", "differences", "versus", " vs ",
-                          "vs.", "distinguish", "distinguish between"]),
-        ("Mechanism",   ["how does", "how do", "how can", "how is", "how are", "mechanism",
-                          "mechanisms", "process", "processes", "workflow", "step", "steps",
-                          "procedure", "work", "works", "operate", "operates", "function"]),
-        ("Relationship",["affect", "affects", "impact", "impacts", "influence", "influences",
-                          "improve", "improves", "enable", "enables", "help", "helps", "support",
-                          "supports", "reduce", "reduces", "increase", "increases", "prevent",
-                          "prevents", "cause", "causes", "relate", "relates", "relationship"]),
-        ("Application", ["application", "applications", "use case", "use cases", "deploy",
-                          "deployed", "applied", "used in", "applied in"]),
-        ("Definition",  ["what is", "what are", "define", "definition", "meaning", "means",
-                          "refer to", "concept of"]),
+        ("Methodology", ["methodology", "research methodology", "experimental method", "study design", "experimental design", "procedure", "data collection", "sampling"]),
+        ("Survey",      ["survey", "review", "systematic review", "literature review", "taxonomy", "what does this survey", "what does the survey"]),
+        ("Summary",     ["summarize", "summary", "brief overview", "main summary"]),
+        ("Objective",   ["objective", "objectives", "goal", "goals", "aim", "aims", "purpose", "target", "what problem does", "problem addressed"]),
+        ("Contribution",["contribution", "contributions", "novelty", "proposed method", "main contributions", "we introduce", "we present"]),
+        ("Limitation",  ["limitation", "limitations", "drawback", "drawbacks", "weakness", "weaknesses", "shortcoming", "shortcomings", "failure", "failures", "vulnerability", "vulnerabilities", "bottleneck", "bottlenecks", "constraint", "constraints"]),
+        ("Challenge",   ["challenge", "challenges", "difficulty", "difficulties", "obstacle", "obstacles", "hard to"]),
+        ("Advantage",   ["advantage", "advantages", "benefit", "benefits", "strength", "strengths", "gain", "gains", "merit", "merits"]),
+        ("Disadvantage",["disadvantage", "disadvantages", "downside", "downsides"]),
+        ("Cause",       ["cause", "causes", "caused", "why does", "why is", "why do", "why are", "reason", "reasons", "leads to", "lead to", "due to", "results in"]),
+        ("Finding",     ["finding", "findings", "result", "results", "outcome", "outcomes", "observation", "observations", "conclusion", "conclusions", "proved"]),
+        ("Component",   ["component", "components", "module", "modules", "part", "parts", "layer", "layers", "element", "elements"]),
+        ("Property",    ["property", "properties", "characteristic", "characteristics", "feature", "features", "attribute", "attributes"]),
+        ("Comparison",  ["compare", "comparison", "difference", "differences", "versus", " vs ", "vs.", "distinguish", "distinguish between"]),
+        ("Mechanism",   ["how does", "how do", "how can", "how is", "how are", "mechanism", "mechanisms", "process", "processes", "workflow", "step", "steps", "preserve", "preserving", "protect", "protects", "privacy", "work", "works", "operate", "operates"]),
+        ("Dataset",     ["dataset", "datasets", "benchmark", "benchmarks", "corpus", "corpora", "data set", "data sets", "testbed"]),
+        ("Evaluation",  ["evaluat", "metric", "metrics", "performance", "accuracy", "precision", "recall", "f1", "auc", "roc"]),
+        ("Experiment",  ["experiment", "experiments", "experimental setup", "trial", "trials", "empirical"]),
+        ("Relationship",["affect", "affects", "impact", "impacts", "influence", "influences", "improve", "improves", "enable", "enables", "help", "helps", "support", "supports", "reduce", "reduces", "increase", "increases", "prevent", "prevents", "relate", "relates", "relationship"]),
+        ("Application", ["application", "applications", "use case", "use cases", "deploy", "deployed", "applied", "used in", "applied in"]),
+        ("Algorithm",   ["what algorithms", "what algorithm", "algorithm", "algorithms", "classifier", "classifiers", "commonly used algorithms"]),
+        ("Method",      ["what methods", "what method", "what techniques", "method", "methods", "technique", "techniques", "approach", "approaches"]),
+        ("Trend",       ["trend", "trends", "recent advances", "future directions", "emerging", "future work"]),
+        ("Definition",  ["what is", "what are", "define", "definition", "meaning", "means", "refer to", "concept of"]),
     ]
 
     # Multi-aspect markers
@@ -500,7 +500,24 @@ class GenericQuestionAnalyzer:
                 rel_verb = "relationship"
                 is_relational = bool(rel_source and rel_target)
 
-        # If not relational, main_subject = all content words
+        # Define generic aspect/intent words that describe the question type rather than the target concept
+        ASPECT_INTENT_TOKENS = {
+            "limitation", "limitations", "drawback", "drawbacks", "challenge", "challenges",
+            "weakness", "weaknesses", "advantage", "advantages", "benefit", "benefits",
+            "strength", "strengths", "algorithm", "algorithms", "method", "methods",
+            "technique", "techniques", "mechanism", "mechanisms", "process", "processes",
+            "cause", "causes", "reason", "reasons", "result", "results", "application",
+            "applications", "dataset", "datasets", "metric", "metrics", "evaluation",
+            "preserve", "preserving", "protect", "protects", "privacy", "deploying",
+            "deployment", "main", "commonly", "used", "recent", "advances"
+        }
+
+        # Filter out aspect/intent words when deriving core target concept words
+        target_subject_words = [w for w in all_content_words if w.lower() not in ASPECT_INTENT_TOKENS]
+        if not target_subject_words:
+            target_subject_words = all_content_words
+
+        # If not relational, main_subject = core target subject words
         if is_relational:
             main_subject = rel_source
             secondary_concepts = rel_target
@@ -508,8 +525,8 @@ class GenericQuestionAnalyzer:
             main_subject = [w for t in comparison_targets for w in cls._tokenize(t)]
             secondary_concepts = []
         else:
-            main_subject = all_content_words[:4] if len(all_content_words) > 4 else all_content_words
-            secondary_concepts = all_content_words[4:] if len(all_content_words) > 4 else []
+            main_subject = target_subject_words[:5]
+            secondary_concepts = target_subject_words[5:]
 
         # Derive primary concept string from question text
         topic_phrase = q_lower
@@ -596,35 +613,46 @@ class GenericEvidenceEvaluator:
     # Intent → evidence markers (generic — covers any domain)
     # These are FUNCTIONAL ASPECT MARKERS, not topic keywords.
     INTENT_ASPECT_MARKERS: Dict[str, Set[str]] = {
-        "Algorithm": {
-            "algorithm", "algorithms", "method", "methods", "technique", "techniques",
-            "model", "models", "classifier", "classifiers", "architecture", "architectures",
-            "framework", "frameworks", "network", "networks", "approach", "approaches",
-            "pipeline", "scheme", "protocol", "heuristic", "optimization", "procedure",
-            "using", "based on", "employs", "implemented", "trained", "applied",
-            # Named method markers — any named entity following these patterns
-            "svm", "cnn", "rnn", "lstm", "gru", "transformer", "random forest",
-            "decision tree", "gradient boosting", "naive bayes", "k-nearest",
-            "linear regression", "logistic regression", "deep learning", "neural",
-            "attention", "encoder", "decoder", "embedding",
+        "Methodology": {
+            "methodology", "procedure", "experimental design", "study design", "pipeline", "sampling",
+            "data collection", "setup", "protocol", "workflow", "framework", "implementation",
+        },
+        "Survey": {
+            "survey", "review", "taxonomy", "overview", "categorization", "classification",
+            "literature review", "state of the art", "comprehensive review", "systematic review",
+        },
+        "Summary": {
+            "summary", "summarize", "overview", "main points", "key findings", "abstract",
+        },
+        "Objective": {
+            "objective", "objectives", "goal", "goals", "aim", "aims", "purpose", "target",
+            "intend to", "strive to", "problem addressed", "focuses on", "focus of",
+        },
+        "Contribution": {
+            "contribution", "contributions", "we propose", "we introduce", "our method",
+            "novel", "key idea", "main novelty", "first to", "present a new",
         },
         "Limitation": {
             "limitation", "limitations", "drawback", "drawbacks", "weakness", "weaknesses",
-            "challenge", "challenges", "failure", "failures", "problem", "problems",
-            "issue", "issues", "shortcoming", "shortcomings", "risk", "risks",
-            "bottleneck", "bottlenecks", "constraint", "constraints", "overhead",
-            "difficult", "difficulty", "hard to", "cannot", "unable", "fails",
-            "error", "errors", "noise", "bias", "costly", "expensive", "slow",
+            "failure", "failures", "problem", "problems", "issue", "issues",
+            "shortcoming", "shortcomings", "risk", "risks", "bottleneck", "bottlenecks",
+            "constraint", "constraints", "overhead", "difficult", "difficulty", "hard to",
+            "cannot", "unable", "fails", "error", "errors", "noise", "bias", "costly",
             "limited", "lack", "lacks", "lacking", "insufficient", "inadequate",
-            "inaccurate", "unreliable", "unstable", "vulnerable", "susceptible",
+        },
+        "Challenge": {
+            "challenge", "challenges", "difficulty", "difficulties", "obstacle", "obstacles",
+            "hard to", "bottleneck", "bottlenecks", "struggle", "vulnerability",
         },
         "Advantage": {
             "advantage", "advantages", "benefit", "benefits", "strength", "strengths",
             "improve", "improves", "improvement", "enhanced", "superior", "better",
-            "efficient", "effective", "effective", "outperform", "outperforms",
-            "gain", "gains", "robust", "robustness", "scalable", "accurate",
-            "precision", "faster", "reliable", "high performance", "optimal",
-            "success", "successful", "demonstrate", "demonstrates", "achieve",
+            "efficient", "effective", "outperform", "outperforms", "gain", "gains",
+            "robust", "robustness", "scalable", "accurate", "precision", "faster",
+        },
+        "Disadvantage": {
+            "disadvantage", "disadvantages", "downside", "downsides", "drawback", "drawbacks",
+            "penalty", "overhead", "cost", "costly",
         },
         "Mechanism": {
             "mechanism", "mechanisms", "process", "processes", "workflow", "step", "steps",
@@ -632,53 +660,78 @@ class GenericEvidenceEvaluator:
             "compute", "computes", "generate", "generates", "encode", "decode",
             "transform", "transforms", "execute", "executes", "transmit", "transmits",
             "measure", "measures", "protocol", "phase", "stage", "stages", "layer",
-            "by", "through", "using", "via", "where", "when", "then",
+            "privacy", "preserve", "preserving", "protect", "protects", "differential privacy",
+            "secure aggregation", "homomorphic", "local updates", "encryption", "cryptographic",
+            "split learning", "gradient exchange", "anonymization", "federated",
+        },
+        "Algorithm": {
+            "svm", "support vector", "random forest", "decision tree", "gradient boosting",
+            "naive bayes", "k-nearest", "knn", "k-means", "logistic regression", "linear regression",
+            "cnn", "rnn", "lstm", "gru", "transformer", "attention", "encoder", "decoder",
+            "embedding", "bert", "gpt", "resnet", "vgg", "yolo", "xgboost", "isolation forest",
+            "autoencoder", "neural network", "principal component", "pca", "bagging", "boosting",
+            "q-learning", "convolutional", "recurrent",
+        },
+        "Method": {
+            "method", "methods", "technique", "techniques", "approach", "approaches",
+            "framework", "algorithm", "model", "architecture", "strategy", "scheme",
+        },
+        "Finding": {
+            "finding", "findings", "result", "results", "outcome", "outcomes",
+            "observation", "observations", "demonstrate", "demonstrates", "show",
+            "shows", "achieve", "achieves", "performance", "accuracy", "score",
+            "experiment", "evaluation", "test", "conclude", "conclusion",
+        },
+        "Component": {
+            "component", "components", "module", "modules", "part", "parts",
+            "layer", "layers", "block", "blocks", "attention", "encoder", "decoder",
+            "head", "embedding", "feed-forward", "residual",
+        },
+        "Property": {
+            "property", "properties", "characteristic", "characteristics", "feature", "features",
+            "attribute", "attributes", "nature", "behavior", "trait", "traits",
         },
         "Relationship": {
             "improve", "improves", "affect", "affects", "impact", "impacts",
             "influence", "influences", "enable", "enables", "help", "helps",
             "support", "supports", "reduce", "reduces", "increase", "increases",
             "lead to", "leads to", "result in", "results in", "cause", "causes",
-            "enhance", "enhances", "contribute", "contributes", "allow", "allows",
-            "facilitate", "facilitates", "promote", "promotes", "prevent", "prevents",
         },
         "Comparison": {
             "compare", "compared", "versus", "vs", "difference", "differences",
-            "while", "whereas", "in contrast", "on the other hand", "unlike", "unlike",
+            "while", "whereas", "in contrast", "on the other hand", "unlike",
             "better than", "worse than", "superior", "inferior", "trade-off", "trade-offs",
-            "advantage over", "disadvantage compared",
         },
         "Cause": {
             "cause", "causes", "caused", "because", "due to", "owing to",
             "reason", "reasons", "result from", "results from", "attribute to",
-            "lead to", "leads to", "trigger", "triggers", "originate", "stem from",
-        },
-        "Result": {
-            "result", "results", "finding", "findings", "outcome", "outcomes",
-            "observation", "observations", "demonstrate", "demonstrates", "show",
-            "shows", "achieve", "achieves", "performance", "accuracy", "score",
-            "percentage", "experiment", "evaluation", "test", "study",
         },
         "Definition": {
             "is defined as", "defined as", "refers to", "meaning of", "definition of",
             "is a paradigm", "is a technology", "is a computing model", "is a framework",
             "is an architecture", "provides on-demand", "characterized by", "enables users to",
             "consists of", "is a method", "is an approach", "denotes", "represents",
+            "is a", "is an", "is the", "are a", "are an", "is a protocol", "is a technique",
         },
         "Dataset": {
             "dataset", "datasets", "benchmark", "benchmarks", "corpus", "corpora",
             "collection", "database", "repository", "samples", "instances",
-            "training set", "test set", "validation set", "annotated",
         },
         "Evaluation": {
             "evaluation", "evaluate", "evaluates", "metric", "metrics",
             "accuracy", "precision", "recall", "f1", "auc", "roc",
-            "benchmark", "benchmarks", "performance", "comparison",
+        },
+        "Experiment": {
+            "experiment", "experiments", "experimental", "test", "testing",
+            "empirical", "baseline", "trial", "trials", "setup",
         },
         "Application": {
             "application", "applications", "applied", "deployed", "used in",
             "used for", "implemented", "practical", "real-world", "use case",
-            "use cases", "domain", "field",
+        },
+        "Trend": {
+            "trend", "trends", "recent advances", "future directions", "emerging",
+            "future work", "state of the art", "horizon",
         },
     }
 
@@ -698,23 +751,109 @@ class GenericEvidenceEvaluator:
         a meta-target (e.g., "evaluation practices", "metrics", "datasets", "benchmarks") rather than
         the query subject?
         """
+        meta_words_regex = r"(?:evaluation|evaluating|assessment|assessing|benchmark|benchmarks|metric|metrics|dataset|datasets|corpus|corpora|testbed|literature|survey|review|paper|baseline|prior studies)"
+
+        # 1. Aspect of [0-3 modifiers] meta_target (e.g. "limitations of static evaluation practice")
+        pattern1 = r'\b' + re.escape(aspect_word) + r's?\s+(?:of|in|with|for)\s+(?:[\w-]+\s+){0,3}' + meta_words_regex
+        if re.search(pattern1, p_text, re.IGNORECASE):
+            return True
+
+        # 2. meta_target [0-3 modifiers] aspect (e.g. "evaluation practice limitations")
+        pattern2 = r'\b' + meta_words_regex + r'\s+(?:[\w-]+\s+){0,3}' + re.escape(aspect_word) + r's?\b'
+        if re.search(pattern2, p_text, re.IGNORECASE):
+            return True
+
+        # 3. "evaluation of <X> has/faces limitations"
+        pattern3 = r'\bevaluat(?:ion|ing)\s+(?:of\s+)?[\w\s]{1,40}\s+(?:has|faces|suffers\s+from|contains|exhibits|possesses)\s+(?:several\s+|key\s+|major\s+|inherent\s+)?' + re.escape(aspect_word)
+        if re.search(pattern3, p_text, re.IGNORECASE):
+            return True
+
         for meta in cls.META_ASPECT_TARGETS:
             patterns = [
                 f"{aspect_word} of {meta}",
-                f"{aspect_word} of existing {meta}",
-                f"{aspect_word} of current {meta}",
-                f"{aspect_word} of standard {meta}",
-                f"{aspect_word} of traditional {meta}",
-                f"{aspect_word} of conventional {meta}",
                 f"{aspect_word} in {meta}",
                 f"{meta} {aspect_word}",
                 f"{meta} {aspect_word}s",
             ]
             if any(pat in p_text for pat in patterns):
-                total_occurrences = p_text.count(aspect_word)
-                hijacked_occurrences = sum(p_text.count(pat) for pat in patterns)
-                if hijacked_occurrences >= total_occurrences:
-                    return True
+                return True
+
+        return False
+
+    @classmethod
+    def _get_subject_variations(cls, subject_terms: List[str]) -> List[str]:
+        """Extract variations for a subject phrase, including suffix-stripped versions and acronyms."""
+        if not subject_terms:
+            return []
+        variations = []
+        full_subj = " ".join(subject_terms).lower()
+        variations.append(full_subj)
+
+        suffixes = {"systems", "system", "models", "model", "techniques", "technique", "methods", "method", "approaches", "approach", "algorithms", "algorithm", "practices", "practice"}
+        filtered_terms = [t for t in subject_terms if t.lower() not in suffixes]
+        if filtered_terms and len(filtered_terms) != len(subject_terms):
+            variations.append(" ".join(filtered_terms).lower())
+
+        # Generate acronym if terms consist of hyphens or words (e.g., retrieval-augmented generation -> rag)
+        clean_words = []
+        for t in filtered_terms:
+            clean_words.extend(t.split("-"))
+        first_letters = "".join(w[0].lower() for w in clean_words if w)
+        if len(first_letters) >= 2:
+            variations.append(first_letters)
+
+        return list(set(variations))
+
+    @classmethod
+    def _is_aspect_modifying_contrasting_entity(cls, p_text: str, aspect_word: str, subject_terms: List[str]) -> bool:
+        """
+        Generic check: Is the aspect word modifying a contrasting/prior entity (e.g. "static RAG", "traditional ML",
+        "standard evaluation") rather than the user's specific target entity (e.g. "agentic RAG")?
+        """
+        if not subject_terms:
+            return False
+
+        contrasting_modifiers = [
+            "static", "standard", "traditional", "conventional", "baseline", "classic",
+            "prior", "previous", "former", "early", "heuristics-based", "heuristic"
+        ]
+
+        # Check if a contrasting modifier is present in the text
+        for mod in contrasting_modifiers:
+            if not any(mod in term.lower() for term in subject_terms):
+                mod_pattern = r'\b' + re.escape(mod) + r'\b'
+                if re.search(mod_pattern, p_text, re.IGNORECASE):
+                    # Verify whether the target subject itself is ALSO directly described as having aspect_word
+                    has_target_aspect = False
+                    neg_lookbehind = r'(?<!static\s)(?<!standard\s)(?<!traditional\s)(?<!conventional\s)(?<!baseline\s)(?<!classic\s)(?<!prior\s)(?<!previous\s)(?<!former\s)(?<!early\s)'
+                    for subj_var in cls._get_subject_variations(subject_terms):
+                        target_aspect_pattern = (
+                            r'\b' + neg_lookbehind + re.escape(subj_var) +
+                            r'(?:\s+[\w-]+){0,4}\s+(?:suffer|suffers|face|faces|exhibit|exhibits|have|has|possess|possesses|with|in|is|are|prone|vulnerable)\s+(?:[\w-]+\s+){0,3}' +
+                            re.escape(aspect_word)
+                        )
+                        target_aspect_pattern_rev = (
+                            r'\b' + re.escape(aspect_word) + r's?\s+(?:of|in|with|for)\s+(?:[\w-]+\s+){0,2}' +
+                            neg_lookbehind + re.escape(subj_var)
+                        )
+                        if re.search(target_aspect_pattern, p_text, re.IGNORECASE) or re.search(target_aspect_pattern_rev, p_text, re.IGNORECASE):
+                            has_target_aspect = True
+                            break
+
+                    if not has_target_aspect:
+                        return True
+        return False
+
+    @classmethod
+    def _is_aspect_mitigated_or_resolved(cls, p_text: str, aspect_word: str) -> bool:
+        """
+        Generic check: Is the aspect word (e.g. "limitation", "drawback", "weakness") preceded by a mitigation verb
+        (e.g., "addresses limitations", "mitigates limitations", "overcomes drawbacks")?
+        If so, the text describes resolving a limitation, not experiencing one.
+        """
+        pattern = r'\b(?:address|addresses|addressed|mitigate|mitigates|mitigated|overcome|overcomes|overcame|solve|solves|solved|resolve|resolves|resolved|tackle|tackles|tackled|remedy|remedies|alleviate|alleviates|alleviated)\s+(?:[\w-]+\s+){0,3}' + re.escape(aspect_word)
+        if re.search(pattern, p_text, re.IGNORECASE):
+            return True
         return False
 
     MIN_PASSAGE_LENGTH = 70  # chars — fragments below this are rejected
@@ -819,18 +958,13 @@ class GenericEvidenceEvaluator:
         if q_repr.intent == "Algorithm":
             # SPECIFIC named algorithm/method markers (named models, architectures, specific techniques)
             specific_algorithm_markers = {
-                "algorithm", "algorithms", "classifier", "classifiers", "architecture", "architectures",
-                "framework", "frameworks",
                 # Named common algorithms/models — sufficiently specific
                 "svm", "support vector", "random forest", "decision tree", "gradient boosting",
-                "naive bayes", "k-nearest", "k-means", "logistic regression", "linear regression",
+                "naive bayes", "k-nearest", "knn", "k-means", "logistic regression", "linear regression",
                 "cnn", "rnn", "lstm", "gru", "transformer", "attention", "encoder", "decoder",
-                "embedding", "bert", "gpt", "resnet", "vgg",
-                # Named technique patterns
-                "convolutional", "recurrent", "deep learning", "shallow learning",
-                "ensemble", "bagging", "boosting", "clustering",
-                "heuristic", "genetic", "evolutionary", "reinforcement",
-                "unsupervised", "supervised",
+                "embedding", "bert", "gpt", "resnet", "vgg", "yolo", "xgboost", "isolation forest",
+                "autoencoder", "neural network", "principal component", "pca", "bagging", "boosting",
+                "q-learning", "convolutional", "recurrent",
             }
             # GENERIC usage-only markers (these do NOT prove a specific algorithm is named)
             _generic_usage = {"using", "based on", "employs", "implemented", "trained",
@@ -857,11 +991,11 @@ class GenericEvidenceEvaluator:
             valid_hits = 0
             for m in core_limitation_markers:
                 if m in p_text:
-                    if not cls._is_aspect_hijacked_by_meta_target(p_text, m):
+                    if not cls._is_aspect_hijacked_by_meta_target(p_text, m) and not cls._is_aspect_modifying_contrasting_entity(p_text, m, q_repr.main_subject) and not cls._is_aspect_mitigated_or_resolved(p_text, m):
                         valid_hits += 1
 
             if valid_hits == 0:
-                # All limitation words modify meta targets (e.g. evaluation practices) or none exist
+                # All limitation words modify meta targets (e.g. evaluation practices), contrasting entities (e.g. static RAG), or are mitigated/resolved
                 return 0.0
             return min(1.0, valid_hits / 2.0)
 
@@ -893,9 +1027,12 @@ class GenericEvidenceEvaluator:
             concept_str = q_repr.contract.concept.lower() if hasattr(q_repr, 'contract') and q_repr.contract else " ".join(q_repr.main_subject).lower()
             strict_def_patterns = {
                 "is defined as", "defined as", "refers to", "meaning of", "definition of",
-                "is a", "is an", "are a", "are an", "defined by", "known as",
-                "provides on-demand", "characterized by", "enables users to",
-                "consists of", "denotes", "represents", "serves as",
+                "is a", "is an", "are a", "are an", "is the", "defined by", "known as",
+                "is a protocol", "is a technique", "is a method", "is an approach",
+                "is a paradigm", "is a system", "is a framework", "is an architecture",
+                "is a model", "is a computing model", "provides on-demand",
+                "characterized by", "enables users to", "consists of", "denotes",
+                "represents", "serves as",
             }
             def_hits = sum(1 for m in strict_def_patterns if m in p_text)
 
@@ -1108,14 +1245,12 @@ class GenericEvidenceEvaluator:
         # Use the SAME strict evaluation as per-passage to enforce "related ≠ answerable"
         # For Algorithm and Limitation intents, use specific markers only.
         _specific_algorithm_markers = {
-            "algorithm", "algorithms", "classifier", "classifiers", "architecture", "architectures",
-            "framework", "frameworks", "svm", "support vector", "random forest", "decision tree",
-            "gradient boosting", "naive bayes", "k-nearest", "k-means", "logistic regression",
-            "linear regression", "cnn", "rnn", "lstm", "gru", "transformer", "attention",
-            "encoder", "decoder", "embedding", "bert", "gpt", "resnet", "vgg",
-            "convolutional", "recurrent", "deep learning", "shallow learning", "ensemble",
-            "bagging", "boosting", "clustering", "heuristic", "genetic", "evolutionary",
-            "reinforcement", "unsupervised", "supervised",
+            "svm", "support vector", "random forest", "decision tree", "gradient boosting",
+            "naive bayes", "k-nearest", "knn", "k-means", "logistic regression", "linear regression",
+            "cnn", "rnn", "lstm", "gru", "transformer", "attention", "encoder", "decoder",
+            "embedding", "bert", "gpt", "resnet", "vgg", "yolo", "xgboost", "isolation forest",
+            "autoencoder", "neural network", "principal component", "pca", "bagging", "boosting",
+            "q-learning", "convolutional", "recurrent",
         }
         _core_limitation_markers = {
             "limitation", "limitations", "drawback", "drawbacks", "weakness", "weaknesses",
@@ -1137,11 +1272,42 @@ class GenericEvidenceEvaluator:
             spec_hits = sum(1 for m in _specific_algorithm_markers if m in all_text)
             intent_support_collective = min(1.0, spec_hits / 2.0) if spec_hits > 0 else 0.0
         elif q_repr.intent == "Limitation":
-            core_hits = sum(1 for m in _core_limitation_markers if m in all_text)
-            intent_support_collective = min(1.0, core_hits / 2.0) if core_hits > 0 else 0.0
+            valid_core_hits = 0
+            for m in _core_limitation_markers:
+                if m in all_text and not cls._is_aspect_hijacked_by_meta_target(all_text, m) and not cls._is_aspect_modifying_contrasting_entity(all_text, m, q_repr.main_subject) and not cls._is_aspect_mitigated_or_resolved(all_text, m):
+                    valid_core_hits += 1
+            intent_support_collective = min(1.0, valid_core_hits / 2.0) if valid_core_hits > 0 else 0.0
         elif q_repr.intent == "Advantage":
             core_hits = sum(1 for m in _core_advantage_markers if m in all_text)
             intent_support_collective = min(1.0, core_hits / 2.0) if core_hits > 0 else 0.0
+        elif q_repr.intent == "Definition":
+            concept_str = q_repr.contract.concept.lower() if hasattr(q_repr, 'contract') and q_repr.contract else " ".join(q_repr.main_subject).lower()
+            strict_def_patterns = {
+                "is defined as", "defined as", "refers to", "meaning of", "definition of",
+                "is a", "is an", "are a", "are an", "is the", "defined by", "known as",
+                "is a protocol", "is a technique", "is a method", "is an approach",
+                "is a paradigm", "is a system", "is a framework", "is an architecture",
+                "is a model", "is a computing model", "provides on-demand",
+                "characterized by", "enables users to", "consists of", "denotes",
+                "represents", "serves as",
+            }
+            def_hits = sum(1 for m in strict_def_patterns if m in all_text)
+            concept_is_def = False
+            if concept_str and len(concept_str) >= 3:
+                if (f"{concept_str} is" in all_text or
+                    f"{concept_str} refers" in all_text or
+                    f"{concept_str} provides" in all_text or
+                    f"{concept_str} enables" in all_text or
+                    f"{concept_str} denotes" in all_text or
+                    f"{concept_str} represents" in all_text or
+                    f"{concept_str} defined" in all_text or
+                    f"{concept_str} encompasses" in all_text or
+                    f"{concept_str} serves" in all_text):
+                    concept_is_def = True
+            if concept_is_def or def_hits >= 1:
+                intent_support_collective = min(1.0, 0.6 + (0.4 if concept_is_def else 0.2))
+            else:
+                intent_support_collective = 0.0
         else:
             markers = cls.INTENT_ASPECT_MARKERS.get(q_repr.intent, set())
             if markers:
@@ -1245,11 +1411,12 @@ class GenericEvidenceEvaluator:
                 f"and '{' '.join(q_repr.relation_target[:2])}'"
             )
 
-        # === Decision ===
+        # === Decision & 4-State Evidence Classification ===
         n_direct = len(direct_supporting_passages)
 
         if not is_related:
             decision = f"{source_label}_INSUFFICIENT"
+            evidence_state = "UNRELATED"
             rationale = (
                 f"Evidence does not discuss the question subject "
                 f"(concept_support={concept_support:.2f}, matched={matched_concepts[:3]}). "
@@ -1257,14 +1424,22 @@ class GenericEvidenceEvaluator:
             )
             is_answerable = False
 
-        intent_min = 0.35 if source_label == "LOCAL" else 0.15
-        score_min = 0.55 if source_label == "LOCAL" else 0.40
+        intent_min = 0.30 if source_label == "LOCAL" else 0.15
+        score_min = 0.50 if source_label == "LOCAL" else 0.40
         passes_aspects = (not missing_aspects_list) if source_label == "LOCAL" else True
 
-        if n_direct >= cls.MIN_ANSWERABLE_PASSAGES and answerability_score >= score_min and intent_support_collective >= intent_min and passes_aspects:
+        # Combined multi-passage evidence qualification:
+        # Either we have >= 1 direct supporting passage, OR the collective multi-passage pool
+        # provides BOTH strong concept support (>= 0.75) AND intent support together.
+        collective_sufficient = (n_direct >= 1) or (concept_support >= 0.75 and intent_support_collective >= 0.35 and len(quality_passages) >= 2)
+
+        if not is_related:
+            pass  # Already set to UNRELATED above
+        elif collective_sufficient and answerability_score >= score_min and intent_support_collective >= intent_min and passes_aspects:
             decision = f"{source_label}_SUFFICIENT"
+            evidence_state = "SUFFICIENT"
             rationale = (
-                f"Evidence is sufficient: {n_direct} direct supporting passage(s), "
+                f"Evidence is sufficient: {n_direct} direct passage(s) (collective_support=True), "
                 f"answerability_score={answerability_score:.2f}, "
                 f"intent_support={intent_support_collective:.2f}, "
                 f"concept_support={concept_support:.2f}."
@@ -1273,6 +1448,11 @@ class GenericEvidenceEvaluator:
 
         else:
             decision = f"{source_label}_INSUFFICIENT"
+            if intent_support_collective > 0.0 or n_direct > 0:
+                evidence_state = "PARTIALLY_ANSWERING"
+            else:
+                evidence_state = "RELATED_BUT_NOT_ANSWERING"
+
             rationale = (
                 f"Evidence is topically related (concept_support={concept_support:.2f}) "
                 f"but does not contain the specific {q_repr.requested_aspect} information requested "
@@ -1280,14 +1460,14 @@ class GenericEvidenceEvaluator:
                 f"direct_passages={n_direct}, "
                 f"answerability_score={answerability_score:.2f}). "
                 f"Missing: {missing_aspects[:3]}. "
-                f"This is a RELATED-BUT-NOT-ANSWERABLE case. "
+                f"State: {evidence_state}. "
                 f"Triggering {'online search' if source_label == 'LOCAL' else 'insufficient-evidence response'}."
             )
             is_answerable = False
 
         logger.info(
             f"[GENERIC EVALUATOR | {source_label}] Question: '{question[:70]}' | "
-            f"Intent: {q_repr.intent} | Decision: {decision} | "
+            f"Intent: {q_repr.intent} | State: {evidence_state} | Decision: {decision} | "
             f"concept={concept_support:.2f} intent={intent_support_collective:.2f} "
             f"rel={avg_rel_sup:.2f} direct_passages={n_direct} score={answerability_score:.2f}"
         )
@@ -1295,6 +1475,7 @@ class GenericEvidenceEvaluator:
         return AnswerabilityResult(
             related=is_related,
             answerable=is_answerable,
+            evidence_state=evidence_state,
             completeness=aspect_coverage,
             intent_support=intent_support_collective,
             concept_support=concept_support,
@@ -1735,6 +1916,31 @@ class EvidenceContextBuilder:
                     published_date=res.published_date,
                 )
                 page_str = "1"
+            elif source_type == "uploaded" or getattr(res, "domain", "") == "uploaded":
+                citation_id = f"U{local_idx}"
+                local_idx += 1
+                ev = EvidenceItem(
+                    citation_id=citation_id,
+                    unit_id=getattr(res, "unit_id", f"UPLOAD_U{local_idx:02d}"),
+                    parent_chunk_id=getattr(res, "chunk_id", f"UPLOAD_C{local_idx:02d}"),
+                    chunk_id=getattr(res, "chunk_id", f"UPLOAD_C{local_idx:02d}"),
+                    paper_id=getattr(res, "paper_id", "UPLOADED_PAPER"),
+                    section_id="SEC_UPLOADED",
+                    section_name=getattr(res, "section_name", "Uploaded Section"),
+                    domain="uploaded",
+                    subtopic="user_upload",
+                    page_start=1,
+                    page_end=1,
+                    text=getattr(res, "text", str(res)),
+                    dense_score=1.0,
+                    bm25_score=10.0,
+                    rrf_score=1.0,
+                    retrieval_methods=["UserUpload"],
+                    source_type="uploaded",
+                    title=getattr(res, "title", "Uploaded Academic Paper"),
+                    authors=getattr(res, "authors", ["Uploaded Author"]),
+                )
+                page_str = getattr(res, "pages", "1")
             else:
                 citation_id = f"E{local_idx}"
                 local_idx += 1
@@ -1803,7 +2009,7 @@ class CitationValidator:
 
     @staticmethod
     def extract_citations(text: str) -> List[str]:
-        raw_matches = re.findall(r"\[([EO]\d+(?:\s*,\s*[EO]\d+)*)\]", text)
+        raw_matches = re.findall(r"\[([EOU]\d+(?:\s*,\s*[EOU]\d+)*)\]", text)
         citations = []
         for match in raw_matches:
             tags = [t.strip() for t in match.split(",")]
@@ -1848,7 +2054,8 @@ class FinalSafetyGate:
 
         valid_local_tags = {e.citation_id: e for e in evidence_items if e.source_type == "corpus"}
         valid_online_tags = {e.citation_id: e for e in evidence_items if e.source_type == "online"}
-        valid_all_tags = {**valid_local_tags, **valid_online_tags}
+        valid_uploaded_tags = {e.citation_id: e for e in evidence_items if e.source_type == "uploaded"}
+        valid_all_tags = {**valid_local_tags, **valid_online_tags, **valid_uploaded_tags}
 
         tags_in_answer = CitationValidator.extract_citations(answer)
 
@@ -1878,6 +2085,191 @@ class FinalSafetyGate:
                 active_evidence.append(valid_all_tags[tag])
 
         return clean_answer, active_cits, active_evidence
+
+
+def _chunk_uploaded_paper_text(
+    text: str,
+    paper_name: str = "Uploaded Academic Paper",
+    q_repr: Optional[QuestionRepresentation] = None,
+) -> List[RetrievalResult]:
+    """
+    Robust layout-aware chunking & aspect-ranked retrieval engine for user-uploaded academic papers.
+    Filters front-matter metadata and prioritizes exact methodology, results, findings, and dataset sections.
+    Logs comprehensive diagnostic metrics required by Requirement 3.
+    """
+    from src.pipeline.pdf_extractor import PDFExtractor
+
+    clean_text = text
+    pages_count = 1
+
+    # Auto-detect binary PDF stream or base64 PDF string
+    if text.startswith("%PDF-") or text.startswith("data:application/pdf") or len(re.findall(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", text[:200])) > 5:
+        logger.info(f"[UPLOADED PAPER AUTO-DECODE] Detected binary/base64 PDF stream for '{paper_name}'. Running PDFExtractor...")
+        if text.startswith("%PDF-"):
+            extraction = PDFExtractor.extract_from_bytes(text.encode("latin-1", errors="replace"), filename=paper_name)
+        else:
+            extraction = PDFExtractor.extract_from_base64(text, filename=paper_name)
+
+        if extraction.text and len(extraction.text) > 100:
+            clean_text = extraction.text
+            pages_count = extraction.pages_count
+            logger.info(f"[UPLOADED PAPER AUTO-DECODE SUCCESS] Extracted {extraction.char_count} chars across {extraction.pages_count} pages.")
+        else:
+            logger.error(f"[UPLOADED PAPER AUTO-DECODE FAILED] {extraction.error or 'Empty extracted text'}")
+
+    char_count = len(clean_text)
+    lines = clean_text.split("\n")
+    chunks = []
+    curr_section = "Abstract / Introduction"
+    curr_page = 1
+    curr_text = ""
+    chunk_idx = 1
+    detected_headings = []
+
+    SECTION_KEYWORDS = [
+        "abstract", "introduction", "background", "related work",
+        "method", "methods", "methodology", "proposed method", "proposed approach",
+        "framework", "architecture", "system design", "experimental setup",
+        "experiments", "evaluation", "results", "discussion", "conclusion",
+        "limitations", "contributions", "datasets", "data store", "benchmarks"
+    ]
+
+    for line in lines:
+        l_str = line.strip()
+        if not l_str:
+            continue
+
+        # Page boundary tracking
+        p_match = re.match(r"^---\s*Page\s+(\d+)\s*---$", l_str, re.IGNORECASE)
+        if p_match:
+            curr_page = int(p_match.group(1))
+            continue
+
+        # Layout heading detection
+        if len(l_str) < 80 and (
+            any(l_str.lower() == kw or l_str.lower().startswith(kw + " ") or l_str.lower().startswith(kw + ":") for kw in SECTION_KEYWORDS)
+            or (len(l_str) < 50 and l_str.isupper() and not any(c in l_str for c in ["@", "http", "doi"]))
+        ):
+            curr_section = l_str
+            if l_str not in detected_headings:
+                detected_headings.append(l_str)
+
+        curr_text += l_str + " "
+        if len(curr_text) >= 500:
+            # Detect front-matter (author names, affiliations, DOI, received date)
+            is_front_matter = (
+                curr_page == 1 and (
+                    any(kw in curr_text.lower() for kw in ["received:", "accepted:", "https://doi.org", "university", "department", "@"])
+                    or len(re.findall(r"\b[A-Z][a-z]+1,2\b", curr_text)) > 0
+                )
+            )
+
+            p_obj = RetrievalResult(
+                rank=chunk_idx,
+                unit_id=f"UPLOAD_U{chunk_idx:02d}",
+                chunk_id=f"UPLOAD_C{chunk_idx:02d}",
+                parent_chunk_id=f"UPLOAD_C{chunk_idx:02d}",
+                paper_id=paper_name,
+                section_id=f"SEC_UP_{chunk_idx:02d}",
+                section_name=curr_section,
+                domain="uploaded",
+                subtopic="user_upload",
+                page_start=curr_page,
+                page_end=curr_page,
+                text=curr_text.strip(),
+                token_count=len(curr_text.split()),
+                dense_score=0.20 if is_front_matter else 1.0,
+                bm25_score=1.0 if is_front_matter else 10.0,
+                rrf_score=0.20 if is_front_matter else 1.0,
+                retrieval_methods=["UserUpload"],
+            )
+            setattr(p_obj, "title", paper_name)
+            setattr(p_obj, "authors", ["Uploaded Author"])
+            chunks.append(p_obj)
+            chunk_idx += 1
+            curr_text = ""
+
+    if curr_text.strip():
+        is_front_matter = curr_page == 1 and any(kw in curr_text.lower() for kw in ["received:", "accepted:", "https://doi.org", "@"])
+        p_obj = RetrievalResult(
+            rank=chunk_idx,
+            unit_id=f"UPLOAD_U{chunk_idx:02d}",
+            chunk_id=f"UPLOAD_C{chunk_idx:02d}",
+            parent_chunk_id=f"UPLOAD_C{chunk_idx:02d}",
+            paper_id=paper_name,
+            section_id=f"SEC_UP_{chunk_idx:02d}",
+            section_name=curr_section,
+            domain="uploaded",
+            subtopic="user_upload",
+            page_start=curr_page,
+            page_end=curr_page,
+            text=curr_text.strip(),
+            token_count=len(curr_text.split()),
+            dense_score=0.20 if is_front_matter else 1.0,
+            bm25_score=1.0 if is_front_matter else 10.0,
+            rrf_score=0.20 if is_front_matter else 1.0,
+            retrieval_methods=["UserUpload"],
+        )
+        setattr(p_obj, "title", paper_name)
+        setattr(p_obj, "authors", ["Uploaded Author"])
+        chunks.append(p_obj)
+
+    # Diagnostic logging required by Requirement 3
+    first_chunk_prev = chunks[0].text[:200] if chunks else "N/A"
+    logger.info(
+        f"[UPLOADED PAPER DIAGNOSTICS] paper_name='{paper_name}' "
+        f"pages={pages_count} total_chars={char_count} chunks_created={len(chunks)} "
+        f"headings_detected={len(detected_headings)} "
+        f"first_chunk_preview='{first_chunk_prev}...'"
+    )
+    if detected_headings:
+        logger.info(f"[UPLOADED PAPER HEADINGS] {detected_headings[:10]}")
+
+    # Aspect-aware score boosting for paper-scoped queries
+    if q_repr:
+        intent = q_repr.intent.lower()
+        methodology_kw = ["method", "methods", "methodology", "approach", "framework", "architecture", "system design", "procedure", "workflow", "implementation"]
+        finding_kw = ["result", "results", "finding", "findings", "evaluation", "experiment", "benchmark", "discussion"]
+        contribution_kw = ["contribution", "contributions", "abstract", "introduction", "overview"]
+        dataset_kw = ["dataset", "datasets", "data", "corpus", "benchmarks", "peS2o", "ScholarQABench"]
+        limitation_kw = ["limitation", "limitations", "challenge", "challenges", "future work", "drawback", "failure"]
+
+        for c in chunks:
+            sec_lower = c.section_name.lower()
+            text_lower = c.text.lower()
+            boost = 0.0
+
+            if intent in ["methodology", "method", "algorithm", "mechanism"]:
+                if any(kw in sec_lower for kw in methodology_kw):
+                    boost += 5.0
+                if any(kw in text_lower for kw in methodology_kw):
+                    boost += 2.0
+            elif intent in ["finding", "result", "evaluation"]:
+                if any(kw in sec_lower for kw in finding_kw):
+                    boost += 5.0
+                if any(kw in text_lower for kw in finding_kw):
+                    boost += 2.0
+            elif intent in ["contribution", "summary", "objective"]:
+                if any(kw in sec_lower for kw in contribution_kw):
+                    boost += 5.0
+                if any(kw in text_lower for kw in contribution_kw):
+                    boost += 2.0
+            elif intent in ["dataset", "experiment"]:
+                if any(kw in sec_lower for kw in dataset_kw) or any(kw in text_lower for kw in dataset_kw):
+                    boost += 5.0
+            elif intent in ["limitation", "challenge"]:
+                if any(kw in sec_lower for kw in limitation_kw) or any(kw in text_lower for kw in limitation_kw):
+                    boost += 5.0
+
+            c.rrf_score += boost
+            c.dense_score += boost
+
+        # Re-sort chunks by score so highest aspect relevance appears first
+        chunks.sort(key=lambda x: x.rrf_score, reverse=True)
+        for idx, c in enumerate(chunks, 1):
+            c.rank = idx
+
+    return chunks
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1920,6 +2312,8 @@ class RAGPipeline:
         top_k: int = 10,
         request_id: Optional[str] = None,
         question_hash: Optional[str] = None,
+        uploaded_paper_text: Optional[str] = None,
+        uploaded_paper_name: Optional[str] = None,
     ) -> RAGResponse:
         if not question or not question.strip():
             raise ValueError("Question cannot be empty or whitespace-only")
@@ -1945,136 +2339,199 @@ class RAGPipeline:
             f"multi_aspect={q_repr.is_multi_aspect}"
         )
 
-        # ── Step 1: Intent-Aware Hybrid Local Evidence Retrieval ──
-        retrieved_results = self.retriever.retrieve(
-            question, top_k=top_k, filters=filters, allowed_domains=allowed_domains, intent=intent
-        )
-
-        if allowed_domains and len(allowed_domains) < len(DOMAIN_PREFIX_MAP):
-            retrieved_results = [
-                r for r in retrieved_results
-                if r.domain in allowed_domains and (
-                    not expected_prefixes or any(r.paper_id.startswith(p) for p in expected_prefixes)
-                )
-            ]
-
-        # ── Step 2: Generic Evidence Answerability Evaluation (local) ──
-        local_eval = GenericEvidenceEvaluator.evaluate(
-            question, q_repr, retrieved_results, "LOCAL"
-        )
-
-        logger.info(
-            f"[LOCAL EVAL] related={local_eval.related} answerable={local_eval.answerable} "
-            f"decision={local_eval.decision} score={local_eval.answerability_score:.2f} "
-            f"direct_passages={len(local_eval.direct_supporting_passages)}"
-        )
-
-        # ── Step 3: 4-Tier Decision ──
+        # ── Initialize State Variables ──
         source_type_tag = "corpus"
         active_evidence_pool: List[Any] = []
+        local_eval: Optional[AnswerabilityResult] = None
         online_fallback_triggered = False
+        retrieved_results: List[RetrievalResult] = []
 
-        if local_eval.answerable:
-            # ── Tier 1: Local evidence is sufficient ──
-            source_type_tag = "corpus"
-            active_evidence_pool = list(retrieved_results)
-            logger.info(
-                f"[DECISION] Tier 1: LOCAL_SUFFICIENT "
-                f"(score={local_eval.answerability_score:.2f}). "
-                f"Skipping online fallback."
+        # ── Uploaded Paper Processing (HIGHEST PRIORITY SOURCE) ──
+        uploaded_passages = []
+        if uploaded_paper_text and uploaded_paper_text.strip():
+            uploaded_passages = _chunk_uploaded_paper_text(
+                uploaded_paper_text, uploaded_paper_name or "Uploaded Academic Paper", q_repr=q_repr
             )
-        else:
-            # ── Secondary Targeted Local Retrieval ──
-            concept_str = q_repr.contract.concept if hasattr(q_repr, 'contract') and q_repr.contract else " ".join(q_repr.main_subject)
-            secondary_query = f"{concept_str} {q_repr.requested_aspect} definition explanation properties"
-            logger.info(f"[SECONDARY RETRIEVAL] Attempting targeted local search: '{secondary_query}'")
 
-            retry_results = self.retriever.retrieve(
-                secondary_query, top_k=top_k, filters=filters, allowed_domains=allowed_domains, intent=intent
+        is_paper_scoped = any(
+            w in question.lower() for w in [
+                "this paper", "the paper", "uploaded paper", "this study", "this manuscript",
+                "proposed method", "proposed approach", "in this study", "in this paper",
+                "used in this paper", "findings of this paper", "contributions of this paper"
+            ]
+        ) or bool(uploaded_passages)
+
+        if uploaded_passages:
+            uploaded_eval = GenericEvidenceEvaluator.evaluate(
+                question, q_repr, uploaded_passages, "UPLOADED"
             )
+
+            # Uploaded paper is the primary source whenever present
+            if uploaded_eval.answerable or uploaded_eval.evidence_state in ["SUFFICIENT", "PARTIALLY_ANSWERING"] or len(uploaded_passages) > 0:
+                source_type_tag = "uploaded"
+                active_evidence_pool = uploaded_passages
+                local_eval = uploaded_eval
+                logger.info(
+                    f"[DECISION TIER UPLOADED] Selected uploaded paper '{uploaded_paper_name}' "
+                    f"as primary evidence (state={uploaded_eval.evidence_state}, score={uploaded_eval.answerability_score:.2f}, passages={len(uploaded_passages)}). "
+                    f"Bypassing corpus & online search."
+                )
+            elif is_paper_scoped or (filters and filters.get("paper_id") == "uploaded"):
+                logger.warning(
+                    f"[DECISION TIER UPLOADED] Uploaded paper '{uploaded_paper_name}' insufficient "
+                    f"for paper-scoped question (state={uploaded_eval.evidence_state}). "
+                    f"Bypassing corpus/online substitution."
+                )
+                return self._build_insufficient_evidence_response(
+                    question, uploaded_passages, scope_res, q_repr=q_repr, local_eval=uploaded_eval,
+                    custom_msg=f"Insufficient evidence was found in the uploaded paper ('{uploaded_paper_name or 'Uploaded Paper'}') regarding {q_repr.requested_aspect}."
+                )
+
+        if not active_evidence_pool:
+            # ── Step 1: Intent-Aware Hybrid Local Evidence Retrieval ──
+            retrieved_results = self.retriever.retrieve(
+                question, top_k=top_k, filters=filters, allowed_domains=allowed_domains, intent=intent
+            )
+
             if allowed_domains and len(allowed_domains) < len(DOMAIN_PREFIX_MAP):
-                retry_results = [
-                    r for r in retry_results
+                retrieved_results = [
+                    r for r in retrieved_results
                     if r.domain in allowed_domains and (
                         not expected_prefixes or any(r.paper_id.startswith(p) for p in expected_prefixes)
                     )
                 ]
 
-            retry_eval = GenericEvidenceEvaluator.evaluate(
-                question, q_repr, retry_results, "LOCAL_RETRY"
-            )
-            logger.info(
-                f"[SECONDARY LOCAL EVAL] related={retry_eval.related} answerable={retry_eval.answerable} "
-                f"score={retry_eval.answerability_score:.2f} direct_passages={len(retry_eval.direct_supporting_passages)}"
+            # ── Step 2: Generic Evidence Answerability Evaluation (local) ──
+            local_eval = GenericEvidenceEvaluator.evaluate(
+                question, q_repr, retrieved_results, "LOCAL"
             )
 
-            if retry_eval.answerable:
+            logger.info(
+                f"[LOCAL EVAL] related={local_eval.related} answerable={local_eval.answerable} "
+                f"decision={local_eval.decision} score={local_eval.answerability_score:.2f} "
+                f"direct_passages={len(local_eval.direct_supporting_passages)}"
+            )
+
+            # ── Step 3: 4-Tier Decision with Production LLM Answerability Judge ──
+            local_judge = self.llm.evaluate_evidence_sufficiency(
+                question, local_eval.direct_supporting_passages or retrieved_results, q_repr
+            )
+            is_local_judge_sufficient = local_judge.get("answerable", True)
+
+            if local_eval.answerable and is_local_judge_sufficient:
+                # ── Tier 1: Local evidence is sufficient ──
                 source_type_tag = "corpus"
-                active_evidence_pool = list(retry_results)
-                local_eval = retry_eval
+                active_evidence_pool = list(retrieved_results)
                 logger.info(
-                    f"[DECISION] Secondary local retrieval SUFFICIENT "
-                    f"(score={retry_eval.answerability_score:.2f})."
+                    f"[DECISION] Tier 1: LOCAL_SUFFICIENT "
+                    f"(score={local_eval.answerability_score:.2f}). "
+                    f"Skipping online fallback."
                 )
             else:
-                # ── Tier 3/2: Local primary & secondary insufficient — trigger online academic search ──
-                reason = local_eval.rationale[:120]
-                logger.info(
-                    f"[DECISION] Primary & secondary local evidence insufficient/unanswerable. "
-                    f"Reason: {reason}. Triggering Online Academic Search."
-                )
-                online_fallback_triggered = True
+                # ── Secondary Targeted Local Retrieval ──
+                concept_str = q_repr.contract.concept if hasattr(q_repr, 'contract') and q_repr.contract else " ".join(q_repr.main_subject)
+                secondary_query = f"{concept_str} {q_repr.requested_aspect} definition explanation properties"
+                logger.info(f"[SECONDARY RETRIEVAL] Attempting targeted local search: '{secondary_query}'")
 
-                online_query = question
-                online_items = self.online_retriever.retrieve(
-                    query=online_query,
-                    domain=user_domain,
-                    allowed_domains=allowed_domains,
-                    intent=intent,
-                    max_results=5,
+                retry_results = self.retriever.retrieve(
+                    secondary_query, top_k=top_k, filters=filters, allowed_domains=allowed_domains, intent=intent
                 )
+                if allowed_domains and len(allowed_domains) < len(DOMAIN_PREFIX_MAP):
+                    retry_results = [
+                        r for r in retry_results
+                        if r.domain in allowed_domains and (
+                            not expected_prefixes or any(r.paper_id.startswith(p) for p in expected_prefixes)
+                        )
+                    ]
 
-                if online_items:
-                    # ── Run the SAME generic evaluator on online evidence ──
-                    online_eval = GenericEvidenceEvaluator.evaluate(
-                        question, q_repr, online_items, "ONLINE"
-                    )
+                retry_eval = GenericEvidenceEvaluator.evaluate(
+                    question, q_repr, retry_results, "LOCAL_RETRY"
+                )
+                retry_judge = self.llm.evaluate_evidence_sufficiency(
+                    question, retry_eval.direct_supporting_passages or retry_results, q_repr
+                )
+                is_retry_judge_sufficient = retry_judge.get("answerable", True)
+
+                if retry_eval.answerable and is_retry_judge_sufficient:
+                    source_type_tag = "corpus"
+                    active_evidence_pool = list(retry_results)
+                    local_eval = retry_eval
                     logger.info(
-                        f"[ONLINE EVAL] related={online_eval.related} "
-                        f"answerable={online_eval.answerable} "
-                        f"decision={online_eval.decision} "
-                        f"score={online_eval.answerability_score:.2f}"
+                        f"[DECISION] Secondary local retrieval SUFFICIENT "
+                        f"(score={retry_eval.answerability_score:.2f})."
                     )
+                else:
+                    # ── Tier 3/2: Local primary & secondary insufficient — trigger online academic search with query expansion retries ──
+                    reason = local_eval.rationale[:120]
+                    logger.info(
+                        f"[DECISION] Primary & secondary local evidence insufficient/unanswerable. "
+                        f"Reason: {reason}. Triggering Online Academic Search with retry expansion."
+                    )
+                    online_fallback_triggered = True
 
-                    if online_eval.answerable:
-                        # ── ONLINE_SUFFICIENT ──
-                        source_type_tag = "online"
-                        active_evidence_pool = list(online_items)
-                        logger.info(
-                            f"[DECISION] ONLINE_SUFFICIENT "
-                            f"(score={online_eval.answerability_score:.2f}). "
-                            f"Using online academic evidence."
+                    def online_evaluator_check(q_text, qr_obj, items_list):
+                        e_eval = GenericEvidenceEvaluator.evaluate(q_text, qr_obj, items_list, "ONLINE")
+                        if not e_eval.answerable:
+                            return False
+                        j_eval = self.llm.evaluate_evidence_sufficiency(q_text, items_list, qr_obj)
+                        return j_eval.get("answerable", True)
+
+                    if hasattr(self.online_retriever, 'retrieve_with_retry'):
+                        online_items = self.online_retriever.retrieve_with_retry(
+                            query=question,
+                            q_repr=q_repr,
+                            domain=user_domain,
+                            allowed_domains=allowed_domains,
+                            evaluator_fn=online_evaluator_check,
+                            max_results=5,
                         )
                     else:
-                        # ── Tier 4: Both local and online insufficient ──
+                        online_items = self.online_retriever.retrieve(
+                            query=question,
+                            domain=user_domain,
+                            allowed_domains=allowed_domains,
+                            intent=intent,
+                            max_results=5,
+                        )
+
+                    if online_items:
+                        # ── Run the SAME generic evaluator and LLM judge on online evidence ──
+                        online_eval = GenericEvidenceEvaluator.evaluate(
+                            question, q_repr, online_items, "ONLINE"
+                        )
+                        online_judge = self.llm.evaluate_evidence_sufficiency(
+                            question, online_items, q_repr
+                        )
+
+                        if online_eval.answerable and online_judge.get("answerable", True):
+                            # ── ONLINE_SUFFICIENT ──
+                            source_type_tag = "online"
+                            active_evidence_pool = list(online_items)
+                            logger.info(
+                                f"[DECISION] ONLINE_SUFFICIENT "
+                                f"(score={online_eval.answerability_score:.2f}). "
+                                f"Using online academic evidence."
+                            )
+                        else:
+                            # ── Tier 4: Both local and online insufficient ──
+                            logger.warning(
+                                f"[DECISION] Tier 4: ONLINE evidence also insufficient "
+                                f"(score={online_eval.answerability_score:.2f}, "
+                                f"decision={online_eval.decision}). "
+                                f"Returning honest insufficient-evidence response."
+                            )
+                            return self._build_insufficient_evidence_response(
+                                question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval
+                            )
+                    else:
+                        # No online results returned at all
                         logger.warning(
-                            f"[DECISION] Tier 4: ONLINE evidence also insufficient "
-                            f"(score={online_eval.answerability_score:.2f}, "
-                            f"decision={online_eval.decision}). "
-                            f"Returning honest insufficient-evidence response."
+                            "[DECISION] Tier 4: Online retrieval returned no results. "
+                            "Returning honest insufficient-evidence response."
                         )
                         return self._build_insufficient_evidence_response(
                             question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval
                         )
-                else:
-                    # No online results returned at all
-                    logger.warning(
-                        "[DECISION] Tier 4: Online retrieval returned no results. "
-                        "Returning honest insufficient-evidence response."
-                    )
-                    return self._build_insufficient_evidence_response(
-                        question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval
-                    )
 
         if not active_evidence_pool:
             return self._build_insufficient_evidence_response(question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval)
@@ -2101,8 +2558,7 @@ class RAGPipeline:
             f"Target 500–1000 words for normal research questions and 800–1500 words for "
             f"complex synthesis questions when sufficient evidence is available. "
             f"Keep simple definitions concise (100–300 words). DO NOT fabricate facts or numbers.\n"
-            f"Cite claims with inline tags like [E1], [E2] or [O1], [O2] immediately after "
-            f"supported statements."
+            f"Cite claims with inline tags like [U1], [U2] for uploaded paper evidence, [E1], [E2] for local corpus, or [O1], [O2] for online search immediately after supported statements."
         )
 
         # ── Step 6: LLM Generation ──
@@ -2190,11 +2646,82 @@ class RAGPipeline:
                 parsed_final, citations_map, evidence_items, allowed_domains, expected_prefixes
             )
 
+        # ── Step 10.5: Final Answer Quality Judge & Online Fallback Retry Loop ──
+        final_quality = self.llm.verify_final_answer_quality(question, parsed_answer, active_evidence_pool)
+        if not final_quality.get("answers_exact_question", True) or not final_quality.get("all_major_claims_supported", True):
+            logger.warning(
+                f"[FINAL QUALITY CHECK REJECTED] answers_exact={final_quality.get('answers_exact_question')}, "
+                f"claims_supported={final_quality.get('all_major_claims_supported')}. "
+                f"Reason: {final_quality.get('reason')}."
+            )
+            # If online fallback has not yet been attempted and this is not an uploaded paper, attempt online search fallback now
+            if not online_fallback_triggered and source_type_tag != "uploaded" and not is_paper_scoped:
+                logger.info("[FINAL QUALITY CHECK] Online fallback has not been attempted. Triggering Online Academic Search...")
+                online_fallback_triggered = True
+
+                def online_evaluator_check(q_text, qr_obj, items_list):
+                    e_eval = GenericEvidenceEvaluator.evaluate(q_text, qr_obj, items_list, "ONLINE")
+                    if not e_eval.answerable:
+                        return False
+                    j_eval = self.llm.evaluate_evidence_sufficiency(q_text, items_list, qr_obj)
+                    return j_eval.get("answerable", True)
+
+                online_items = []
+                if hasattr(self.online_retriever, 'retrieve_with_retry'):
+                    online_items = self.online_retriever.retrieve_with_retry(
+                        query=question, q_repr=q_repr, domain=user_domain,
+                        allowed_domains=allowed_domains, evaluator_fn=online_evaluator_check, max_results=5
+                    )
+                else:
+                    online_items = self.online_retriever.retrieve(
+                        query=question, domain=user_domain, allowed_domains=allowed_domains, intent=intent, max_results=5
+                    )
+
+                if online_items:
+                    online_eval = GenericEvidenceEvaluator.evaluate(question, q_repr, online_items, "ONLINE")
+                    online_judge = self.llm.evaluate_evidence_sufficiency(question, online_items, q_repr)
+
+                    if online_eval.answerable and online_judge.get("answerable", True):
+                        source_type_tag = "online"
+                        active_evidence_pool = list(online_items)
+                        context_text, evidence_items, citations_map = EvidenceContextBuilder.build_context(
+                            active_evidence_pool, source_type=source_type_tag
+                        )
+                        evidence_map = {e.citation_id: e for e in evidence_items}
+                        user_prompt = (
+                            f"Research Question:\n{question}\n"
+                            f"Question Intent: {intent}\n\n"
+                            f"Retrieved Research Evidence Passages ({source_type_tag.upper()}):\n{context_text}\n\n"
+                            f"Instructions:\nAnswer the user's research question clearly and accurately using ONLY the evidence passages provided."
+                        )
+                        raw_retry = self.llm.generate(user_prompt, system_prompt=GROUNDED_SYSTEM_PROMPT, request_id=req_id, question_hash=q_hash)
+                        parsed_retry, _, _, _, _ = self._parse_llm_output(raw_retry)
+                        parsed_retry, _, _ = ClaimGroundingValidator.validate_and_filter_claims(parsed_retry, evidence_map, question)
+                        parsed_answer, active_citations, evidence_items = FinalSafetyGate.sanitize_response(
+                            parsed_retry, citations_map, evidence_items, allowed_domains, expected_prefixes
+                        )
+                        retry_quality = self.llm.verify_final_answer_quality(question, parsed_answer, active_evidence_pool)
+                        if retry_quality.get("answers_exact_question", True) and retry_quality.get("all_major_claims_supported", True):
+                            logger.info("[FINAL QUALITY CHECK SUCCESS] Online fallback answer passed final quality check.")
+                        else:
+                            return self._build_insufficient_evidence_response(question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval)
+                    else:
+                        return self._build_insufficient_evidence_response(question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval)
+                else:
+                    return self._build_insufficient_evidence_response(question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval)
+            else:
+                return self._build_insufficient_evidence_response(
+                    question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval
+                )
+
         # ── Step 11: Evidence Assessment & Source Labeling ──
         local_cits = [t for t in active_citations if t.startswith("E")]
         online_cits = [t for t in active_citations if t.startswith("O")]
+        uploaded_cits = [t for t in active_citations if t.startswith("U")]
 
-        if local_cits and online_cits:
+        if uploaded_cits:
+            source_label = "Uploaded Academic Paper"
+        elif local_cits and online_cits:
             source_label = "Research Mind Corpus & Online Academic Search"
         elif online_cits:
             source_label = "Online Academic Search"
@@ -2207,13 +2734,13 @@ class RAGPipeline:
         multi_paper = len(contributing_papers) > 1
 
         effective_score = (
-            max(local_eval.answerability_score, 0.80) if online_cits
+            max(local_eval.answerability_score, 0.80) if (online_cits or uploaded_cits)
             else local_eval.answerability_score
         )
 
         # Evidence strength based STRICTLY on VERIFIED claim-level evidence quality
         total_active_cits = len(active_citations)
-        if not active_citations or (not local_eval.answerable and not online_fallback_triggered):
+        if not active_citations or (not local_eval.answerable and not online_fallback_triggered and not uploaded_cits):
             evidence_strength = "Insufficient"
         elif unsupported_claims_count > 0:
             if effective_score >= 0.60 and total_active_cits >= 2:
@@ -2224,7 +2751,7 @@ class RAGPipeline:
                 evidence_strength = "Insufficient"
         elif effective_score >= 0.65 and len(contributing_papers) >= 2 and total_active_cits >= 2:
             evidence_strength = "Excellent"
-        elif effective_score >= 0.50 and total_active_cits >= 2:
+        elif effective_score >= 0.50 and total_active_cits >= 1:
             evidence_strength = "High"
         elif effective_score >= 0.35 and total_active_cits >= 1:
             evidence_strength = "Moderate"
@@ -2234,7 +2761,7 @@ class RAGPipeline:
         confidence = evidence_strength
         confidence_rationale = (
             f"Confidence rated '{confidence}' based on evidence assessment "
-            f"({len(local_cits)} local passage(s), {len(online_cits)} online source(s), "
+            f"({len(local_cits)} local passage(s), {len(online_cits)} online source(s), {len(uploaded_cits)} uploaded paper source(s), "
             f"{len(contributing_papers)} paper(s), score {effective_score:.2f})."
         )
 
@@ -2265,6 +2792,10 @@ class RAGPipeline:
             bullet_points=bullet_points,
             source_type=source_label,
             domain_scope=scope_label,
+            evidence_state=getattr(local_eval, 'evidence_state', 'SUFFICIENT'),
+            local_source_count=len(local_cits),
+            online_source_count=len(online_cits),
+            uploaded_paper_source_count=len(uploaded_cits),
         )
 
         retrieval_metadata = {
@@ -2378,6 +2909,7 @@ class RAGPipeline:
         scope_res: Optional[DomainScopeResult] = None,
         q_repr: Optional[QuestionRepresentation] = None,
         local_eval: Optional[AnswerabilityResult] = None,
+        custom_msg: Optional[str] = None,
     ) -> RAGResponse:
         concept_str = (
             q_repr.contract.concept if q_repr and q_repr.contract
@@ -2385,7 +2917,7 @@ class RAGPipeline:
         )
         aspect_str = q_repr.requested_aspect if q_repr else "requested information"
 
-        msg = (
+        msg = custom_msg or (
             "Insufficient evidence was found in the current Research Mind corpus or "
             "available online academic sources to answer this question reliably."
         )

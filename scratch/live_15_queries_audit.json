@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "question": "What are the limitations of agentic RAG?",
+    "intent": "Limitation",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 4,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "High",
+    "confidence": "High",
+    "citations": [
+      "E1",
+      "E2",
+      "E3",
+      "E5"
+    ],
+    "contributing_papers": [
+      "AI030"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "This section therefore examines the limitations of existing evaluation practices and outlines a structured framework for assessing agentic RAG behavior [E1]. Evaluation Dimensions for Agentic RAG To m...",
+    "why_this_answer": "Passage [E1] (Paper AI030, 'This section therefore examines the limitations of existing') supports key claims: 'This section therefore examines the li"
+  },
+  {
+    "id": 2,
+    "question": "What are the limitations of large language models?",
+    "intent": "Algorithm",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 3,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E5"
+    ],
+    "contributing_papers": [
+      "AG166",
+      "HC049",
+      "AI022"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "restrictions on large language model performance [E1]. Phase 2: Limitations of Direct LLM-Based Feature Ex- traction [E2]. Given the localization failures of VLMs, we ex- plored using Large Language M...",
+    "why_this_answer": "Passage [E1] (Paper AG166, 'restrictions on large language model performance. In') supports key claims: 'restrictions on large language model performa"
+  },
+  {
+    "id": 3,
+    "question": "What algorithms are commonly used for intrusion detection?",
+    "intent": "Algorithm",
+    "local_decision": "LOCAL_INSUFFICIENT",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 3,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "O1",
+      "O4",
+      "O5"
+    ],
+    "contributing_papers": [
+      "arXiv:1305.7416v1",
+      "arXiv:2104.10015v2",
+      "arXiv:1907.04098v1"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "As one of the solutions to intrusion detection problems, Artificial Immune Systems (AIS) have shown their advantages [O1]. Unlike genetic algorithms, there is no one archetypal AIS, instead there are ...",
+    "why_this_answer": "Passage [O1] (Paper arXiv:1305.7416v1, 'Abstract') supports key claims: 'As one of the solutions to intrusion detection problems, Artificial Immune Sy"
+  },
+  {
+    "id": 4,
+    "question": "How does federated learning preserve privacy?",
+    "intent": "Mechanism",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 3,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E5"
+    ],
+    "contributing_papers": [
+      "CY021",
+      "CY020"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "analysis of a cutting-edge approach to personalize ML model while preserving privacy achieved through Privacy Preserving Machine Learning with the innovative framework of Federated Personalized Learni...",
+    "why_this_answer": "Passage [E1] (Paper CY021, 'analysis of a cutting-edge approach to personalize ML model') supports key claims: 'analysis of a cutting-edge approach to"
+  },
+  {
+    "id": 5,
+    "question": "What are the main challenges of deploying deep learning models on edge devices?",
+    "intent": "Unknown",
+    "local_decision": "N/A",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 0,
+    "evidence_strength": "Insufficient",
+    "confidence": "Insufficient",
+    "citations": [],
+    "contributing_papers": [],
+    "unsupported_claims": 0,
+    "answer_snippet": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably....",
+    "why_this_answer": "Retrieved passages discuss 'main challenges of deploying deep learning models on edge devices', but do not provide sufficient direct evidence addressi"
+  },
+  {
+    "id": 6,
+    "question": "How does explainable AI improve trust in healthcare?",
+    "intent": "Mechanism",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 3,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E5"
+    ],
+    "contributing_papers": [
+      "AI036",
+      "HC019",
+      "CY064"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "Explainable Artificial Intelligence (XAI) has emerged as a critical paradigm for understanding complex machine learning models, particularly in domains where trust and explainability are essential, su...",
+    "why_this_answer": "Passage [E1] (Paper AI036, 'Introduction') supports key claims: 'Introduction Explainable Artificial Intelligence (XAI) has emerged as a critical para"
+  },
+  {
+    "id": 7,
+    "question": "What are the benefits of smart irrigation systems?",
+    "intent": "Advantage",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 5,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "contributing_papers": [
+      "AG025",
+      "AG040",
+      "AG023",
+      "AG021"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "The prime motive behind the advent of smart irrigation systems is to enhance the overall water ef\ufb01ciency of irrigation systems, with minimal user effort [E1]. Internet connectivity is designed to prov...",
+    "why_this_answer": "Passage [E1] (Paper AG025, 'social engineering. Many methods [15], [16] to detect and') supports key claims: 'The prime motive behind the advent of sm"
+  },
+  {
+    "id": 8,
+    "question": "What causes climate prediction uncertainty?",
+    "intent": "Cause",
+    "local_decision": "LOCAL_INSUFFICIENT",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 2,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "O1",
+      "O5"
+    ],
+    "contributing_papers": [
+      "arXiv:1704.00563v1",
+      "arXiv:2110.13661v2"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "The East Asian summer monsoon (EASM) is important for bringing rainfall to large areas of China [O1]. Historically, variations in the EASM have had major impacts including flooding and drought [O1]. W...",
+    "why_this_answer": "Passage [O1] (Paper arXiv:1704.00563v1, 'Abstract') supports key claims: 'The East Asian summer monsoon (EASM) is important for bringing rainfall to l"
+  },
+  {
+    "id": 9,
+    "question": "How does CRISPR-Cas9 work?",
+    "intent": "Unknown",
+    "local_decision": "N/A",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 0,
+    "evidence_strength": "Insufficient",
+    "confidence": "Insufficient",
+    "citations": [],
+    "contributing_papers": [],
+    "unsupported_claims": 0,
+    "answer_snippet": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably....",
+    "why_this_answer": "Retrieved passages discuss 'crispr-cas9 work', but do not provide sufficient direct evidence addressing the requested mechanism/process."
+  },
+  {
+    "id": 10,
+    "question": "What is quantum teleportation?",
+    "intent": "Definition",
+    "local_decision": "LOCAL_INSUFFICIENT",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 4,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "O1",
+      "O2",
+      "O3",
+      "O5"
+    ],
+    "contributing_papers": [
+      "arXiv:1311.7318v5",
+      "arXiv:2306.08242v1",
+      "arXiv:2604.16101v1",
+      "arXiv:2412.20762v1"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "We present a scheme to generate three particle hyper-entanglement utilizing polarization and orbital angular momentum (OAM) of a photon [O1]. We show that the generated state can be used to teleport a...",
+    "why_this_answer": "Passage [O1] (Paper arXiv:1311.7318v5, 'Abstract') supports key claims: 'We present a scheme to generate three particle hyper-entanglement utilizing p"
+  },
+  {
+    "id": 11,
+    "question": "What are the advantages of retrieval-augmented generation?",
+    "intent": "Advantage",
+    "local_decision": "LOCAL_INSUFFICIENT",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 3,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "O1",
+      "O4",
+      "O5"
+    ],
+    "contributing_papers": [
+      "arXiv:2405.17706v1",
+      "arXiv:2502.06864v1",
+      "arXiv:2312.10466v1"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "In this work, we propose the use of \"aligned visual captions\" as a mechanism for integrating information contained within videos into retrieval augmented generation (RAG) based chat assistant systems ...",
+    "why_this_answer": "Passage [O1] (Paper arXiv:2405.17706v1, 'Abstract') supports key claims: 'In this work, we propose the use of \"aligned visual captions\" as a mechanism"
+  },
+  {
+    "id": 12,
+    "question": "How does reinforcement learning improve robotic manipulation?",
+    "intent": "Mechanism",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 3,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E5"
+    ],
+    "contributing_papers": [
+      "AI184",
+      "AG130"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "deemed ungraspable by geometrical methods [E1]. The framework\u2019s sim-to-real transferability is further validated through physical experiments on a Delta parallel robot, where a refined grasp successfu...",
+    "why_this_answer": "Passage [E1] (Paper AI184, 'deemed ungraspable by geometrical methods. The framework\u2019s') supports key claims: 'deemed ungraspable by geometrical metho"
+  },
+  {
+    "id": 13,
+    "question": "Compare cloud computing and edge computing.",
+    "intent": "Comparison",
+    "local_decision": "LOCAL_SUFFICIENT",
+    "local_evidence_count": 4,
+    "online_fallback_active": false,
+    "online_evidence_count": 0,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "E1",
+      "E2",
+      "E3",
+      "E5"
+    ],
+    "contributing_papers": [
+      "CY023",
+      "AG123",
+      "AI026",
+      "HC181"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "On the other hand, edge computing can bridge the gap between the deployment of cloud computing with powerful resources but high latency and the onboard deployment with no latency but limited resources...",
+    "why_this_answer": "Passage [E1] (Paper CY023, 'suitable means for regular updates of the ML/DL model.') supports key claims: 'On the other  hand, edge computing can brid"
+  },
+  {
+    "id": 14,
+    "question": "What are the main components of a transformer architecture?",
+    "intent": "Algorithm",
+    "local_decision": "LOCAL_INSUFFICIENT",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 2,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "O1",
+      "O5"
+    ],
+    "contributing_papers": [
+      "arXiv:2501.17088v1",
+      "arXiv:2601.20854v1"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "Large pre-trained models have achieved outstanding results in sequence modeling [O1]. The Transformer block and its attention mechanism have been the main drivers of the success of these models [O1]. ...",
+    "why_this_answer": "Passage [O1] (Paper arXiv:2501.17088v1, 'Abstract') supports key claims: 'Large pre-trained models have achieved outstanding results in sequence model"
+  },
+  {
+    "id": 15,
+    "question": "What are recent advances in multimodal AI?",
+    "intent": "Definition",
+    "local_decision": "LOCAL_INSUFFICIENT",
+    "local_evidence_count": 0,
+    "online_fallback_active": true,
+    "online_evidence_count": 2,
+    "evidence_strength": "Excellent",
+    "confidence": "Excellent",
+    "citations": [
+      "O1",
+      "O5"
+    ],
+    "contributing_papers": [
+      "arXiv:2008.13369v1",
+      "arXiv:1605.05212v1"
+    ],
+    "unsupported_claims": 0,
+    "answer_snippet": "Automated deception detection systems can enhance health, justice, and security in society by helping humans detect deceivers in high-stakes situations across medical and legal domains, among others [...",
+    "why_this_answer": "Passage [O1] (Paper arXiv:2008.13369v1, 'Abstract') supports key claims: 'Automated deception detection systems can enhance health, justice, and secur"
+  }
+]

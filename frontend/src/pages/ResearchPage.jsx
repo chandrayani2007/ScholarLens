@@ -29,6 +29,48 @@ export const ResearchPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [response, setResponse] = useState(null);
+  const [attachedFileText, setAttachedFileText] = useState('');
+  const [attachedFileName, setAttachedFileName] = useState('');
+  const fileInputRef = React.useRef(null);
+
+  const [uploadingFile, setUploadingFile] = useState(false);
+  const [uploadInfo, setUploadInfo] = useState(null);
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setAttachedFileName(file.name);
+    setUploadingFile(true);
+    setError('');
+
+    try {
+      // Call backend PDF/document extraction endpoint
+      const res = await api.uploadPaper(file);
+      setAttachedFileText(res.text || '');
+      setAttachedFileName(res.filename || file.name);
+      setUploadInfo({
+        pages: res.pages_count,
+        chars: res.char_count,
+        chunks: res.chunks_count,
+        headings: res.section_headings ? res.section_headings.length : 0,
+      });
+      console.log(`[FRONTEND PDF UPLOAD] Successfully extracted ${res.char_count} chars from ${res.filename} (${res.pages_count} pages)`);
+    } catch (err) {
+      console.warn('[FRONTEND UPLOAD FALLBACK] Backend PDF upload failed, trying local text reader:', err);
+      if (file.name.endsWith('.txt') || file.name.endsWith('.md')) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          setAttachedFileText(event.target.result || '');
+        };
+        reader.readAsText(file);
+      } else {
+        setError(`Failed to extract text from ${file.name}: ${err.message}`);
+      }
+    } finally {
+      setUploadingFile(false);
+    }
+  };
 
   const handleAsk = async (qText = question, domainVal = selectedDomain) => {
     const activeQuestion = qText || question;
@@ -47,6 +89,8 @@ export const ResearchPage = () => {
         question: activeQuestion.trim(),
         domain: activeDomain,
         top_k: 10,
+        uploaded_paper_text: attachedFileText || undefined,
+        uploaded_paper_name: attachedFileName || undefined,
       };
       const resData = await api.askResearchQuestion(payload);
       setResponse(resData);
@@ -134,9 +178,21 @@ export const ResearchPage = () => {
                   <span>Synthesizing answer grounded in 250 indexed scientific papers</span>
                 </div>
                 <div className="input-actions-right">
-                  <button type="button" className="btn-attach" title="Attach reference">
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    style={{ display: 'none' }}
+                    accept=".pdf,.txt,.md"
+                    onChange={handleFileUpload}
+                  />
+                  <button
+                    type="button"
+                    className={`btn-attach ${attachedFileName ? 'active' : ''}`}
+                    title="Attach paper PDF or text file"
+                    onClick={() => fileInputRef.current && fileInputRef.current.click()}
+                  >
                     <Paperclip size={14} />
-                    <span>Attach</span>
+                    <span>{attachedFileName ? attachedFileName.slice(0, 15) + '...' : 'Attach Paper'}</span>
                   </button>
                   <button
                     type="button"

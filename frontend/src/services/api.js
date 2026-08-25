@@ -216,6 +216,26 @@ export const api = {
   getPaperPdfUrl: (paperId) => `${API_BASE_URL}/api/corpus/${paperId}/pdf`,
 
   // Research Query Pipeline
+  uploadPaper: async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    const token = getToken();
+    const headers = {};
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+    const response = await fetch(`${API_BASE_URL}/research/upload-paper`, {
+      method: 'POST',
+      headers,
+      body: formData,
+    });
+    if (!response.ok) {
+      const errData = await response.json().catch(() => null);
+      throw new Error(errData?.detail || `Upload failed with status ${response.status}`);
+    }
+    return await response.json();
+  },
+
   askResearchQuestion: (payload) =>
     request('/research/query', {
       method: 'POST',
