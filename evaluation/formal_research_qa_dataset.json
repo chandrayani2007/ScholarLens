@@ -1,0 +1,400 @@
+[
+  {
+    "question_id": "AI_QA_01",
+    "domain": "artificial_intelligence",
+    "paper_id": "AI001",
+    "paper_title": "Uncovering Knowledge and Reasoning Capabilities in Large Language Models",
+    "category": "A. Single Fact",
+    "question": "What primary benchmark dataset was used to evaluate reasoning capabilities in AI001?",
+    "question_type": "SINGLE_FACT",
+    "expected_sections": [
+      "Experimental Setup",
+      "Dataset",
+      "Evaluation"
+    ],
+    "reference_answer": "The paper AI001 evaluates model reasoning on 2,752 thermal and textual benchmark pairs across standardized AI partitions.",
+    "supporting_evidence_chunk_ids": [
+      "AI001_C01",
+      "AI001_C04"
+    ],
+    "expected_answer_points": [
+      "2752 pairs",
+      "thermal/textual benchmark",
+      "standardized partitions"
+    ]
+  },
+  {
+    "question_id": "AI_QA_02",
+    "domain": "artificial_intelligence",
+    "paper_id": "AI001",
+    "paper_title": "Uncovering Knowledge and Reasoning Capabilities in Large Language Models",
+    "category": "B. Methodology",
+    "question": "What methodology did the authors propose for parameter-efficient adapter fine-tuning?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Methodology",
+      "Proposed Method",
+      "Model Architecture"
+    ],
+    "reference_answer": "The authors propose a modular adapter architecture inserted into frozen transformer blocks, updating less than 2% of parameters while preserving pretrained knowledge.",
+    "supporting_evidence_chunk_ids": [
+      "AI001_C02",
+      "AI001_C03"
+    ],
+    "expected_answer_points": [
+      "modular adapter architecture",
+      "frozen transformer layers",
+      "parameter efficiency"
+    ]
+  },
+  {
+    "question_id": "AI_QA_03",
+    "domain": "artificial_intelligence",
+    "paper_id": "AI002",
+    "paper_title": "Retrieval-Augmented Generation for Dynamic Knowledge Grounding",
+    "category": "G. Baseline Comparison",
+    "question": "How does the proposed RAG approach compare with standard dense retriever baselines?",
+    "question_type": "COMPARISON",
+    "expected_sections": [
+      "Results",
+      "Comparative Evaluation",
+      "Discussion"
+    ],
+    "reference_answer": "The proposed hybrid RAG pipeline outperforms single-vector dense retriever baselines by 14.2% in exact-match recall and reduces hallucinated metric claims.",
+    "supporting_evidence_chunk_ids": [
+      "AI002_C05",
+      "AI002_C08"
+    ],
+    "expected_answer_points": [
+      "14.2% recall improvement",
+      "hybrid vs single-vector dense retriever",
+      "reduced hallucination"
+    ]
+  },
+  {
+    "question_id": "AI_QA_04",
+    "domain": "artificial_intelligence",
+    "paper_id": "AI002",
+    "paper_title": "Retrieval-Augmented Generation for Dynamic Knowledge Grounding",
+    "category": "J. Multi-Part Research Question",
+    "question": "What dataset was used, how was context preprocessed, and what were the baseline comparison results?",
+    "question_type": "MULTI_PART",
+    "expected_sections": [
+      "Dataset",
+      "Methodology",
+      "Results"
+    ],
+    "reference_answer": "The study utilized the ScholarQABench dataset. Context was preprocessed using layout-aware section chunking (600 chars). RAG achieved superior recall compared to dense-only baselines.",
+    "supporting_evidence_chunk_ids": [
+      "AI002_C01",
+      "AI002_C03",
+      "AI002_C05"
+    ],
+    "expected_answer_points": [
+      "ScholarQABench dataset",
+      "600-char layout-aware chunking",
+      "outperformed dense baseline"
+    ]
+  },
+  {
+    "question_id": "CY_QA_01",
+    "domain": "cybersecurity",
+    "paper_id": "CY001",
+    "paper_title": "Deep Learning Based Omni Intrusion Detection in Industrial Control Networks",
+    "category": "F. Results",
+    "question": "What were the main quantitative empirical results achieved by the intrusion detection model?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Results",
+      "Experimental Results",
+      "Evaluation"
+    ],
+    "reference_answer": "The deep learning omni intrusion detection system achieved an F1 score of 99.68% ± 0.04% across industrial SCADA packet streams.",
+    "supporting_evidence_chunk_ids": [
+      "CY001_C01",
+      "CY001_C06"
+    ],
+    "expected_answer_points": [
+      "F1 score 99.68%",
+      "± 0.04% variance",
+      "SCADA intrusion detection"
+    ]
+  },
+  {
+    "question_id": "CY_QA_02",
+    "domain": "cybersecurity",
+    "paper_id": "CY001",
+    "paper_title": "Deep Learning Based Omni Intrusion Detection in Industrial Control Networks",
+    "category": "C. Preprocessing",
+    "question": "How was industrial network packet traffic preprocessed prior to model training?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Methodology",
+      "Data Preprocessing",
+      "Implementation"
+    ],
+    "reference_answer": "Raw PCAP network traces were normalized using sliding temporal windows and converted into fixed-length feature vectors representing payload entropy and header flags.",
+    "supporting_evidence_chunk_ids": [
+      "CY001_C02",
+      "CY001_C03"
+    ],
+    "expected_answer_points": [
+      "sliding temporal windows",
+      "payload entropy",
+      "header flag feature vectors"
+    ]
+  },
+  {
+    "question_id": "CY_QA_03",
+    "domain": "cybersecurity",
+    "paper_id": "CY002",
+    "paper_title": "Zero-Trust Architecture and Cryptographic Key Exchange Protocols",
+    "category": "I. Limitations",
+    "question": "What computational limitations or overheads were identified in the zero-trust key exchange?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Limitations",
+      "Discussion",
+      "Constraints"
+    ],
+    "reference_answer": "The authors reported high handshake latency under peak connection loads (up to 45ms per exchange) due to asymmetric key validation overheads.",
+    "supporting_evidence_chunk_ids": [
+      "CY002_C04",
+      "CY002_C07"
+    ],
+    "expected_answer_points": [
+      "handshake latency up to 45ms",
+      "asymmetric key validation overhead",
+      "peak load constraints"
+    ]
+  },
+  {
+    "question_id": "CY_QA_04",
+    "domain": "cybersecurity",
+    "paper_id": "CY002",
+    "paper_title": "Zero-Trust Architecture and Cryptographic Key Exchange Protocols",
+    "category": "L. Insufficient Evidence",
+    "question": "Why did the authors choose post-quantum lattice cryptography over elliptic curve cryptography for hardware sensors?",
+    "question_type": "CAUSAL_WHY",
+    "expected_sections": [
+      "Methodology",
+      "Discussion"
+    ],
+    "reference_answer": "Insufficient evidence was found in the paper regarding hardware sensor cryptographic choices.",
+    "supporting_evidence_chunk_ids": [],
+    "expected_answer_points": [
+      "insufficient evidence response",
+      "no fabricated rationale"
+    ]
+  },
+  {
+    "question_id": "AG_QA_01",
+    "domain": "agriculture",
+    "paper_id": "AG001",
+    "paper_title": "IoT-Enabled Smart Irrigation and Soil Moisture Analytics",
+    "category": "A. Single Fact",
+    "question": "What sensor devices were deployed for real-time soil moisture monitoring in AG001?",
+    "question_type": "SINGLE_FACT",
+    "expected_sections": [
+      "Materials",
+      "Experimental Setup",
+      "Hardware"
+    ],
+    "reference_answer": "Capacitive soil moisture sensors connected to LoRaWAN edge microcontrollers were deployed across test plots.",
+    "supporting_evidence_chunk_ids": [
+      "AG001_C01",
+      "AG001_C02"
+    ],
+    "expected_answer_points": [
+      "capacitive moisture sensors",
+      "LoRaWAN microcontrollers"
+    ]
+  },
+  {
+    "question_id": "AG_QA_02",
+    "domain": "agriculture",
+    "paper_id": "AG001",
+    "paper_title": "IoT-Enabled Smart Irrigation and Soil Moisture Analytics",
+    "category": "H. Contributions",
+    "question": "What are the main scientific contributions of the smart irrigation study?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Introduction",
+      "Contributions",
+      "Methodology"
+    ],
+    "reference_answer": "Contributions include: (1) an adaptive closed-loop irrigation scheduling algorithm, (2) 34% reduction in water consumption, and (3) a field-tested LoRaWAN sensor network deployment.",
+    "supporting_evidence_chunk_ids": [
+      "AG001_C01",
+      "AG001_C05"
+    ],
+    "expected_answer_points": [
+      "adaptive scheduling algorithm",
+      "34% water reduction",
+      "LoRaWAN deployment"
+    ]
+  },
+  {
+    "question_id": "AG_QA_03",
+    "domain": "agriculture",
+    "paper_id": "AG002",
+    "paper_title": "Deep Learning for Automated Crop Disease Detection from Multispectral Imagery",
+    "category": "E. Experimental Setup",
+    "question": "What hardware and image resolution setup were used for Multispectral crop imaging?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Experimental Setup",
+      "Materials",
+      "Methods"
+    ],
+    "reference_answer": "Multispectral imagery was captured using a Sequoia camera mounted on a quadcopter at 4K resolution (3840x2160) at an altitude of 30 meters.",
+    "supporting_evidence_chunk_ids": [
+      "AG002_C03",
+      "AG002_C04"
+    ],
+    "expected_answer_points": [
+      "Sequoia camera on quadcopter",
+      "4K resolution",
+      "30m altitude"
+    ]
+  },
+  {
+    "question_id": "CL_QA_01",
+    "domain": "climate",
+    "paper_id": "CL001",
+    "paper_title": "Machine Learning Approaches for Extreme Weather Pattern Prediction",
+    "category": "F. Results",
+    "question": "What performance accuracy did the spatio-temporal model achieve in predicting tropical cyclone trajectories?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Results",
+      "Findings",
+      "Evaluation"
+    ],
+    "reference_answer": "The spatio-temporal ConvLSTM model reduced track forecast error by 18.5% over traditional numerical weather prediction baselines at 48-hour lead times.",
+    "supporting_evidence_chunk_ids": [
+      "CL001_C02",
+      "CL001_C06"
+    ],
+    "expected_answer_points": [
+      "18.5% track forecast error reduction",
+      "ConvLSTM model",
+      "48-hour lead times"
+    ]
+  },
+  {
+    "question_id": "CL_QA_02",
+    "domain": "climate",
+    "paper_id": "CL001",
+    "paper_title": "Machine Learning Approaches for Extreme Weather Pattern Prediction",
+    "category": "D. Motivation / Why",
+    "question": "Why did the authors combine physics-informed constraints with deep neural networks?",
+    "question_type": "CAUSAL_WHY",
+    "expected_sections": [
+      "Introduction",
+      "Methodology",
+      "Motivation"
+    ],
+    "reference_answer": "Physics-informed constraints were incorporated to enforce mass and energy conservation laws, preventing non-physical atmospheric predictions during extreme weather anomalies.",
+    "supporting_evidence_chunk_ids": [
+      "CL001_C01",
+      "CL001_C03"
+    ],
+    "expected_answer_points": [
+      "enforce mass/energy conservation",
+      "prevent non-physical predictions",
+      "handle extreme anomalies"
+    ]
+  },
+  {
+    "question_id": "CL_QA_03",
+    "domain": "climate",
+    "paper_id": "CL002",
+    "paper_title": "Satellite Remote Sensing of Carbon Flux in Boreal Forest Ecosystems",
+    "category": "K. Analytical Question",
+    "question": "Based on the paper, what are the primary strengths and weaknesses of satellite optical remote sensing for carbon flux estimation?",
+    "question_type": "ANALYTICAL",
+    "expected_sections": [
+      "Discussion",
+      "Strengths",
+      "Limitations"
+    ],
+    "reference_answer": "Strengths include high spatial coverage and multi-year temporal resolution. Weaknesses include signal degradation under dense cloud cover and atmospheric aerosol interference.",
+    "supporting_evidence_chunk_ids": [
+      "CL002_C04",
+      "CL002_C07"
+    ],
+    "expected_answer_points": [
+      "high spatial/temporal coverage",
+      "cloud cover degradation",
+      "atmospheric aerosol interference"
+    ]
+  },
+  {
+    "question_id": "HC_QA_01",
+    "domain": "healthcare",
+    "paper_id": "HC001",
+    "paper_title": "Deep Convolutional Networks for Automated Medical Image Diagnosis in Radiology",
+    "category": "B. Methodology",
+    "question": "What neural network architecture was proposed for automated pulmonary nodule detection in CT scans?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Methodology",
+      "Proposed Architecture",
+      "Methods"
+    ],
+    "reference_answer": "The authors proposed 3D U-Net with residual skip connections and focal loss to address class imbalance between benign tissue and small pulmonary nodules.",
+    "supporting_evidence_chunk_ids": [
+      "HC001_C01",
+      "HC001_C03"
+    ],
+    "expected_answer_points": [
+      "3D U-Net",
+      "residual skip connections",
+      "focal loss for class imbalance"
+    ]
+  },
+  {
+    "question_id": "HC_QA_02",
+    "domain": "healthcare",
+    "paper_id": "HC001",
+    "paper_title": "Deep Convolutional Networks for Automated Medical Image Diagnosis in Radiology",
+    "category": "C. Preprocessing",
+    "question": "How were 3D CT scan volumes preprocessed before inputting into the diagnostic network?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "expected_sections": [
+      "Methodology",
+      "Preprocessing",
+      "Materials"
+    ],
+    "reference_answer": "CT scans were resampled to isotropic 1.0mm³ voxel resolution, clipped to Hounsfield unit range [-1000, 400], and normalized to [0, 1].",
+    "supporting_evidence_chunk_ids": [
+      "HC001_C02",
+      "HC001_C04"
+    ],
+    "expected_answer_points": [
+      "resampled to isotropic 1.0mm³ voxels",
+      "Hounsfield unit clipping [-1000, 400]",
+      "min-max normalization"
+    ]
+  },
+  {
+    "question_id": "HC_QA_03",
+    "domain": "healthcare",
+    "paper_id": "HC002",
+    "paper_title": "Privacy-Preserving Federated Learning for Multi-Hospital Clinical Risk Prediction",
+    "category": "L. Insufficient Evidence",
+    "question": "What specific hardware GPU model was used in Hospital Site 4 during federated training?",
+    "question_type": "SINGLE_FACT",
+    "expected_sections": [
+      "Experimental Setup",
+      "Hardware"
+    ],
+    "reference_answer": "Insufficient evidence was found in the paper regarding the specific GPU hardware at Hospital Site 4.",
+    "supporting_evidence_chunk_ids": [],
+    "expected_answer_points": [
+      "insufficient evidence response",
+      "no fabricated GPU specification"
+    ]
+  }
+]

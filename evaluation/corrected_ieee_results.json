@@ -1,0 +1,369 @@
+{
+  "retrieval_performance_by_config": {
+    "Vector-Only": {
+      "Paper_Hit@5": 0.0,
+      "Paper_Hit@10": 0.0,
+      "Paper_MRR": 0.0,
+      "Chunk_Recall@5": 0.118,
+      "Chunk_Recall@10": 0.118,
+      "Subquery_Coverage_Num": 0,
+      "Subquery_Coverage_Den": 49,
+      "Subquery_Coverage_Percent": 0.0
+    },
+    "BM25-Only": {
+      "Paper_Hit@5": 0.059,
+      "Paper_Hit@10": 0.059,
+      "Paper_MRR": 0.015,
+      "Chunk_Recall@5": 0.118,
+      "Chunk_Recall@10": 0.118,
+      "Subquery_Coverage_Num": 14,
+      "Subquery_Coverage_Den": 49,
+      "Subquery_Coverage_Percent": 28.6
+    },
+    "Baseline Hybrid": {
+      "Paper_Hit@5": 0.0,
+      "Paper_Hit@10": 0.059,
+      "Paper_MRR": 0.006,
+      "Chunk_Recall@5": 0.118,
+      "Chunk_Recall@10": 0.118,
+      "Subquery_Coverage_Num": 13,
+      "Subquery_Coverage_Den": 49,
+      "Subquery_Coverage_Percent": 26.5
+    },
+    "Section-Aware Hybrid": {
+      "Paper_Hit@5": 0.0,
+      "Paper_Hit@10": 0.059,
+      "Paper_MRR": 0.01,
+      "Chunk_Recall@5": 0.118,
+      "Chunk_Recall@10": 0.118,
+      "Subquery_Coverage_Num": 13,
+      "Subquery_Coverage_Den": 49,
+      "Subquery_Coverage_Percent": 26.5
+    }
+  },
+  "answer_quality_averages": {
+    "Correctness": 2.71,
+    "Completeness": 2.71,
+    "Relevance": 4.24,
+    "Groundedness": 3.47,
+    "Citation_Accuracy": 3.47,
+    "Insufficient_Evidence_Handling": 2.71,
+    "Overall_Usefulness": 3.09
+  },
+  "raw_per_question_evaluations": [
+    {
+      "question_id": "AI_QA_01",
+      "domain": "artificial_intelligence",
+      "paper_id": "AI001",
+      "question": "What primary benchmark dataset was used to evaluate reasoning capabilities in AI001?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "AI_QA_02",
+      "domain": "artificial_intelligence",
+      "paper_id": "AI001",
+      "question": "What methodology did the authors propose for parameter-efficient adapter fine-tuning?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "AI_QA_03",
+      "domain": "artificial_intelligence",
+      "paper_id": "AI002",
+      "question": "How does the proposed RAG approach compare with standard dense retriever baselines?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "AI_QA_04",
+      "domain": "artificial_intelligence",
+      "paper_id": "AI002",
+      "question": "What dataset was used, how was context preprocessed, and what were the baseline comparison results?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "CY_QA_01",
+      "domain": "cybersecurity",
+      "paper_id": "CY001",
+      "question": "What were the main quantitative empirical results achieved by the intrusion detection model?",
+      "answer_summary": "### Executive Summary Quantitative Results and Analysis Table III summarizes the detection performance against all 18 at...",
+      "citations": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "scores": {
+        "correctness": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "citation_accuracy": 5.0,
+        "insufficient_evidence_handling": 5.0,
+        "usefulness": 5.0
+      },
+      "failure_classification": "NONE (Answer Generated & Grounded)"
+    },
+    {
+      "question_id": "CY_QA_02",
+      "domain": "cybersecurity",
+      "paper_id": "CY001",
+      "question": "How was industrial network packet traffic preprocessed prior to model training?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "CY_QA_03",
+      "domain": "cybersecurity",
+      "paper_id": "CY002",
+      "question": "What computational limitations or overheads were identified in the zero-trust key exchange?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "CY_QA_04",
+      "domain": "cybersecurity",
+      "paper_id": "CY002",
+      "question": "Why did the authors choose post-quantum lattice cryptography over elliptic curve cryptography for hardware sensors?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "citation_accuracy": 5.0,
+        "insufficient_evidence_handling": 5.0,
+        "usefulness": 5.0
+      },
+      "failure_classification": "NONE (Correct Refusal)"
+    },
+    {
+      "question_id": "AG_QA_01",
+      "domain": "agriculture",
+      "paper_id": "AG001",
+      "question": "What sensor devices were deployed for real-time soil moisture monitoring in AG001?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "AG_QA_02",
+      "domain": "agriculture",
+      "paper_id": "AG001",
+      "question": "What are the main scientific contributions of the smart irrigation study?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "AG_QA_03",
+      "domain": "agriculture",
+      "paper_id": "AG002",
+      "question": "What hardware and image resolution setup were used for Multispectral crop imaging?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "CL_QA_01",
+      "domain": "climate",
+      "paper_id": "CL001",
+      "question": "What performance accuracy did the spatio-temporal model achieve in predicting tropical cyclone trajectories?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "CL_QA_02",
+      "domain": "climate",
+      "paper_id": "CL001",
+      "question": "Why did the authors combine physics-informed constraints with deep neural networks?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "CL_QA_03",
+      "domain": "climate",
+      "paper_id": "CL002",
+      "question": "Based on the paper, what are the primary strengths and weaknesses of satellite optical remote sensing for carbon flux estimation?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "HC_QA_01",
+      "domain": "healthcare",
+      "paper_id": "HC001",
+      "question": "What neural network architecture was proposed for automated pulmonary nodule detection in CT scans?",
+      "answer_summary": "### Executive Summary Deep neural networks with millions of parameters are at the heart of many state of the art machine...",
+      "citations": [
+        "O1",
+        "O2",
+        "O3"
+      ],
+      "scores": {
+        "correctness": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "citation_accuracy": 5.0,
+        "insufficient_evidence_handling": 5.0,
+        "usefulness": 5.0
+      },
+      "failure_classification": "NONE (Answer Generated & Grounded)"
+    },
+    {
+      "question_id": "HC_QA_02",
+      "domain": "healthcare",
+      "paper_id": "HC001",
+      "question": "How were 3D CT scan volumes preprocessed before inputting into the diagnostic network?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 2.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "groundedness": 3.0,
+        "citation_accuracy": 3.0,
+        "insufficient_evidence_handling": 2.0,
+        "usefulness": 2.5
+      },
+      "failure_classification": "B. Evidence Sufficiency Failure (Threshold refusal on domain query)"
+    },
+    {
+      "question_id": "HC_QA_03",
+      "domain": "healthcare",
+      "paper_id": "HC002",
+      "question": "What specific hardware GPU model was used in Hospital Site 4 during federated training?",
+      "answer_summary": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this ...",
+      "citations": [],
+      "scores": {
+        "correctness": 5.0,
+        "completeness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "citation_accuracy": 5.0,
+        "insufficient_evidence_handling": 5.0,
+        "usefulness": 5.0
+      },
+      "failure_classification": "NONE (Correct Refusal)"
+    }
+  ]
+}

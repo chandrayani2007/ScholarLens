@@ -1,0 +1,523 @@
+{
+  "summary": {
+    "total_questions": 10,
+    "correct_supported": 7,
+    "partially_correct": 0,
+    "incorrect_hallucinated": 3,
+    "accuracy_rate_percent": 70.0,
+    "provider_used": "gemini"
+  },
+  "evaluations": [
+    {
+      "question_index": 1,
+      "category": "Dataset",
+      "question": "What dataset was used for training and evaluating the model?",
+      "classification": "INCORRECT",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "High"
+    },
+    {
+      "question_index": 2,
+      "category": "Methodology",
+      "question": "What methodology did the authors propose for privacy-preserving federated learning?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    },
+    {
+      "question_index": 3,
+      "category": "Preprocessing",
+      "question": "How was the input data preprocessed and cleaned before model training?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    },
+    {
+      "question_index": 4,
+      "category": "Motivation / Why",
+      "question": "Why did the authors choose split federated learning over standard federated learning?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    },
+    {
+      "question_index": 5,
+      "category": "Experimental setup",
+      "question": "What experimental setup, hardware, and hyperparameters were used in the evaluation?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    },
+    {
+      "question_index": 6,
+      "category": "Results",
+      "question": "What were the main quantitative empirical results and performance metrics achieved?",
+      "classification": "INCORRECT",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "High"
+    },
+    {
+      "question_index": 7,
+      "category": "Baseline comparison",
+      "question": "How does the proposed approach compare with baseline methods?",
+      "classification": "INCORRECT",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "High"
+    },
+    {
+      "question_index": 8,
+      "category": "Limitations",
+      "question": "What limitations or computational overheads did the authors identify in their approach?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    },
+    {
+      "question_index": 9,
+      "category": "Contributions",
+      "question": "What are the main scientific contributions introduced in this paper?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    },
+    {
+      "question_index": 10,
+      "category": "Multi-part analytical question",
+      "question": "What dataset was used, how was it preprocessed, what methodology was proposed, and how did the results compare with the baseline?",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY",
+      "grounded_claims": 0,
+      "unsupported_claims": 0,
+      "evidence_strength": "Insufficient"
+    }
+  ],
+  "details": [
+    {
+      "question_index": 1,
+      "category": "Dataset",
+      "question": "What dataset was used for training and evaluating the model?",
+      "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+      "intent": "Dataset",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What dataset was used for training and evaluating the model?",
+          "target_aspect": "Dataset",
+          "expected_sections": [
+            "Dataset",
+            "Datasets",
+            "Materials",
+            "Experimental Setup",
+            "Data",
+            "Corpus",
+            "Testbed"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [
+        {
+          "citation_id": "E5",
+          "paper_id": "AI109",
+          "section_name": "implementation of the model developers.",
+          "chunk_id": "AI109_C16"
+        },
+        {
+          "citation_id": "E6",
+          "paper_id": "AI186",
+          "section_name": "4. Experiments",
+          "chunk_id": "AI186_C43"
+        },
+        {
+          "citation_id": "E7",
+          "paper_id": "AI025",
+          "section_name": "The model was trained using 2752 pairs of thermal and",
+          "chunk_id": "AI025_C31"
+        },
+        {
+          "citation_id": "E8",
+          "paper_id": "AI044",
+          "section_name": "16: Output: Optimized policy model πθ.",
+          "chunk_id": "AI044_C24"
+        },
+        {
+          "citation_id": "E9",
+          "paper_id": "AI155",
+          "section_name": "Each model is trained for 25 epochs with an effective batch",
+          "chunk_id": "AI155_C60"
+        },
+        {
+          "citation_id": "E10",
+          "paper_id": "AI154",
+          "section_name": "2.3. Vision-language models and model selection",
+          "chunk_id": "AI154_C10"
+        },
+        {
+          "citation_id": "E2",
+          "paper_id": "AI069",
+          "section_name": "Brief Summary of Baseline Model Setup",
+          "chunk_id": "AI069_C91"
+        },
+        {
+          "citation_id": "E3",
+          "paper_id": "AI092",
+          "section_name": "evaluation domain are shared.",
+          "chunk_id": "AI092_C15"
+        }
+      ],
+      "evidence_strength": "High",
+      "generated_answer": "### Executive Summary --- ### Core Technical Analysis * **Aerial Object Detection (VisDrone2019-DET):** Fine-tuning object detection models utilized the official training split of the VisDrone2019-DET dataset, while the official validation split was used for checkpoint selection  [E5]. The dataset comprises 263 videos and 10,209 images containing over 2.5 million annotations across ten classes from an air-to-ground (A2G) perspective  [E5]. Preprocessing included masking ignored regions to a fixed grey color (RGB values `(144, 144, 144)`), stripping annotations with significant overlap ($\\text{IoU} \\ge 0.8$) to ignored regions, and mapping vehicle categories ('car', 'van', 'truck', 'bus') into a consolidated `'vehicle'` class  [E5]. * **Optical Coherence Tomography (OCT-C8):** Evaluated the RetiWave-Mamba framework using 24,000 optical coherence tomography (OCT) images balanced evenly (3,000 images per category) across eight retinal disease categories: AMD, CNV, CSR, DME, DR, Drusen, Macular Hole (MH), and Normal  [E6]. * **Thermal and Visual Imaging (WiSARD):** Model training incorporated 2,752 pairs of thermal and visual images sourced from the WiSARD dataset  [E7]. * **Visual & Mathematical Reasoning (VLAA-Thinking):** Used to train optimized policy models ($\\pi_\\theta$), consisting of 21,192 question-answer pairs accompanied by distilled reasoning steps  [E8]. It integrates mathematical reasoning with general visual question answering (VQA), spanning close-ended (numerical, equation-based, multiple-choice) and open-ended descriptive prompts  [E8]. * **Vision-Language Instruction Datasets (LLaVA & cc-sbu-align):** Used for instruction-tuning Vision-Language Models (VLMs) like MiniGPT-4  [E9]. The `cc-sbu-align` dataset comprises 3.5k detailed image description pairs formatted as $(V, Q, A)$ triplets  [E9]. * **Precision Gauge Reading Datasets:** Model performance was evaluated across three distinct gauge datasets: Kaggle's *Synthetic DS6.0* (501 gauge images annotated for readings and scale endpoints), the *Pressure Gauge video dataset* (abbreviated as Pressure), and the *Siemens Energy (SE)* dataset  [E10]. * **Tabular Datasets:** Evaluated baseline regression models (e.g., DeepGBM, TabNet, FT-Transformer, tree-based models) loaded from ARFF files into pandas DataFrames, applying z-score normalization to neural architectures while retaining raw values for tree models  [E2]. --- ### Empirical Findings & Data Partitioning Strategies Each experimental framework implemented specific dataset partitioning strategies to balance training efficacy, hyperparameter tuning, and independent testing: [E10]. * **OCT-C8 Partitioning:** To maximize training sample size and improve generalization, researchers modified the official split by pooling the original training set (18,400 images) and validation set (2,800 images) into a enlarged training set of 21,200 images (2,650 per class)  [E6]. The official test set of 2,800 images (350 per class) was held out exclusively for final model evaluation  [E6]. * **WiSARD Partitioning:** The 2,752 image pairs were divided using an 80:20 train-to-validation ratio, while a separate, independent dataset of 200 image pairs was reserved for testing performance  [E7]. * **Synthetic DS6.0 Partitioning:** Partitioned using a random train-test split resulting in 375 training images and 126 testing images  [E10]. * **VLM Data Partitioning (LLaVA / cc-sbu-align):** Both the LLaVA dataset and `cc-sbu-align` dataset were split into member, non-member, and shadow subsets following a 45%:45%:10% ratio to facilitate membership inference and target VLM evaluation  [E9]. * **Tabular / Baseline Model Partitioning:** Split overall data into 80% combined training+validation and 20% test  [E2]. The 80% portion was further split into 90% training and 10% validation, using Optuna for 3-fold cross-validation during hyperparameter optimization prior to held-out test evaluation using RMSE, MSE, MAE, and $R^2$ metrics  [E2]. --- ### Limitations * The provided text does not contain detailed sample breakdowns or instance counts for the Pressure Gauge video dataset and Siemens Energy dataset beyond their macro dataset names  [E10]. * While meta-analyses on pre-training datasets indicate that within-domain generalization is not strictly superior and that domain transferability varies broadly across scientific domains , detailed individual dataset parameters across all $N_{\\text{train}}$ pre-training datasets in that meta-analysis are not explicitly enumerated  [E3].",
+      "classification": "INCORRECT"
+    },
+    {
+      "question_index": 2,
+      "category": "Methodology",
+      "question": "What methodology did the authors propose for privacy-preserving federated learning?",
+      "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+      "intent": "Methodology",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What methodology did the authors propose for privacy-preserving federated learning?",
+          "target_aspect": "Methodology",
+          "expected_sections": [
+            "Methodology",
+            "Proposed Method",
+            "Model Architecture",
+            "Implementation",
+            "Methods",
+            "System Model"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    },
+    {
+      "question_index": 3,
+      "category": "Preprocessing",
+      "question": "How was the input data preprocessed and cleaned before model training?",
+      "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+      "intent": "Mechanism",
+      "decomposed_subqueries": [
+        {
+          "subquery": "How was the input data preprocessed and cleaned before model training?",
+          "target_aspect": "Mechanism",
+          "expected_sections": [
+            "Abstract",
+            "Methodology",
+            "Results"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    },
+    {
+      "question_index": 4,
+      "category": "Motivation / Why",
+      "question": "Why did the authors choose split federated learning over standard federated learning?",
+      "question_type": "CAUSAL_WHY",
+      "intent": "Explanation",
+      "decomposed_subqueries": [
+        {
+          "subquery": "Why did the authors choose split federated learning over standard federated learning?",
+          "target_aspect": "Explanation",
+          "expected_sections": [
+            "Abstract",
+            "Methodology",
+            "Results"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    },
+    {
+      "question_index": 5,
+      "category": "Experimental setup",
+      "question": "What experimental setup, hardware, and hyperparameters were used in the evaluation?",
+      "question_type": "MULTI_PART",
+      "intent": "Evaluation",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What experimental setup, hardware, and hyperparameters were used in the evaluation?",
+          "target_aspect": "Evaluation",
+          "expected_sections": [
+            "Evaluation",
+            "Results",
+            "Performance",
+            "Metrics",
+            "Benchmark"
+          ],
+          "is_required": true
+        },
+        {
+          "subquery": "What experimental setup",
+          "target_aspect": "Experiment",
+          "expected_sections": [
+            "Abstract",
+            "Methodology",
+            "Results"
+          ],
+          "is_required": true
+        },
+        {
+          "subquery": "hardware",
+          "target_aspect": "Explanation",
+          "expected_sections": [
+            "Abstract",
+            "Methodology",
+            "Results"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    },
+    {
+      "question_index": 6,
+      "category": "Results",
+      "question": "What were the main quantitative empirical results and performance metrics achieved?",
+      "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+      "intent": "Finding",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What were the main quantitative empirical results and performance metrics achieved?",
+          "target_aspect": "Finding",
+          "expected_sections": [
+            "Results",
+            "Experimental Results",
+            "Findings",
+            "Discussion"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [
+        {
+          "citation_id": "E4",
+          "paper_id": "AG140",
+          "section_name": "All seven target model families were successfully trained,",
+          "chunk_id": "AG140_C87"
+        },
+        {
+          "citation_id": "E3",
+          "paper_id": "AG170",
+          "section_name": "4.7. Alternative Strategy Results and Comparison",
+          "chunk_id": "AG170_C99"
+        },
+        {
+          "citation_id": "E1",
+          "paper_id": "AG179",
+          "section_name": "CNN Results",
+          "chunk_id": "AG179_C26"
+        },
+        {
+          "citation_id": "E2",
+          "paper_id": "AG179",
+          "section_name": "VGG16 Results",
+          "chunk_id": "AG179_C42"
+        },
+        {
+          "citation_id": "E6",
+          "paper_id": "AG140",
+          "section_name": "signed to reduce common non-benchmark background activity",
+          "chunk_id": "AG140_C71"
+        }
+      ],
+      "evidence_strength": "High",
+      "generated_answer": "### Executive Summary In object detection, **YOLO11n** and **YOLO11s** achieved top test accuracy with mAP50-95 scores of **0.9035** and **0.9019**, respectively  [E4]. For semantic segmentation, **SegFormer-B0** yielded the strongest performance with a test mIoU of **0.8049** and a test Dice score of **0.8854** , while among convolutional network iterations, **CNN_v3** achieved the highest accuracy (**0.7899**) and mean IoU (**0.4480**)  [E4]. Additionally, in agricultural engineering simulations, an optical-fiber (OF) daylighting system delivered an annual useful-PAR delivery efficiency between **19% and 27%**  [E3]. --- ### Experimental Setup & Datasets * **Computer Vision Target Datasets**: Object detection architectures were trained on the **CottonWeedDet12_v1** dataset, whereas semantic segmentation networks were trained on the **CropAndWeed_v1** dataset prior to Jetson deployment  [E4]. * **Ray-Tracing Simulation Setup**: A single-axis solar-tracked concentration system was modeled using **Tonatiuh ray-tracing software** to evaluate five optical fiber typologies and three daylighting integration strategies  [E3]. --- ### Main Empirical Findings #### 1. Object Detection Models [E4]. * **YOLO11n**: Achieved a test mAP50-95 of **0.9035** [E4]. * **YOLO11s**: Reached a test mAP50-95 of **0.9019** [E4]. * **RT-DETR-R18**: Recorded a competitive test mAP50-95 of **0.8740** alongside a COCO-style test AR@100 of **0.961**  [E4]. #### 2. Semantic Segmentation Models [E4]. * **SegFormer-B0**: Achieved the highest overall performance with a test mIoU of **0.8049**, test Dice score of **0.8854**, and foreground mIoU of **0.7115**  [E4]. * **DeepLabV3+**: Followed with a test mIoU of **0.7774**  [E4]. * **MobileNetV3-LRASPP**: Reached a test mIoU of **0.7631**  [E4]. * **BiSeNetV2**: Recorded a test mIoU of **0.7278**  [E1]. #### 3. Custom CNN & VGG Variant Performances [E1]. * **CNN Iterations**: * `CNN_v3` achieved the highest accuracy (**0.7899**) and mean IoU (**0.4480**)  [E1]. * `CNN_v1` followed with an accuracy of **0.7669** and mean IoU of **0.4127**  [E1]. * `CNN_v2` recorded the lowest metrics across all evaluated categories  [E1]. * **VGG16 Iterations**: * `VGG16_v2` achieved the highest mean IoU (**0.4244**) and F1-score (**0.5411**)  [E2]. * `VGG16_v3` attained the highest overall accuracy (**0.7690**) and precision (**0.6319**)  [E2]. * `VGG16_v1` produced the lowest metrics, with an accuracy of **0.7274** and mean IoU of **0.3512**  [E2]. #### 4. Optical Fiber Daylighting Performance [E3]. * **Useful-PAR Efficiency**: The optical-fiber daylighting system achieved an annual useful-PAR (photosynthetically active radiation) delivery efficiency of **19% to 27%**, varying by fiber typology  [E3]. --- ### Baseline Comparison * **Computer Vision Architectures**: SegFormer-B0 outperformed DeepLabV3+, MobileNetV3-LRASPP, and BiSeNetV2 on semantic segmentation tasks  [E4]. In object detection, lightweight YOLO11 variants (YOLO11n/s) outperformed RT-DETR-R18 in mAP50-95 accuracy  [E4]. * **Daylighting Technologies**: The optical-fiber daylighting system was benchmarked against two alternative solar-based systems : [E3]. 1. **Light-Pipe System**: Characterized by higher optical efficiency but lower integration flexibility  [E3]. 2. **Photovoltaic-Based Solution**: Characterized by lower solar-to-useful-energy performance despite possessing higher technological maturity  [E3]. --- ### Supporting Evidence * **Energy-Normalized Metrics**: Metric models for deployment on Jetson edge devices incorporate throughput ($\\text{FPS} = \\frac{N}{t_1 - t_0}$), energy per inference ($J/\\text{inference} = \\frac{3600 E_{\\text{Wh}}}{N}$), inferences per Watt-hour ($\\text{inferences/Wh} = \\frac{N}{E_{\\text{Wh}}}$), and energy per thousand inferences ($\\text{Wh}/1000 \\text{ inferences}$) ,  [E6]. * **Agronomic Performance Indicators**: Crop production, Specific Electrical Energy Consumption (SEEC), and Light Cost (LC)  [E3].",
+      "classification": "INCORRECT"
+    },
+    {
+      "question_index": 7,
+      "category": "Baseline comparison",
+      "question": "How does the proposed approach compare with baseline methods?",
+      "question_type": "COMPARISON",
+      "intent": "Comparison",
+      "decomposed_subqueries": [
+        {
+          "subquery": "How does the proposed approach compare with baseline methods?",
+          "target_aspect": "Comparison",
+          "expected_sections": [
+            "Comparative Baseline Evaluation",
+            "Comparison",
+            "Baseline",
+            "Results",
+            "Results and Discussion"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [
+        {
+          "citation_id": "E6",
+          "paper_id": "CL036",
+          "section_name": "B. Conditional Coverage Analysis",
+          "chunk_id": "CL036_C63"
+        },
+        {
+          "citation_id": "E7",
+          "paper_id": "CL172",
+          "section_name": "pared against four reference methods.",
+          "chunk_id": "CL172_C29"
+        },
+        {
+          "citation_id": "E5",
+          "paper_id": "CL172",
+          "section_name": "Comparison Methods",
+          "chunk_id": "CL172_C28"
+        },
+        {
+          "citation_id": "E9",
+          "paper_id": "CL067",
+          "section_name": "E. Compare with the state of the art methods",
+          "chunk_id": "CL067_C74"
+        },
+        {
+          "citation_id": "E1",
+          "paper_id": "CL034",
+          "section_name": "(b) Comparison with different learning methods.",
+          "chunk_id": "CL034_C54"
+        },
+        {
+          "citation_id": "E3",
+          "paper_id": "CL017",
+          "section_name": "It also sets a baseline for the model.",
+          "chunk_id": "CL017_C44"
+        }
+      ],
+      "evidence_strength": "High",
+      "generated_answer": "### Executive Summary The proposed approaches across the evaluated studies consistently demonstrate superior performance, adaptability, and target alignment compared to baseline methods  [E6]. In forecasting and coverage applications, the proposed methods achieve tighter alignment with target coverage levels and adapt more effectively to daily distributional shifts than standard baselines  [E6]. While highly novel frameworks (such as unsupervised flood forecasting) occasionally lack existing baselines for direct comparison , other proposed approaches are rigorously benchmarked against state-of-the-art models (e.g., SkyGPT), decoupled formulations, and operational standards to demonstrate clear methodological advantages  [E7]. --- ### Proposed Approach vs Baselines *   **Latent-Coupled Forecasting (FarSky):** To assess the effectiveness of the proposed FarSky latent-coupled forecasting approach, it is compared against four reference methods : [E5][E7]. 1. *Decoupled Baseline:* This formulation isolates the impact of the latent-space coupling strategy [E7]. It trains the DCAE and FAR models exclusively on sky image sequences and subsequently estimates irradiance using a separately trained ResNet34-based CNN regressor  [E7]. 2. *Scaled Persistence:* This serves as a standard operational benchmark  [E7]. 3. *Transformer-based End-to-End Model:* This model is included to compare generative versus direct forecasting paradigms  [E7]. 4. *SkyGPT:* This represents the state-of-the-art literature baseline  [E7]. *   **Adaptive Conformal Prediction (CACP):** The proposed CACP method is compared against baseline approaches, including Conformalized Quantile Regression (CQR), utilizing hourly interval-width adjustments ($\\Delta$IW) relative to original NREL intervals  [E6]. *   **Super-Resolution (DBSD):** The proposed DBSD method is compared against state-of-the-art methods to evaluate super-resolution (SR) performance, demonstrating a superior ability to handle scale variations compared to most baseline methods  [E9]. *   **Other Baselines:** Other studies compare their proposed approaches against levels of a-priori user input , three selected best baselines , or an intercomparison baseline used to quantify downscaling gains  [E1]. However, for few-shot flood forecasting, no baseline is available because the proposed model is the first to apply unsupervised learning to this task  [E3]. --- ### Quantitative Performance & Metrics *   **Conditional Coverage Analysis:** In hourly Prediction Interval Coverage Probability (PICP) evaluations at an 80% target coverage level, the proposed CACP method achieves coverage remarkably close to the target across all hours  [E6]. It exhibits only slight overcoverage during peak hours and mild undercoverage during non-peak periods  [E6]. *   **Baseline Deficiencies:** In contrast to the proposed method, baseline approaches exhibit substantial miscoverage during early morning and evening hours  [E6]. Furthermore, they provide overconfident intervals during peak hours, failing to adapt to daily distributional shifts  [E6]. --- ### Trade-offs & Findings *   **Adaptability to Distributional Shifts:** The proposed CACP method demonstrates superior adaptability to daily distributional shifts compared to baselines, which is further illustrated by its dynamic hourly interval-width adjustments  [E6]. *   **Decoupled vs. Coupled Architectures:** Isolating the impact of FarSky's latent-space coupling strategy against a decoupled baseline reveals the trade-offs of training models separately  [E7]. The decoupled baseline requires a separate CNN regressor to estimate irradiance from synthetic images, whereas the proposed coupled approach integrates these steps more cohesively  [E7].",
+      "classification": "INCORRECT"
+    },
+    {
+      "question_index": 8,
+      "category": "Limitations",
+      "question": "What limitations or computational overheads did the authors identify in their approach?",
+      "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+      "intent": "Limitation",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What limitations or computational overheads did the authors identify in their approach?",
+          "target_aspect": "Limitation",
+          "expected_sections": [
+            "Limitation",
+            "Limitations",
+            "Discussion",
+            "Constraints",
+            "Challenges"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    },
+    {
+      "question_index": 9,
+      "category": "Contributions",
+      "question": "What are the main scientific contributions introduced in this paper?",
+      "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+      "intent": "Contribution",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What are the main scientific contributions introduced in this paper?",
+          "target_aspect": "Contribution",
+          "expected_sections": [
+            "Introduction",
+            "Contributions",
+            "Proposed Method"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    },
+    {
+      "question_index": 10,
+      "category": "Multi-part analytical question",
+      "question": "What dataset was used, how was it preprocessed, what methodology was proposed, and how did the results compare with the baseline?",
+      "question_type": "COMPARISON",
+      "intent": "Methodology",
+      "decomposed_subqueries": [
+        {
+          "subquery": "What dataset was used, how was it preprocessed, what methodology was proposed, and how did the results compare with the baseline?",
+          "target_aspect": "Methodology",
+          "expected_sections": [
+            "Methodology",
+            "Proposed Method",
+            "Model Architecture",
+            "Implementation",
+            "Methods",
+            "System Model"
+          ],
+          "is_required": true
+        },
+        {
+          "subquery": "What dataset was used (preprocessed methodology proposed did compare)",
+          "target_aspect": "Dataset",
+          "expected_sections": [
+            "Dataset",
+            "Datasets",
+            "Materials",
+            "Experimental Setup",
+            "Data",
+            "Corpus",
+            "Testbed"
+          ],
+          "is_required": true
+        },
+        {
+          "subquery": "how was it preprocessed",
+          "target_aspect": "Mechanism",
+          "expected_sections": [
+            "Abstract",
+            "Methodology",
+            "Results"
+          ],
+          "is_required": true
+        },
+        {
+          "subquery": "how did the results compare with the baseline",
+          "target_aspect": "Finding",
+          "expected_sections": [
+            "Results",
+            "Experimental Results",
+            "Findings",
+            "Discussion"
+          ],
+          "is_required": true
+        }
+      ],
+      "retrieved_evidence": [],
+      "evidence_strength": "Insufficient",
+      "generated_answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+      "classification": "INSUFFICIENT EVIDENCE HANDLED CORRECTLY"
+    }
+  ]
+}

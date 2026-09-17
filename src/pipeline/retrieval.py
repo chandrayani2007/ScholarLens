@@ -38,7 +38,25 @@ DOMAIN_PREFIX_MAP = {
 }
 
 INTENT_EXPANSION_KEYWORDS = {
-    "Limitation": ["limitations", "challenges", "drawbacks", "weaknesses", "failures", "bottlenecks", "constraints", "evaluation", "risks", "errors", "noise"],
+    "RESEARCH_PROBLEM": ["problem", "challenge", "gap", "limitation", "motivation", "existing approaches", "shortcomings", "unmet need", "objective", "addresses"],
+    "ResearchProblem": ["problem", "challenge", "gap", "limitation", "motivation", "existing approaches", "shortcomings", "unmet need", "objective", "addresses"],
+    "METHODOLOGY": ["methodology", "method", "approach", "framework", "architecture", "proposed", "system", "model", "algorithm", "mechanism"],
+    "Methodology": ["methodology", "method", "approach", "framework", "architecture", "proposed", "system", "model", "algorithm", "mechanism"],
+    "DATASET": ["dataset", "benchmark", "corpus", "data", "evaluation dataset", "samples", "cohort", "records"],
+    "Dataset": ["dataset", "benchmark", "corpus", "data", "evaluation dataset", "samples", "cohort", "records"],
+    "DATA_PREPARATION": ["preprocessing", "preparation", "curation", "annotation", "filtering", "collection", "cleaning", "extracted"],
+    "DataPreparation": ["preprocessing", "preparation", "curation", "annotation", "filtering", "collection", "cleaning", "extracted"],
+    "RESULTS": ["results", "findings", "evaluation", "performance", "accuracy", "precision", "recall", "F1", "comparison", "improvement", "outperforms"],
+    "Results": ["results", "findings", "evaluation", "performance", "accuracy", "precision", "recall", "F1", "comparison", "improvement", "outperforms"],
+    "Finding": ["results", "findings", "evaluation", "performance", "accuracy", "precision", "recall", "F1", "comparison", "improvement", "outperforms"],
+    "CONTRIBUTION": ["contributions", "contribution", "novelty", "novel", "proposed", "introduced", "developed", "framework", "system", "key contribution", "presents"],
+    "Contribution": ["contributions", "contribution", "novelty", "novel", "proposed", "introduced", "developed", "framework", "system", "key contribution", "presents"],
+    "LIMITATION": ["limitations", "limitation", "drawback", "challenge", "future work", "constraint", "weakness", "bottleneck"],
+    "Limitation": ["limitations", "limitation", "drawback", "challenge", "future work", "constraint", "weakness", "bottleneck"],
+    "WHY_THIS_APPROACH": ["motivation", "rationale", "why", "advantage", "benefit", "necessity", "choice", "reason", "overcome"],
+    "WhyThisApproach": ["motivation", "rationale", "why", "advantage", "benefit", "necessity", "choice", "reason", "overcome"],
+    "COMPREHENSIVE": ["summary", "overview", "problem", "method", "results", "contributions", "limitations", "dataset", "framework", "abstract", "conclusion"],
+    "Comprehensive": ["summary", "overview", "problem", "method", "results", "contributions", "limitations", "dataset", "framework", "abstract", "conclusion"],
     "Challenge": ["challenges", "difficulties", "barriers", "limitations", "drawbacks", "bottlenecks", "complexities"],
     "Advantage": ["advantages", "benefits", "improvements", "effectiveness", "performance", "superiority", "gains", "optimization"],
     "Mechanism": ["method", "architecture", "workflow", "mechanism", "implementation", "process", "pipeline", "algorithm", "step"],
@@ -53,6 +71,7 @@ INTENT_EXPANSION_KEYWORDS = {
     "Detection": ["detection", "identification", "discovery", "monitoring", "screening", "diagnosis"],
     "Prediction": ["prediction", "forecasting", "estimation", "projections", "modeling"],
 }
+
 
 
 class IntentQueryReformulator:

@@ -66,12 +66,6 @@ def reset_research_service():
 
 def get_research_service() -> ResearchService:
     global _research_service_instance
-    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("LLM_API_KEY")
-
     if _research_service_instance is None:
         _research_service_instance = ResearchService()
-    elif api_key and api_key.strip() and not isinstance(_research_service_instance.pipeline.llm, GeminiLLMProvider):
-        logger.info("Upgrading ResearchService instance to GeminiLLMProvider based on active GEMINI_API_KEY.")
-        _research_service_instance = ResearchService()
-
     return _research_service_instance

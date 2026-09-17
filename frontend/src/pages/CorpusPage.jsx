@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Library, Search, Filter, FileText, ExternalLink, ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Library, Search, Filter, FileText, ExternalLink, ChevronLeft, ChevronRight, X, Eye, Sparkles } from 'lucide-react';
 import { Sidebar } from '../components/Sidebar';
 import { Header } from '../components/Header';
 import { api } from '../services/api';
@@ -14,6 +15,7 @@ const DOMAIN_TABS = [
 ];
 
 export const CorpusPage = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [papers, setPapers] = useState([]);
@@ -22,6 +24,7 @@ export const CorpusPage = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
   const [selectedPaper, setSelectedPaper] = useState(null);
+
 
   const fetchPapers = async () => {
     setLoading(true);
@@ -177,11 +180,18 @@ export const CorpusPage = () => {
                     <td style={{ padding: '0.85rem 1.25rem', color: '#64748b', whiteSpace: 'nowrap' }}>
                       {paper.published_date || '2024'}
                     </td>
-                    <td style={{ padding: '0.85rem 1.25rem', textAlign: 'right', whiteSpace: 'nowrap' }}>
+                    <td style={{ padding: '0.85rem 1.25rem', textAlign: 'right', whiteSpace: 'nowrap', display: 'flex', justifyContent: 'flex-end', gap: '0.4rem' }}>
+                      <button
+                        type="button"
+                        onClick={() => navigate('/', { state: { selectedPaper: paper } })}
+                        style={{ background: '#efeafd', color: '#6d28d9', border: '1px solid #ddd6fe', padding: '0.4rem 0.75rem', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                      >
+                        <Sparkles size={14} className="sparkle-purple" /> Ask Question
+                      </button>
                       <button
                         type="button"
                         onClick={() => setSelectedPaper(paper)}
-                        style={{ background: '#efeafd', color: '#6d28d9', border: 'none', padding: '0.4rem 0.75rem', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                        style={{ background: '#f1f5f9', color: '#475569', border: 'none', padding: '0.4rem 0.75rem', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
                       >
                         <Eye size={14} /> View
                       </button>
@@ -257,19 +267,21 @@ export const CorpusPage = () => {
                 </div>
               )}
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e2e8f0' }}>
-                {selectedPaper.url ? (
-                  <a href={selectedPaper.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#2563eb', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
-                    <ExternalLink size={16} /> Open ArXiv Record ({selectedPaper.arxiv_id || selectedPaper.paper_id})
-                  </a>
-                ) : <span />}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e2e8f0', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  onClick={() => navigate('/', { state: { selectedPaper } })}
+                  className="btn-primary"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                >
+                  <Sparkles size={16} /> Ask Question About This Paper
+                </button>
 
                 <a
                   href={api.getPaperPdfUrl(selectedPaper.paper_id)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary"
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: 'none', color: '#475569', fontSize: '0.85rem', fontWeight: 600 }}
                 >
                   <FileText size={16} /> Open Genuine PDF
                 </a>
@@ -278,6 +290,7 @@ export const CorpusPage = () => {
           </div>
         </div>
       )}
+
           </div>
         </main>
       </div>

@@ -76,5 +76,9 @@ def auto_migrate_sqlite():
 def init_db():
     """Create all application database tables and auto-migrate missing columns."""
     from app.db import models  # Ensure models are imported for metadata registration
+    from app.services.auth_service import seed_default_user
     Base.metadata.create_all(bind=engine)
     auto_migrate_sqlite()
+    with SessionLocal() as db:
+        seed_default_user(db)
+

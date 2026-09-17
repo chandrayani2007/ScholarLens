@@ -22,7 +22,12 @@ export const AnswerCard = ({ response }) => {
     limitations,
   } = response;
 
-  const isInsufficient = answer.toLowerCase().includes('insufficient evidence');
+  const isInsufficient =
+    (confidence && confidence.toLowerCase().includes('insufficient')) ||
+    (why_this_answer?.evidence_strength && why_this_answer.evidence_strength.toLowerCase().includes('insufficient')) ||
+    (response.retrieval_metadata?.insufficient_evidence === true) ||
+    (answer && answer.toLowerCase().includes('insufficient'));
+
   const citationsList = Object.values(citations);
 
   const effectiveEvidence =
@@ -122,20 +127,28 @@ export const AnswerCard = ({ response }) => {
 
   const renderInlineCitations = (inlineText) => {
     if (!inlineText) return null;
-    const parts = inlineText.split(/(\[[EO]\d+\]|\[\d+\])/g);
+    // Match [E#], [O#], [U#] and bare [#] citation tags
+    const parts = inlineText.split(/(\[[EOU]\d+\]|\[\d+\])/g);
     return parts.map((part, idx) => {
-      const match = part.match(/^\[([EO]\d+|\d+)\]$/);
+      const match = part.match(/^\[([EOU]\d+|\d+)\]$/);
       if (match) {
         const tag = match[1];
         const isOnlineTag = tag.startsWith('O');
+        const isUploadedTag = tag.startsWith('U');
         return (
           <button
             key={idx}
             type="button"
-            className={`citation-badge-clickable ${isOnlineTag ? 'citation-badge-online' : ''}`}
+            className={`citation-badge-clickable ${isOnlineTag ? 'citation-badge-online' : ''} ${isUploadedTag ? 'citation-badge-uploaded' : ''}`}
             onClick={() => handleCitationClick(tag)}
             title={`Click to view evidence passage for [${tag}]`}
-            style={isOnlineTag ? { background: '#eff6ff', color: '#1d4ed8', borderColor: '#bfdbfe' } : {}}
+            style={
+              isOnlineTag
+                ? { background: '#eff6ff', color: '#1d4ed8', borderColor: '#bfdbfe' }
+                : isUploadedTag
+                ? { background: '#f5f3ff', color: '#6d28d9', borderColor: '#ddd6fe' }
+                : {}
+            }
           >
             [{tag}]
           </button>
@@ -147,26 +160,53 @@ export const AnswerCard = ({ response }) => {
 
   const renderFormattedAnswer = (text) => {
     if (!text) return null;
-    const paragraphs = text.split('\n\n');
-    return paragraphs.map((para, pIdx) => {
-      const trimmed = para.trim();
-      if (!trimmed) return null;
+    // Split on any newline (single or double) to handle headings and body on the same or separate lines
+    const lines = text.split(/\n/);
+    const elements = [];
+    let bodyBuffer = [];
 
+    const flushBuffer = (key) => {
+      if (bodyBuffer.length > 0) {
+        const bodyText = bodyBuffer.join(' ').trim();
+        if (bodyText) {
+          elements.push(
+            <p key={`body-${key}`} className="answer-paragraph" style={{ marginBottom: '0.9rem', lineHeight: 1.75, fontSize: '0.975rem', color: '#374151', fontWeight: 400 }}>
+              {renderInlineCitations(bodyText)}
+            </p>
+          );
+        }
+        bodyBuffer = [];
+      }
+    };
+
+    lines.forEach((line, idx) => {
+      const trimmed = line.trim();
+      if (!trimmed) {
+        // empty line = flush buffer as paragraph
+        flushBuffer(idx);
+        return;
+      }
       if (trimmed.startsWith('#')) {
+        // Flush any accumulated body text first
+        flushBuffer(idx);
         const headingText = trimmed.replace(/^#+\s*/, '');
-        return (
-          <h4 key={pIdx} className="answer-section-heading" style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginTop: '1.25rem', marginBottom: '0.5rem' }}>
+        elements.push(
+          <h4
+            key={`h-${idx}`}
+            className="answer-section-heading"
+            style={{ fontSize: '1rem', fontWeight: 600, color: '#1e293b', marginTop: '1.1rem', marginBottom: '0.35rem', letterSpacing: '0.01em' }}
+          >
             {renderInlineCitations(headingText)}
           </h4>
         );
+      } else {
+        bodyBuffer.push(trimmed);
       }
-
-      return (
-        <p key={pIdx} className="answer-paragraph" style={{ marginBottom: '1rem', lineHeight: 1.7, fontSize: '0.975rem', color: '#334155' }}>
-          {renderInlineCitations(trimmed)}
-        </p>
-      );
     });
+    // Flush any remaining body text
+    flushBuffer('end');
+
+    return elements;
   };
 
   return (
@@ -202,28 +242,42 @@ export const AnswerCard = ({ response }) => {
               {isSaved ? <Check size={15} style={{ color: '#16a34a' }} /> : <Bookmark size={15} />}
               <span>{isSaved ? 'Saved' : saving ? 'Saving...' : 'Save Query'}</span>
             </button>
-            <span className="confidence-badge-green">
-              <Star size={14} fill="#16a34a" />
+            <span
+              className={isInsufficient ? "confidence-badge-red" : "confidence-badge-green"}
+              style={
+                isInsufficient
+                  ? { background: '#fef2f2', color: '#991b1b', border: '1px solid #fecaca', padding: '0.25rem 0.65rem', borderRadius: '20px', fontSize: '0.825rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }
+                  : {}
+              }
+            >
+              <Star size={14} fill={isInsufficient ? "#991b1b" : "#16a34a"} />
               Confidence: {confidence || 'Excellent (0.92)'}
             </span>
           </div>
         </div>
 
         {isInsufficient ? (
-          <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#991b1b', fontWeight: 700, fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <AlertCircle size={20} />
-              Insufficient Evidence
-            </div>
-            <p style={{ color: '#7f1d1d', fontSize: '0.95rem', lineHeight: 1.6 }}>
-              {answer}
-            </p>
-            {limitations && (
-              <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#991b1b' }}>
-                <strong>Note:</strong> {limitations}
+          <>
+            <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem', marginTop: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#991b1b', fontWeight: 700, fontSize: '1rem', marginBottom: '0.5rem' }}>
+                <AlertCircle size={20} />
+                Insufficient Evidence
               </div>
+              <p style={{ color: '#7f1d1d', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                {answer}
+              </p>
+              {limitations && (
+                <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#991b1b' }}>
+                  <strong>Note:</strong> {limitations}
+                </div>
+              )}
+            </div>
+
+            {/* Why This Answer Card Component (explaining why evidence was insufficient) */}
+            {why_this_answer && (
+              <WhyThisAnswerCard whyThisAnswer={why_this_answer} />
             )}
-          </div>
+          </>
         ) : (
           <>
             {/* Formatted Answer Body */}

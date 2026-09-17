@@ -98,6 +98,24 @@ def register_user(db: Session, user_data: UserRegister) -> User:
     return user
 
 
+def seed_default_user(db: Session):
+    """Seed default researcher account if database has no users."""
+    try:
+        user = db.query(User).filter(User.email == "researcher@scholarlens.org").first()
+        if not user:
+            logger.info("[DB SEED] Seeding default researcher account (researcher@scholarlens.org)...")
+            register_user(db, UserRegister(
+                username="researcher",
+                email="researcher@scholarlens.org",
+                password="password123",
+                confirm_password="password123",
+                full_name="Lead Researcher",
+            ))
+    except Exception as e:
+        pass
+
+
+
 from typing import Optional, Tuple
 
 

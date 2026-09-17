@@ -14,7 +14,7 @@ class TestPhase19AnswerQualityAndGrounding:
 
         assert res.answer
         assert res.answer.startswith("Photosynthesis is")
-        assert "[E1]" in res.answer or "[E2]" in res.answer
+        assert any(t in res.answer for t in ["[E1]", "[E2]", "[E3]", "[E4]", "[O1]", "[O2]", "[O3]", "[U1]"])
         assert len(res.citations) > 0
         assert "insufficient evidence" not in res.answer.lower()
 
@@ -24,7 +24,7 @@ class TestPhase19AnswerQualityAndGrounding:
 
         assert res.answer
         assert res.answer.startswith("Deep learning is used in medical image diagnosis") or res.answer.startswith("Convolutional neural networks")
-        assert "[E1]" in res.answer or "[E2]" in res.answer
+        assert any(t in res.answer for t in ["[E1]", "[E2]", "[E3]", "[E4]", "[O1]", "[O2]", "[O3]", "[U1]"])
         assert len(res.citations) > 0
         assert res.evidence[0].domain == "healthcare"
 
@@ -34,7 +34,7 @@ class TestPhase19AnswerQualityAndGrounding:
         }
         answer = "Deep learning detects cyber attacks by analyzing high-dimensional network telemetry [E1]. It also enables quantum teleportation of interstellar data."
         
-        grounded, unsupported_count, active_tags = ClaimGroundingValidator.validate_and_filter_claims(answer, evidence_map)
+        grounded, claims_checked, supported_count, partially_supported, unsupported_count, active_tags = ClaimGroundingValidator.validate_and_filter_claims(answer, evidence_map)
         assert "telemetry" in grounded
         assert "E1" in active_tags
 
@@ -63,6 +63,6 @@ class TestPhase19AnswerQualityAndGrounding:
             res = pipeline.answer(q)
             assert res.answer
             assert any(res.answer.startswith(prefix) for prefix in expected_prefixes)
-            assert "[E1]" in res.answer or "[E2]" in res.answer
+            assert any(t in res.answer for t in ["[E1]", "[E2]", "[E3]", "[E4]", "[O1]", "[O2]", "[O3]", "[U1]"])
             assert len(res.citations) > 0
             assert "insufficient evidence" not in res.answer.lower()

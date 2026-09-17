@@ -57,6 +57,10 @@ class WhyThisAnswerSchema(BaseModel):
     bullet_points: List[str] = []
     source_type: Optional[str] = "Research Mind Corpus"
     domain_scope: Optional[str] = "All Domains"
+    unsupported_claims: Optional[int] = 0
+    claims_checked: Optional[int] = 0
+    supported_claims: Optional[int] = 0
+    partially_supported_claims: Optional[int] = 0
 
 
 class ResearchQueryResponse(BaseModel):

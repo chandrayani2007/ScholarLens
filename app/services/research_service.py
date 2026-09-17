@@ -10,6 +10,9 @@ import os
 import logging
 from typing import Optional, Dict, Any
 from sqlalchemy.orm import Session
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from src.pipeline.rag import RAGPipeline
 from src.pipeline.retrieval import HybridRetriever
@@ -59,33 +62,64 @@ class ResearchService:
         if req.subtopic:
             filters["subtopic"] = req.subtopic
         if req.paper_id:
-            filters["paper_id"] = req.paper_id
+            pid = req.paper_id.strip()
+            if pid.lower().startswith("paper_"):
+                pid = pid[6:]
+            if pid.upper().startswith("AGR") and len(pid) > 3 and pid[3:].isdigit():
+                pid = "AG" + pid[3:]
+            elif pid.upper().startswith("CS") and len(pid) > 2 and pid[2:].isdigit():
+                pid = "AI" + pid[2:]
+            filters["paper_id"] = pid
+        elif req.uploaded_paper_name:
+            clean_name = req.uploaded_paper_name.split("/")[-1].split("\\")[-1]
+            filters["paper_id"] = clean_name.replace(".pdf", "").replace(".txt", "").replace(".md", "")
+
+        logger.info(
+            f"[SERVICE TRACE] request_id={request_id} user_id={user_id} question='{req.question}' "
+            f"req.paper_id='{req.paper_id}' uploaded_paper_name='{req.uploaded_paper_name}' "
+            f"has_uploaded_text={bool(req.uploaded_paper_text)} filters={filters}"
+        )
 
         top_k = req.top_k or 10
 
-        # Execute core RAG Pipeline
-        rag_res = self.pipeline.answer(
-            question=req.question,
-            filters=filters if filters else None,
-            top_k=top_k,
-            request_id=request_id,
-            question_hash=question_hash,
-            uploaded_paper_text=req.uploaded_paper_text,
-            uploaded_paper_name=req.uploaded_paper_name,
-        )
 
-        # Convert RAGResponse to Pydantic ResearchQueryResponse schema
-        res_dict = rag_res.to_dict()
-        query_response = ResearchQueryResponse(**res_dict)
+        if req.paper_id:
+            logger.info(f"[LOCAL-PAPER] request received in ResearchService | paper_id={req.paper_id} question='{req.question}'")
 
-        # Log query history in database for authenticated user
-        log_query_history(
-            db=db,
-            user_id=user_id,
-            rag_response=query_response,
-            domain=req.domain,
-            subtopic=req.subtopic,
-            paper_id=req.paper_id,
-        )
+        try:
+            # Execute core RAG Pipeline
+            rag_res = self.pipeline.answer(
+                question=req.question,
+                filters=filters if filters else None,
+                top_k=top_k,
+                request_id=request_id,
+                question_hash=question_hash,
+                uploaded_paper_text=req.uploaded_paper_text,
+                uploaded_paper_name=req.uploaded_paper_name,
+            )
 
-        return query_response
+            # Convert RAGResponse to Pydantic ResearchQueryResponse schema
+            res_dict = rag_res.to_dict()
+            query_response = ResearchQueryResponse(**res_dict)
+
+            # Log query history in database for authenticated user
+            try:
+                log_query_history(
+                    db=db,
+                    user_id=user_id,
+                    rag_response=query_response,
+                    domain=req.domain,
+                    subtopic=req.subtopic,
+                    paper_id=req.paper_id,
+                )
+            except Exception as hist_err:
+                logger.warning(f"[SERVICE HISTORY WARNING] Failed to record query history: {hist_err}")
+
+            return query_response
+        except Exception as e:
+            if req.paper_id:
+                import traceback
+                logger.error(f"[LOCAL-PAPER] EXCEPTION occurred during request processing for paper {req.paper_id}: {type(e).__name__}: {str(e)}")
+                logger.error(f"[LOCAL-PAPER] TRACEBACK:\n{traceback.format_exc()}")
+            raise
+

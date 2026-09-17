@@ -24,6 +24,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.db.database import init_db
 from app.routers import auth, profile, saved_queries, corpus, research, history, health
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 

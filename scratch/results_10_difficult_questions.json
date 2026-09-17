@@ -1,0 +1,280 @@
+[
+  {
+    "query_index": 1,
+    "question": "What problem does the paper address and what are its main contributions?",
+    "question_type": "MULTI_PART",
+    "intent": "Objective",
+    "subqueries": [
+      {
+        "subquery": "What problem does the paper address and what are its main contributions?",
+        "target_aspect": "Objective",
+        "expected_sections": [
+          "Introduction",
+          "Abstract",
+          "Problem Formulation"
+        ],
+        "is_required": true
+      },
+      {
+        "subquery": "what are its main contributions",
+        "target_aspect": "Contribution",
+        "expected_sections": [
+          "Introduction",
+          "Contributions",
+          "Proposed Method"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "### Executive Summary\nClassical accuracy-oriented Recommender Systems (RSs) typically face the cold-start problem and the filter-bubble problem when users suffer the familiar, repeated, and even predictable recommendations, making them boring and unsatisfied. ### Methodological & Technical Analysis\nTo address the above issues, serendipity-oriented RSs are proposed to recommend appealing and valuable items significantly deviating from users' historical interactions and thus satisfying them by introducing unexplored but relevant candidate items to them. ### Empirical Findings & Comparative Results\nIn this paper, we devise a novel serendipity-oriented recommender system (\\textbf{G}enerative \\textbf{S}elf-\\textbf{S}erendipity \\textbf{R}ecommender \\textbf{S}ystem, \\textbf{GS$^2$-RS}) that generates users' self-serendipity preferences to enhance the recommendation performance. ### Limitations & Scope\nSpecifically, this model extracts users' interest and satisfaction preferences, generates virtual but convincible neighbors' preferences from themselves, and achieves their self-serendipity preference."
+  },
+  {
+    "query_index": 2,
+    "question": "What methodology was proposed and why did the authors choose it?",
+    "question_type": "MULTI_PART",
+    "intent": "Methodology",
+    "subqueries": [
+      {
+        "subquery": "What methodology was proposed and why did the authors choose it?",
+        "target_aspect": "Methodology",
+        "expected_sections": [
+          "Methodology",
+          "Proposed Method",
+          "Model Architecture",
+          "Implementation",
+          "Methods",
+          "System Model"
+        ],
+        "is_required": true
+      },
+      {
+        "subquery": "why did the authors choose it",
+        "target_aspect": "Explanation",
+        "expected_sections": [
+          "Abstract",
+          "Methodology",
+          "Results"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  },
+  {
+    "query_index": 3,
+    "question": "What dataset was used, how was it preprocessed, and what were the evaluation metrics?",
+    "question_type": "MULTI_PART",
+    "intent": "Mechanism",
+    "subqueries": [
+      {
+        "subquery": "What dataset was used, how was it preprocessed, and what were the evaluation metrics?",
+        "target_aspect": "Mechanism",
+        "expected_sections": [
+          "Abstract",
+          "Methodology",
+          "Results"
+        ],
+        "is_required": true
+      },
+      {
+        "subquery": "What dataset was used (preprocessed)",
+        "target_aspect": "Dataset",
+        "expected_sections": [
+          "Dataset",
+          "Datasets",
+          "Materials",
+          "Experimental Setup",
+          "Data",
+          "Corpus",
+          "Testbed"
+        ],
+        "is_required": true
+      },
+      {
+        "subquery": "what were the evaluation metrics (preprocessed)",
+        "target_aspect": "Evaluation",
+        "expected_sections": [
+          "Evaluation",
+          "Results",
+          "Performance",
+          "Metrics",
+          "Benchmark"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  },
+  {
+    "query_index": 4,
+    "question": "How does the proposed method compare with the baseline methods?",
+    "question_type": "COMPARISON",
+    "intent": "Contribution",
+    "subqueries": [
+      {
+        "subquery": "How does the proposed method compare with the baseline methods?",
+        "target_aspect": "Contribution",
+        "expected_sections": [
+          "Introduction",
+          "Contributions",
+          "Proposed Method"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "### Executive Summary\nIn supervised learning, simple baseline classifiers can be constructed by only looking at the class, i.e., ignoring any other information from the dataset. ### Methodological & Technical Analysis\nThe single-label learning community frequently uses as a reference the one which always predicts the majority class. ### Empirical Findings & Comparative Results\nAlthough a classifier might perform worse than this simple baseline classifier, this behaviour requires a special explanation. ### Limitations & Scope\nAiming to motivate the community to compare experimental results with the ones provided by a multi-label baseline classifier, calling the attention about the need of special explanations related to classifiers which perform worse than the baseline, in this work we propose the use of General_B, a multi-label baseline classifier."
+  },
+  {
+    "query_index": 5,
+    "question": "What were the most important experimental findings?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "intent": "Finding",
+    "subqueries": [
+      {
+        "subquery": "What were the most important experimental findings?",
+        "target_aspect": "Finding",
+        "expected_sections": [
+          "Results",
+          "Experimental Results",
+          "Findings",
+          "Discussion"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Partial",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [
+      "E1"
+    ],
+    "answer": "### Executive Summary\nExperimental Results and Discussion In this section we have provided the details about experimental setup and its parameters following with [E1] This study provides empirical and theoretical insight into what were the most important experimental findings, establishing a grounded research framework based on retrieved literature evidence [E1]. ### Methodological & Technical Analysis\nBoth reviewers agreed that 69% of reports were correctly restructured, while only 4% were considered incorrectly restructured. ### Empirical Findings & Comparative Results\nDisagreement occurred in 27% of reports, most often involving ﬁndings that could reasonably be assigned to more than one anatomical section because of overlapping anatomy or differences in report organization preferences. ### Limitations & Scope\nImportantly, both reviewers agreed that no clinically important ﬁndings were omitted and no fabricated ﬁndings were introduced, indicating that the original report content was preserved despite occasional differences in preferred organization."
+  },
+  {
+    "query_index": 6,
+    "question": "What limitations did the authors identify?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "intent": "Limitation",
+    "subqueries": [
+      {
+        "subquery": "What limitations did the authors identify?",
+        "target_aspect": "Limitation",
+        "expected_sections": [
+          "Limitation",
+          "Limitations",
+          "Discussion",
+          "Constraints",
+          "Challenges"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  },
+  {
+    "query_index": 7,
+    "question": "What future work did the authors suggest?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "intent": "Mechanism",
+    "subqueries": [
+      {
+        "subquery": "What future work did the authors suggest?",
+        "target_aspect": "Mechanism",
+        "expected_sections": [
+          "Abstract",
+          "Methodology",
+          "Results"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Partial",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [
+      "E2"
+    ],
+    "answer": "### Executive Summary\n14 Funding This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors. ### Methodological & Technical Analysis\nDeclaration of Competing Interest The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. The underlying architecture and experimental design emphasize systematic evaluation and robust implementation principles  [E2]. ### Empirical Findings & Comparative Results\nDeclaration of generative AI and AI-assisted technologies in the writ- ing process During the preparation of this work the authors used Claude (Anthropic) and ChatGPT (OpenAI) in order to improve the language and readability of the manuscript. ### Limitations & Scope\nAfter using these tools, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article."
+  },
+  {
+    "query_index": 8,
+    "question": "What evidence supports the claim that the proposed method outperforms the baseline?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "intent": "Objective",
+    "subqueries": [
+      {
+        "subquery": "What evidence supports the claim that the proposed method outperforms the baseline?",
+        "target_aspect": "Objective",
+        "expected_sections": [
+          "Introduction",
+          "Abstract",
+          "Problem Formulation"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  },
+  {
+    "query_index": 9,
+    "question": "What are the differences between the proposed method and the existing approaches?",
+    "question_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "intent": "Contribution",
+    "subqueries": [
+      {
+        "subquery": "What are the differences between the proposed method and the existing approaches?",
+        "target_aspect": "Contribution",
+        "expected_sections": [
+          "Introduction",
+          "Contributions",
+          "Proposed Method"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Partial",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [
+      "E3"
+    ],
+    "answer": "### Executive Summary\nMore generally, a given XAI method’s suitability depends strongly on the stakeholder’s require- ments (Sect. This study provides empirical and theoretical insight into what are the differences between the proposed method and the existing approaches, establishing a grounded research framework based on retrieved literature evidence  [E3]. ### Methodological & Technical Analysis\nEvaluation can be viewed as two complementary streams: whether an explanation is useful to the intended user, which is inherently application- and stakeholder-dependent; and whether XAI methods can be quantitatively compared on specific properties of their explanation values. ### Empirical Findings & Comparative Results\nThis latter stream remains relatively immature, and the desirable properties of a “good” explanation are typically context dependent, particularly in complex dynamical systems. ### Limitations & Scope\nWe think that she underestimates this potential in terms of three properties, namely, the approaches’ fidelity, completeness, and usefulness."
+  },
+  {
+    "query_index": 10,
+    "question": "Why did the authors choose this method for privacy-preserving federated learning?",
+    "question_type": "CAUSAL_WHY",
+    "intent": "Mechanism",
+    "subqueries": [
+      {
+        "subquery": "Why did the authors choose this method for privacy-preserving federated learning?",
+        "target_aspect": "Mechanism",
+        "expected_sections": [
+          "Abstract",
+          "Methodology",
+          "Results"
+        ],
+        "is_required": true
+      }
+    ],
+    "evidence_strength": "Insufficient",
+    "source_type": "Research Mind Corpus",
+    "citations_used": [],
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably."
+  }
+]

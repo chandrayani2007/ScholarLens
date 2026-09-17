@@ -1,0 +1,95 @@
+[
+  {
+    "test_name": "Test 1: Unseen Corpus Query (Transformer Positional Encoding)",
+    "question": "How do transformer models utilize positional encoding to maintain word order without recurrence?",
+    "answer": "The researched topic represents an evidence-supported methodology examined across academic literature, providing structured mechanisms to address core operational challenges  [O2].",
+    "confidence": "High",
+    "citations": [
+      "O2"
+    ],
+    "evidence_count": 1,
+    "evidence_sources": [
+      "online"
+    ],
+    "why_this_answer_summary": "Passage [O2] (Paper arXiv:2408.03404v3, 'Abstract') supports key claims: 'In many real-world applications, modeling both the internal structure of sets and their temporal relationsh...'.",
+    "bullets": [
+      "\u2022 Direct evidence: Retaining 1 direct supporting citation(s).",
+      "\u2022 Local evidence: 0 passage(s).",
+      "\u2022 Online evidence: 1 academic source(s).",
+      "\u2022 Supporting papers: 1 relevant paper(s) (arXiv:2408.03404v3).",
+      "\u2022 Claim coverage: Factual claims verified against retrieved evidence.",
+      "\u2022 Domain scope: General Technical Knowledge / Online.",
+      "\u2022 Cross-paper agreement: Single-paper focused evidence.",
+      "\u2022 Unsupported claims: 0.",
+      "\u2022 Source: Online Academic / Open Literature."
+    ]
+  },
+  {
+    "test_name": "Test 2: Unseen Online Fallback Query (Quantum Neural Architecture Search)",
+    "question": "What is Quantum Neural Architecture Search and how does it optimize quantum circuits?",
+    "answer": "Insufficient evidence was found in the current Research Mind corpus or available online academic sources to answer this question reliably.",
+    "confidence": "Insufficient",
+    "citations": [],
+    "evidence_count": 0,
+    "evidence_sources": [],
+    "why_this_answer_summary": "No retrieved passages in the current 1,000-paper ScholarLens corpus or available online academic search contained substantive direct evidence addressing this research question.",
+    "bullets": [
+      "\u2022 Direct evidence: No relevant direct evidence found.",
+      "\u2022 Local corpus coverage: Insufficient.",
+      "\u2022 Online fallback: Evaluated / Insufficient online coverage.",
+      "\u2022 Domain scope: All Domains.",
+      "\u2022 Unsupported claims: 0 (No ungrounded claims generated).",
+      "\u2022 Source: Research Mind Corpus & Online Academic Search."
+    ]
+  },
+  {
+    "test_name": "Test 3: Unseen Single-Paper Mode Query (Uploaded Paper Context)",
+    "question": "What is the primary technical advantage of dual-encoder prompting for low-resource languages?",
+    "answer": "The Primary Technical Advantage Of Dual-Encoder Prompting For Low-Resource Languages represents an evidence-supported methodology examined across academic literature, providing structured mechanisms to address core operational challenges  [E1].",
+    "confidence": "High",
+    "citations": [
+      "E1"
+    ],
+    "evidence_count": 1,
+    "evidence_sources": [
+      "corpus"
+    ],
+    "why_this_answer_summary": "Passage [E1] (Paper AI020, 'Dataset - Task / Model') supports key claims: 'Comparison of quantized Qwen2.5-70B model with few-shot setting on DDI2013, HoC, MedQA, and NCBI Disease da...'.",
+    "bullets": [
+      "\u2022 Direct evidence: Retaining 1 direct supporting citation(s).",
+      "\u2022 Local evidence: 1 passage(s).",
+      "\u2022 Online evidence: 0 academic source(s).",
+      "\u2022 Supporting papers: 1 relevant paper(s) (AI020).",
+      "\u2022 Claim coverage: Factual claims verified against retrieved evidence.",
+      "\u2022 Domain scope: General Technical Knowledge / Online.",
+      "\u2022 Cross-paper agreement: Single-paper focused evidence.",
+      "\u2022 Unsupported claims: 0.",
+      "\u2022 Source: Online Academic / Open Literature."
+    ]
+  },
+  {
+    "test_name": "Test 4: Unseen Comparative Query (GNNs vs Transformers for Molecules)",
+    "question": "How does graph neural network node classification compare to transformer self-attention for molecular property prediction?",
+    "answer": "### Baseline Comparison\nThe proposed methodology was evaluated against standard baseline approaches, demonstrating measurable improvements in accuracy and error reduction  [O3].",
+    "confidence": "High",
+    "citations": [
+      "O3"
+    ],
+    "evidence_count": 1,
+    "evidence_sources": [
+      "online"
+    ],
+    "why_this_answer_summary": "Passage [O3] (Paper arXiv:2408.06717v3, 'Abstract') supports key claims: 'High-level automation is increasingly critical in AI, driven by rapid advances in large language models (LL...'.",
+    "bullets": [
+      "\u2022 Direct evidence: Retaining 1 direct supporting citation(s).",
+      "\u2022 Local evidence: 0 passage(s).",
+      "\u2022 Online evidence: 1 academic source(s).",
+      "\u2022 Supporting papers: 1 relevant paper(s) (arXiv:2408.06717v3).",
+      "\u2022 Claim coverage: Factual claims verified against retrieved evidence.",
+      "\u2022 Domain scope: General Technical Knowledge / Online.",
+      "\u2022 Cross-paper agreement: Single-paper focused evidence.",
+      "\u2022 Unsupported claims: 0.",
+      "\u2022 Source: Online Academic / Open Literature."
+    ]
+  }
+]

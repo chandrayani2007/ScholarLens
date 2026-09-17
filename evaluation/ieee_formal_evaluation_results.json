@@ -1,0 +1,154 @@
+{
+  "table_1_retrieval_performance": [
+    {
+      "config": "Vector-Only",
+      "Recall@5": 0.0,
+      "Recall@10": 0.0,
+      "MRR": 0.0,
+      "Hit@5": 0.0,
+      "Subquery_Coverage": 0.0
+    },
+    {
+      "config": "BM25-Only",
+      "Recall@5": 0.059,
+      "Recall@10": 0.059,
+      "MRR": 0.015,
+      "Hit@5": 0.059,
+      "Subquery_Coverage": 100.0
+    },
+    {
+      "config": "Baseline Hybrid",
+      "Recall@5": 0.0,
+      "Recall@10": 0.059,
+      "MRR": 0.006,
+      "Hit@5": 0.0,
+      "Subquery_Coverage": 25.5
+    },
+    {
+      "config": "Section-Aware Hybrid",
+      "Recall@5": 0.0,
+      "Recall@10": 0.059,
+      "MRR": 0.01,
+      "Hit@5": 0.0,
+      "Subquery_Coverage": 25.5
+    }
+  ],
+  "table_2_answer_quality": {
+    "Correctness": 2.71,
+    "Completeness": 2.71,
+    "Relevance": 4.24,
+    "Groundedness": 3.47,
+    "Citation_Accuracy": 3.47,
+    "Insufficient_Evidence_Handling": 2.71,
+    "Overall_Quality": 3.09
+  },
+  "table_3_domain_results": {
+    "artificial_intelligence": {
+      "Correctness": 2.0,
+      "Completeness": 2.0,
+      "Groundedness": 3.0,
+      "Usefulness": 2.5
+    },
+    "cybersecurity": {
+      "Correctness": 3.5,
+      "Completeness": 3.5,
+      "Groundedness": 4.0,
+      "Usefulness": 3.75
+    },
+    "agriculture": {
+      "Correctness": 2.0,
+      "Completeness": 2.0,
+      "Groundedness": 3.0,
+      "Usefulness": 2.5
+    },
+    "climate": {
+      "Correctness": 2.0,
+      "Completeness": 2.0,
+      "Groundedness": 3.0,
+      "Usefulness": 2.5
+    },
+    "healthcare": {
+      "Correctness": 4.0,
+      "Completeness": 4.0,
+      "Groundedness": 4.33,
+      "Usefulness": 4.17
+    }
+  },
+  "phase_6_claim_validation_audit": {
+    "test_claim": "The proposed method achieved 89% accuracy, outperforming the baseline which achieved 92% accuracy.",
+    "test_passage": "Baseline accuracy = 92%. Proposed method accuracy = 89%.",
+    "is_valid_lexical": true,
+    "rationale": "Direct support verified",
+    "limitation_documented": "Current ClaimGroundingValidator performs lexical term matching and morphological expansion. Full numerical inequality direction verification (e.g. 89% < 92%) requires NLI transformer validation."
+  },
+  "failure_analysis": {
+    "total_failures": 13,
+    "failure_details": [
+      {
+        "q_id": "AI_QA_01",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "AI_QA_02",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "AI_QA_03",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "AI_QA_04",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "CY_QA_02",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "CY_QA_03",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "AG_QA_01",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "AG_QA_02",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "AG_QA_03",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "CL_QA_01",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "CL_QA_02",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "CL_QA_03",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      },
+      {
+        "q_id": "HC_QA_02",
+        "type": "insufficient_context",
+        "reason": "System declared insufficient evidence despite valid paper chunks."
+      }
+    ]
+  }
+}

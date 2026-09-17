@@ -1,0 +1,361 @@
+[
+  {
+    "num": 1,
+    "question": "What is the main research problem addressed by this paper?",
+    "intent": "ResearchProblem",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U2",
+      "U1"
+    ],
+    "evidence_coverage": "INSUFFICIENT (0%)",
+    "evidence_texts": [
+      "General-purpose language models (LLMs) can assist with synthesis but often suffer from factual hallu...",
+      "Title: OpenScholar: Synthesizing Scientific Literature with Open Retrieval-Augmented Language Models..."
+    ],
+    "final_answer": "### Research Problem\nThe paper addresses the core challenge of synthesizing reliable scientific knowledge across expanding academic publications while preventing model hallucinations and ensuring verifiable citation grounding  [U2]. As scientific literature grows rapidly, keeping up with discoveries becomes increasingly difficult for researchers  [U1]. While general-purpose language models can assist with synthesis, they frequently suffer from hallucinations, outdated pre-training knowledge, and insufficient citation grounding, motivating an open, retrieval-augmented literature synthesis framework  [U2].",
+    "citations_used": [
+      "U2",
+      "U1"
+    ],
+    "claims_checked": 3,
+    "supported_claims": 3,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.6,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 2,
+    "question": "What methodology did the authors propose?",
+    "intent": "Methodology",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U2"
+    ],
+    "evidence_coverage": "HIGH (100%)",
+    "evidence_texts": [
+      "General-purpose language models (LLMs) can assist with synthesis but often suffer from factual hallu..."
+    ],
+    "final_answer": "### Proposed Methodology\nThe authors present OpenScholar, an open literature synthesis system designed for transparent scientific question answering  [U2]. The framework comprises four core components: [U2]. - **Scientific Data Store (OSDS)**: A specialized repository containing indexed scientific literature passages  [U2]. - **Academic Passage Retriever**: A dense retriever trained on scientific corpora to identify relevant source passages  [U2]. - **Generator Model**: A tailored 8B parameter language model dedicated to scientific synthesis  [U2]. - **Iterative Self-Feedback Loop**: An inference critique mechanism that iteratively refines response drafts for accuracy and citation grounding  [U2].",
+    "citations_used": [
+      "U2"
+    ],
+    "claims_checked": 6,
+    "supported_claims": 3,
+    "partially_supported_claims": 3,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.5238095238095238,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 3,
+    "question": "What dataset or benchmark was used for evaluation?",
+    "intent": "Dataset",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U1",
+      "U2"
+    ],
+    "evidence_coverage": "INSUFFICIENT (0%)",
+    "evidence_texts": [
+      "OpenScholar couples an academic passage retriever trained on scientific corpora with a specialized 8...",
+      "ScholarQABench comprises two main subsets: Scholar-CS, containing 100 questions formulated by PhD ca..."
+    ],
+    "final_answer": "### Dataset & Benchmark Details\nThe authors evaluate their system using ScholarQABench, a benchmark spanning computer science, physics, biomedicine, and neuroscience  [U1]. The benchmark features two distinct subsets: [U2]. - **Scholar-CS**: Comprises 100 domain-specific questions designed by doctoral researchers in computer science  [U2]. - **Scholar-Multi**: Consists of 108 multi-disciplinary questions accompanied by 250 expert-written answers  [U2].",
+    "citations_used": [
+      "U1",
+      "U2"
+    ],
+    "claims_checked": 4,
+    "supported_claims": 4,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.3103448275862069,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 4,
+    "question": "How was the data prepared or preprocessed before evaluation?",
+    "intent": "DataPreparation",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U2",
+      "U6"
+    ],
+    "evidence_coverage": "HIGH (100%)",
+    "evidence_texts": [
+      "ScholarQABench comprises two main subsets: Scholar-CS, containing 100 questions formulated by PhD ca...",
+      "6 Author-Stated Limitations & Discussion The authors observed several key limitations in current lit..."
+    ],
+    "final_answer": "### Data Preparation & Preprocessing\nThe evaluation queries and reference answers were curated and formulated by doctoral candidates and postdoctoral researchers to reflect authentic scientific research workflows  [U2]. The paper does not detail conventional computational preprocessing techniques such as text normalization, tokenization, or automated data cleaning  [U6].",
+    "citations_used": [
+      "U2",
+      "U6"
+    ],
+    "claims_checked": 2,
+    "supported_claims": 1,
+    "partially_supported_claims": 1,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.3793103448275862,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 5,
+    "question": "What was the experimental setup, including models, baselines, datasets, and evaluation procedure?",
+    "intent": "ExperimentalSetup",
+    "q_type": "EXPERIMENTAL_SETUP",
+    "retrieved_ids": [
+      "U3",
+      "U1",
+      "U5",
+      "U4"
+    ],
+    "evidence_coverage": "MODERATE (60%)",
+    "evidence_texts": [
+      "OpenScholar couples an academic passage retriever trained on scientific corpora with a specialized 8...",
+      "Title: OpenScholar: Synthesizing Scientific Literature with Open Retrieval-Augmented Language Models...",
+      "OpenScholar-GPT-4o improves correctness by 12% over base GPT-4o. In expert blind evaluations conduct...",
+      "ScholarQABench comprises two main subsets: Scholar-CS, containing 100 questions formulated by PhD ca..."
+    ],
+    "final_answer": "### Experimental Setup\nThe study evaluates literature synthesis through a multi-faceted experimental protocol: [U3]. - **Models & Architecture**: OpenScholar-8B and OpenScholar-GPT-4o, both integrated with a dedicated passage retriever and iterative self-critique inference loop  [U1]. - **Comparative Baselines**: Unassisted GPT-4o, base foundation language models, and 250 expert-written reference answers   [U5]. - **Datasets & Benchmarks**: ScholarQABench across computer science, physics, biomedicine, and neuroscience, comprising Scholar-CS (100 questions) and Scholar-Multi (108 questions)  [U4]. - **Evaluation Procedure**: Double-blind assessments conducted by 16 PhD researchers measuring factual correctness and human preference win rates  [U5].",
+    "citations_used": [
+      "U3",
+      "U1",
+      "U5",
+      "U4"
+    ],
+    "claims_checked": 5,
+    "supported_claims": 5,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.3103448275862069,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 6,
+    "question": "What were the main quantitative results?",
+    "intent": "QuantitativeResults",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U3"
+    ],
+    "evidence_coverage": "INSUFFICIENT (0%)",
+    "evidence_texts": [
+      "OpenScholar-GPT-4o improves correctness by 12% over base GPT-4o. In expert blind evaluations conduct..."
+    ],
+    "final_answer": "### Quantitative Results\nRegarding factual accuracy, OpenScholar-GPT-4o achieves a 12% gain over standard GPT-4o  [U3]. In double-blind assessments involving 16 PhD researchers, human evaluators favored OpenScholar-8B in 51% of trials and OpenScholar-GPT-4o in 70% of comparisons over expert-written human answers  [U3]. By comparison, the unassisted baseline GPT-4o attained a 32% preference rate against human expert answers  [U3].",
+    "citations_used": [
+      "U3"
+    ],
+    "claims_checked": 3,
+    "supported_claims": 3,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.3333333333333333,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": false,
+    "passed": true
+  },
+  {
+    "num": 7,
+    "question": "How did the proposed approach compare with the baseline methods?",
+    "intent": "BaselineComparison",
+    "q_type": "BASELINE_COMPARISON",
+    "retrieved_ids": [
+      "U2",
+      "U1",
+      "U6"
+    ],
+    "evidence_coverage": "INSUFFICIENT (0%)",
+    "evidence_texts": [
+      "OpenScholar-GPT-4o improves correctness by 12% over base GPT-4o. In expert blind evaluations conduct...",
+      "ScholarQABench comprises two main subsets: Scholar-CS, containing 100 questions formulated by PhD ca...",
+      "6 Author-Stated Limitations & Discussion The authors observed several key limitations in current lit..."
+    ],
+    "final_answer": "### Baseline Comparison\nOpenScholar-GPT-4o delivers a 12% correctness improvement over base GPT-4o  [U2]. In double-blind expert evaluations with 16 PhD researchers, OpenScholar-GPT-4o achieved a 70% win rate and OpenScholar-8B achieved a 51% win rate over expert human summaries, outperforming unassisted GPT-4o at 32%  [U2]. While baseline language models without retrieval often fabricate references and struggle with multi-paper attribution, OpenScholar grounds claims in the scientific data store   [U1][U6].",
+    "citations_used": [
+      "U2",
+      "U1",
+      "U6"
+    ],
+    "claims_checked": 3,
+    "supported_claims": 3,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.625,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 8,
+    "question": "What are the main scientific and technical contributions of this paper?",
+    "intent": "Contribution",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U3",
+      "U1"
+    ],
+    "evidence_coverage": "HIGH (100%)",
+    "evidence_texts": [
+      "OpenScholar-GPT-4o improves correctness by 12% over base GPT-4o. In expert blind evaluations conduct...",
+      "General-purpose language models (LLMs) can assist with synthesis but often suffer from factual hallu..."
+    ],
+    "final_answer": "### Scientific & Technical Contributions\nThe paper contributes three primary innovations: [U3]. 1. **OpenScholar Framework**: Creating OpenScholar, an open literature synthesis framework integrating a scientific passage retriever, specialized 8B generator, and iterative self-critique inference loop  [U1]. 2. **ScholarQABench Benchmark**: Establishing the ScholarQABench evaluation suite across four scientific disciplines with 250 expert-written answers and dedicated evaluation subsets (Scholar-CS and Scholar-Multi)  [U3]. 3. **Empirical Grounding Validation**: Demonstrating that retrieval-augmented feedback substantially boosts correctness (+12%) and human preference (up to 70%) over foundation baselines  [U3].",
+    "citations_used": [
+      "U3",
+      "U1"
+    ],
+    "claims_checked": 4,
+    "supported_claims": 4,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.28888888888888886,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 9,
+    "question": "What limitations did the authors identify?",
+    "intent": "Limitation",
+    "q_type": "SINGLE_CONCEPT_EXPLANATORY",
+    "retrieved_ids": [
+      "U2"
+    ],
+    "evidence_coverage": "INSUFFICIENT (0%)",
+    "evidence_texts": [
+      "6 Author-Stated Limitations & Discussion The authors observed several key limitations in current lit..."
+    ],
+    "final_answer": "### Author-Stated Limitations\nThe authors report that unassisted foundation models frequently generate fabricated citations and fail to properly attribute sources across multiple documents  [U2]. In addition, running iterative self-feedback critique cycles introduces noticeable computational latency during multi-paragraph generation  [U2]. As future work, the authors plan to expand datastore indexing capacity and enhance the efficiency of multi-step reasoning  [U2].",
+    "citations_used": [
+      "U2"
+    ],
+    "claims_checked": 3,
+    "supported_claims": 3,
+    "partially_supported_claims": 0,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.4444444444444444,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  },
+  {
+    "num": 10,
+    "question": "What is the research problem, methodology, dataset, experimental setup, main results, contributions, and limitations of this paper?",
+    "intent": "Comprehensive",
+    "q_type": "COMPREHENSIVE",
+    "retrieved_ids": [
+      "U1",
+      "U3",
+      "U4",
+      "U5",
+      "U6"
+    ],
+    "evidence_coverage": "MODERATE (38%)",
+    "evidence_texts": [
+      "Title: OpenScholar: Synthesizing Scientific Literature with Open Retrieval-Augmented Language Models...",
+      "OpenScholar couples an academic passage retriever trained on scientific corpora with a specialized 8...",
+      "ScholarQABench comprises two main subsets: Scholar-CS, containing 100 questions formulated by PhD ca...",
+      "OpenScholar-GPT-4o improves correctness by 12% over base GPT-4o. In expert blind evaluations conduct...",
+      "6 Author-Stated Limitations & Discussion The authors observed several key limitations in current lit..."
+    ],
+    "final_answer": "### Research Problem\nThe authors investigate how to accurately generate grounded scientific syntheses from extensive literature collections while preventing factual errors and maintaining verifiable source attribution  [U1].\n### Proposed Methodology\nThe authors introduce OpenScholar, an open literature synthesis framework connecting a dedicated passage retriever indexed over the OpenScholar Data Store (OSDS) with an 8B parameter generator model and an iterative self-critique inference mechanism to refine response drafts dynamically  [U3].\n### Datasets & Benchmarks\nThe authors evaluate their system on ScholarQABench across four disciplines (computer science, physics, biomedicine, neuroscience), comprising Scholar-CS (100 questions) and Scholar-Multi (108 questions accompanied by 250 expert-written answers)  [U4].\n### Experimental Setup\nThe experimental design evaluates OpenScholar variants against unassisted foundation models and human expert baselines using double-blind evaluations with 16 PhD researchers assessing correctness and human preference  [U5].\n### Quantitative Results & Baseline Comparison\nOpenScholar-GPT-4o achieves a 12% correctness improvement over base GPT-4o, with expert evaluators preferring OpenScholar-8B in 51% of trials and OpenScholar-GPT-4o in 70% of trials over expert human answers, compared to 32% for unassisted GPT-4o  [U5].\n### Scientific Contributions\nThe authors make three primary contributions: (1) creating the OpenScholar synthesis framework, (2) establishing the multi-discipline ScholarQABench benchmark with 250 expert-written answers, and (3) demonstrating that retrieval-augmented feedback improves correctness and human preference  [U5].\n### Author-Stated Limitations\nThe authors highlight that conventional unassisted foundation models often invent citations and exhibit difficulties attributing claims across multi-document sources, while iterative feedback cycles increase runtime latency during long-form generation  [U6].",
+    "citations_used": [
+      "U1",
+      "U3",
+      "U4",
+      "U5",
+      "U6"
+    ],
+    "claims_checked": 7,
+    "supported_claims": 6,
+    "partially_supported_claims": 1,
+    "unsupported_claims": 0,
+    "grounded": true,
+    "anti_copy_score": 0.5217391304347826,
+    "is_synthesized": true,
+    "anti_copy_reason": "Answer is properly synthesized.",
+    "has_verbatim_sentence": false,
+    "has_sentence_fragment": false,
+    "cross_paper_contamination": false,
+    "ui_rendered_clean": true,
+    "evidence_strength": "High",
+    "completeness": true,
+    "passed": true
+  }
+]

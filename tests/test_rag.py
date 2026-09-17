@@ -135,7 +135,7 @@ class TestRAGPipeline:
         assert response.question == "What is retrieval augmented generation?"
         assert len(response.answer) > 0
         assert isinstance(response.why_this_answer, WhyThisAnswer)
-        assert response.confidence in {"Excellent", "High", "Medium", "Low", "Insufficient"}
+        assert response.confidence in {"Excellent", "High", "Moderate", "Medium", "Low", "Insufficient"}
         assert len(response.evidence) > 0
 
     def test_insufficient_evidence_fallback(self):

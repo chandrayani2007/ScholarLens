@@ -75,6 +75,10 @@ export const WhyThisAnswerCard = ({ whyThisAnswer }) => {
               <div><strong>Supporting Papers:</strong> {contributing_papers.join(', ') || 'N/A'}</div>
               <div><strong>Supporting Sections:</strong> {contributing_sections.join(', ') || 'N/A'}</div>
               <div><strong>Cited Evidence:</strong> {evidence_passages.join(', ') || 'None'}</div>
+              <div><strong>Claims Checked:</strong> {whyThisAnswer.claims_checked ?? 'N/A'}</div>
+              <div><strong>Supported Claims:</strong> {whyThisAnswer.supported_claims ?? 'N/A'}</div>
+              <div><strong>Partially Supported:</strong> {whyThisAnswer.partially_supported_claims ?? 0}</div>
+              <div><strong>Unsupported Claims:</strong> {whyThisAnswer.unsupported_claims ?? 0}</div>
               <div><strong>Multi-Paper Support:</strong> {multi_paper_support ? 'Yes' : 'No'}</div>
               <div><strong>Source Platform:</strong> {source_type}</div>
             </div>
