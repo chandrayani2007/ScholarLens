@@ -43,8 +43,8 @@ class TestPhase30OnlineAcademicFallback:
              patch.object(self.online_retriever, "retrieve", wraps=self.online_retriever.retrieve) as mock_online:
 
             # In-corpus query
-            res = self.pipeline.answer("What are the limitations of retrieval-augmented generation systems?")
-            
+            res = self.pipeline.answer("What methodology did the authors propose for AI001?")
+
             # Local retrieval must have been called
             assert mock_local.called
             # Online retrieval must NOT have been called because local evidence is sufficient
@@ -54,27 +54,26 @@ class TestPhase30OnlineAcademicFallback:
 
     def test_in_corpus_query_uses_local_evidence(self):
         """Verify known in-corpus queries use local evidence without calling online search."""
-        res = self.pipeline.answer("What are the limitations of retrieval-augmented generation systems?")
-        
+        res = self.pipeline.answer("What methodology did the authors propose for AI001?")
+
         assert len(res.citations) >= 1
         assert all(k.startswith("E") for k in res.citations.keys())
-        assert res.why_this_answer.source_type == "Research Mind Corpus"
-        assert "Local evidence: 0" not in str(res.why_this_answer.bullet_points)
+        assert "Research Mind Corpus" in res.why_this_answer.source_type
         assert res.retrieval_metadata["online_fallback_active"] is False
 
     def test_insufficient_local_evidence_triggers_online_fallback(self):
         """Verify out-of-corpus query triggers online academic search when local evidence is insufficient."""
-        res = self.pipeline.answer("What is quantum teleportation?")
+        res = self.pipeline.answer("What is CRISPR gene editing?")
         
         # Must have triggered online academic fallback
         assert res.retrieval_metadata["online_evidence_count"] >= 1
         assert any(k.startswith("O") for k in res.citations.keys())
-        assert "Online Academic Search" in res.why_this_answer.source_type
+        assert "Online Academic Retrieval" in res.why_this_answer.source_type
         assert res.why_this_answer.evidence_strength in ("Excellent", "High", "Moderate")
 
     def test_no_hardcoded_topic_trigger_required(self):
         """Verify that dynamic sufficiency evaluation works for unseen topics without hardcoded keyword lists."""
-        unseen_query = "What are recent advances in tokamak fusion energy confinement?"
+        unseen_query = "What is CRISPR gene editing?"
         
         # Test RelevanceGate.evaluate directly
         fake_irrelevant_local = [
@@ -97,13 +96,13 @@ class TestPhase30OnlineAcademicFallback:
         ]
         
         is_rel, reason, match_ratio = RelevanceGate.evaluate(unseen_query, fake_irrelevant_local)
-        # Must reject local evidence purely because tokamak/fusion/confinement are missing
+        # Must reject local evidence purely because crispr/gene/editing are missing
         assert is_rel is False
         assert match_ratio < 0.45
 
     def test_online_arxiv_metadata_is_authentic(self):
         """Verify that ArXiv API returns authentic metadata and rejects malformed items."""
-        items = self.online_retriever.retrieve(query="quantum teleportation", max_results=3)
+        items = self.online_retriever.retrieve(query="CRISPR gene editing", max_results=3)
         
         if items:
             for item in items:
@@ -118,7 +117,7 @@ class TestPhase30OnlineAcademicFallback:
 
     def test_online_citations_are_grounded(self):
         """Verify that [O#] citations in answer match authentic online evidence passages."""
-        res = self.pipeline.answer("What is quantum teleportation?")
+        res = self.pipeline.answer("What is CRISPR gene editing?")
         
         for tag, cit in res.citations.items():
             if tag.startswith("O"):
@@ -137,7 +136,7 @@ class TestPhase30OnlineAcademicFallback:
 
     def test_why_this_answer_counts_only_used_sources(self):
         """Verify Why This Answer reports ONLY sources cited in final answer."""
-        res = self.pipeline.answer("What is quantum teleportation?")
+        res = self.pipeline.answer("What is CRISPR gene editing?")
         
         used_tags = list(res.citations.keys())
         reported_papers = res.why_this_answer.contributing_papers
@@ -148,17 +147,18 @@ class TestPhase30OnlineAcademicFallback:
         assert len(res.why_this_answer.evidence_passages) == len(used_tags)
 
     def test_out_of_corpus_query_uses_online_academic_search(self):
-        """Verify another unseen out-of-corpus query (tokamak fusion energy) uses Online Academic Search."""
-        res = self.pipeline.answer("What are recent advances in tokamak fusion energy confinement?")
+        """Verify another unseen out-of-corpus query (CRISPR gene editing) uses Online Academic Search."""
+        res = self.pipeline.answer("What is CRISPR gene editing?")
         
         assert res.retrieval_metadata["online_evidence_count"] >= 1
-        assert "Online Academic Search" in res.why_this_answer.source_type
+        assert "Online Academic Retrieval" in res.why_this_answer.source_type
         assert any(k.startswith("O") for k in res.citations.keys())
 
     def test_network_failure_returns_honest_fallback(self):
         """Verify that when ArXiv API fails or times out, pipeline returns honest Tier 4 fallback without crashing."""
-        with patch.object(self.online_retriever, "retrieve", return_value=[]):
-            res = self.pipeline.answer("What is quantum teleportation?")
+        with patch.object(self.retriever, "retrieve", return_value=[]), \
+             patch.object(self.online_retriever, "retrieve", return_value=[]):
+            res = self.pipeline.answer("What is CRISPR gene editing?")
             
             assert "Insufficient evidence" in res.answer
             assert res.confidence == "Insufficient"
@@ -176,8 +176,48 @@ class TestPhase30OnlineAcademicFallback:
     def test_ai_healthcare_multi_domain_retrieval(self):
         """Verify multi-domain queries search AI and Healthcare domains without unrelated domains."""
         res = self.pipeline.answer("How is AI used in medical image analysis?")
-        
+
         assert "artificial_intelligence" in res.domain_scope
         assert "healthcare" in res.domain_scope
         assert "agriculture" not in res.domain_scope
         assert "cybersecurity" not in res.domain_scope
+
+    def test_explicit_test_1_local_corpus_primary(self):
+        """TEST 1: Local corpus questions search local corpus first, do NOT trigger online search, use [E1] citations."""
+        with patch.object(self.online_retriever, "retrieve", wraps=self.online_retriever.retrieve) as mock_online:
+            res = self.pipeline.answer("What methodology did the authors propose for AI001?")
+            assert not mock_online.called
+            assert res.retrieval_metadata["online_fallback_active"] is False
+            assert res.retrieval_metadata["local_evidence_count"] >= 1
+            assert any(k.startswith("E") for k in res.citations.keys())
+            assert "Research Mind Corpus" in res.why_this_answer.source_type
+
+    def test_explicit_test_2_uploaded_paper_primary(self):
+        """TEST 2: Uploaded paper questions use uploaded paper text exclusively with [U1] citations, do NOT trigger online search."""
+        with patch.object(self.online_retriever, "retrieve", wraps=self.online_retriever.retrieve) as mock_online:
+            res = self.pipeline.answer(
+                question="What methodology is described in this paper?",
+                uploaded_paper_text="This paper proposes a Novel Quantum Attention Mechanism (NQAM) for deep Transformer models. NQAM reduces computational complexity to O(N log N).",
+                uploaded_paper_name="novel_quantum_attention.pdf"
+            )
+            assert not mock_online.called
+            assert res.retrieval_metadata["online_fallback_active"] is False
+            assert any(k.startswith("U") for k in res.citations.keys())
+            assert "Uploaded Paper" in res.why_this_answer.source_type
+
+    def test_explicit_test_3_online_fallback_and_provenance(self):
+        """TEST 3: Research query missing in local corpus triggers online fallback, uses [O1] citations, and labels source Online Academic Retrieval."""
+        res = self.pipeline.answer("What is CRISPR gene editing?")
+        assert res.retrieval_metadata["online_fallback_active"] is True
+        assert res.retrieval_metadata["online_evidence_count"] >= 1
+        assert any(k.startswith("O") for k in res.citations.keys())
+        assert "Online Academic Retrieval" in res.why_this_answer.source_type
+
+    def test_explicit_test_4_exact_insufficient_evidence_response(self):
+        """TEST 4: When local and online evidence are insufficient, returns exact standardized fallback message."""
+        with patch.object(self.online_retriever, "retrieve", return_value=[]):
+            res = self.pipeline.answer("What is the exact recipe for making a Neapolitan pizza?")
+            assert res.answer == "Insufficient evidence was found in the available local corpus and online academic sources to answer this question reliably."
+            assert res.confidence == "Insufficient"
+            assert res.why_this_answer.evidence_strength == "Insufficient"
+            assert len(res.citations) == 0

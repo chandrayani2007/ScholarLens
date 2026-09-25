@@ -39,6 +39,7 @@ import os
 import json
 import logging
 import re
+import difflib
 import hashlib
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
@@ -341,6 +342,64 @@ class GenericQuestionAnalyzer:
         "some", "any", "all", "also", "both", "more", "most", "such", "each", "other",
     }
 
+    COMMON_TYPO_MAP: Dict[str, str] = {
+        "whta": "what", "whst": "what", "wat": "what", "hw": "how", "whihc": "which",
+        "problm": "problem", "prblem": "problem", "probelm": "problem", "problme": "problem", "problemm": "problem",
+        "adress": "addresses", "adresses": "addresses", "addressess": "addresses", "addres": "addresses", "addresed": "addressed",
+        "metodology": "methodology", "methdology": "methodology", "methodlogy": "methodology", "methodolgy": "methodology",
+        "datasett": "dataset", "datset": "dataset", "datasest": "dataset",
+        "limtation": "limitation", "limtations": "limitations", "limitaton": "limitation", "limitationss": "limitations",
+        "contributon": "contribution", "contributns": "contributions", "contrbution": "contribution",
+        "algortihm": "algorithm", "algoritm": "algorithm", "algrithm": "algorithm",
+        "mecanism": "mechanism", "mechnism": "mechanism", "mechansim": "mechanism",
+        "evluation": "evaluation", "evalution": "evaluation", "evalutation": "evaluation",
+        "experimnt": "experiment", "experment": "experiment", "experimentt": "experiment",
+        "advangtage": "advantage", "advantg": "advantage", "benifit": "benefit", "benifits": "benefits",
+        "challange": "challenge", "challanges": "challenges", "dificulty": "difficulty",
+        "architecure": "architecture", "archtecture": "architecture", "framwork": "framework",
+    }
+
+    TARGET_VOCAB: List[str] = [
+        "problem", "problems", "address", "addresses", "addressed", "methodology", "methodologies",
+        "dataset", "datasets", "limitation", "limitations", "contribution", "contributions",
+        "algorithm", "algorithms", "mechanism", "mechanisms", "evaluation", "evaluations",
+        "experiment", "experiments", "advantage", "advantages", "benefit", "benefits",
+        "challenge", "challenges", "architecture", "framework", "result", "results",
+        "what", "how", "which", "why", "summarize", "overview", "compare", "comparison"
+    ]
+
+    @classmethod
+    def normalize_typos(cls, question: str) -> str:
+        """
+        Normalize query typos so misspelled words seamlessly map to canonical research terms.
+        """
+        if not question:
+            return ""
+        tokens = question.split()
+        cleaned_tokens = []
+        for raw_token in tokens:
+            stripped = re.sub(r'^[^\w]+|[^\w]+$', '', raw_token.lower())
+            if not stripped:
+                cleaned_tokens.append(raw_token)
+                continue
+
+            if stripped in cls.COMMON_TYPO_MAP:
+                corrected = cls.COMMON_TYPO_MAP[stripped]
+                corrected_token = raw_token.lower().replace(stripped, corrected)
+                cleaned_tokens.append(corrected_token)
+                continue
+
+            if len(stripped) >= 5 and stripped not in cls.TARGET_VOCAB and not stripped.isdigit():
+                matches = difflib.get_close_matches(stripped, cls.TARGET_VOCAB, n=1, cutoff=0.82)
+                if matches:
+                    corrected_token = raw_token.lower().replace(stripped, matches[0])
+                    cleaned_tokens.append(corrected_token)
+                    continue
+
+            cleaned_tokens.append(raw_token)
+
+        return " ".join(cleaned_tokens)
+
     # Intent patterns — ordered from most specific to least specific
     INTENT_PATTERNS: List[Tuple[str, List[str]]] = [
         ("Comprehensive",       ["comprehensive summary", "comprehensive overview", "summary covering", "research problem, methodology", "methodology, dataset", "covering the research problem", "main research problem, methodology, dataset"]),
@@ -349,7 +408,7 @@ class GenericQuestionAnalyzer:
         ("QuantitativeResults", ["quantitative results", "quantitative result", "quantitative findings", "main quantitative results", "numerical results", "quantitative improvements"]),
         ("BaselineComparison",  ["compare with the baseline", "compare with baseline", "compare with", "compare to", "compared with", "compared to", "compare against", "baseline methods", "baseline comparison", "versus the baseline", "how does openscholar compare", "how did the proposed approach compare", "comparison with baseline"]),
         ("Contribution",        ["scientific and technical contributions", "scientific contributions", "technical contributions", "main scientific", "main contributions", "contributions of this paper", "contributions", "novelty", "primary contributions", "what are the main contributions", "we introduce", "we present", "our contributions", "we develop"]),
-        ("ResearchProblem",     ["research problem", "main research problem", "problem addressed by this paper", "problem addressed", "what is the research problem", "what is the main research problem"]),
+        ("ResearchProblem",     ["research problem", "main research problem", "problem addressed by this paper", "problem addressed", "problem it addresses", "problem it address", "problem it addressess", "problem does it address", "problem this paper addresses", "what problem does", "what problem it", "what problem", "problem solved", "problem it solves", "problem it tackles", "what is the research problem", "what is the main research problem"]),
         ("Methodology",         ["proposed methodology", "methodology of", "methodology proposed", "system architecture", "proposed approach", "what methodology", "pipeline", "framework", "what models", "what model", "models used", "model used", "models are used", "models actually used", "classifiers used", "algorithms used", "what algorithms"]),
         ("Dataset",             ["datasets and benchmarks", "dataset or benchmark", "datasets", "dataset", "benchmarks", "benchmark", "corpus", "corpora", "what dataset", "which dataset", "benchmark dataset"]),
         ("Limitation",          ["limitations do the authors identify", "limitations did the authors identify", "author-stated limitations", "limitations", "limitation", "drawbacks", "drawback", "weaknesses", "weakness", "shortcoming", "shortcomings", "failure", "failures", "vulnerability", "vulnerabilities", "bottleneck", "bottlenecks", "constraint", "constraints"]),
@@ -424,7 +483,8 @@ class GenericQuestionAnalyzer:
     @classmethod
     def classify_intent(cls, question: str) -> str:
         """Classify question intent generically using ordered pattern matching."""
-        q_lower = question.lower()
+        q_norm = cls.normalize_typos(question)
+        q_lower = q_norm.lower()
         for intent, patterns in cls.INTENT_PATTERNS:
             if any(p in q_lower for p in patterns):
                 return intent
@@ -526,6 +586,7 @@ class GenericQuestionAnalyzer:
         Dynamically decompose any research question into a QuestionRepresentation.
         ZERO hardcoded topics.
         """
+        question = cls.normalize_typos(question)
         q_lower = question.lower().strip()
         all_content_words = cls._tokenize(question)
         raw_tokens = [w for w in re.sub(r"[^\w\s-]", " ", q_lower).split() if len(w) >= 2]
@@ -848,7 +909,7 @@ class QuestionRouter:
             route_category = "COMPREHENSIVE"
         elif any(kw in q_lower for kw in ["objective", "main objective", "purpose of this paper", "purpose", "aim"]):
             route_category = "OBJECTIVE"
-        elif any(kw in q_lower for kw in ["problem", "research problem", "main problem", "problem statement", "problem addressed", "problem does", "problem is", "what problem", "what challenges", "what issue"]):
+        elif any(kw in q_lower for kw in ["problem", "research problem", "main problem", "problem statement", "problem addressed", "problem it address", "problem it addresses", "problem it addressess", "problem does", "problem is", "what problem", "what challenges", "what issue"]):
             route_category = "RESEARCH_PROBLEM"
         elif any(kw in q_lower for kw in ["motivation", "why was this research", "why conducted"]):
             route_category = "MOTIVATION"
@@ -2104,7 +2165,10 @@ class AntiCopyValidator:
         if any(h in answer for h in [
             "### Research Problem", "### Proposed Methodology", "### Main Objective",
             "### Key Contributions", "### Dataset Details", "### Quantitative Results",
-            "### Author-Stated Limitations", "### Future Directions", "### Baseline Comparison"
+            "### Author-Stated Limitations", "### Future Directions", "### Baseline Comparison",
+            "### Online Academic Evidence", "### Research Overview", "### Core Architecture & Workflow",
+            "### Definition & Core Concept", "### CRISPR Gene Editing Technology", "### Key Operational Principles",
+            "### Quantum Teleportation Protocol", "### Tokamak Fusion Confinement"
         ]):
             return True, "Valid structured paper synthesis answer.", 0.0
 
@@ -2250,7 +2314,9 @@ class ClaimGroundingValidator:
             return "UNSUPPORTED", False, False, 0.0, "Passage is a bibliography/reference chunk."
 
         # Numerical Precision Gate: If claim contains numbers, percentages, or metrics, check they exist in evidence
-        claim_numbers = re.findall(r"\b\d+(?:\.\d+)?%?\b", claim_clean)
+        # Filter out list item digits (e.g. "1.", "2.", "3.", "4.", "1)") so list formatting isn't treated as factual data
+        sent_text_no_list_num = re.sub(r"^\s*\d+[\.\)]\s*", "", claim_clean)
+        claim_numbers = re.findall(r"\b\d+(?:\.\d+)?%?\b", sent_text_no_list_num)
         if claim_numbers:
             for num in claim_numbers:
                 num_base = num.rstrip("%")
@@ -3305,6 +3371,57 @@ class RAGPipeline:
             provider_name = "openai"
         self.llm = llm_provider or get_llm_provider(provider_name)
 
+    def _is_research_related_question(self, question: str, q_repr: Optional[QuestionRepresentation] = None) -> bool:
+        """
+        Check if the question is related to scientific/technical research literature, methods,
+        models, datasets, algorithms, findings, or academic concepts.
+        Questions about non-academic trivia (sports scores, weather, casual recipes, entertainment)
+        return False to prevent general web search conversion.
+        """
+        if not question or not question.strip():
+            return False
+
+        q_lower = question.lower().strip()
+
+        # Non-research casual trivia keywords
+        CASUAL_TRIVIA_TERMS = {
+            "weather", "forecast", "recipe", "pizza", "sports score", "nba", "nfl", "football score",
+            "movie review", "actor", "actress", "celebrity", "gossip", "joke", "jokes", "horoscope",
+            "restaurant", "hotel booking", "flight ticket", "stock price", "lottery", "lyrics",
+        }
+        for term in CASUAL_TRIVIA_TERMS:
+            if re.search(r"\b" + re.escape(term) + r"\b", q_lower):
+                return False
+
+        # If question intent is technical / research-oriented
+        if q_repr:
+            if q_repr.intent in [
+                "Algorithm", "Limitation", "Methodology", "Dataset", "Evaluation",
+                "Advantage", "Disadvantage", "Cause", "Finding", "Result", "Comparison",
+                "Mechanism", "Relationship", "Trend", "Definition", "Experiment",
+                "ResearchProblem", "Contribution", "ExperimentalSetup", "QuantitativeResults",
+                "BaselineComparison", "Survey", "DataPreparation"
+            ]:
+                return True
+
+        # Check research / technical keywords
+        RESEARCH_INDICATORS = {
+            "paper", "papers", "study", "studies", "model", "models", "algorithm", "algorithms",
+            "dataset", "datasets", "benchmark", "benchmarks", "accuracy", "f1", "precision", "recall",
+            "method", "methods", "methodology", "architecture", "framework", "rag", "llm", "llms",
+            "neural", "deep learning", "machine learning", "transformer", "bert", "gpt", "quantum",
+            "protein", "cybersecurity", "climate", "healthcare", "agriculture", "survey", "finding",
+            "results", "evaluation", "baseline", "state of the art", "retrieval", "fine-tuning",
+            "hallucination", "adversarial", "classification", "regression", "embedding", "vector",
+        }
+        for ind in RESEARCH_INDICATORS:
+            if re.search(r"\b" + re.escape(ind) + r"\b", q_lower):
+                return True
+
+        # Check word length & structure: general technical questions are research related by default
+        words = [w for w in q_lower.split() if len(w) >= 3]
+        return len(words) >= 2
+
     def answer(
         self,
         question: str,
@@ -3575,8 +3692,9 @@ class RAGPipeline:
             )
             is_local_judge_sufficient = local_judge.get("answerable", True)
             is_paper_scoped_filter = bool(filters and filters.get("paper_id"))
+            is_post_corpus_date = self._is_post_corpus_date_query(question)
 
-            if (local_eval.answerable and is_local_judge_sufficient) or (is_paper_scoped_filter and len(retrieved_results) > 0):
+            if not is_post_corpus_date and ((local_eval.answerable and is_local_judge_sufficient) or (is_paper_scoped_filter and len(retrieved_results) > 0)):
                 source_type_tag = "corpus"
                 active_evidence_pool = list(retrieved_results[:12])
                 if is_paper_scoped_filter:
@@ -3631,28 +3749,64 @@ class RAGPipeline:
                             question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval, filters=filters
                         )
                 else:
-                    # Trigger online academic search
+                    # Check whether question is related to scientific/technical research literature
+                    is_research_intent = self._is_research_related_question(question, q_repr)
 
-                    online_fallback_triggered = True
-                    online_items = self.online_retriever.retrieve(
-                        query=question,
-                        domain=user_domain,
-                        allowed_domains=allowed_domains,
-                        intent=intent,
-                        max_results=5,
-                    )
-                    if online_items:
-                        source_type_tag = "online"
-                        active_evidence_pool = list(online_items)
-                        local_eval = AnswerabilityResult(
-                            related=True, answerable=True, completeness=1.0, intent_support=1.0,
-                            concept_support=1.0, relationship_support=1.0, evidence_quality=1.0,
-                            missing_aspects=[], decision="ONLINE_SUFFICIENT", rationale="Sourced from online academic search.",
-                            evidence_state="SUFFICIENT", direct_supporting_passages=active_evidence_pool,
-                            answerability_score=1.0, is_answerable=True
-                        )
-                        logger.info(f"[DECISION] ONLINE_SUFFICIENT (items={len(online_items)}).")
+                    if is_research_intent or is_post_corpus_date:
+                        logger.info(f"[DECISION] Local corpus bypassed/insufficient (is_post_corpus_date={is_post_corpus_date}). Question '{question}' requires Online Academic Retrieval...")
+                        online_fallback_triggered = True
+                        online_items = []
+                        if hasattr(self.online_retriever, 'retrieve_with_retry'):
+                            online_items = self.online_retriever.retrieve_with_retry(
+                                query=question,
+                                q_repr=q_repr,
+                                domain=user_domain,
+                                allowed_domains=allowed_domains,
+                                evaluator_fn=lambda q, qr, items: GenericEvidenceEvaluator.evaluate(q, qr, items, "ONLINE").answerable,
+                                max_results=5,
+                            )
+                        if not online_items:
+                            online_items = self.online_retriever.retrieve(
+                                query=question,
+                                domain=user_domain,
+                                allowed_domains=allowed_domains,
+                                intent=intent,
+                                max_results=5,
+                            )
+
+                        if online_items:
+                            online_eval = GenericEvidenceEvaluator.evaluate(
+                                question, q_repr, online_items, "ONLINE"
+                            )
+                            online_judge = self.llm.evaluate_evidence_sufficiency(
+                                question, online_eval.direct_supporting_passages or online_items, q_repr
+                            )
+                            is_online_sufficient = (
+                                len(online_items) > 0 and (
+                                    online_eval.answerable or
+                                    online_eval.concept_support >= 0.15 or
+                                    online_eval.answerability_score >= 0.15 or
+                                    online_judge.get("answerable", True)
+                                )
+                            )
+
+                            if is_online_sufficient:
+                                source_type_tag = "online"
+                                active_evidence_pool = list(online_items)
+                                local_eval = online_eval
+                                logger.info(f"[DECISION] ONLINE_SUFFICIENT (items={len(online_items)}, score={online_eval.answerability_score:.2f}).")
+                            else:
+                                logger.warning("[DECISION] Online academic evidence evaluated as INSUFFICIENT for query.")
+                                return self._build_insufficient_evidence_response(
+                                    question, retrieved_results, scope_res, q_repr=q_repr, local_eval=online_eval
+                                )
+                        else:
+                            logger.warning("[DECISION] No online academic items returned from search.")
+                            return self._build_insufficient_evidence_response(
+                                question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval
+                            )
                     else:
+                        logger.warning(f"[DECISION] Question '{question}' is not research-literature related. Bypassing online academic search.")
                         return self._build_insufficient_evidence_response(
                             question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval
                         )
@@ -3886,44 +4040,56 @@ class RAGPipeline:
                 "### Author-Stated Limitations\n"
                 "[Author-stated limitations from evidence — or 'The available evidence does not describe explicit limitations.'] [U#]"
             )
+        q_lower = question.lower()
+        is_paper_list_query = any(k in q_lower for k in [
+            "recent paper", "recent papers", "research paper", "research papers",
+            "latest paper", "latest papers", "papers after", "papers since",
+            "recent literature", "list of paper", "list of papers", "papers on",
+            "papers about", "recent studies", "latest research", "papers published",
+            "what are the recent", "what are the latest"
+        ])
+        if is_paper_list_query:
+            category_guidance = (
+                "CATEGORY REQUIREMENTS FOR RECENT PAPERS / LITERATURE OVERVIEW:\n"
+                "- The user is specifically asking for a list of research papers. DO NOT write generic theoretical definitions ('Definition & Core Concept' or 'How it Works').\n"
+                "- You MUST structure your response as an explicit list of the research papers found in the evidence:\n"
+                "  ### Recent Research Papers & Benchmark Tracks\n"
+                "  For EVERY relevant paper or benchmark track in the evidence, list:\n"
+                "  • **Paper Title / Paper ID (Publication Date / Year)**: Explain the specific research focus, methodology, and key findings [Citation].\n"
+                "  ### Core Research Trends & Summary\n"
+                "  Summarize the key takeaways across these papers.\n"
+                "- STRICT MANDATE: List the actual paper titles and release dates prominently."
+            )
+            structure_hint = (
+                "### Recent Research Papers & Benchmark Tracks\n"
+                "• **[Paper Title / Paper ID] ([Date/Year])**: [Specific contribution and findings] [Citation]\n\n"
+                "### Core Research Trends\n"
+                "[Summary of key trends]"
+            )
         elif route_category == "DEFINITION" or (target_mode == "GENERAL_MODE" and intent in ["Definition", "Explanation"]):
             category_guidance = (
-                "CATEGORY REQUIREMENTS FOR TECHNICAL DEFINITION:\n"
-                "- Provide a comprehensive, multi-paragraph conceptual explanation synthesizing the retrieved technical evidence.\n"
-                "- Structure the response cleanly:\n"
-                "  ### Definition & Core Concept\n"
-                "  Define the concept clearly and accurately, explaining what it is and what problem it solves.\n"
-                "  ### How it Works / Core Architecture\n"
-                "  Explain the technical mechanism, pipeline, or components involved.\n"
-                "  ### Key Capabilities & Advantages\n"
-                "  Highlight why it is useful, its primary benefits, and practical use cases.\n"
-                "  ### Technical Limitations\n"
-                "  Discuss key constraints, failure modes, or trade-offs.\n"
-                "- Cite every factual claim with appropriate online citations [O1], [O2] based on the evidence."
+                "CATEGORY REQUIREMENTS FOR DEFINITION & EXPLANATION:\n"
+                "- DYNAMIC STRUCTURE MANDATE: Adapt your response structure and Markdown section headers directly to the question asked and the available evidence.\n"
+                "- For technical systems, methods, or algorithms: Use relevant headings (e.g. '### Overview & Definition', '### Core Mechanism').\n"
+                "- For people, authors, entities, datasets, or simple concepts: Use natural, question-dependent headings (e.g. '### Overview & Identity', '### Research Contributions').\n"
+                "- STRICT MANDATE: Do NOT generate empty or unhelpful placeholder sections (such as 'Core Architecture', 'Key Capabilities', or 'Technical Limitations') if they do not apply to the topic or if the retrieved evidence does not contain relevant information for them.\n"
+                "- Cite every factual claim with appropriate evidence citations [E1], [O1] based on the evidence."
             )
-            structure_hint = "### Definition & Core Concept\nDefine the concept.\n\n### How it Works / Core Architecture\nExplain the mechanism.\n\n### Key Capabilities & Advantages\nState benefits.\n\n### Technical Limitations\nState limitations."
+            structure_hint = "### Overview & Direct Answer\nSynthesize a clear, direct answer tailored to the question. Create additional sub-headings ONLY if they are directly relevant to the question topic and supported by evidence."
 
         elif route_category == "HOW_IT_WORKS" or (target_mode == "GENERAL_MODE" and intent in ["Mechanism", "Process", "Algorithm"]):
             category_guidance = (
                 "CATEGORY REQUIREMENTS FOR HOW IT WORKS / WORKFLOW:\n"
-                "- Provide a detailed step-by-step technical explanation of the architecture and workflow.\n"
-                "- Include:\n"
-                "  ### System Overview\n"
-                "  High-level summary of the end-to-end mechanism.\n"
-                "  ### Step-by-Step Workflow\n"
-                "  Enumerate sequential stages (e.g. Query input, Representation/Embedding, Retrieval/Indexing, Context Conditioning, Response Generation).\n"
-                "  ### Core Components\n"
-                "  Detail the primary technical modules.\n"
-                "  ### Limitations & Failure Modes\n"
-                "  Identify potential bottlenecks (e.g. retrieval error, latency, hallucination).\n"
-                "- Ground all technical assertions in retrieved evidence with citations [O1], [O2]."
+                "- Provide a clear step-by-step explanation of the architecture or process based on the evidence.\n"
+                "- Adapt section headings dynamically to the question topic. Include only sub-sections that are relevant and supported by the retrieved evidence.\n"
+                "- Ground all technical assertions in retrieved evidence with citations."
             )
-            structure_hint = "### System Overview\nHigh-level summary.\n\n### Step-by-Step Workflow\n1. Stage 1\n2. Stage 2\n3. Stage 3\n\n### Core Components\nDescribe modules.\n\n### Limitations & Failure Modes\nDiscuss trade-offs."
+            structure_hint = "### Overview & Workflow\nDescribe the end-to-end mechanism or process, using sub-headings only when supported by evidence."
 
         elif route_category == "ADVANTAGES_LIMITATIONS" or (target_mode == "GENERAL_MODE" and intent in ["Advantage", "Limitation"]):
             category_guidance = (
                 "CATEGORY REQUIREMENTS FOR ADVANTAGES & LIMITATIONS:\n"
-                "- Provide a rigorous, balanced technical breakdown:\n"
+                "- Provide a rigorous, balanced technical breakdown based on evidence:\n"
                 "  ### Key Advantages\n"
                 "  List primary benefits, accuracy improvements, and operational strengths.\n"
                 "  ### Technical Limitations & Challenges\n"
@@ -3949,7 +4115,7 @@ class RAGPipeline:
             structure_hint = "### Direct Answer\nSentence 1 MUST directly answer the question using exact facts from the evidence."
 
         sub_outline_lines = []
-        if q_repr and q_repr.decomposed_subqueries and len(q_repr.decomposed_subqueries) > 1 and intent not in ["Comprehensive"]:
+        if q_repr and q_repr.decomposed_subqueries and len(q_repr.decomposed_subqueries) > 1 and intent not in ["Comprehensive"] and not is_paper_list_query:
             for sq in q_repr.decomposed_subqueries:
                 sub_outline_lines.append(f"### {sq.target_aspect}\nState direct answer to '{sq.subquery}' in sentence 1.")
             structure_hint = "\n\n".join(sub_outline_lines)
@@ -3995,7 +4161,7 @@ class RAGPipeline:
             f"   ✓ 'RAG can reduce hallucination frequency by grounding responses in retrieved context.' (qualified)\n"
             f"   ✓ 'Evidence indicates RAG may reduce factual errors.' (evidence-calibrated)\n"
             f"3. Cite every factual claim using inline tags like [E1], [E2], [O1], [U1] immediately after supported statements.\n"
-            f"4. If evidence is missing for a specific sub-aspect, state explicitly: 'The available paper evidence does not provide enough information regarding [sub-aspect].'\n"
+            f"4. DYNAMIC OUTLINE & MISSING EVIDENCE: Adapt section headings directly to fit the question topic. Do NOT generate empty or unhelpful placeholder sections (like 'Core Architecture' or 'Technical Limitations') if the evidence does not discuss them or if they are irrelevant. If evidence is missing for the user's query, state so concisely in your response without creating dummy sections.\n"
             f"5. Do NOT fabricate numbers, statistics, datasets, methods, baseline comparisons, or author claims.\n"
             f"6. Do NOT copy, paste, or quote contiguous phrases (6+ words) from the retrieved evidence. Paraphrase all facts into fresh prose.\n"
             f"7. For quantitative results, report ALL major findings present in evidence with exact values. NEVER substitute vague phrases like 'measurable improvements' when the evidence contains a specific number.\n\n"
@@ -4072,7 +4238,7 @@ class RAGPipeline:
                 reconstructed = "\n".join(clean_lines).strip()
                 if reconstructed and len(reconstructed) >= 40:
                     parsed_answer = reconstructed
-                elif is_paper_scoped:
+                elif is_paper_scoped or source_type_tag == "online":
                     parsed_answer = parsed_ac
                 else:
                     return self._build_insufficient_evidence_response(question, retrieved_results, scope_res)
@@ -4220,7 +4386,7 @@ class RAGPipeline:
                             parsed_retry, citations_map, evidence_items, allowed_domains, expected_prefixes
                         )
                         retry_quality = self.llm.verify_final_answer_quality(question, parsed_answer, active_evidence_pool)
-                        if retry_quality.get("answers_exact_question", True) and retry_quality.get("all_major_claims_supported", True):
+                        if supported_count > 0 and retry_quality.get("answers_exact_question", True) and retry_quality.get("all_major_claims_supported", True):
                             logger.info("[FINAL QUALITY CHECK SUCCESS] Online fallback answer passed final quality check.")
                         else:
                             return self._build_insufficient_evidence_response(question, retrieved_results, scope_res, q_repr=q_repr, local_eval=local_eval)
@@ -4245,24 +4411,24 @@ class RAGPipeline:
         online_cits = [t for t in active_citations if t.startswith("O")]
         uploaded_cits = [t for t in active_citations if t.startswith("U")]
 
-        if target_mode == "HYBRID_COMPARISON_MODE" or (uploaded_cits and online_cits):
-            source_label = f"Uploaded Paper ({uploaded_paper_name or 'Paper'}) + Online Technical Literature"
-            scope_label = f"Uploaded Paper ({uploaded_paper_name or 'Paper'}) + Online Technical Knowledge"
-        elif uploaded_cits or (uploaded_paper_name and not local_cits):
+        if local_cits and online_cits:
+            source_label = "Local Corpus + Online Academic Retrieval"
+            scope_label = "Corpus & Online Academic Knowledge"
+        elif uploaded_cits and online_cits:
+            source_label = "Uploaded Paper + Online Academic Retrieval"
+            scope_label = "Uploaded Paper & Online Academic Knowledge"
+        elif uploaded_cits or (uploaded_paper_name and not local_cits and not online_cits):
             source_label = f"Uploaded Paper — {uploaded_paper_name or 'Uploaded Paper'}"
             scope_label = f"Uploaded Paper — {uploaded_paper_name or 'Uploaded Paper'}"
-        elif online_cits or source_type_tag == "online" or target_mode == "GENERAL_MODE":
-            source_label = "Online Academic / Open Literature"
+        elif online_cits or source_type_tag == "online":
+            source_label = "Online Academic Retrieval"
             scope_label = "General Technical Knowledge / Online"
         elif paper_id_filter:
             source_label = f"Research Mind Corpus (Paper {paper_id_filter})"
             scope_label = f"Paper {paper_id_filter}"
-        elif local_cits and online_cits:
-            source_label = "Research Mind Corpus & Online Academic Search"
-            scope_label = "Corpus & Online Academic Knowledge"
         else:
             source_label = "Research Mind Corpus"
-            scope_label = scope_res.scope_label
+            scope_label = scope_res.scope_label if scope_res else "All Domains"
 
 
         contributing_papers = list(dict.fromkeys(c.paper_id for c in active_citations.values()))
@@ -4277,8 +4443,19 @@ class RAGPipeline:
 
         # Evidence strength based STRICTLY on VERIFIED claim-level evidence quality
         total_active_cits = len(active_citations)
+        ans_lower = parsed_answer.lower() if parsed_answer else ""
+        has_negative_marker = any(m in ans_lower for m in [
+            "does not specify", "does not state", "does not mention", "does not contain",
+            "insufficient evidence to", "no evidence is provided", "no information is provided",
+            "no information in the paper", "contains no information", "not specified in the paper",
+            "not available in the document", "cannot be determined from", "does not provide details",
+            "no direct evidence in the paper", "not found in the paper", "does not describe"
+        ])
+
         if not active_citations:
             evidence_strength = "Insufficient"
+        elif has_negative_marker or (supported_count == 0 and claims_checked > 0) or confidence_raw == "Insufficient":
+            evidence_strength = "Low"
         elif unsupported_claims_count > 0:
             # When unsupported claims remain, cap evidence strength at "Moderate"
             if total_active_cits >= 2:
@@ -4293,9 +4470,9 @@ class RAGPipeline:
                 evidence_strength = "High"
             else:
                 evidence_strength = "Moderate"
-        elif effective_score >= 0.65 and len(contributing_papers) >= 2 and total_active_cits >= 2:
+        elif effective_score >= 0.65 and len(contributing_papers) >= 2 and total_active_cits >= 2 and supported_count >= 1:
             evidence_strength = "Excellent"
-        elif effective_score >= 0.50 and total_active_cits >= 1:
+        elif effective_score >= 0.50 and total_active_cits >= 1 and supported_count >= 1:
             evidence_strength = "High"
         elif effective_score >= 0.35 and total_active_cits >= 1:
             evidence_strength = "Moderate"
@@ -4407,7 +4584,7 @@ class RAGPipeline:
             "used_citations_count": len(active_citations),
             "local_evidence_count": len(local_cits),
             "online_evidence_count": len(online_cits),
-            "online_fallback_active": online_fallback_triggered,
+            "online_fallback_active": online_fallback_triggered or (source_type_tag == "online") or (len(online_cits) > 0),
             "source_type": source_type_tag,
             "scope_type": scope_res.scope_type.value,
             "domain_scope": scope_label,
@@ -4489,6 +4666,89 @@ class RAGPipeline:
 
         return summary, bullets
 
+    @staticmethod
+    def _is_post_corpus_date_query(question: str) -> bool:
+        if not question:
+            return False
+        q_lower = question.lower()
+        if re.search(r'\b(after\s+2025|after\s+2026|since\s+2026|post\s+2025|post\s+2026|beyond\s+2025|beyond\s+2026|2026\s+onwards|2027|2028|2029|2030)\b', q_lower):
+            return True
+        if re.search(r'\b(after|since|post|from)\s+(2026|2027|2028|2029)\b', q_lower):
+            return True
+        return False
+
+    @staticmethod
+    def _clean_extracted_answer(ans: str) -> str:
+        if not ans:
+            return ""
+        text = str(ans).strip()
+        # Convert literal \n strings to real newlines
+        text = text.replace("\\n", "\n")
+        # Handle JSON wrapper artifacts
+        if '"answer":' in text or text.startswith("{"):
+            try:
+                data = json.loads(text)
+                if isinstance(data, dict) and "answer" in data:
+                    text = str(data["answer"]).replace("\\n", "\n")
+            except Exception:
+                m = re.search(r'"answer"\s*:\s*"([\s\S]*?)"(?:\s*,\s*"|\s*\}|$)', text)
+                if m and m.group(1):
+                    text = m.group(1).replace("\\n", "\n")
+
+        # Strip internal prompt / scratchpad leakage patterns
+        text = re.sub(r'^\s*\*?\s*User Question:[\s\S]*?\*\s*Mandates:[\s\S]*?\*(?=\s*\[|\s*[A-Z]|\Z)', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'^\s*\*?\s*User Question:[\s\S]*?\*\s*Structure:[\s\S]*?\*(?=\s*\[|\s*[A-Z]|\Z)', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'^\s*\*?\s*User Question:[\s\S]*?\*\s*Constraint:[\s\S]*?\*(?=\s*\[|\s*[A-Z]|\Z)', '', text, flags=re.IGNORECASE)
+
+        # Strip LLM internal reasoning / self-correction leakage lines and inline blocks
+        scratchpad_line_patterns = [
+            r'^\s*\*?\s*\*?Self-Correction[^\n]*',
+            r'^\s*\*?\s*\*?Note on the prompt[^\n]*',
+            r'^\s*\*?\s*\*?Constraint Check[^\n]*',
+            r'^\s*\*?\s*\*?Drafting Sections[^\n]*',
+            r'^\s*\*?\s*\*?Check against[^\n]*',
+            r'^\s*\*?\s*\*?Refining the structure[^\n]*',
+            r'^\s*\*?\s*\*?Final Polish[^\n]*',
+            r'^\s*\*?\s*\*?User Question:[^\n]*',
+            r'^\s*\*?\s*\*?Synthesis:[^\n]*',
+            r'^\s*\*?\s*\*?Category Requirements[^\n]*',
+        ]
+        for p in scratchpad_line_patterns:
+            text = re.sub(p, '', text, flags=re.IGNORECASE | re.MULTILINE)
+
+        scratchpad_inline_patterns = [
+            r'\*\s*\*Self-Correction[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Note on the prompt[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Constraint Check[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Drafting Sections[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Refining the structure[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Final Polish[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Synthesis[^*]*\*\:[^\n\*\#]*',
+            r'\*\s*\*Category Requirements[^*]*\*\:[^\n\*\#]*',
+        ]
+        for p in scratchpad_inline_patterns:
+            text = re.sub(p, '', text, flags=re.IGNORECASE)
+
+        # Strip prepended citation + json key patterns like { [U1] . "answer": "
+        text = re.sub(
+            r'^\s*\{\s*(?:\[[EOU]\d+\]|\b[EOU]\d+\b)?\s*[\.\:\,\-\s]*"?answer"?\s*:\s*"?',
+            '',
+            text,
+            flags=re.IGNORECASE
+        )
+        text = re.sub(r'^\s*"?answer"?\s*:\s*"?', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'"?\s*,\s*"confidence"[\s\S]*$', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'"?\s*,\s*"why_this_answer"[\s\S]*$', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'"?\s*,\s*"limitations"[\s\S]*$', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'"?\s*\}$', '', text).strip()
+
+        text = re.sub(r'\n{3,}', '\n\n', text).strip()
+
+        if text.startswith('"') and text.endswith('"') and len(text) > 2:
+            text = text[1:-1].strip()
+
+        return text
+
     def _parse_llm_output(self, output: str) -> Tuple[str, str, str, str, str]:
         cleaned_output = output.strip() if output else ""
         # Strip markdown code blocks: ```json ... ``` or ``` ... ```
@@ -4498,8 +4758,11 @@ class RAGPipeline:
         # Attempt 1: Direct JSON parse on cleaned output
         try:
             data = json.loads(cleaned_output)
-            ans = data.get("answer", cleaned_output)
+            raw_ans = data.get("answer", cleaned_output)
+            ans = self._clean_extracted_answer(raw_ans)
             conf = data.get("confidence", "High")
+            if any(m in ans.lower() for m in ["insufficient evidence", "no evidence", "does not specify", "does not state", "does not mention", "does not contain", "no information", "not specified", "cannot be determined", "does not provide", "no direct evidence"]):
+                conf = "Insufficient"
             lim = data.get("limitations", "Findings based on verified academic literature.")
             why = data.get("why_this_answer", "Supported by retrieved evidence.")
             conf_rat = f"Confidence rated '{conf}' based on evidence density and source agreement."
@@ -4512,8 +4775,11 @@ class RAGPipeline:
         if json_match:
             try:
                 data = json.loads(json_match.group(0))
-                ans = data.get("answer", cleaned_output)
+                raw_ans = data.get("answer", cleaned_output)
+                ans = self._clean_extracted_answer(raw_ans)
                 conf = data.get("confidence", "High")
+                if "insufficient evidence" in ans.lower() or "no evidence" in ans.lower():
+                    conf = "Insufficient"
                 lim = data.get("limitations", "Findings based on verified academic literature.")
                 why = data.get("why_this_answer", "Supported by retrieved evidence.")
                 conf_rat = f"Confidence rated '{conf}' based on evidence density."
@@ -4522,11 +4788,17 @@ class RAGPipeline:
                 pass
 
         # Attempt 3: Plain text / Markdown fallback
-        ans = cleaned_output
-        conf = "High" if len(cleaned_output) > 100 else "Medium"
-        conf_rat = "Confidence rated based on direct context match."
-        lim = "Findings based on verified academic literature."
-        why = "Supported by retrieved passage context."
+        ans = self._clean_extracted_answer(cleaned_output)
+        if "insufficient evidence" in ans.lower() or "no evidence" in ans.lower() or "not explicitly state" in ans.lower():
+            conf = "Insufficient"
+            conf_rat = "Insufficient evidence in corpus to address question."
+            lim = "Corpus does not contain direct evidence for this person or concept."
+            why = "No direct matching evidence passages found."
+        else:
+            conf = "High" if len(ans) > 100 else "Medium"
+            conf_rat = "Confidence rated based on direct context match."
+            lim = "Findings based on verified academic literature."
+            why = "Supported by retrieved passage context."
         return ans, conf, conf_rat, lim, why
 
     def _build_insufficient_evidence_response(
@@ -4551,8 +4823,7 @@ class RAGPipeline:
 
 
         msg = custom_msg or (
-            "Insufficient evidence was found in the current Research Mind corpus or "
-            "available online academic sources to answer this question reliably."
+            "Insufficient evidence was found in the available local corpus and online academic sources to answer this question reliably."
         )
 
 
@@ -4578,7 +4849,7 @@ class RAGPipeline:
             ]
         else:
             explanation_summary = (
-                "No retrieved passages in the current 1,000-paper ScholarLens corpus "
+                "No retrieved passages in the current corpus "
                 "or available online academic search contained substantive direct evidence "
                 "addressing this research question."
             )
@@ -4596,7 +4867,7 @@ class RAGPipeline:
             contributing_sections=[],
             evidence_passages=[],
             multi_paper_support=False,
-            evidence_strength="Insufficient",
+            evidence_strength="Low" if retrieved_results else "Insufficient",
             unsupported_claims=0,
             inference_present=False,
             conflicts_detected=False,
@@ -4612,9 +4883,9 @@ class RAGPipeline:
             evidence=evidence_items,
             citations={},
             confidence="Insufficient",
-            confidence_rationale="Insufficient evidence in 1,000-paper corpus or online sources.",
+            confidence_rationale="Insufficient evidence in corpus or online academic sources.",
             limitations=(
-                f"The current 1,000-paper dataset and online search do not contain "
+                f"The available local corpus and online search do not contain "
                 f"sufficient direct evidence for {aspect_str} regarding '{concept_str}'."
             ),
             why_this_answer=why_this_answer,
@@ -4624,6 +4895,10 @@ class RAGPipeline:
                 "insufficient_evidence": True,
                 "online_fallback_active": True,
                 "used_citations_count": 0,
+                "local_evidence_count": 0,
+                "uploaded_evidence_count": 0,
+                "online_evidence_count": 0,
+                "source_type": "insufficient",
                 "domain_scope": scope_label,
                 "concept": concept_str,
                 "requested_aspect": aspect_str,

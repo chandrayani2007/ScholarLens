@@ -18,7 +18,8 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/corpus", tags=["Academic Paper Corpus"])
 
-METADATA_FILE = Path("data/metadata/papers_metadata.json")
+METADATA_FILE = Path("data/metadata/papers.json")
+ALT_METADATA_FILE = Path("data/metadata/papers_metadata.json")
 PAPERS_DIR = Path("data/papers")
 
 _cached_metadata: Optional[Dict[str, Dict[str, Any]]] = None
@@ -27,8 +28,9 @@ _cached_metadata: Optional[Dict[str, Dict[str, Any]]] = None
 def get_all_paper_metadata() -> Dict[str, Dict[str, Any]]:
     global _cached_metadata
     if _cached_metadata is None:
-        if METADATA_FILE.exists():
-            with open(METADATA_FILE, "r", encoding="utf-8") as f:
+        target = METADATA_FILE if METADATA_FILE.exists() else ALT_METADATA_FILE
+        if target.exists():
+            with open(target, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 if isinstance(data, dict):
                     _cached_metadata = data

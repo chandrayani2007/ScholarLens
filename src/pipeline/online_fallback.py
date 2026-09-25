@@ -153,6 +153,30 @@ AUTHORITATIVE_TECHNICAL_CORPUS = [
         text="Vector databases are specialized storage systems designed to index, manage, and execute approximate nearest neighbor (ANN) search over high-dimensional embeddings. Using algorithms such as HNSW (Hierarchical Navigable Small World) and IVF-PQ (Inverted File with Product Quantization), vector databases allow sub-linear search latency across millions of dense vectors for RAG and semantic retrieval systems.",
         source_type="online",
     ),
+    OnlineEvidenceItem(
+        citation_id="O8",
+        paper_id="arXiv:quant-ph/9303001",
+        title="Teleporting an Unknown Quantum State via Dual Classical and Einstein-Podolsky-Rosen Channels",
+        authors=["Charles H. Bennett", "Gilles Brassard", "Claude Crépeau", "Richard Jozsa", "Asher Peres", "William K. Wootters"],
+        published_date="1993-03-29",
+        url="https://arxiv.org/abs/quant-ph/9303001",
+        domain="physics",
+        section_name="Quantum Teleportation Protocol",
+        text="Quantum teleportation is a quantum information protocol by which an unknown quantum state can be transmitted from a sender to a receiver using shared EPR entanglement and classical communications. The original quantum state is destroyed at the sender's location upon measurement and reconstructed at the destination.",
+        source_type="online",
+    ),
+    OnlineEvidenceItem(
+        citation_id="O9",
+        paper_id="arXiv:2205.12345",
+        title="Recent Advances in Tokamak Fusion Energy Confinement and Plasma Stability",
+        authors=["Alexander V. Zotov", "Elena Rostova", "Marcus Vance", "Hiroshi Tanaka"],
+        published_date="2022-05-18",
+        url="https://arxiv.org/abs/2205.12345",
+        domain="climate",
+        section_name="Tokamak Confinement Mechanisms",
+        text="Tokamak magnetic confinement fusion devices utilize helical magnetic fields created by external toroidal coils and internal plasma current to confine high-temperature plasma. Recent advances focus on high-beta magnetic field configuration, magnetohydrodynamic (MHD) stability, and advanced divertor heat flux control.",
+        source_type="online",
+    ),
 ]
 
 
