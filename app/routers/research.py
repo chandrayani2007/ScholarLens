@@ -39,6 +39,14 @@ async def upload_paper(
 
     logger.info(f"[API UPLOAD PAPER] Received file '{filename}' ({len(contents)} bytes) from user_id={current_user.id}")
 
+    # Save uploaded file to temp directory for PDF viewer streaming
+    try:
+        temp_dir = Path("data/papers/temp")
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        (temp_dir / filename).write_bytes(contents)
+    except Exception as save_err:
+        logger.warning(f"[API UPLOAD PAPER] Could not persist uploaded file to temp folder: {save_err}")
+
     if filename.lower().endswith(".pdf") or (file.content_type and "pdf" in file.content_type.lower()) or contents.startswith(b"%PDF-"):
         res = PDFExtractor.extract_from_bytes(contents, filename=filename)
     else:

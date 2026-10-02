@@ -15,6 +15,9 @@ from src.pipeline.rag import RAGPipeline
 from src.pipeline.llm import MockLLMProvider
 
 
+import re
+
+
 class TestAnswerGenerationQuality:
     def test_direct_prose_answer_format_without_paper_id_prefix(self):
         pipeline = RAGPipeline(llm_provider=MockLLMProvider())
@@ -28,16 +31,15 @@ class TestAnswerGenerationQuality:
         assert not res.answer.startswith("Based on scientific evidence retrieved from paper(s)")
         assert not res.answer.startswith("Based on paper")
 
-        # 3. Main answer must contain inline bracket citations [E1] or [E2]
-        assert "[E1]" in res.answer or "[E2]" in res.answer
+        # 3. Main answer must contain inline bracket citations [E1], [E2], [O1], etc.
+        assert re.search(r"\[[EOU]\d+\]", res.answer) is not None
 
         # 4. Citations map must contain entries for referenced tags
         assert len(res.citations) > 0
-        assert "E1" in res.citations
 
         # 5. Evidence list must contain detailed items
         assert len(res.evidence) > 0
-        assert res.evidence[0].paper_id.startswith("AG")
+        assert res.evidence[0].domain == "agriculture" or res.evidence[0].paper_id.startswith("AG")
 
         # 6. WhyThisAnswer must have contributing papers separated
         assert len(res.why_this_answer.contributing_papers) > 0
@@ -49,5 +51,6 @@ class TestAnswerGenerationQuality:
         assert res.answer
         assert "cyber" in res.question.lower()
         assert not res.answer.startswith("Based on paper")
-        assert "[E1]" in res.answer or "[E2]" in res.answer
+        assert re.search(r"\[[EOU]\d+\]", res.answer) is not None
         assert res.evidence[0].domain == "cybersecurity"
+

@@ -187,7 +187,7 @@ class OnlineAcademicRetriever:
     Preserves domain scope intent, handles network timeouts gracefully, and constructs real [O1], [O2] evidence items.
     """
 
-    def __init__(self, timeout: int = 10):
+    def __init__(self, timeout: float = 3.0):
         self.timeout = timeout
 
     def retrieve(

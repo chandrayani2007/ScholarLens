@@ -45,7 +45,7 @@ class TestAnswerQualityEnhancements:
 
         # Sentence makes latency and context window claims not supported by passage_text
         unsupported_sent = "RAG systems suffer from context window constraints and computational latency [E1]."
-        grounded_answer, unsupported_count, active_tags = ClaimGroundingValidator.validate_and_filter_claims(
+        grounded_answer, _, _, _, unsupported_count, active_tags = ClaimGroundingValidator.validate_and_filter_claims(
             unsupported_sent, evidence_map
         )
 

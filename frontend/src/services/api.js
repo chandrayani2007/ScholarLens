@@ -213,7 +213,40 @@ export const api = {
     return request(`/api/corpus?${query}`);
   },
   getCorpusPaper: (paperId) => request(`/api/corpus/${paperId}`),
-  getPaperPdfUrl: (paperId) => `${API_BASE_URL}/api/corpus/${paperId}/pdf`,
+  getPaperPdfUrl: (paperId) => `${API_BASE_URL}/api/corpus/${encodeURIComponent(paperId)}/pdf`,
+  getOnlinePaperPdfUrl: (source) => {
+    if (!source) return '#';
+    const paperId =
+      source.paper_id ||
+      source.paperId ||
+      source.filename ||
+      source.file_name ||
+      source.file_path ||
+      source.unit_id ||
+      source.chunk_id ||
+      source.id ||
+      '';
+    const url = source.url || '';
+    const sourceType = source.source_type || source.sourceType || '';
+
+    if (paperId.toLowerCase().startsWith('arxiv:')) {
+      const cleanId = paperId.replace(/^arxiv:/i, '').trim();
+      return `https://arxiv.org/pdf/${cleanId}.pdf`;
+    }
+    if (url.includes('arxiv.org/abs/')) {
+      return url.replace('arxiv.org/abs/', 'arxiv.org/pdf/') + '.pdf';
+    }
+    if (url.includes('arxiv.org/pdf/')) {
+      return url;
+    }
+    if (url && url.startsWith('http')) {
+      return url;
+    }
+    if (paperId && sourceType !== 'online') {
+      return `${API_BASE_URL}/api/corpus/${encodeURIComponent(paperId)}/pdf`;
+    }
+    return url || '#';
+  },
 
   // Research Query Pipeline
   uploadPaper: async (file) => {

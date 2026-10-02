@@ -2607,13 +2607,29 @@ class AnswerCompletenessChecker:
 
 class EvidenceReranker:
     """
-    Reranks retrieved candidate passages based on:
-    1. Relevance to primary question (dense + BM25 scores).
-    2. Relevance to decomposed subqueries.
-    3. Section-name matching against subquery target sections.
-    4. Content quality (penalizing bibliography, generic headers, non-substantive fragments).
-    5. Diversity & Subquery Coverage Guarantee.
+    Reranks retrieved candidate passages using BAAI/bge-reranker-base Cross-Encoder rescoring combined with:
+    1. Full token-level cross-attention relevance scores from BAAI/bge-reranker-base.
+    2. Intent and Section-name matching against expected research sections.
+    3. Structural noise filtering (penalizing bibliography, generic headers, non-substantive fragments).
+    4. Diversity & Subquery Coverage Guarantee.
     """
+    _cross_encoder_model = None
+    _cross_encoder_attempted = False
+
+    @classmethod
+    def get_cross_encoder(cls, model_name: str = "BAAI/bge-reranker-base"):
+        if cls._cross_encoder_model is None and not cls._cross_encoder_attempted:
+            cls._cross_encoder_attempted = True
+            try:
+                from sentence_transformers import CrossEncoder
+                import torch
+                device = "cuda" if torch.cuda.is_available() else "cpu"
+                logger.info(f"[RERANKER] Initializing Cross-Encoder Transformer: {model_name} on {device}")
+                cls._cross_encoder_model = CrossEncoder(model_name, max_length=512, device=device)
+            except Exception as err:
+                logger.warning(f"[RERANKER] Cross-Encoder initialization notice ({model_name}): {err}")
+                cls._cross_encoder_model = None
+        return cls._cross_encoder_model
 
     @classmethod
     def rerank(
@@ -2622,12 +2638,36 @@ class EvidenceReranker:
         q_repr: Optional[QuestionRepresentation],
         candidates: List[Any],
         top_k: int = 10,
+        use_cross_encoder: bool = True,
+        cross_encoder_model: str = "BAAI/bge-reranker-base"
     ) -> List[Any]:
         if not candidates:
             return []
 
+        # 1. Neural Cross-Encoder Rescoring (if enabled & available)
+        ce_scores_map = {}
+        if use_cross_encoder:
+            encoder = cls.get_cross_encoder(cross_encoder_model)
+            if encoder is not None:
+                try:
+                    eval_candidates = candidates[:16]
+                    pairs = []
+                    for c in eval_candidates:
+                        sec_name = getattr(c, "section_name", "") or ""
+                        txt_str = getattr(c, "text", "") or ""
+                        txt_short = txt_str[:350]
+                        paired_text = f"Section: {sec_name}\n{txt_short}" if sec_name else txt_short
+                        pairs.append([question, paired_text])
+                    raw_scores = encoder.predict(pairs, batch_size=16, show_progress_bar=False)
+                    for c, s in zip(eval_candidates, raw_scores):
+                        c_id = getattr(c, "chunk_id", getattr(c, "paper_id", str(id(c))))
+                        ce_scores_map[c_id] = float(s)
+                except Exception as ce_err:
+                    logger.warning(f"[RERANKER] Cross-Encoder prediction failed: {ce_err}")
+
         scored_candidates = []
         for c in candidates:
+            c_id = getattr(c, "chunk_id", getattr(c, "paper_id", str(id(c))))
             text_str = getattr(c, "text", "") or ""
             sec_name = getattr(c, "section_name", "") or ""
             text_lower = text_str.lower()
@@ -2636,6 +2676,13 @@ class EvidenceReranker:
             base_score = getattr(c, "rrf_score", 0.0)
             if not base_score or base_score <= 0.0:
                 base_score = (getattr(c, "dense_score", 0.0) or 0.0) + (getattr(c, "bm25_score", 0.0) or 0.0)
+
+            # Integrate BAAI/bge-reranker-base Cross-Encoder score if available
+            ce_score = ce_scores_map.get(c_id, None)
+            if ce_score is not None:
+                # Combine normalized Cross-Encoder score with hybrid base score
+                base_score = 0.7 * ce_score + 0.3 * base_score
+                setattr(c, "cross_encoder_score", ce_score)
 
             section_bonus = 0.0
             if q_repr:

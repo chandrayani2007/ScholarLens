@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Sparkles, AlertCircle, Star, X, FileText, Bookmark, Check } from 'lucide-react';
+import { Sparkles, AlertCircle, Star, X, FileText, Bookmark, Check, ExternalLink, Globe, Eye } from 'lucide-react';
 import { WhyThisAnswerCard } from './WhyThisAnswerCard';
 import { EvidenceAccordion } from './EvidenceAccordion';
+import { PdfViewerModal } from './PdfViewerModal';
 import { api } from '../services/api';
 
 export const AnswerCard = ({ response }) => {
@@ -9,6 +10,7 @@ export const AnswerCard = ({ response }) => {
   const [activeCitationId, setActiveCitationId] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [activePdfViewer, setActivePdfViewer] = useState(null); // { pdfUrl, title, paperId }
 
   if (!response) return null;
 
@@ -50,6 +52,35 @@ export const AnswerCard = ({ response }) => {
           authors: c.authors || [],
           url: c.url,
         }));
+
+  const hasOnlineRetrieval =
+    (response.retrieval_metadata?.source === 'online') ||
+    effectiveEvidence.some(
+      (e) =>
+        e.source_type === 'online' ||
+        (e.citation_id && e.citation_id.startsWith('O')) ||
+        (e.paper_id && e.paper_id.startsWith('arXiv:'))
+    ) ||
+    citationsList.some(
+      (c) =>
+        c.source_type === 'online' ||
+        (c.citation_id && c.citation_id.startsWith('O')) ||
+        (c.paper_id && c.paper_id.startsWith('arXiv:'))
+    );
+
+  const onlineItem =
+    effectiveEvidence.find(
+      (e) =>
+        e.source_type === 'online' ||
+        (e.citation_id && e.citation_id.startsWith('O')) ||
+        (e.paper_id && e.paper_id.startsWith('arXiv:'))
+    ) ||
+    citationsList.find(
+      (c) =>
+        c.source_type === 'online' ||
+        (c.citation_id && c.citation_id.startsWith('O')) ||
+        (c.paper_id && c.paper_id.startsWith('arXiv:'))
+    );
 
   const handleSaveQuery = async () => {
     if (isSaved || saving) return;
@@ -127,7 +158,6 @@ export const AnswerCard = ({ response }) => {
 
   const renderInlineCitations = (inlineText) => {
     if (!inlineText) return null;
-    // Match [E#], [O#], [U#] and bare [#] citation tags
     const parts = inlineText.split(/(\[[EOU]\d+\]|\[\d+\])/g);
     return parts.map((part, idx) => {
       const match = part.match(/^\[([EOU]\d+|\d+)\]$/);
@@ -160,7 +190,6 @@ export const AnswerCard = ({ response }) => {
 
   const renderFormattedAnswer = (text) => {
     if (!text) return null;
-    // Split on any newline (single or double) to handle headings and body on the same or separate lines
     const lines = text.split(/\n/);
     const elements = [];
     let bodyBuffer = [];
@@ -182,12 +211,10 @@ export const AnswerCard = ({ response }) => {
     lines.forEach((line, idx) => {
       const trimmed = line.trim();
       if (!trimmed) {
-        // empty line = flush buffer as paragraph
         flushBuffer(idx);
         return;
       }
       if (trimmed.startsWith('#')) {
-        // Flush any accumulated body text first
         flushBuffer(idx);
         const headingText = trimmed.replace(/^#+\s*/, '');
         elements.push(
@@ -203,10 +230,20 @@ export const AnswerCard = ({ response }) => {
         bodyBuffer.push(trimmed);
       }
     });
-    // Flush any remaining body text
     flushBuffer('end');
 
     return elements;
+  };
+
+  const handleOpenPdfViewer = (item) => {
+    const pdfUrl = api.getOnlinePaperPdfUrl(item);
+    if (pdfUrl && pdfUrl !== '#') {
+      setActivePdfViewer({
+        pdfUrl,
+        title: item.title || item.paper_id,
+        paperId: item.paper_id,
+      });
+    }
   };
 
   return (
@@ -256,6 +293,55 @@ export const AnswerCard = ({ response }) => {
           </div>
         </div>
 
+        {/* Online Academic Retrieval Banner with View PDF button */}
+        {hasOnlineRetrieval && (
+          <div
+            style={{
+              background: '#eff6ff',
+              border: '1px solid #bfdbfe',
+              borderRadius: '10px',
+              padding: '0.65rem 1rem',
+              marginTop: '0.85rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '0.75rem',
+              flexWrap: 'wrap',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1d4ed8', fontWeight: 600, fontSize: '0.875rem' }}>
+              <Globe size={16} />
+              <span>
+                Answer synthesized using <strong>Online Academic Retrieval</strong>
+                {onlineItem?.paper_id ? ` (${onlineItem.paper_id})` : ''}
+              </span>
+            </div>
+            {onlineItem && (
+              <button
+                type="button"
+                onClick={() => handleOpenPdfViewer(onlineItem)}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  background: '#2563eb',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '0.35rem 0.85rem',
+                  borderRadius: '7px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 4px rgba(37,99,235,0.2)',
+                }}
+              >
+                <Eye size={14} />
+                <span>View PDF</span>
+              </button>
+            )}
+          </div>
+        )}
+
         {isInsufficient ? (
           <>
             <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem', marginTop: '1rem' }}>
@@ -273,7 +359,6 @@ export const AnswerCard = ({ response }) => {
               )}
             </div>
 
-            {/* Why This Answer Card Component (explaining why evidence was insufficient) */}
             {why_this_answer && (
               <WhyThisAnswerCard whyThisAnswer={why_this_answer} />
             )}
@@ -299,47 +384,82 @@ export const AnswerCard = ({ response }) => {
       </div>
 
       {/* Modal for Citation Evidence Detail */}
-      {activeEvidenceModal && (
-        <div className="modal-overlay" onClick={() => setActiveEvidenceModal(null)}>
-          <div className="modal-content card" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <div className="modal-title-group">
-                <FileText size={20} className="sparkle-purple" />
-                <h4>Citation Evidence: [{activeEvidenceModal.tag}]</h4>
-              </div>
-              <button
-                type="button"
-                className="modal-close-btn"
-                onClick={() => setActiveEvidenceModal(null)}
-              >
-                <X size={18} />
-              </button>
-            </div>
-            <div className="modal-body">
-              <div className="modal-paper-title">{activeEvidenceModal.title}</div>
-              <div className="modal-meta-grid">
-                <div><strong>Paper ID:</strong> {activeEvidenceModal.paper_id}</div>
-                <div><strong>Section:</strong> {activeEvidenceModal.section_name}</div>
-                <div><strong>Pages:</strong> {activeEvidenceModal.pages}</div>
-                <div><strong>Source Type:</strong> {activeEvidenceModal.source_type === 'online' ? 'Online Academic Search' : 'Research Mind Corpus'}</div>
-              </div>
+      {activeEvidenceModal && (() => {
+        const isOnlineModal =
+          activeEvidenceModal.source_type === 'online' ||
+          (activeEvidenceModal.tag && activeEvidenceModal.tag.startsWith('O')) ||
+          (activeEvidenceModal.paper_id && activeEvidenceModal.paper_id.startsWith('arXiv:'));
 
-              {activeEvidenceModal.url && (
-                <div style={{ margin: '0.75rem 0', fontSize: '0.85rem' }}>
-                  <strong>Paper URL:</strong>{' '}
-                  <a href={activeEvidenceModal.url} target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-                    {activeEvidenceModal.url}
-                  </a>
+        return (
+          <div className="modal-overlay" onClick={() => setActiveEvidenceModal(null)}>
+            <div className="modal-content card" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <div className="modal-title-group">
+                  <FileText size={20} className="sparkle-purple" />
+                  <h4>Citation Evidence: [{activeEvidenceModal.tag}]</h4>
                 </div>
-              )}
+                <button
+                  type="button"
+                  className="modal-close-btn"
+                  onClick={() => setActiveEvidenceModal(null)}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="modal-paper-title">{activeEvidenceModal.title}</div>
+                <div className="modal-meta-grid">
+                  <div><strong>Paper ID:</strong> {activeEvidenceModal.paper_id}</div>
+                  <div><strong>Section:</strong> {activeEvidenceModal.section_name}</div>
+                  <div><strong>Pages:</strong> {activeEvidenceModal.pages}</div>
+                  <div><strong>Source Type:</strong> {isOnlineModal ? 'Online Academic Search' : 'Research Mind Corpus'}</div>
+                </div>
 
-              <div className="modal-passage-box">
-                <div className="modal-passage-label">Retrieved Evidence Passage Text:</div>
-                <p className="modal-passage-text">"{activeEvidenceModal.text}"</p>
+                {/* View PDF Action Button */}
+                <div style={{ margin: '1rem 0', background: isOnlineModal ? '#eff6ff' : '#faf5ff', padding: '0.85rem', borderRadius: '8px', border: isOnlineModal ? '1px solid #bfdbfe' : '1px solid #e9d5ff', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.85rem', color: isOnlineModal ? '#1e40af' : '#5b21b6', fontWeight: 600 }}>
+                    {isOnlineModal ? '📄 Online Academic Paper PDF Available' : '📄 Paper Document Available'}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleOpenPdfViewer(activeEvidenceModal)}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      background: isOnlineModal ? '#2563eb' : '#6d28d9',
+                      color: '#ffffff',
+                      border: 'none',
+                      padding: '0.4rem 0.85rem',
+                      borderRadius: '7px',
+                      fontSize: '0.825rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <Eye size={14} />
+                    <span>View PDF</span>
+                  </button>
+                </div>
+
+                <div className="modal-passage-box">
+                  <div className="modal-passage-label">Retrieved Evidence Passage Text:</div>
+                  <p className="modal-passage-text">"{activeEvidenceModal.text}"</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        );
+      })()}
+
+      {/* Embedded PDF Viewer Modal */}
+      {activePdfViewer && (
+        <PdfViewerModal
+          pdfUrl={activePdfViewer.pdfUrl}
+          title={activePdfViewer.title}
+          paperId={activePdfViewer.paperId}
+          onClose={() => setActivePdfViewer(null)}
+        />
       )}
     </>
   );
